@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T16:33:56Z",
+  "generated_at": "2026-05-30T17:11:07Z",
   "generator": "helpers/fetch.py",
   "schema_version": 2,
   "count": 100,
@@ -10,7 +10,7 @@
       "rank": 1,
       "full_name": "openclaw/openclaw",
       "url": "https://github.com/openclaw/openclaw",
-      "stars": 375639,
+      "stars": 375645,
       "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞",
       "topics": [
         "ai",
@@ -32,7 +32,7 @@
       "rank": 2,
       "full_name": "obra/superpowers",
       "url": "https://github.com/obra/superpowers",
-      "stars": 212831,
+      "stars": 212849,
       "description": "An agentic skills framework & software development methodology that works.",
       "topics": [],
       "archived": false,
@@ -46,7 +46,7 @@
       "rank": 3,
       "full_name": "affaan-m/ECC",
       "url": "https://github.com/affaan-m/ECC",
-      "stars": 199094,
+      "stars": 199114,
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "topics": [
         "ai-agents",
@@ -96,7 +96,7 @@
       "rank": 5,
       "full_name": "NousResearch/hermes-agent",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 173504,
+      "stars": 173526,
       "description": "The agent that grows with you",
       "topics": [
         "ai",
@@ -123,7 +123,7 @@
       "rank": 6,
       "full_name": "anomalyco/opencode",
       "url": "https://github.com/anomalyco/opencode",
-      "stars": 167415,
+      "stars": 167424,
       "description": "The open source coding agent.",
       "topics": [],
       "archived": false,
@@ -137,7 +137,7 @@
       "rank": 7,
       "full_name": "f/prompts.chat",
       "url": "https://github.com/f/prompts.chat",
-      "stars": 163063,
+      "stars": 163065,
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "topics": [
         "ai",
@@ -164,7 +164,7 @@
       "rank": 8,
       "full_name": "multica-ai/andrej-karpathy-skills",
       "url": "https://github.com/multica-ai/andrej-karpathy-skills",
-      "stars": 162365,
+      "stars": 162380,
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
       "topics": [],
       "archived": false,
@@ -206,7 +206,7 @@
       "rank": 10,
       "full_name": "anthropics/skills",
       "url": "https://github.com/anthropics/skills",
-      "stars": 143946,
+      "stars": 143971,
       "description": "Public repository for Agent Skills",
       "topics": [
         "agent-skills"
@@ -223,7 +223,7 @@
       "rank": 11,
       "full_name": "langchain-ai/langchain",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 138047,
+      "stars": 138048,
       "description": "The agent engineering platform.",
       "topics": [
         "agents",
@@ -250,7 +250,7 @@
       "rank": 12,
       "full_name": "anthropics/claude-code",
       "url": "https://github.com/anthropics/claude-code",
-      "stars": 128277,
+      "stars": 128294,
       "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
       "topics": [],
       "archived": false,
@@ -264,7 +264,7 @@
       "rank": 13,
       "full_name": "mattpocock/skills",
       "url": "https://github.com/mattpocock/skills",
-      "stars": 112157,
+      "stars": 112184,
       "description": "Skills for Real Engineers. Straight from my .claude directory.",
       "topics": [],
       "archived": false,
@@ -278,7 +278,7 @@
       "rank": 14,
       "full_name": "github/spec-kit",
       "url": "https://github.com/github/spec-kit",
-      "stars": 107148,
+      "stars": 107156,
       "description": "💫 Toolkit to help you get started with Spec-Driven Development",
       "topics": [
         "ai",
@@ -300,7 +300,7 @@
       "rank": 15,
       "full_name": "msitarzewski/agency-agents",
       "url": "https://github.com/msitarzewski/agency-agents",
-      "stars": 106142,
+      "stars": 106147,
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
       "topics": [],
       "archived": false,
@@ -314,7 +314,7 @@
       "rank": 16,
       "full_name": "garrytan/gstack",
       "url": "https://github.com/garrytan/gstack",
-      "stars": 104719,
+      "stars": 104730,
       "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
       "topics": [],
       "archived": false,
@@ -329,7 +329,7 @@
       "rank": 17,
       "full_name": "punkpeye/awesome-mcp-servers",
       "url": "https://github.com/punkpeye/awesome-mcp-servers",
-      "stars": 88193,
+      "stars": 88194,
       "description": "A collection of MCP servers.",
       "topics": [
         "ai",
@@ -346,7 +346,7 @@
       "rank": 18,
       "full_name": "modelcontextprotocol/servers",
       "url": "https://github.com/modelcontextprotocol/servers",
-      "stars": 86478,
+      "stars": 86480,
       "description": "Model Context Protocol Servers",
       "topics": [],
       "archived": false,
@@ -360,7 +360,7 @@
       "rank": 19,
       "full_name": "farion1231/cc-switch",
       "url": "https://github.com/farion1231/cc-switch",
-      "stars": 85462,
+      "stars": 85482,
       "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io",
       "topics": [
         "ai-tools",
@@ -388,7 +388,7 @@
       "rank": 20,
       "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 85042,
+      "stars": 85053,
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "topics": [
         "ai-skills",
@@ -415,7 +415,7 @@
       "rank": 21,
       "full_name": "thedotmack/claude-mem",
       "url": "https://github.com/thedotmack/claude-mem",
-      "stars": 79725,
+      "stars": 79724,
       "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "topics": [
         "ai",
@@ -442,7 +442,7 @@
       "rank": 22,
       "full_name": "lobehub/lobehub",
       "url": "https://github.com/lobehub/lobehub",
-      "stars": 77986,
+      "stars": 77988,
       "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
       "topics": [
         "agent",
@@ -469,7 +469,7 @@
       "rank": 23,
       "full_name": "OpenHands/OpenHands",
       "url": "https://github.com/OpenHands/OpenHands",
-      "stars": 75408,
+      "stars": 75412,
       "description": "🙌 OpenHands: AI-Driven Development",
       "topics": [
         "agent",
@@ -493,7 +493,7 @@
       "rank": 24,
       "full_name": "dair-ai/Prompt-Engineering-Guide",
       "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
-      "stars": 75084,
+      "stars": 75085,
       "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
       "topics": [
         "agent",
@@ -519,7 +519,7 @@
       "rank": 25,
       "full_name": "JuliusBrussee/caveman",
       "url": "https://github.com/JuliusBrussee/caveman",
-      "stars": 66609,
+      "stars": 66613,
       "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
       "topics": [
         "ai",
@@ -544,7 +544,7 @@
       "rank": 26,
       "full_name": "gsd-build/get-shit-done",
       "url": "https://github.com/gsd-build/get-shit-done",
-      "stars": 63780,
+      "stars": 63779,
       "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
       "topics": [
         "claude-code",
@@ -563,7 +563,7 @@
       "rank": 27,
       "full_name": "shareAI-lab/learn-claude-code",
       "url": "https://github.com/shareAI-lab/learn-claude-code",
-      "stars": 63690,
+      "stars": 63695,
       "description": "Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1",
       "topics": [
         "agent",
@@ -589,7 +589,7 @@
       "rank": 28,
       "full_name": "cline/cline",
       "url": "https://github.com/cline/cline",
-      "stars": 62548,
+      "stars": 62549,
       "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
       "topics": [],
       "archived": false,
@@ -603,7 +603,7 @@
       "rank": 29,
       "full_name": "ComposioHQ/awesome-claude-skills",
       "url": "https://github.com/ComposioHQ/awesome-claude-skills",
-      "stars": 62528,
+      "stars": 62529,
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "topics": [
         "agent-skills",
@@ -684,7 +684,7 @@
       "rank": 32,
       "full_name": "earendil-works/pi",
       "url": "https://github.com/earendil-works/pi",
-      "stars": 57720,
+      "stars": 57729,
       "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
       "topics": [],
       "archived": false,
@@ -698,7 +698,7 @@
       "rank": 33,
       "full_name": "mem0ai/mem0",
       "url": "https://github.com/mem0ai/mem0",
-      "stars": 57146,
+      "stars": 57148,
       "description": "Universal memory layer for AI Agents",
       "topics": [
         "ai",
@@ -725,7 +725,7 @@
       "rank": 34,
       "full_name": "ruvnet/ruflo",
       "url": "https://github.com/ruvnet/ruflo",
-      "stars": 56601,
+      "stars": 56607,
       "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features enterprise-grade architecture, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
       "topics": [
         "agentic-ai",
@@ -752,7 +752,7 @@
       "rank": 35,
       "full_name": "safishamsi/graphify",
       "url": "https://github.com/safishamsi/graphify",
-      "stars": 56563,
+      "stars": 56584,
       "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
       "topics": [
         "antigravity",
@@ -778,7 +778,7 @@
       "rank": 36,
       "full_name": "rtk-ai/rtk",
       "url": "https://github.com/rtk-ai/rtk",
-      "stars": 56483,
+      "stars": 56493,
       "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
       "topics": [
         "agentic-coding",
@@ -805,7 +805,7 @@
       "rank": 37,
       "full_name": "upstash/context7",
       "url": "https://github.com/upstash/context7",
-      "stars": 56418,
+      "stars": 56420,
       "description": "Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors",
       "topics": [
         "llm",
@@ -824,7 +824,7 @@
       "rank": 38,
       "full_name": "nexu-io/open-design",
       "url": "https://github.com/nexu-io/open-design",
-      "stars": 55821,
+      "stars": 55831,
       "description": "🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.",
       "topics": [
         "agent-skills",
@@ -900,7 +900,7 @@
       "rank": 41,
       "full_name": "Fission-AI/OpenSpec",
       "url": "https://github.com/Fission-AI/OpenSpec",
-      "stars": 51790,
+      "stars": 51794,
       "description": "Spec-driven development (SDD) for AI coding assistants.",
       "topics": [
         "ai",
@@ -925,7 +925,7 @@
       "rank": 42,
       "full_name": "VoltAgent/awesome-openclaw-skills",
       "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
-      "stars": 49537,
+      "stars": 49539,
       "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
       "topics": [
         "agent-skills",
@@ -952,7 +952,7 @@
       "rank": 43,
       "full_name": "bmad-code-org/BMAD-METHOD",
       "url": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "stars": 48309,
+      "stars": 48311,
       "description": "Breakthrough Method for Agile Ai Driven Development",
       "topics": [],
       "archived": false,
@@ -966,7 +966,7 @@
       "rank": 44,
       "full_name": "santifer/career-ops",
       "url": "https://github.com/santifer/career-ops",
-      "stars": 47909,
+      "stars": 47913,
       "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
       "topics": [
         "ai-agent",
@@ -993,7 +993,7 @@
       "rank": 45,
       "full_name": "addyosmani/agent-skills",
       "url": "https://github.com/addyosmani/agent-skills",
-      "stars": 47115,
+      "stars": 47121,
       "description": "Production-grade engineering skills for AI coding agents.",
       "topics": [
         "agent-skills",
@@ -1014,7 +1014,7 @@
       "rank": 46,
       "full_name": "aaif-goose/goose",
       "url": "https://github.com/aaif-goose/goose",
-      "stars": 46069,
+      "stars": 46072,
       "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
       "topics": [
         "acp",
@@ -1033,7 +1033,7 @@
       "rank": 47,
       "full_name": "Lum1104/Understand-Anything",
       "url": "https://github.com/Lum1104/Understand-Anything",
-      "stars": 45642,
+      "stars": 45680,
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
       "topics": [
         "antigravity-skills",
@@ -1060,7 +1060,7 @@
       "rank": 48,
       "full_name": "Aider-AI/aider",
       "url": "https://github.com/Aider-AI/aider",
-      "stars": 45547,
+      "stars": 45549,
       "description": "aider is AI pair programming in your terminal",
       "topics": [
         "anthropic",
@@ -1087,7 +1087,7 @@
       "rank": 49,
       "full_name": "hesreallyhim/awesome-claude-code",
       "url": "https://github.com/hesreallyhim/awesome-claude-code",
-      "stars": 45209,
+      "stars": 45211,
       "description": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic",
       "topics": [
         "agentic-code",
@@ -1142,7 +1142,7 @@
       "rank": 51,
       "full_name": "anthropics/claude-cookbooks",
       "url": "https://github.com/anthropics/claude-cookbooks",
-      "stars": 44627,
+      "stars": 44630,
       "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
       "topics": [],
       "archived": false,
@@ -1156,7 +1156,7 @@
       "rank": 52,
       "full_name": "HKUDS/nanobot",
       "url": "https://github.com/HKUDS/nanobot",
-      "stars": 43397,
+      "stars": 43396,
       "description": "Lightweight, open-source AI agent for your tools, chats, and workflows.",
       "topics": [
         "ai",
@@ -1183,7 +1183,7 @@
       "rank": 53,
       "full_name": "ChromeDevTools/chrome-devtools-mcp",
       "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-      "stars": 42325,
+      "stars": 42328,
       "description": "Chrome DevTools for coding agents",
       "topics": [
         "browser",
@@ -1204,32 +1204,6 @@
     },
     {
       "rank": 54,
-      "full_name": "moeru-ai/airi",
-      "url": "https://github.com/moeru-ai/airi",
-      "stars": 40537,
-      "description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.",
-      "topics": [
-        "ai-companion",
-        "ai-vtuber",
-        "airi",
-        "digital-life",
-        "grok-companion",
-        "live2d",
-        "neuro-sama",
-        "neurosama",
-        "openclaw",
-        "vrm",
-        "vtuber"
-      ],
-      "archived": false,
-      "sources": [
-        "repo_search"
-      ],
-      "redirected_from": null,
-      "readme_raw": ""
-    },
-    {
-      "rank": 55,
       "full_name": "mindsdb/minds-platform",
       "url": "https://github.com/mindsdb/minds-platform",
       "stars": 39222,
@@ -1256,10 +1230,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 56,
+      "rank": 55,
       "full_name": "sickn33/antigravity-awesome-skills",
       "url": "https://github.com/sickn33/antigravity-awesome-skills",
-      "stars": 39187,
+      "stars": 39188,
       "description": "Installable GitHub library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.",
       "topics": [
         "agent-skills",
@@ -1284,10 +1258,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 57,
+      "rank": 56,
       "full_name": "wshobson/agents",
       "url": "https://github.com/wshobson/agents",
-      "stars": 36145,
+      "stars": 36147,
       "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI",
       "topics": [
         "agent-skills",
@@ -1312,10 +1286,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 58,
+      "rank": 57,
       "full_name": "anthropics/prompt-eng-interactive-tutorial",
       "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
-      "stars": 36050,
+      "stars": 36051,
       "description": "Anthropic's Interactive Prompt Engineering Tutorial",
       "topics": [],
       "archived": false,
@@ -1326,10 +1300,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 59,
+      "rank": 58,
       "full_name": "bytedance/UI-TARS-desktop",
       "url": "https://github.com/bytedance/UI-TARS-desktop",
-      "stars": 35749,
+      "stars": 35750,
       "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
       "topics": [
         "agent",
@@ -1353,7 +1327,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 60,
+      "rank": 59,
       "full_name": "patchy631/ai-engineering-hub",
       "url": "https://github.com/patchy631/ai-engineering-hub",
       "stars": 35405,
@@ -1374,7 +1348,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 61,
+      "rank": 60,
       "full_name": "Yeachan-Heo/oh-my-claudecode",
       "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
       "stars": 35357,
@@ -1400,10 +1374,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 62,
+      "rank": 61,
       "full_name": "luongnv89/claude-howto",
       "url": "https://github.com/luongnv89/claude-howto",
-      "stars": 34615,
+      "stars": 34616,
       "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
       "topics": [
         "claude-code",
@@ -1419,10 +1393,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 63,
+      "rank": 62,
       "full_name": "musistudio/claude-code-router",
       "url": "https://github.com/musistudio/claude-code-router",
-      "stars": 34545,
+      "stars": 34544,
       "description": "Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.",
       "topics": [],
       "archived": false,
@@ -1434,10 +1408,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 64,
+      "rank": 63,
       "full_name": "multica-ai/multica",
       "url": "https://github.com/multica-ai/multica",
-      "stars": 34264,
+      "stars": 34268,
       "description": "The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.",
       "topics": [],
       "archived": false,
@@ -1448,7 +1422,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 65,
+      "rank": 64,
       "full_name": "PDFMathTranslate/PDFMathTranslate",
       "url": "https://github.com/PDFMathTranslate/PDFMathTranslate",
       "stars": 34261,
@@ -1467,6 +1441,20 @@
         "translate",
         "translation"
       ],
+      "archived": false,
+      "sources": [
+        "repo_search"
+      ],
+      "redirected_from": null,
+      "readme_raw": ""
+    },
+    {
+      "rank": 65,
+      "full_name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "stars": 34175,
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+      "topics": [],
       "archived": false,
       "sources": [
         "repo_search"
@@ -1499,23 +1487,9 @@
     },
     {
       "rank": 67,
-      "full_name": "colbymchenry/codegraph",
-      "url": "https://github.com/colbymchenry/codegraph",
-      "stars": 34139,
-      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
-      "topics": [],
-      "archived": false,
-      "sources": [
-        "repo_search"
-      ],
-      "redirected_from": null,
-      "readme_raw": ""
-    },
-    {
-      "rank": 68,
       "full_name": "kepano/obsidian-skills",
       "url": "https://github.com/kepano/obsidian-skills",
-      "stars": 33665,
+      "stars": 33670,
       "description": "Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI.",
       "topics": [
         "claude",
@@ -1536,34 +1510,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 69,
-      "full_name": "AstrBotDevs/AstrBot",
-      "url": "https://github.com/AstrBotDevs/AstrBot",
-      "stars": 33470,
-      "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "topics": [
-        "agent",
-        "ai",
-        "chatbot",
-        "chatgpt",
-        "docker",
-        "gpt",
-        "llm",
-        "openai",
-        "python",
-        "qq",
-        "qqbot",
-        "telegram"
-      ],
-      "archived": false,
-      "sources": [
-        "repo_search"
-      ],
-      "redirected_from": null,
-      "readme_raw": ""
-    },
-    {
-      "rank": 70,
+      "rank": 68,
       "full_name": "microsoft/playwright-mcp",
       "url": "https://github.com/microsoft/playwright-mcp",
       "stars": 33233,
@@ -1580,7 +1527,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 71,
+      "rank": 69,
       "full_name": "alibaba/nacos",
       "url": "https://github.com/alibaba/nacos",
       "stars": 32986,
@@ -1607,10 +1554,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 72,
+      "rank": 70,
       "full_name": "pbakaus/impeccable",
       "url": "https://github.com/pbakaus/impeccable",
-      "stars": 31548,
+      "stars": 31559,
       "description": "The design language that makes your AI harness better at design.",
       "topics": [],
       "archived": false,
@@ -1621,7 +1568,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 73,
+      "rank": 71,
       "full_name": "hesamsheikh/awesome-openclaw-usecases",
       "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
       "stars": 31230,
@@ -1644,10 +1591,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 74,
+      "rank": 72,
       "full_name": "coreyhaines31/marketingskills",
       "url": "https://github.com/coreyhaines31/marketingskills",
-      "stars": 31184,
+      "stars": 31188,
       "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
       "topics": [
         "claude",
@@ -1662,7 +1609,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 75,
+      "rank": 73,
       "full_name": "github/github-mcp-server",
       "url": "https://github.com/github/github-mcp-server",
       "stars": 30289,
@@ -1680,7 +1627,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 76,
+      "rank": 74,
       "full_name": "nanocoai/nanoclaw",
       "url": "https://github.com/nanocoai/nanoclaw",
       "stars": 29538,
@@ -1701,10 +1648,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 77,
+      "rank": 75,
       "full_name": "Leonxlnx/taste-skill",
       "url": "https://github.com/Leonxlnx/taste-skill",
-      "stars": 28944,
+      "stars": 28970,
       "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
       "topics": [
         "agent",
@@ -1728,10 +1675,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 78,
+      "rank": 76,
       "full_name": "anthropics/claude-plugins-official",
       "url": "https://github.com/anthropics/claude-plugins-official",
-      "stars": 28728,
+      "stars": 28731,
       "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
       "topics": [
         "claude-code",
@@ -1747,10 +1694,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 79,
+      "rank": 77,
       "full_name": "simstudioai/sim",
       "url": "https://github.com/simstudioai/sim",
-      "stars": 28656,
+      "stars": 28657,
       "description": "Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.",
       "topics": [
         "agent-workflow",
@@ -1774,7 +1721,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 80,
+      "rank": 78,
       "full_name": "ComposioHQ/composio",
       "url": "https://github.com/ComposioHQ/composio",
       "stars": 28530,
@@ -1801,10 +1748,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 81,
+      "rank": 79,
       "full_name": "davila7/claude-code-templates",
       "url": "https://github.com/davila7/claude-code-templates",
-      "stars": 27674,
+      "stars": 27673,
       "description": "CLI tool for configuring and monitoring Claude Code",
       "topics": [
         "anthropic",
@@ -1821,10 +1768,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 82,
+      "rank": 80,
       "full_name": "assafelovic/gpt-researcher",
       "url": "https://github.com/assafelovic/gpt-researcher",
-      "stars": 27394,
+      "stars": 27395,
       "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
       "topics": [
         "agent",
@@ -1847,10 +1794,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 83,
+      "rank": 81,
       "full_name": "vercel-labs/agent-skills",
       "url": "https://github.com/vercel-labs/agent-skills",
-      "stars": 27324,
+      "stars": 27325,
       "description": "Vercel's official collection of agent skills",
       "topics": [],
       "archived": false,
@@ -1861,7 +1808,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 84,
+      "rank": 82,
       "full_name": "eyaltoledano/claude-task-master",
       "url": "https://github.com/eyaltoledano/claude-task-master",
       "stars": 27292,
@@ -1889,10 +1836,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 85,
+      "rank": 83,
       "full_name": "iOfficeAI/AionUi",
       "url": "https://github.com/iOfficeAI/AionUi",
-      "stars": 27227,
+      "stars": 27230,
       "description": "Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI | Customize your assistants | Star if you like it!",
       "topics": [
         "acp",
@@ -1916,7 +1863,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 86,
+      "rank": 84,
       "full_name": "78/xiaozhi-esp32",
       "url": "https://github.com/78/xiaozhi-esp32",
       "stars": 26879,
@@ -1934,10 +1881,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 87,
+      "rank": 85,
       "full_name": "mvanhorn/last30days-skill",
       "url": "https://github.com/mvanhorn/last30days-skill",
-      "stars": 26824,
+      "stars": 26830,
       "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
       "topics": [
         "ai-prompts",
@@ -1961,7 +1908,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 88,
+      "rank": 86,
       "full_name": "googleworkspace/cli",
       "url": "https://github.com/googleworkspace/cli",
       "stars": 26690,
@@ -1988,7 +1935,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 89,
+      "rank": 87,
       "full_name": "BloopAI/vibe-kanban",
       "url": "https://github.com/BloopAI/vibe-kanban",
       "stars": 26660,
@@ -2008,10 +1955,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 90,
+      "rank": 88,
       "full_name": "K-Dense-AI/scientific-agent-skills",
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "stars": 26623,
+      "stars": 26628,
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Antigravity, and the open Agent Skills standard.",
       "topics": [
         "ai-scientist",
@@ -2035,31 +1982,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 91,
-      "full_name": "agentscope-ai/agentscope",
-      "url": "https://github.com/agentscope-ai/agentscope",
-      "stars": 25872,
-      "description": "Build and run agents you can see, understand and trust.",
-      "topics": [
-        "agent",
-        "chatbot",
-        "large-language-models",
-        "llm",
-        "llm-agent",
-        "mcp",
-        "multi-agent",
-        "multi-modal",
-        "react-agent"
-      ],
-      "archived": false,
-      "sources": [
-        "repo_search"
-      ],
-      "redirected_from": null,
-      "readme_raw": ""
-    },
-    {
-      "rank": 92,
+      "rank": 89,
       "full_name": "yamadashy/repomix",
       "url": "https://github.com/yamadashy/repomix",
       "stars": 25762,
@@ -2086,7 +2009,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 93,
+      "rank": 90,
       "full_name": "PrefectHQ/fastmcp",
       "url": "https://github.com/PrefectHQ/fastmcp",
       "stars": 25402,
@@ -2110,10 +2033,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 94,
+      "rank": 91,
       "full_name": "rohitg00/ai-engineering-from-scratch",
       "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-      "stars": 25023,
+      "stars": 25036,
       "description": "Learn it. Build it. Ship it for others.",
       "topics": [
         "agents",
@@ -2137,10 +2060,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 95,
+      "rank": 92,
       "full_name": "volcengine/OpenViking",
       "url": "https://github.com/volcengine/OpenViking",
-      "stars": 24916,
+      "stars": 24917,
       "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
       "topics": [
         "agent",
@@ -2164,7 +2087,7 @@
       "readme_raw": ""
     },
     {
-      "rank": 96,
+      "rank": 93,
       "full_name": "oraios/serena",
       "url": "https://github.com/oraios/serena",
       "stars": 24761,
@@ -2191,64 +2114,10 @@
       "readme_raw": ""
     },
     {
-      "rank": 97,
-      "full_name": "flipped-aurora/gin-vue-admin",
-      "url": "https://github.com/flipped-aurora/gin-vue-admin",
-      "stars": 24722,
-      "description": "🚀Vite+Vue3+Gin拥有AI辅助的基础开发平台，企业级业务AI+开发解决方案，内置mcp辅助服务，内置skills管理，支持TS和JS混用。它集成了JWT鉴权、权限管理、动态路由、显隐可控组件、分页封装、多点登录拦截、资源权限、上传下载、代码生成器、表单生成器和可配置的导入导出等开发必备功能。",
-      "topics": [
-        "admin",
-        "casbin",
-        "element-ui",
-        "gin",
-        "gin-admin",
-        "gin-vue-admin",
-        "go",
-        "go-admin",
-        "golang",
-        "vue",
-        "vue-admin",
-        "vue3"
-      ],
-      "archived": false,
-      "sources": [
-        "repo_search"
-      ],
-      "redirected_from": null,
-      "readme_raw": ""
-    },
-    {
-      "rank": 98,
-      "full_name": "mastra-ai/mastra",
-      "url": "https://github.com/mastra-ai/mastra",
-      "stars": 24555,
-      "description": "From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack.",
-      "topics": [
-        "agents",
-        "ai",
-        "chatbots",
-        "evals",
-        "javascript",
-        "llm",
-        "mcp",
-        "nextjs",
-        "nodejs",
-        "reactjs",
-        "typescript",
-        "workflows"
-      ],
-      "archived": false,
-      "sources": [
-        "repo_search"
-      ],
-      "redirected_from": null,
-      "readme_raw": ""
-    },
-    {
-      "rank": 99,
+      "rank": 94,
       "full_name": "Imbad0202/academic-research-skills",
       "url": "https://github.com/Imbad0202/academic-research-skills",
-      "stars": 24422,
+      "stars": 24432,
       "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
       "topics": [
         "academic-pipeline",
@@ -2268,16 +2137,114 @@
       "readme_raw": ""
     },
     {
-      "rank": 100,
+      "rank": 95,
       "full_name": "gastownhall/beads",
       "url": "https://github.com/gastownhall/beads",
-      "stars": 24225,
+      "stars": 24226,
       "description": "Beads - A memory upgrade for your coding agent",
       "topics": [
         "agents",
         "claude-code",
         "coding"
       ],
+      "archived": false,
+      "sources": [
+        "repo_search"
+      ],
+      "redirected_from": null,
+      "readme_raw": ""
+    },
+    {
+      "rank": 96,
+      "full_name": "jarrodwatts/claude-hud",
+      "url": "https://github.com/jarrodwatts/claude-hud",
+      "stars": 24111,
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "topics": [
+        "anthropic",
+        "claude",
+        "claude-code",
+        "cli",
+        "plugin",
+        "statusline",
+        "typescript"
+      ],
+      "archived": false,
+      "sources": [
+        "repo_search"
+      ],
+      "redirected_from": null,
+      "readme_raw": ""
+    },
+    {
+      "rank": 97,
+      "full_name": "VoltAgent/awesome-agent-skills",
+      "url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "stars": 23628,
+      "description": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "antigravity-skills",
+        "awesome-list",
+        "claude-code",
+        "claude-code-skills",
+        "claude-skills",
+        "codex-skills",
+        "cursor-skills",
+        "gemini-skills",
+        "opencode-skills",
+        "skills"
+      ],
+      "archived": false,
+      "sources": [
+        "repo_search"
+      ],
+      "redirected_from": null,
+      "readme_raw": ""
+    },
+    {
+      "rank": 98,
+      "full_name": "langchain-ai/deepagents",
+      "url": "https://github.com/langchain-ai/deepagents",
+      "stars": 23570,
+      "description": "The batteries-included agent harness.",
+      "topics": [
+        "ai",
+        "deepagents",
+        "langchain",
+        "langgraph",
+        "python",
+        "typescript"
+      ],
+      "archived": false,
+      "sources": [
+        "repo_search"
+      ],
+      "redirected_from": null,
+      "readme_raw": ""
+    },
+    {
+      "rank": 99,
+      "full_name": "modelcontextprotocol/python-sdk",
+      "url": "https://github.com/modelcontextprotocol/python-sdk",
+      "stars": 23181,
+      "description": "The official Python SDK for Model Context Protocol servers and clients",
+      "topics": [],
+      "archived": false,
+      "sources": [
+        "repo_search"
+      ],
+      "redirected_from": null,
+      "readme_raw": ""
+    },
+    {
+      "rank": 100,
+      "full_name": "SuperClaude-Org/SuperClaude_Framework",
+      "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
+      "stars": 23067,
+      "description": "A configuration framework that enhances Claude Code with specialized commands, cognitive personas, and development methodologies.",
+      "topics": [],
       "archived": false,
       "sources": [
         "repo_search"
