@@ -86,31 +86,6 @@
       "topics": []
     },
     {
-      "full_name": "f/prompts.chat",
-      "stars": 163065,
-      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-      "topics": [
-        "ai",
-        "artificial-intelligence",
-        "awesome-list",
-        "chatgpt",
-        "chatgpt-prompts",
-        "claude",
-        "gemini",
-        "gpt",
-        "gpt-4",
-        "llm",
-        "machine-learning",
-        "nextjs",
-        "open-source",
-        "openai",
-        "prompt-engineering",
-        "prompts",
-        "prompts-chat",
-        "typescript"
-      ]
-    },
-    {
       "full_name": "multica-ai/andrej-karpathy-skills",
       "stars": 162471,
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
@@ -1537,6 +1512,29 @@
         "tailwindcss",
         "typescript",
         "vite"
+      ]
+    },
+    {
+      "full_name": "enescingoz/awesome-n8n-templates",
+      "stars": 22589,
+      "description": "280+ free n8n automation templates — ready-to-use workflows for Gmail, Telegram, Slack, Discord, WhatsApp, Google Drive, Notion, OpenAI, and more. AI agents, RAG chatbots, email automation, social media, DevOps, and document processing. The largest open-source n8n template collection.",
+      "topics": [
+        "ai-agents",
+        "ai-automation",
+        "automation",
+        "automation-templates",
+        "awesome",
+        "awesome-list",
+        "integration",
+        "low-code",
+        "n8n",
+        "n8n-automation",
+        "n8n-template",
+        "no-code-ai",
+        "no-code-automation",
+        "self-hosted",
+        "telegram-bot",
+        "workflow-automation"
       ]
     }
   ]

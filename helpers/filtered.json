@@ -2375,6 +2375,20 @@
         "retrieval-augmented-generation",
         "tutorials"
       ]
+    },
+    {
+      "repo_id": "f/prompts.chat",
+      "reason": "generic provider-neutral prompt directory (f.k.a. Awesome ChatGPT Prompts); ChatGPT-first, matches only by the 'claude' tag, not a Claude-ecosystem tool",
+      "stars": 163065,
+      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+      "tags": [
+        "awesome-list",
+        "chatgpt-prompts",
+        "gpt",
+        "openai",
+        "prompt-engineering",
+        "prompts"
+      ]
     }
   ]
 }
