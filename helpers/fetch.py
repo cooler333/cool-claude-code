@@ -83,6 +83,12 @@ def canon(alias_map_lc: dict[str, str], full: str) -> str:
     return alias_map_lc.get(full.lower(), full)
 
 
+def deny_id(entry) -> str:
+    """A denylist entry is {"repo_id": ..., "reason": ...}; tolerate a bare
+    string for backward compatibility. Returns the owner/name."""
+    return entry["repo_id"] if isinstance(entry, dict) else entry
+
+
 def in_scope(repo: dict, scope: dict) -> bool:
     """Relevance gate: loose search pulls in unrelated giants (awesome lists,
     roadmaps). Keep only repos whose name/description/topics match an ecosystem
@@ -399,7 +405,7 @@ def main() -> int:
 
     client = GHClient(get_token(), cfg["http"]["user_agent"])
     alias_lc = {k.lower(): v for k, v in cfg.get("alias_map", {}).items()}
-    deny_lc = {x.lower() for x in cfg.get("denylist", [])}
+    deny_lc = {deny_id(d).lower() for d in cfg.get("denylist", [])}
 
     # 1) discovery
     log("discovering candidates...")

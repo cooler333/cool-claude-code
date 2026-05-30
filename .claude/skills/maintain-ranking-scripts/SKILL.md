@@ -36,9 +36,11 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 - **Change the table layout / columns / Table of Contents** — edit `helpers/render.py`.
 - **Add/repair an alias** (renamed/moved repos) — `alias_map` in `config.json`.
 - **Adjust scope** (what counts as in-ecosystem) — `scope_filter` in `config.json`.
-- **Exclude an unwanted repo** — add it to `denylist` in `config.json`. The denylist
-   is reserved for editorial exclusions that rules can't detect: repos that match scope
-   keywords but aren't Claude Code ecosystem tools. The established categories are:
+- **Exclude an unwanted repo** — add a `{ "repo_id": "owner/name", "reason": "..." }`
+   entry to `denylist` in `config.json` (the reader also tolerates a bare string).
+   The denylist is reserved for editorial exclusions that rules can't detect: repos
+   that match scope keywords but aren't Claude Code ecosystem tools. The established
+   categories are:
    1. **Competing coding-agent CLIs / editors** — single-vendor or non-Claude-compatible
       (e.g. `google-gemini/gemini-cli`, `openai/codex`, `voideditor/void`).
    2. **API gateways / proxies / resellers** — model-access infrastructure, not a

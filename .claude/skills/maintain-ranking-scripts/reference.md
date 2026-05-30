@@ -23,8 +23,11 @@ config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──�
 - `discovery.code_search_filenames` — filenames for `gh search code`.
 - `discovery.awesome_lists` — CSV sources (repo + path + column).
 - `alias_map` — rename map: `old/name` → `new/name` (applied before fetch).
-- `denylist` — editorial exclude (case-insensitive). **No allowlist.** Reserved for
-  repos that match scope keywords but aren't Claude Code ecosystem tools, in four
+- `denylist` — editorial exclude (case-insensitive). A list of
+  `{ "repo_id": "owner/name", "reason": "..." }` objects (a bare string is still
+  tolerated by the reader for backward compatibility). `reason` documents *why* the
+  repo is excluded; only `repo_id` affects filtering. **No allowlist.** Reserved for
+  repos that match scope keywords but aren't Claude Code ecosystem tools, in five
   categories: (1) competing coding-agent CLIs/editors (`google-gemini/gemini-cli`,
   `openai/codex`, `voideditor/void`); (2) API gateways/proxies/resellers
   (`songquanpeng/one-api`, `BerriAI/litellm`, `chatanywhere/GPT_API_free`); (3) generic
