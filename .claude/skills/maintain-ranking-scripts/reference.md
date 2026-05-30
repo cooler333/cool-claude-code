@@ -95,9 +95,9 @@ Note `repos.json` comes from `fetch.py`'s *scoped* discovery queries (not a glob
   "generated_at": "ISO8601",
   "generator": "helpers/fetch.py",
   "schema_version": 2,
-  "count": 97,
+  "count": 134,
   "target_count": 100,
-  "partial": true,
+  "partial": false,
   "repos": [
     {
       "rank": 1,
@@ -118,6 +118,14 @@ Note `repos.json` comes from `fetch.py`'s *scoped* discovery queries (not a glob
 - Raw snapshot: **no `category` or brief** — render derives both. `description` is the
   untruncated GitHub description; `readme_raw` is only populated when the description
   was empty (capped to `brief.readme_raw_max_chars`, newlines kept).
+- `repos` is the **FULL kept set** — every in-scope, non-archived repo at or above
+  `min_stars` that fetch's discovery found — **not** capped at `target_count`. So
+  `count` is the full kept count, and `repos.json` + `out_of_scope.json` +
+  `scope_excluded.json` ≈ the whole `>= min_stars` universe (see partition above).
+- `target_count` — no longer a cap; it's the **health threshold**: `partial` is true
+  when fewer than `target_count` in-scope repos were found (a thin-discovery warning).
+  The leaderboard size in the README is render's `top_table_size`, independent of this.
+- `--limit N` still caps output for cheap test runs (sets `partial` aside).
 - `schema_version` — bump when shape changes; update both scripts + docs.
 - Atomic write: fetch writes to a temp path then renames (write is the last step, so a
   good `repos.json` is never clobbered).
@@ -131,8 +139,8 @@ Note `repos.json` comes from `fetch.py`'s *scoped* discovery queries (not a glob
 - Bump star floor → `min_stars`; re-run fetch.
 - Change columns / TOC / category order → edit `render.py` / `render.category_order`;
   re-run render.
-- Exclude an off-scope repo (competing CLI, gateway/reseller, generic app) → add it to
-  `denylist`; re-run fetch.
+- Exclude an off-scope repo (competing CLI, gateway/reseller, generic app) → add a
+  `{repo_id, reason}` entry to `helpers/out_of_scope.json`; re-run fetch.
 
 ## Scope philosophy
 

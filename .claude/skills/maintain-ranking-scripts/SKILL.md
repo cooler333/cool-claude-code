@@ -15,8 +15,9 @@ Claude Code / skills / agents / MCP ecosystem.
    metadata via the GraphQL API (REST fallback), drops denylisted repos (read from
    `helpers/out_of_scope.json`), filters
    (min_stars + scope + not archived), ranks by stars, fetches raw README text for
-   final-set repos that have no description, and serializes the **raw** top N to
-   **`helpers/repos.json`**. It does **not** categorize or write briefs.
+   repos that have no description, and serializes the **raw** full kept set (every
+   in-scope repo, not just the top N) to **`helpers/repos.json`**. It does **not**
+   categorize or write briefs.
 2. **`helpers/render.py`** (no network) reads that JSON and regenerates
    **`README.md`**: it **categorizes**, builds the short **briefs** (from the saved
    description / raw README / topics), and lays out a Table of Contents, the Top-N
@@ -29,7 +30,9 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 ## Working on this
 
 - **Tune what's discovered** — edit `helpers/config.json` (`repo_search_queries`,
-   `code_search_filenames`, `awesome_lists`, `min_stars`, `target_count`).
+   `code_search_filenames`, `awesome_lists`, `min_stars`). Note `target_count` is no
+   longer a cap — `repos.json` keeps the full in-scope set; `target_count` is only the
+   `partial` health threshold (see `reference.md`).
 - **Improve categorization** — adjust `category_rules` (topic_map / keyword_rules)
    in `config.json`; `render.py` assigns the category and groups by it. If you add a
    new category, also add its heading to `render.category_order` (they must stay in

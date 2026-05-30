@@ -4,8 +4,8 @@
 Network-only + selection. Pipeline: discover candidates (repo search + `gh` code
 search + awesome-list) -> normalize/dedupe/alias/deny -> validate -> authoritative
 metadata via batched GraphQL -> REST fallback for renames -> re-dedupe -> filter
-(min_stars + scope + not archived) -> rank + trim -> fetch raw README for the
-final-set repos that have no description -> deterministic atomic JSON write.
+(min_stars + scope + not archived) -> rank (keep the FULL set, not just top N) ->
+fetch raw README for repos with no description -> deterministic atomic JSON write.
 
 This script does NO categorization or brief generation — those are pure-CPU steps
 owned by helpers/render.py, which reads the raw snapshot offline. fetch.py only
@@ -471,8 +471,13 @@ def main() -> int:
             + ", ".join(f"{r['full_name']}({r['stars']})" for r in scope_dropped[:10]))
     ranked.sort(key=lambda r: (-r["stars"], r["full_name"].lower()))
     target = cfg["target_count"]
-    limit = args.limit or target
-    top = ranked[:limit]
+    # repos.json stores the FULL kept set -- every in-scope, non-archived repo at or
+    # above min_stars -- not just the top `target_count`. Together with
+    # out_of_scope.json (denylisted) and scope_excluded.json (fails scope) this is the
+    # whole >=min_stars universe. `target_count` is now only the health threshold for
+    # `partial` below; the leaderboard size is render's `top_table_size`. `--limit`
+    # still caps output for cheap test runs.
+    top = ranked[: args.limit] if args.limit is not None else ranked
 
     # 5) floor check (skip for explicit --limit test runs)
     if args.limit is None:
