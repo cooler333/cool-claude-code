@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import re
 import subprocess
 import sys
@@ -136,22 +137,54 @@ def discover_repo_search(client: GHClient, cfg: dict, candidates: dict) -> None:
                 break
 
 
+# Code search is a separate, very low budget (~10/min) and `gh` only surfaces a
+# 429 as a generic rc=1, so we sniff its stderr for rate-limit signals and back off
+# rather than dropping the query like a permanent failure. Mirrors ghclient's policy.
+_CS_PACE = 6.5            # seconds between code-search calls (respect ~10/min)
+_CS_MAX_RETRIES = 4
+_CS_BACKOFF_BASE = 4.0
+_CS_BACKOFF_CAP = 60.0
+_CS_RATE_LIMIT_RE = re.compile(
+    r"429|rate limit|secondary rate|abuse detection|too many requests",
+    re.IGNORECASE,
+)
+
+
 def discover_code_search(cfg: dict, candidates: dict) -> None:
-    """Code search via `gh` (newer code-search API; raw REST 422s on bare qualifiers)."""
+    """Code search via `gh` (newer code-search API; raw REST 422s on bare qualifiers).
+
+    Retries 429/secondary-rate-limit responses with backoff instead of dropping the
+    query; genuine errors are logged and skipped after the first attempt.
+    """
     for fn in cfg["discovery"].get("code_search_filenames", []):
-        try:
-            out = subprocess.run(
-                ["gh", "search", "code", "--filename", fn,
-                 "--json", "repository", "--limit", "100"],
-                capture_output=True, text=True, timeout=120,
-            )
-        except (FileNotFoundError, subprocess.SubprocessError) as e:
-            log(f"  code_search '{fn}' skipped (gh unavailable: {e})")
-            return
-        if out.returncode != 0:
+        for attempt in range(_CS_MAX_RETRIES + 1):
+            time.sleep(_CS_PACE)  # pace BEFORE every call, including retries
+            try:
+                out = subprocess.run(
+                    ["gh", "search", "code", "--filename", fn,
+                     "--json", "repository", "--limit", "100"],
+                    capture_output=True, text=True, timeout=120,
+                )
+            except (FileNotFoundError, subprocess.SubprocessError) as e:
+                log(f"  code_search '{fn}' skipped (gh unavailable: {e})")
+                return  # gh missing/broken: no point trying the other filenames
+            if out.returncode == 0:
+                break
+            stderr = out.stderr.strip()
+            if _CS_RATE_LIMIT_RE.search(stderr) and attempt < _CS_MAX_RETRIES:
+                delay = min(_CS_BACKOFF_CAP, _CS_BACKOFF_BASE * (2 ** attempt))
+                delay += random.uniform(0, 2.0)
+                log(f"  code_search '{fn}' rate-limited (gh rc={out.returncode}); "
+                    f"retry {attempt + 1}/{_CS_MAX_RETRIES} in {delay:.0f}s")
+                time.sleep(delay)
+                continue
             log(f"  code_search '{fn}' skipped (gh rc={out.returncode}): "
-                f"{out.stderr.strip()[:200]}")
-            continue
+                f"{stderr[:200]}")
+            break
+        else:
+            continue  # retries exhausted on this filename; move to the next
+        if out.returncode != 0:
+            continue  # broke out on a non-rate-limit error; nothing to parse
         try:
             rows = json.loads(out.stdout or "[]")
         except json.JSONDecodeError:
@@ -160,7 +193,6 @@ def discover_code_search(cfg: dict, candidates: dict) -> None:
             repo = row.get("repository") or {}
             name = repo.get("nameWithOwner") or repo.get("fullName") or ""
             add_candidate(candidates, name, "code_search")
-        time.sleep(6.5)  # respect code-search ~10/min
 
 
 def discover_awesome_lists(client: GHClient, cfg: dict, candidates: dict) -> None:
