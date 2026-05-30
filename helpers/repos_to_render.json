@@ -891,21 +891,6 @@
       "topics": []
     },
     {
-      "full_name": "github/awesome-copilot",
-      "stars": 34148,
-      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
-      "topics": [
-        "agent-skills",
-        "agents",
-        "ai",
-        "awesome",
-        "custom-agents",
-        "github-copilot",
-        "hacktoberfest",
-        "prompt-engineering"
-      ]
-    },
-    {
       "full_name": "kepano/obsidian-skills",
       "stars": 33687,
       "description": "Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI.",
@@ -1543,6 +1528,12 @@
         "rag",
         "tutorials"
       ]
+    },
+    {
+      "full_name": "ahujasid/blender-mcp",
+      "stars": 22166,
+      "description": "",
+      "topics": []
     }
   ]
 }

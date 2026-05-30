@@ -110,6 +110,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [a2aproject/A2A](https://github.com/a2aproject/A2A) | 24.1k | Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications. |
 | [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | 23.2k | The official Python SDK for Model Context Protocol servers and clients |
 | [NirDiamant/GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents) | 22.3k | 50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems. |
+| [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | 22.2k | — |
 
 ### Agent harness
 
@@ -156,7 +157,6 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [github/awesome-copilot](https://github.com/github/awesome-copilot) | 34.1k | Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot. |
 | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | 24.5k | Academic Research Skills for Claude Code: research → write → review → revise → finalize |
 
 ### Spec-driven dev

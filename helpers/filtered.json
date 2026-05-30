@@ -2417,6 +2417,20 @@
         "openai",
         "python"
       ]
+    },
+    {
+      "repo_id": "github/awesome-copilot",
+      "reason": "single-vendor GitHub Copilot customization directory (agents/instructions/skills for Copilot, not Claude); matched scope only via the generic 'skill(s)' term. Same class as openai/skills.",
+      "stars": 34148,
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
+      "tags": [
+        "agent-skills",
+        "agents",
+        "awesome",
+        "custom-agents",
+        "github-copilot",
+        "prompt-engineering"
+      ]
     }
   ]
 }
