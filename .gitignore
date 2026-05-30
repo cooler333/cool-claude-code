@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 *.tmp
 .DS_Store
+.claude/agent-usage.log

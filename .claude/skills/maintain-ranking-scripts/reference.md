@@ -1,96 +1,108 @@
-# Reference — maintain-ranking-scripts
+# maintain-ranking-scripts — reference
 
-Deep methodology for the ranking pipeline. SKILL.md stays lean; load this when
-editing internals.
+Deep reference for the ranking pipeline. Read this when making non-trivial
+changes (schema, discovery, ranking, categorization).
 
-## Scope
+## Pipeline overview
 
-**Root problem.** Keyword/topic search only finds repos that *self-describe* as
-Claude-related; it misses high-value, generically named tools (e.g.
-`anthropics/skills`, `modelcontextprotocol/servers`, `earendil-works/pi`). Blog
-"best-of" posts share the bias and report stale stars. So discovery combines
-name-independent signals, and stars are always re-verified live.
+```
+config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──▶ README.md
+```
 
-- **In scope:** Claude Code skills, agents, plugins, harnesses, memory and
-  orchestration; the MCP tool-protocol layer (servers, directories, switchers);
-  directly adjacent coding-agent CLIs (opencode, codex, gemini-cli, OpenHands, goose).
-- **Out of scope:** general-purpose AI frameworks not Claude/skill/agent-specific
-  (`langchain`, `dify`, `langflow`, `firecrawl`, `ragflow` — in `denylist`); general chat UIs.
+- **fetch.py**: network only. discovery → metadata → deny/filter → rank/trim →
+  raw README (for empty-description repos) → raw JSON. No categorize/brief.
+- **render.py**: no network. JSON → categorize + brief → TOC + grouped markdown tables.
 
-## Discovery signals + rate limits
-`fetch.py` unions three signals, dedupes (alias map), then re-ranks by live stars.
-1. **Repo search** — REST `/search/repositories?q=…&sort=stars` (`topic:claude-code`,
-   keyword queries). Sortable by stars; ~30 req/min authenticated; paged.
-2. **Structural code search** — `gh search code --filename SKILL.md|CLAUDE.md`
-   (name-independent). **Use `gh`, not raw `/search/code`** — the REST endpoint
-   422s on qualifier-only queries. 1000-result cap, ~10 req/min, can't sort by
-   stars → discovery signal only. Best-effort; a failure must not fail the run.
-3. **Awesome-list aggregation** — harvest `hesreallyhim/awesome-claude-code`
-   (`data/repo-ticker.csv`) via the content API with `Accept: application/vnd.github.raw`.
-   Names only; the CSV stars are **stale** — discard them, re-verify live.
+## config.json keys
 
-## Authoritative star counts
-- One **batched GraphQL** query, ~50 aliased `repository(owner,name){…}` fields
-  (`r0…r49`), mapped back **by alias index**. Cuts hundreds of lookups to a few requests.
-- Validate each `owner/name` against GitHub's charset before building the query
-  (owner `^[A-Za-z0-9-]+$`, name `^[A-Za-z0-9._-]+$`): one bad name breaks the
-  whole batch and is an injection vector.
-- GraphQL returns `null` for renamed/deleted repos → **REST fallback**
-  `/repos/{owner}/{name}` (follows redirects); record `redirected_from` and
-  **re-dedupe** by canonical `full_name` afterward (a redirect can collapse two
-  candidates into one).
+- `target_count` — how many repos to keep (default 100).
+- `min_stars` — floor; repos below are dropped (currently 20000).
+- `scope_filter.any` — at least one substring must appear in name/desc/topics
+  (the "is this in-ecosystem?" gate).
+- `discovery.repo_search_queries` — GitHub search queries (topic:/keyword).
+- `discovery.code_search_filenames` — filenames for `gh search code`.
+- `discovery.awesome_lists` — CSV sources (repo + path + column).
+- `alias_map` — rename map: `old/name` → `new/name` (applied before fetch).
+- `denylist` — editorial exclude (case-insensitive). **No allowlist.** Reserved for
+  non-Claude-compatible / single-vendor competing coding-agent CLIs and generic, non-AI
+  repos that match by keyword but aren't ecosystem-specific (e.g. `sindresorhus/awesome`).
+- `brief` — `max_chars`, `readme_excerpt_max_chars`, `readme_raw_max_chars`,
+  `fetch_readme_when_description_empty` (fetch caps the raw README; render parses it).
+- `category_rules` — `topic_map` (topic→category) + `keyword_rules` (ordered;
+  `match_owner` or `any` substrings) + `default_category` (`"Other"`).
+- `render.category_order` — the fixed, ordered category headings for the By-category
+  section. **Must list every category `category_rules` can emit** (except the default
+  `"Other"`), or that category silently falls into "Other".
+- `render.other_category_label` / `render.other_max` — the catch-all label and the
+  warn threshold (render logs a warning when "Other" ≥ this many repos).
+- `http.user_agent` — sent on every request.
 
-## Heuristic categorization (config-driven, first-match-wins)
-Order: **owner override → `topic_map` → ordered `keyword_rules` (over
-name+description+topics) → `default_category`.** All data lives in
-`config.json.category_rules`; `fetch.py` only evaluates it. Add rules in priority
-order (earlier = higher priority). `<category source="...">` records which stage
-fired (`topic_map` / `keyword_rules` / `default`).
+## repos.json schema contract
 
-## Brief fallback chain (requirement: never blank without trying)
-`description` → (if empty) README first meaningful paragraph via
-`/repos/{o}/{n}/readme` (raw bytes; skip headings/badges/HTML/blockquotes, strip
-markdown, truncate) → joined `topics[:5]` → empty (`render.py` shows `—`). README
-is fetched **only** when the description is empty, capping extra requests.
-`<description source="...">` records the provenance.
+```json
+{
+  "generated_at": "ISO8601",
+  "generator": "helpers/fetch.py",
+  "schema_version": 2,
+  "count": 97,
+  "target_count": 100,
+  "partial": true,
+  "repos": [
+    {
+      "rank": 1,
+      "full_name": "owner/name",
+      "url": "https://github.com/owner/name",
+      "stars": 123,
+      "description": "raw GitHub description (UNtruncated)",
+      "topics": ["x", "y"],
+      "archived": false,
+      "sources": ["repo_search", "code_search"],
+      "redirected_from": null,
+      "readme_raw": "first N chars of raw README, newlines preserved (empty unless description was empty)"
+    }
+  ]
+}
+```
 
-## repos.xml schema contract
-Root: `<repos generated_at="ISO-8601-UTC Z" generator schema_version count
-target_count partial>`. Each `<repo rank="N">` has, in order: `full_name`, `url`,
-`stars` (raw int — humanized in render), `category source=…`, `description
-source=…`, `topics/topic*` (sorted), `discovery/source*` (sorted), `archived`,
-optional `redirected_from`. Determinism (clean diffs): stable sort `(-stars,
-full_name)`, sorted topics/sources, fixed attribute order, atomic write. Any
-change here must update `fetch.py` writer + `render.py` reader + this section together.
+- Raw snapshot: **no `category` or brief** — render derives both. `description` is the
+  untruncated GitHub description; `readme_raw` is only populated when the description
+  was empty (capped to `brief.readme_raw_max_chars`, newlines kept).
+- `schema_version` — bump when shape changes; update both scripts + docs.
+- Atomic write: fetch writes to a temp path then renames (write is the last step, so a
+  good `repos.json` is never clobbered).
+- Ranking lives entirely in fetch (`(-stars, full_name)`); render trusts `rank`.
 
-## Failure / write policy
-- Rate-limit exhaustion or transport error → exception → non-zero exit, **no write**
-  (write is the last step, so good `repos.xml` is never clobbered).
-- `fetch.floor_fraction` (default 0.9): if metadata `coverage` (definitively
-  resolved-or-404 ÷ attempted) drops below it → hard fail, no write. Distinguishes
-  a rate-limited truncation from a legitimately small ecosystem.
-- `render.py` refuses to overwrite README below `MIN_REPOS` (10).
-- CI commits only on a real diff and tags `[skip ci]`; pushes by `GITHUB_TOKEN`
-  don't re-trigger workflows.
+## Editing recipes
 
-## Alias / dedup map (in `config.json.alias_map`)
-| Seen as | Canonical |
-|---------|-----------|
-| `All-Hands-AI/OpenHands` | `OpenHands/OpenHands` |
-| `affaan-m/ECC` | `affaan-m/everything-claude-code` |
-| `sst/opencode` | `anomalyco/opencode` |
-| `getAsterisk/claudia` | `winfunc/opcode` |
-| `forrestchang/andrej-karpathy-skills` | `multica-ai/andrej-karpathy-skills` |
+- Add a discovery query → `repo_search_queries`. Re-run fetch; confirm new repos.
+- Re-categorize / relabel → tweak `category_rules` (+ `render.category_order`); re-run
+  **render only** (no fetch needed — category + brief are computed offline).
+- Bump star floor → `min_stars`; re-run fetch.
+- Change columns / TOC / category order → edit `render.py` / `render.category_order`;
+  re-run render.
+- Exclude a competing CLI → add it to `denylist`; re-run fetch.
 
-## Gotchas
-- **`gh` for code search** (not raw REST) — qualifier-only `/search/code` 422s.
-- **GraphQL null on rename** → REST fallback follows redirects.
-- **Code search**: 1000-cap, ~10/min, no star sort — discovery only, throttle.
-- **Secondary (anti-abuse) rate limits** are the real risk, not the 5000/hr
-  primary budget — keep per-endpoint spacing + honor `Retry-After`/`429`.
-- **Content API base64**: request raw bytes (`Accept: application/vnd.github.raw`)
-  rather than decoding base64 (the legacy bash hit macOS `base64 -d` issues).
-- **No shared-file races**: write to `*.tmp` then atomic-rename once; never
-  background multiple writers onto `repos.xml`.
-- **Branch protection**: the CI daily push needs `main` to allow
-  `github-actions[bot]`; otherwise switch the workflow to a PR flow.
+## Scope philosophy
+
+- In: Claude Code skills/plugins/agents, MCP servers/clients, agent harnesses,
+  memory/context tools; general-purpose & provider-neutral LLM/agent frameworks; and
+  multi-model coding-agent CLIs that support Claude (opencode, OpenHands, goose).
+- Out: single-vendor / non-Claude-compatible competing coding-agent CLIs
+  (`google-gemini/gemini-cli`, `openai/codex` — in `denylist`); generic non-AI
+  awesome-of-awesomes (`sindresorhus/awesome` — in `denylist`); general chat UIs.
+  Archived repos and repos under `min_stars` are filtered out automatically.
+
+## Common failure modes
+
+- **Rate limit** → fetch exits 2; CI fails; no write. Re-run later.
+- **Low coverage** (< floor_fraction) → fetch refuses to overwrite. Investigate.
+- **Empty/changed schema** → render's floor check refuses to overwrite README.
+- **gh not authed** → code search skipped (logged), other signals still run.
+- **"Other" too big / category drift** → render warns (non-fatal); add a category
+  rule and/or a `category_order` entry.
+
+## Notes
+
+- Background jobs / multiple writers onto `repos.json` can race — don't run two
+  fetches at once.
+- Keep this file and `SKILL.md` in sync with actual script behavior.

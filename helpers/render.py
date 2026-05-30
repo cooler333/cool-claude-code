@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""render.py — regenerate README.md from helpers/repos.xml. Zero network.
+"""render.py — regenerate README.md from helpers/repos.json. Zero network.
 
-Layout: a Top-N leaderboard table, then the long tail split into one table per
-category (small categories folded into a trailing "Other" table), plus an
-explicit "Updated at" note and static scope/contributing/license prose.
+render owns all the pure-CPU steps: it reads the raw snapshot fetch.py produced
+(metadata + raw README text), then categorizes, builds the short briefs, and lays
+out the README — a Table of Contents, a Top-N leaderboard, the long tail split
+into one table per predefined category (with a trailing "Other" catch-all), and
+static scope/contributing/license prose.
 
 Usage:
   python helpers/render.py                # write ../README.md
@@ -17,10 +19,9 @@ import json
 import re
 import sys
 from pathlib import Path
-from xml.etree import ElementTree as ET
 
 HERE = Path(__file__).resolve().parent
-DEFAULT_XML = HERE / "repos.xml"
+DEFAULT_IN = HERE / "repos.json"
 DEFAULT_CONFIG = HERE / "config.json"
 DEFAULT_OUT = HERE.parent / "README.md"
 
@@ -28,11 +29,22 @@ MIN_REPOS = 10  # floor: refuse to overwrite README with an implausibly short li
 
 _TAG = re.compile(r"<[^>]*>")
 _WS = re.compile(r"\s+")
+_ILLEGAL = re.compile("[^\x09\x0a\x0d\x20-\U0010ffff]")
+_SLUG_STRIP = re.compile(r"[^a-z0-9 _-]")
+
+# README-excerpt parsing (ported from fetch.py; operates on saved raw text, no network)
+_SKIP_LINE = re.compile(r"^\s*(#|>|<|\[!\[|!\[|---|===|\|)")
+_MD_LINK = re.compile(r"\[([^\]]+)\]\([^)]+\)")
+_MD_INLINE = re.compile(r"[`*_]+")
 
 
 def log(msg: str) -> None:
     sys.stderr.write(msg + "\n")
 
+
+# --------------------------------------------------------------------------
+# small helpers
+# --------------------------------------------------------------------------
 
 def human_stars(n: int) -> str:
     if n >= 1_000_000:
@@ -40,6 +52,20 @@ def human_stars(n: int) -> str:
     if n >= 1000:
         return f"{n / 1000:.1f}k"
     return str(n)
+
+
+def clean_text(s: str) -> str:
+    if not s:
+        return ""
+    s = _ILLEGAL.sub("", s)
+    return _WS.sub(" ", s).strip()
+
+
+def truncate(s: str, n: int) -> str:
+    if len(s) <= n:
+        return s
+    cut = s[:n].rsplit(" ", 1)[0].rstrip()
+    return (cut or s[:n].rstrip()) + "…"
 
 
 def cell(s: str) -> str:
@@ -59,25 +85,142 @@ def fmt_date(iso: str) -> str:
     return f"{m.group(1)} {m.group(2)} UTC" if m else (iso or "unknown")
 
 
-def parse_repos(root: ET.Element) -> list[dict]:
+def slugify(heading: str) -> str:
+    """GitHub heading-anchor slug: lowercase, drop chars outside [a-z0-9 _-],
+    spaces -> '-', no hyphen collapsing. 'MCP server / tooling' -> 'mcp-server--tooling'."""
+    s = heading.strip().lower()
+    s = _SLUG_STRIP.sub("", s)
+    return s.replace(" ", "-")
+
+
+# --------------------------------------------------------------------------
+# categorize + brief (pure CPU; were in fetch.py before the split)
+# --------------------------------------------------------------------------
+
+def categorize(full_name: str, description: str, topics: list[str], rules: dict) -> str:
+    owner = full_name.split("/", 1)[0].lower()
+    tps = [t.lower() for t in topics]
+    text = " ".join([full_name.lower(), description.lower(), *tps])
+
+    for kr in rules["keyword_rules"]:
+        if "match_owner" in kr and owner in [o.lower() for o in kr["match_owner"]]:
+            return kr["category"]
+    topic_map = {k.lower(): v for k, v in rules["topic_map"].items()}
+    for t in tps:
+        if t in topic_map:
+            return topic_map[t]
+    for kr in rules["keyword_rules"]:
+        for kw in kr.get("any", []):
+            if kw.lower() in text:
+                return kr["category"]
+    return rules["default_category"]
+
+
+def readme_excerpt(raw: str) -> str:
+    """First prose paragraph of a raw README, stripped of markdown. No network."""
+    buf = []
+    for line in raw.splitlines():
+        if not line.strip():
+            if buf:
+                break
+            continue
+        if _SKIP_LINE.match(line):
+            continue
+        buf.append(line.strip())
+    text = " ".join(buf)
+    text = _MD_LINK.sub(r"\1", text)
+    text = _MD_INLINE.sub("", text)
+    return clean_text(text)
+
+
+def build_brief(description: str, topics: list[str], readme_raw: str, briefcfg: dict) -> str:
+    if description:
+        return truncate(description, briefcfg["max_chars"])
+    if readme_raw:
+        para = readme_excerpt(readme_raw)
+        if para:
+            return truncate(para, briefcfg["readme_excerpt_max_chars"])
+    if topics:
+        return ", ".join(topics[:5])
+    return ""
+
+
+# --------------------------------------------------------------------------
+# parse + group
+# --------------------------------------------------------------------------
+
+def parse_repos(payload: dict, cfg: dict) -> list[dict]:
+    rules = cfg["category_rules"]
+    briefcfg = cfg["brief"]
     repos = []
-    for el in root.findall("repo"):
+    for r in payload.get("repos", []):
+        full = r.get("full_name", "")
+        desc_raw = r.get("description", "") or ""
+        topics = r.get("topics") or []
+        readme_raw = r.get("readme_raw", "") or ""
         repos.append({
-            "rank": int(el.get("rank", "0")),
-            "full_name": el.findtext("full_name", ""),
-            "url": el.findtext("url", ""),
-            "stars": int(el.findtext("stars", "0")),
-            "category": el.findtext("category", "") or "Uncategorized",
-            "description": el.findtext("description", "") or "",
-            "archived": el.findtext("archived", "false") == "true",
+            "rank": int(r.get("rank", 0)),
+            "full_name": full,
+            "url": r.get("url", "") or f"https://github.com/{full}",
+            "stars": int(r.get("stars", 0)),
+            "category": categorize(full, desc_raw, topics, rules),
+            "description": build_brief(desc_raw, topics, readme_raw, briefcfg),
         })
     repos.sort(key=lambda r: r["rank"])
     return repos
 
 
+def group_tail(tail: list[dict], cfg: dict) -> list[tuple[str, list[dict]]]:
+    """Group rank>N repos using the predefined static `category_order`.
+
+    Categories render in config order (empty ones skipped); a trailing "Other"
+    bucket collects the default category and anything not listed. No repo is ever
+    dropped. Warns (non-fatal) if "Other" grows large or if a rule can emit a
+    category missing from `category_order`.
+    """
+    rcfg = cfg.get("render", {})
+    order = rcfg.get("category_order", [])
+    other_label = rcfg.get("other_category_label", "Other")
+    other_max = rcfg.get("other_max", 10)
+    rules = cfg["category_rules"]
+    default_cat = rules["default_category"]
+
+    # sync guard: every category a rule can emit should be listed (or it's the default)
+    emitted = set(rules["topic_map"].values())
+    emitted.update(kr["category"] for kr in rules["keyword_rules"])
+    order_set = set(order)
+    missing = [c for c in sorted(emitted) if c not in order_set and c != default_cat]
+    if missing:
+        log(f"WARNING: categories emitted by rules but absent from render.category_order "
+            f"(they will fall into '{other_label}'): {missing}")
+
+    groups: dict[str, list[dict]] = {}
+    for r in tail:
+        groups.setdefault(r["category"], []).append(r)
+
+    result = []
+    for cat in order:
+        items = groups.get(cat)
+        if items:
+            result.append((cat, sorted(items, key=lambda r: r["rank"])))
+
+    other = [r for cat, items in groups.items() if cat not in order_set for r in items]
+    if other:
+        other.sort(key=lambda r: r["rank"])
+        if len(other) >= other_max:
+            names = ", ".join(r["full_name"] for r in other)
+            log(f"WARNING: '{other_label}' has {len(other)} repos (>= {other_max}); "
+                f"consider adding a category rule. Repos: {names}")
+        result.append((other_label, other))
+    return result
+
+
+# --------------------------------------------------------------------------
+# tables
+# --------------------------------------------------------------------------
+
 def repo_link(r: dict) -> str:
-    link = f"[{r['full_name']}]({r['url']})"
-    return link + " *(archived)*" if r["archived"] else link
+    return f"[{r['full_name']}]({r['url']})"
 
 
 def top_table(repos: list[dict]) -> str:
@@ -101,40 +244,9 @@ def category_table(repos: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def group_tail(tail: list[dict], cfg: dict) -> list[tuple[str, list[dict]]]:
-    """Group rank>N repos by category; fold small categories into 'Other'.
-
-    Returns ordered list of (heading, repos): big categories by total stars desc,
-    then default category, then the folded 'Other' bucket — both always last.
-    """
-    min_rows = cfg.get("render", {}).get("min_rows_per_category", 3)
-    other_label = cfg.get("render", {}).get("other_category_label", "Other")
-    default_cat = cfg.get("category_rules", {}).get("default_category")
-
-    groups: dict[str, list[dict]] = {}
-    for r in tail:
-        groups.setdefault(r["category"], []).append(r)
-
-    big, other = {}, []
-    for cat, items in groups.items():
-        if len(items) >= min_rows:
-            big[cat] = items
-        else:
-            other.extend(items)
-
-    def total(cat: str) -> int:
-        return sum(r["stars"] for r in big[cat])
-
-    ordered = sorted(big, key=lambda c: (-total(c), c.lower()))
-    # default category always sinks below the other big categories
-    if default_cat in ordered:
-        ordered = [c for c in ordered if c != default_cat] + [default_cat]
-
-    result = [(cat, sorted(big[cat], key=lambda r: r["rank"])) for cat in ordered]
-    if other:
-        result.append((other_label, sorted(other, key=lambda r: r["rank"])))
-    return result
-
+# --------------------------------------------------------------------------
+# static prose
+# --------------------------------------------------------------------------
 
 SCOPE = """## Scope & methodology
 
@@ -146,18 +258,21 @@ repository search (keyword/topic), structural code search (`SKILL.md` /
 **live star count**, and trimmed to the top results.
 
 - **In scope:** Claude Code skills, agents, plugins, harnesses, memory and
-  orchestration; the MCP tool-protocol layer; and directly adjacent coding-agent
-  CLIs (opencode, codex, gemini-cli, OpenHands, goose).
-- **Out of scope:** general-purpose AI frameworks that aren't Claude/skill/agent
-  specific, and general chat UIs.
+  orchestration; the MCP tool-protocol layer; general-purpose and provider-neutral
+  LLM/agent frameworks; and multi-model coding-agent CLIs that support Claude
+  (opencode, OpenHands, goose).
+- **Out of scope:** single-vendor / non-Claude-compatible competing coding-agent
+  CLIs (e.g. gemini-cli, codex), and general chat UIs.
+- **Floor:** repositories under 20,000 stars, and archived repositories, are excluded.
 - **Star counts** are a point-in-time snapshot and drift daily.
 """
 
 CONTRIBUTING = """## Contributing
 
 The published tables are generated — don't edit them by hand. To change what
-appears, edit `helpers/config.json` (discovery queries, `allowlist`/`denylist`,
-`alias_map`, category rules). The daily workflow re-fetches and re-ranks.
+appears, edit `helpers/config.json`: discovery queries, the `denylist` (to exclude
+a competing single-vendor CLI), `alias_map`, `scope_filter`, and the category
+rules. The daily workflow re-fetches and re-ranks.
 """
 
 LICENSE = """## License
@@ -166,14 +281,15 @@ LICENSE = """## License
 """
 
 
-def build_readme(root: ET.Element, cfg: dict) -> str:
-    repos = parse_repos(root)
+def build_readme(payload: dict, cfg: dict) -> str:
+    repos = parse_repos(payload, cfg)
     top_n = cfg.get("top_table_size", 30)
-    generated_at = fmt_date(root.get("generated_at", ""))
-    partial = root.get("partial") == "true"
+    generated_at = fmt_date(payload.get("generated_at", ""))
+    partial = bool(payload.get("partial"))
 
     top = repos[:top_n]
     tail = repos[top_n:]
+    grouped = group_tail(tail, cfg) if tail else []
 
     out = [
         "# Awesome Claude Code & Agent Tools",
@@ -184,9 +300,23 @@ def build_readme(root: ET.Element, cfg: dict) -> str:
     if partial:
         out.append(">")
         out.append(f"> ⚠️ Partial refresh — {len(repos)} repos (fewer than the target).")
-    out += ["", f"## Top {len(top)}", "", top_table(top), ""]
 
-    if tail:
+    # table of contents
+    top_heading = f"Top {len(top)}"
+    out += ["", "## Contents", "", f"- [{top_heading}](#{slugify(top_heading)})"]
+    if grouped:
+        out.append(f"- [By category](#{slugify('By category')})")
+        for heading, _ in grouped:
+            out.append(f"  - [{heading}](#{slugify(heading)})")
+    out += [
+        f"- [Scope & methodology](#{slugify('Scope & methodology')})",
+        f"- [Contributing](#{slugify('Contributing')})",
+        f"- [License](#{slugify('License')})",
+    ]
+
+    out += ["", f"## {top_heading}", "", top_table(top), ""]
+
+    if grouped:
         out += [
             "## By category",
             "",
@@ -194,7 +324,7 @@ def build_readme(root: ET.Element, cfg: dict) -> str:
             "(top-ranked repos above are not repeated here)._",
             "",
         ]
-        for heading, items in group_tail(tail, cfg):
+        for heading, items in grouped:
             out += [f"### {heading}", "", category_table(items), ""]
 
     out += [SCOPE, CONTRIBUTING, LICENSE]
@@ -203,21 +333,21 @@ def build_readme(root: ET.Element, cfg: dict) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--xml", type=Path, default=DEFAULT_XML)
+    ap.add_argument("--in", dest="infile", type=Path, default=DEFAULT_IN)
     ap.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    root = ET.parse(args.xml).getroot()
-    count = len(root.findall("repo"))
+    payload = json.loads(args.infile.read_text())
+    count = len(payload.get("repos", []))
     if count < MIN_REPOS:
-        log(f"FATAL: only {count} repos in {args.xml.name} (< {MIN_REPOS}); "
+        log(f"FATAL: only {count} repos in {args.infile.name} (< {MIN_REPOS}); "
             f"refusing to overwrite README.")
         return 1
 
     cfg = json.loads(args.config.read_text())
-    readme = build_readme(root, cfg)
+    readme = build_readme(payload, cfg)
 
     if args.dry_run:
         sys.stdout.write(readme)

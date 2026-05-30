@@ -1,8 +1,8 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "target_count": 100,
   "top_table_size": 30,
-  "min_stars": 50,
+  "min_stars": 20000,
 
   "fetch": {
     "floor_fraction": 0.9,
@@ -12,13 +12,25 @@
   },
 
   "render": {
-    "min_rows_per_category": 3,
-    "other_category_label": "Other"
+    "category_order": [
+      "Official Anthropic",
+      "Claude Code skills",
+      "MCP server / tooling",
+      "Agent harness",
+      "Coding agent CLI",
+      "Memory / context",
+      "Prompts & system prompts",
+      "Spec-driven dev",
+      "Awesome list / directory"
+    ],
+    "other_category_label": "Other",
+    "other_max": 10
   },
 
   "brief": {
     "max_chars": 140,
     "readme_excerpt_max_chars": 160,
+    "readme_raw_max_chars": 4000,
     "fetch_readme_when_description_empty": true
   },
 
@@ -29,7 +41,9 @@
       "model-context-protocol", "claude-code", "claude code", "agentic",
       "coding agent", "coding-agent", "ai agent", "ai-agent", "llm agent",
       "agent skill", "agent framework", "subagent", "codex", "opencode",
-      "skill.md", "slash command", "agent harness"
+      "skill.md", "slash command", "agent harness", "skill", "skills",
+      "system prompt", "system prompts", "spec-driven", "spec-kit", "spec kit",
+      "ai harness"
     ]
   },
 
@@ -40,12 +54,22 @@
       "topic:claude-agent",
       "topic:claude",
       "topic:model-context-protocol",
+      "topic:spec-driven",
       "claude code in:name,description",
       "claude skill in:name,description",
       "claude agent in:name,description",
       "mcp server in:name,description",
       "claude-code in:name,description",
-      "coding agent cli in:name,description"
+      "coding agent cli in:name,description",
+      "opencode in:name,description",
+      "openhands in:name,description",
+      "spec-driven development in:name,description",
+      "agency-agents in:name,description",
+      "agent skills in:name,description",
+      "claude plugin in:name,description",
+      "topic:anthropic",
+      "prompt engineering in:name,description",
+      "ai harness in:name,description"
     ],
     "code_search_filenames": [
       "SKILL.md",
@@ -69,51 +93,15 @@
     "forrestchang/andrej-karpathy-skills": "multica-ai/andrej-karpathy-skills"
   },
 
-  "allowlist": [
-    "obra/superpowers",
-    "affaan-m/everything-claude-code",
-    "NousResearch/hermes-agent",
-    "anomalyco/opencode",
-    "multica-ai/andrej-karpathy-skills",
-    "anthropics/skills",
-    "x1xhlol/system-prompts-and-models-of-ai-tools",
-    "anthropics/claude-code",
-    "mattpocock/skills",
-    "github/spec-kit",
-    "msitarzewski/agency-agents",
-    "google-gemini/gemini-cli",
-    "garrytan/gstack",
-    "punkpeye/awesome-mcp-servers",
-    "openai/codex",
-    "modelcontextprotocol/servers",
-    "farion1231/cc-switch",
-    "nextlevelbuilder/ui-ux-pro-max-skill",
-    "thedotmack/claude-mem",
-    "OpenHands/OpenHands",
-    "ruvnet/RuView",
-    "JuliusBrussee/caveman",
-    "gsd-build/get-shit-done",
-    "shareAI-lab/learn-claude-code",
-    "earendil-works/pi",
-    "ruvnet/ruflo",
-    "safishamsi/graphify",
-    "nexu-io/open-design",
-    "shanraisshan/claude-code-best-practice",
-    "santifer/career-ops"
-  ],
-
   "denylist": [
-    "langchain-ai/langchain",
-    "langgenius/dify",
-    "langflow-ai/langflow",
-    "mendableai/firecrawl",
-    "infiniflow/ragflow"
+    "google-gemini/gemini-cli",
+    "openai/codex",
+    "sindresorhus/awesome"
   ],
 
   "category_rules": {
     "topic_map": {
       "claude-skills": "Claude Code skills",
-      "claude-code": "Claude Code tooling",
       "mcp": "MCP server / tooling",
       "model-context-protocol": "MCP server / tooling",
       "coding-agent": "Coding agent CLI",
@@ -126,14 +114,14 @@
       { "category": "Official Anthropic", "match_owner": ["anthropics"] },
       { "category": "MCP server / tooling", "any": ["mcp", "model context protocol", "model-context-protocol"] },
       { "category": "Claude Code skills", "any": ["skill", "skills", "skill.md"] },
-      { "category": "Coding agent CLI", "any": ["coding agent", "codex", "gemini-cli", "opencode", "cli"] },
+      { "category": "Coding agent CLI", "any": ["coding agent", "opencode", "cli"] },
       { "category": "Awesome list / directory", "any": ["awesome", "curated", "directory", "list of"] },
       { "category": "Spec-driven dev", "any": ["spec-driven", "spec kit", "spec-kit", "specification"] },
       { "category": "Memory / context", "any": ["memory", "persistent context", "recall"] },
       { "category": "Prompts & system prompts", "any": ["system prompt", "prompts", "prompt library"] },
       { "category": "Agent harness", "any": ["harness", "agent", "swarm", "orchestrat", "autonomous"] }
     ],
-    "default_category": "Claude Code tooling"
+    "default_category": "Other"
   },
 
   "http": {

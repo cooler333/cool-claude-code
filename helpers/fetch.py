@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
-"""fetch.py — discover, rank, and serialize the top Claude-Code/AI repos to XML.
+"""fetch.py — discover, rank, and serialize the top Claude-Code/AI repos to JSON.
 
-Pipeline: discover candidates (repo search + `gh` code search + awesome-list)
--> normalize/dedupe/alias/allow/deny -> validate -> authoritative metadata via
-batched GraphQL -> REST fallback for renames -> re-dedupe -> rank+trim ->
-heuristic categorize + brief -> deterministic atomic XML write.
+Network-only + selection. Pipeline: discover candidates (repo search + `gh` code
+search + awesome-list) -> normalize/dedupe/alias/deny -> validate -> authoritative
+metadata via batched GraphQL -> REST fallback for renames -> re-dedupe -> filter
+(min_stars + scope + not archived) -> rank + trim -> fetch raw README for the
+final-set repos that have no description -> deterministic atomic JSON write.
+
+This script does NO categorization or brief generation — those are pure-CPU steps
+owned by helpers/render.py, which reads the raw snapshot offline. fetch.py only
+saves raw context (metadata + raw README text).
 
 stdlib only. Network goes through helpers/ghclient.py. Exits non-zero on hard
 failure so CI never renders/commits degraded data.
 
 Usage:
-  python helpers/fetch.py                 # full run -> helpers/repos.xml
-  python helpers/fetch.py --dry-run       # print XML to stdout, don't write
-  python helpers/fetch.py --limit 20      # small run (skips floor check)
-  python helpers/fetch.py --no-readme     # skip README-excerpt brief fallback
+  python helpers/fetch.py                 # full run -> helpers/repos.json
+  python helpers/fetch.py --dry-run       # print JSON to stdout, don't write
+  python helpers/fetch.py --limit 20      # small run (caps candidates, skips floor check)
+  python helpers/fetch.py --no-readme     # skip raw-README fetch for empty-description repos
 """
 
 from __future__ import annotations
@@ -27,20 +32,17 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
-from xml.etree import ElementTree as ET
 
 from ghclient import GHClient, RateLimitExhausted, get_token
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_CONFIG = HERE / "config.json"
-DEFAULT_XML = HERE / "repos.xml"
+DEFAULT_OUT = HERE / "repos.json"
 
 OWNER_RE = re.compile(r"^[A-Za-z0-9-]+$")
 NAME_RE = re.compile(r"^[A-Za-z0-9._-]+$")
-# Strip characters illegal in XML 1.0 text (keep tab/newline/CR + valid ranges).
-_ILLEGAL_XML = re.compile(
-    "[^\x09\x0a\x0d\x20-퟿-�\U00010000-\U0010ffff]"
-)
+# Strip control chars that are illegal/awkward in text (keep tab/newline/CR).
+_ILLEGAL = re.compile("[^\x09\x0a\x0d\x20-\U0010ffff]")
 _WS = re.compile(r"\s+")
 
 
@@ -53,17 +55,18 @@ def log(msg: str) -> None:
 # --------------------------------------------------------------------------
 
 def clean_text(s: str | None) -> str:
+    """Collapse whitespace + drop illegal control chars (for single-line fields)."""
     if not s:
         return ""
-    s = _ILLEGAL_XML.sub("", s)
+    s = _ILLEGAL.sub("", s)
     return _WS.sub(" ", s).strip()
 
 
-def truncate(s: str, n: int) -> str:
-    if len(s) <= n:
-        return s
-    cut = s[:n].rsplit(" ", 1)[0].rstrip()
-    return (cut or s[:n].rstrip()) + "…"
+def clean_multiline(s: str | None) -> str:
+    """Drop illegal control chars but PRESERVE newlines (for raw README text)."""
+    if not s:
+        return ""
+    return _ILLEGAL.sub("", s)
 
 
 def valid_name(full: str) -> bool:
@@ -82,7 +85,7 @@ def canon(alias_map_lc: dict[str, str], full: str) -> str:
 def in_scope(repo: dict, scope: dict) -> bool:
     """Relevance gate: loose search pulls in unrelated giants (awesome lists,
     roadmaps). Keep only repos whose name/description/topics match an ecosystem
-    term. Allowlisted repos bypass this upstream."""
+    term."""
     if not scope or not scope.get("require_match"):
         return True
     text = " ".join(
@@ -285,51 +288,18 @@ def _record(resolved, full, stars, desc, topics, archived, sources, redirected):
         "archived": archived,
         "sources": set(sources),
         "redirected_from": redirected,
+        "readme_raw": "",
     }
 
 
 # --------------------------------------------------------------------------
-# categorize + brief
+# raw README (network) — parsing/brief generation lives in render.py
 # --------------------------------------------------------------------------
 
-def categorize(repo: dict, rules: dict) -> tuple[str, str]:
-    owner = repo["full_name"].split("/", 1)[0].lower()
-    topics = [t.lower() for t in repo["topics"]]
-    text = " ".join([repo["full_name"].lower(), repo["description"].lower(), *topics])
-
-    for kr in rules["keyword_rules"]:
-        if "match_owner" in kr and owner in [o.lower() for o in kr["match_owner"]]:
-            return kr["category"], "keyword_rules"
-    topic_map = {k.lower(): v for k, v in rules["topic_map"].items()}
-    for t in topics:
-        if t in topic_map:
-            return topic_map[t], "topic_map"
-    for kr in rules["keyword_rules"]:
-        for kw in kr.get("any", []):
-            if kw.lower() in text:
-                return kr["category"], "keyword_rules"
-    return rules["default_category"], "default"
-
-
-def build_brief(client, repo, briefcfg, fetch_readme) -> tuple[str, str]:
-    desc = repo["description"]
-    if desc:
-        return truncate(desc, briefcfg["max_chars"]), "description"
-    if fetch_readme and briefcfg.get("fetch_readme_when_description_empty"):
-        para = readme_excerpt(client, repo["full_name"])
-        if para:
-            return truncate(para, briefcfg["readme_excerpt_max_chars"]), "readme_excerpt"
-    if repo["topics"]:
-        return ", ".join(repo["topics"][:5]), "topics"
-    return "", "topics"
-
-
-_SKIP_LINE = re.compile(r"^\s*(#|>|<|\[!\[|!\[|---|===|\|)")
-_MD_LINK = re.compile(r"\[([^\]]+)\]\([^)]+\)")
-_MD_INLINE = re.compile(r"[`*_]+")
-
-
-def readme_excerpt(client, full: str) -> str:
+def fetch_readme_raw(client, full: str, max_chars: int) -> str:
+    """Fetch the raw README markdown, capped to a leading slice that PRESERVES
+    newlines (render's excerpt parser needs line structure). No markdown parsing
+    here — render does that offline."""
     try:
         raw = client.get_raw(f"/repos/{full}/readme", klass="core")
     except RateLimitExhausted:
@@ -338,65 +308,44 @@ def readme_excerpt(client, full: str) -> str:
         return ""
     if not raw:
         return ""
-    buf = []
-    for line in raw.splitlines():
-        if not line.strip():
-            if buf:
-                break
-            continue
-        if _SKIP_LINE.match(line):
-            continue
-        buf.append(line.strip())
-    text = " ".join(buf)
-    text = _MD_LINK.sub(r"\1", text)
-    text = _MD_INLINE.sub("", text)
-    return clean_text(text)
+    return clean_multiline(raw[:max_chars])
 
 
 # --------------------------------------------------------------------------
 # serialize
 # --------------------------------------------------------------------------
 
-def build_xml(repos: list[dict], generated_at: str, target: int, partial: bool) -> ET.Element:
-    root = ET.Element("repos")
-    root.set("generated_at", generated_at)
-    root.set("generator", "helpers/fetch.py")
-    root.set("schema_version", "1")
-    root.set("count", str(len(repos)))
-    root.set("target_count", str(target))
-    root.set("partial", "true" if partial else "false")
-    for rank, r in enumerate(repos, 1):
-        el = ET.SubElement(root, "repo")
-        el.set("rank", str(rank))
-        ET.SubElement(el, "full_name").text = r["full_name"]
-        ET.SubElement(el, "url").text = f"https://github.com/{r['full_name']}"
-        ET.SubElement(el, "stars").text = str(r["stars"])
-        cat = ET.SubElement(el, "category")
-        cat.set("source", r["category_source"])
-        cat.text = r["category"]
-        desc = ET.SubElement(el, "description")
-        desc.set("source", r["brief_source"])
-        desc.text = r["brief"]
-        topics_el = ET.SubElement(el, "topics")
-        for t in r["topics"]:
-            ET.SubElement(topics_el, "topic").text = t
-        disc = ET.SubElement(el, "discovery")
-        for s in sorted(r["sources"]):
-            ET.SubElement(disc, "source").text = s
-        ET.SubElement(el, "archived").text = "true" if r["archived"] else "false"
-        if r.get("redirected_from"):
-            ET.SubElement(el, "redirected_from").text = r["redirected_from"]
-    ET.indent(root, space="  ")
-    return root
+def build_payload(repos: list[dict], generated_at: str, target: int, partial: bool) -> dict:
+    return {
+        "generated_at": generated_at,
+        "generator": "helpers/fetch.py",
+        "schema_version": 2,
+        "count": len(repos),
+        "target_count": target,
+        "partial": partial,
+        "repos": [
+            {
+                "rank": rank,
+                "full_name": r["full_name"],
+                "url": f"https://github.com/{r['full_name']}",
+                "stars": r["stars"],
+                "description": r["description"],
+                "topics": r["topics"],
+                "archived": r["archived"],
+                "sources": sorted(r["sources"]),
+                "redirected_from": r.get("redirected_from"),
+                "readme_raw": r.get("readme_raw", ""),
+            }
+            for rank, r in enumerate(repos, 1)
+        ],
+    }
 
 
-def write_atomic(root: ET.Element, out: Path) -> None:
+def write_atomic(payload: dict, out: Path) -> None:
     tmp = out.with_suffix(out.suffix + ".tmp")
-    tree = ET.ElementTree(root)
-    with tmp.open("wb") as f:
-        f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
-        tree.write(f, encoding="utf-8", xml_declaration=False)
-        f.write(b"\n")
+    with tmp.open("w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+        f.write("\n")
     tmp.replace(out)
 
 
@@ -407,10 +356,10 @@ def write_atomic(root: ET.Element, out: Path) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    ap.add_argument("--out", type=Path, default=DEFAULT_XML)
+    ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--limit", type=int, default=None, help="cap output; skips floor check")
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--no-readme", action="store_true", help="skip README-excerpt brief")
+    ap.add_argument("--no-readme", action="store_true", help="skip raw-README fetch")
     args = ap.parse_args()
 
     cfg = json.loads(args.config.read_text())
@@ -419,7 +368,6 @@ def main() -> int:
     client = GHClient(get_token(), cfg["http"]["user_agent"])
     alias_lc = {k.lower(): v for k, v in cfg.get("alias_map", {}).items()}
     deny_lc = {x.lower() for x in cfg.get("denylist", [])}
-    allow_lc = {x.lower() for x in cfg.get("allowlist", [])}
 
     # 1) discovery
     log("discovering candidates...")
@@ -427,8 +375,6 @@ def main() -> int:
     discover_repo_search(client, cfg, candidates)
     discover_code_search(cfg, candidates)
     discover_awesome_lists(client, cfg, candidates)
-    for full in cfg.get("allowlist", []):
-        add_candidate(candidates, full, "allowlist")
 
     # 2) normalize: alias -> canonical, drop denylist, merge sources
     normalized: dict[str, dict] = {}
@@ -450,13 +396,12 @@ def main() -> int:
     coverage = accounted / attempted if attempted else 1.0
     log(f"  resolved {len(resolved)} repos; coverage {coverage:.2%}")
 
-    # 4) rank + trim (allowlisted repos bypass min_stars AND the scope filter)
+    # 4) filter (min_stars + scope + not archived) + rank + trim
     min_stars = cfg["min_stars"]
     scope = cfg.get("scope_filter")
     ranked = [
         r for r in resolved.values()
-        if r["full_name"].lower() in allow_lc
-        or (r["stars"] >= min_stars and in_scope(r, scope))
+        if r["stars"] >= min_stars and in_scope(r, scope) and not r["archived"]
     ]
     log(f"  {len(ranked)} repos in scope (of {len(resolved)} resolved)")
     ranked.sort(key=lambda r: (-r["stars"], r["full_name"].lower()))
@@ -475,27 +420,26 @@ def main() -> int:
             log("FATAL: zero repos resolved.")
             return 1
 
-    # 6) categorize + brief
-    log("categorizing + building briefs...")
-    rules = cfg["category_rules"]
-    for r in top:
-        r["category"], r["category_source"] = categorize(r, rules)
-        r["brief"], r["brief_source"] = build_brief(
-            client, r, cfg["brief"], fetch_readme=not args.no_readme
-        )
+    # 6) raw README for final-set repos with no description (render builds the brief)
+    if not args.no_readme and cfg["brief"].get("fetch_readme_when_description_empty"):
+        cap = cfg["brief"]["readme_raw_max_chars"]
+        n = 0
+        for r in top:
+            if not r["description"]:
+                r["readme_raw"] = fetch_readme_raw(client, r["full_name"], cap)
+                if r["readme_raw"]:
+                    n += 1
+        log(f"  fetched {n} raw README(s) for empty-description repos")
 
     partial = len(top) < target and args.limit is None
-    root = build_xml(top, generated_at, target, partial)
+    payload = build_payload(top, generated_at, target, partial)
 
     if args.dry_run:
-        sys.stdout.write(
-            '<?xml version="1.0" encoding="UTF-8"?>\n'
-            + ET.tostring(root, encoding="unicode") + "\n"
-        )
+        sys.stdout.write(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
         log(f"(dry-run) {len(top)} repos; not written")
         return 0
 
-    write_atomic(root, args.out)
+    write_atomic(payload, args.out)
     log(f"wrote {args.out} ({len(top)} repos, partial={partial})")
     return 0
 

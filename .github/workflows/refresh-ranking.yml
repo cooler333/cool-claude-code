@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write          # commit the regenerated README + repos.xml back to main
+  contents: write          # commit the regenerated README + repos.json back to main
 
 jobs:
   refresh:
@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: "3.x"   # stdlib-only scripts; any 3.x works
 
-      # fetch.py discovers + ranks and writes helpers/repos.xml. It exits
+      # fetch.py discovers + ranks and writes helpers/repos.json. It exits
       # non-zero on hard failure (auth, rate-limit exhaustion, low coverage) so
       # render never runs on degraded data. `gh` is preinstalled on the runner
       # and authenticates via GITHUB_TOKEN for the code-search discovery signal.
@@ -46,7 +46,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python helpers/fetch.py
 
-      # render.py reads helpers/repos.xml and regenerates README.md. Only reached
+      # render.py reads helpers/repos.json and regenerates README.md. Only reached
       # if fetch.py succeeded (default fail-fast). Floor-checks before overwrite.
       - name: Render README
         run: python helpers/render.py
@@ -59,7 +59,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md helpers/repos.xml
+          git add README.md helpers/repos.json
           if git diff --cached --quiet; then
             echo "No changes to ranking — nothing to commit."
             exit 0
