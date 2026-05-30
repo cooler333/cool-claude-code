@@ -1,7 +1,7 @@
 # Awesome Claude Code & Agent Tools
 
 > The most-starred repositories in the Claude Code / skills / agents / MCP ecosystem.
-> **Updated at 2026-05-30 20:12 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
+> **Updated at 2026-05-30 20:35 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
 
 ## Contents
 
@@ -38,7 +38,7 @@
 | 10 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 138.1k | Agent harness | The agent engineering platform. |
 | 11 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | 128.3k | Official Anthropic | Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. |
 | 12 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 112.3k | Awesome list / directory | 100+ AI Agent & RAG apps you can actually run — clone, customize, ship. |
-| 13 | [mattpocock/skills](https://github.com/mattpocock/skills) | 112.2k | Claude Code skills | Skills for Real Engineers. Straight from my .claude directory. |
+| 13 | [mattpocock/skills](https://github.com/mattpocock/skills) | 112.3k | Claude Code skills | Skills for Real Engineers. Straight from my .claude directory. |
 | 14 | [github/spec-kit](https://github.com/github/spec-kit) | 107.2k | Spec-driven dev | 💫 Toolkit to help you get started with Spec-Driven Development |
 | 15 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 106.2k | Agent harness | A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables. |
 | 16 | [garrytan/gstack](https://github.com/garrytan/gstack) | 104.8k | Other | Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA |
