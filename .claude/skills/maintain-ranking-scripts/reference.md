@@ -63,6 +63,31 @@ repos (`sindresorhus/awesome`, `tw93/Pake`); (5) leaked/rights-infringing conten
 extracted proprietary system prompts, credentials, or closed-source material
 (`asgeirtj/system_prompts_leaks`, `x1xhlol/system-prompts-and-models-of-ai-tools`).
 
+## scope_excluded.json (the "filtered" set)
+
+Reference snapshot, **not a pipeline input** — `fetch.py` never reads it. It lists
+GitHub repos with `>= min_stars` that **fail `scope_filter`**, i.e. the rules already
+classify them as outside the ecosystem (so they never reach `repos.json` or the
+denylist). Shape: `{ "description", "min_stars", "count", "scope_excluded": ["owner/name", ...] }`,
+sorted by stars desc. Stored for transparency and to spot a metadata-blind ecosystem
+repo (cf. `openclaw`) wrongly excluded here. It's a **snapshot** (stale-prone);
+regenerate it from `helpers/coverage_sweep.py`, which writes the same list to its
+output dir.
+
+### The full ≥min_stars picture
+
+Together the three files partition the `>= min_stars` universe:
+
+```
+scope_excluded.json  (fails scope_filter)
+out_of_scope.json    (passes scope_filter, but denylisted — editorial)
+repos.json           (passes scope_filter, not denylisted — the kept/ranked set)
+```
+
+Note `repos.json` comes from `fetch.py`'s *scoped* discovery queries (not a global
+`stars:>=N` sweep), so the partition is exact only up to query coverage;
+`coverage_sweep.py` is the global cross-check.
+
 ## repos.json schema contract
 
 ```json

@@ -180,8 +180,13 @@ def main() -> int:
             continue
         missed.append({**r, "canonical": cn, "matched_term": matched_term(r, scope)})
 
+    # repos the rules already reject (fail scope_filter) -- the "filtered" set;
+    # together with repos.json + out_of_scope.json this partitions the >=min_stars
+    # universe. Reference only; never a pipeline input.
+    scope_excluded = [r["full_name"] for r in swept if not in_scope(r, scope)]
     log(f"in-scope & already listed: {in_list} | denylisted (skill exceptions): "
-        f"{denied_hits} | MISSED in-scope: {len(missed)}")
+        f"{denied_hits} | MISSED in-scope: {len(missed)} | "
+        f"scope-excluded (filtered): {len(scope_excluded)}")
 
     # 4) write results to a temp folder
     out_dir = args.out_dir or Path(tempfile.mkdtemp(prefix="cc-coverage-"))
@@ -194,6 +199,10 @@ def main() -> int:
         json.dumps({"min_stars": min_stars, "count": len(missed),
                     "target_count": target_count, "repos": missed},
                    indent=2, ensure_ascii=False))
+    # mirrors the committed helpers/scope_excluded.json (regenerate it from here)
+    (out_dir / "scope_excluded.json").write_text(
+        json.dumps({"min_stars": min_stars, "count": len(scope_excluded),
+                    "scope_excluded": scope_excluded}, indent=2, ensure_ascii=False))
 
     # 5) human-readable summary to stdout
     print(f"\n# Coverage sweep — {len(missed)} in-scope repos missing from repos.json\n")
