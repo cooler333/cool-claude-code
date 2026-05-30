@@ -73,7 +73,10 @@
       "ai harness in:name,description",
       "claude in:name",
       "bmad in:name,description",
-      "ai memory in:name,description"
+      "ai memory in:name,description",
+      "topic:mcp",
+      "topic:mcp-server",
+      "model context protocol in:name,description"
     ],
     "code_search_filenames": [
       "SKILL.md",
@@ -121,7 +124,32 @@
     "x1xhlol/system-prompts-and-models-of-ai-tools",
     "CherryHQ/cherry-studio",
     "dyad-sh/dyad",
-    "activepieces/activepieces"
+    "activepieces/activepieces",
+    "charmbracelet/crush",
+    "QwenLM/qwen-code",
+    "openai/symphony",
+    "openai/skills",
+    "Yeachan-Heo/oh-my-codex",
+    "ultraworkers/claw-code",
+    "zeroclaw-labs/zeroclaw",
+    "n8n-io/n8n",
+    "open-webui/open-webui",
+    "langgenius/dify",
+    "Mintplex-Labs/anything-llm",
+    "FlowiseAI/Flowise",
+    "ChatGPTNextWeb/NextChat",
+    "ToolJet/ToolJet",
+    "Budibase/budibase",
+    "nocobase/nocobase",
+    "1Panel-dev/1Panel",
+    "1Panel-dev/MaxKB",
+    "coze-dev/coze-studio",
+    "warpdotdev/warp",
+    "binary-husky/gpt_academic",
+    "oobabooga/textgen",
+    "mudler/LocalAI",
+    "gitroomhq/postiz-app",
+    "elder-plinius/CL4R1T4S"
   ],
 
   "category_rules": {
