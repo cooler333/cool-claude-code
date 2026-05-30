@@ -167,7 +167,19 @@
     { "repo_id": "mastra-ai/mastra", "reason": "generic agent framework" },
     { "repo_id": "letta-ai/letta", "reason": "generic agent-memory framework" },
     { "repo_id": "agentscope-ai/agentscope", "reason": "generic multi-agent framework" },
-    { "repo_id": "openai/swarm", "reason": "single-vendor (OpenAI) educational agent framework" }
+    { "repo_id": "openai/swarm", "reason": "single-vendor (OpenAI) educational agent framework" },
+    { "repo_id": "Snailclimb/JavaGuide", "reason": "Java interview / backend study guide (matches only by mcp/skills topics)" },
+    { "repo_id": "alibaba/nacos", "reason": "microservices service-discovery / config platform (matches only by mcp-registry)" },
+    { "repo_id": "sansan0/TrendRadar", "reason": "generic AI news / opinion trend-monitor app" },
+    { "repo_id": "mindsdb/minds-platform", "reason": "generic applied-AI platform" },
+    { "repo_id": "PDFMathTranslate/PDFMathTranslate", "reason": "PDF paper-translation tool (matches only by optional MCP interface)" },
+    { "repo_id": "78/xiaozhi-esp32", "reason": "ESP32 hardware chatbot (matches only by mcp)" },
+    { "repo_id": "bytedance/UI-TARS-desktop", "reason": "generic multimodal GUI-agent stack" },
+    { "repo_id": "assafelovic/gpt-researcher", "reason": "generic autonomous research agent" },
+    { "repo_id": "patchy631/ai-engineering-hub", "reason": "generic AI-engineering tutorials, not ecosystem-specific" },
+    { "repo_id": "rohitg00/ai-engineering-from-scratch", "reason": "generic AI-engineering course" },
+    { "repo_id": "langchain-ai/deepagents", "reason": "generic agent harness/framework (langchain)" },
+    { "repo_id": "lobehub/lobehub", "reason": "generic AI agent-operator / chat platform" }
   ],
 
   "category_rules": {
