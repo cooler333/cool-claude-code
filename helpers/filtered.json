@@ -2511,6 +2511,28 @@
         "react",
         "typescript"
       ]
+    },
+    {
+      "repo_id": "a2aproject/A2A",
+      "reason": "Google + Linux Foundation 'Agent2Agent' agent-interop protocol; zero Claude/Anthropic in README — competing protocol, not a Claude-ecosystem tool",
+      "stars": 24066,
+      "description": "Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications.",
+      "tags": [
+        "a2a",
+        "a2a-mcp",
+        "a2a-protocol",
+        "a2a-server",
+        "agents",
+        "generative-ai",
+        "linux-foundation"
+      ]
+    },
+    {
+      "repo_id": "agentsmd/agents.md",
+      "reason": "provider-neutral AGENTS.md coding-agent format (cross-vendor standard); not Claude-specific",
+      "stars": 21839,
+      "description": "AGENTS.md — a simple, open format for guiding coding agents",
+      "tags": []
     }
   ]
 }

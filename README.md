@@ -108,7 +108,6 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [ComposioHQ/composio](https://github.com/ComposioHQ/composio) | 28.5k | Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed workbench to help you build AI agents that turn intent into action. |
 | [yamadashy/repomix](https://github.com/yamadashy/repomix) | 25.8k | 📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity, Gemini, Gemma, Llama, Grok, and more. |
 | [PrefectHQ/fastmcp](https://github.com/PrefectHQ/fastmcp) | 25.4k | 🚀 The fast, Pythonic way to build MCP servers and clients. |
-| [a2aproject/A2A](https://github.com/a2aproject/A2A) | 24.1k | Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications. |
 | [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | 23.2k | The official Python SDK for Model Context Protocol servers and clients |
 | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | 22.2k | — |
 
@@ -131,6 +130,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [volcengine/OpenViking](https://github.com/volcengine/OpenViking) | 24.9k | OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and… |
 | [oraios/serena](https://github.com/oraios/serena) | 24.8k | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities - the IDE for your agent |
 | [vercel/ai](https://github.com/vercel/ai) | 24.6k | The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents |
+| [winfunc/opcode](https://github.com/winfunc/opcode) | 22.0k | A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more. |
 
 ### Coding agent CLI
 

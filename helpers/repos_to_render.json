@@ -1364,20 +1364,6 @@
       ]
     },
     {
-      "full_name": "a2aproject/A2A",
-      "stars": 24066,
-      "description": "Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications.",
-      "topics": [
-        "a2a",
-        "a2a-mcp",
-        "a2a-protocol",
-        "a2a-server",
-        "agents",
-        "generative-ai",
-        "linux-foundation"
-      ]
-    },
-    {
       "full_name": "VoltAgent/awesome-agent-skills",
       "stars": 23642,
       "description": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
@@ -1506,6 +1492,28 @@
       "stars": 21988,
       "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
       "topics": []
+    },
+    {
+      "full_name": "winfunc/opcode",
+      "stars": 21977,
+      "description": "A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.",
+      "topics": [
+        "anthropic",
+        "anthropic-claude",
+        "claude",
+        "claude-4",
+        "claude-4-opus",
+        "claude-4-sonnet",
+        "claude-ai",
+        "claude-code",
+        "claude-code-sdk",
+        "cursor",
+        "ide",
+        "llm",
+        "llm-code",
+        "rust",
+        "tauri"
+      ]
     }
   ]
 }
