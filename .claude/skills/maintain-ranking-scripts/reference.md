@@ -6,7 +6,7 @@ changes (schema, discovery, ranking, categorization).
 ## Pipeline overview
 
 ```
-config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──▶ README.md
+config.json + out_of_scope.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──▶ README.md
 ```
 
 - **fetch.py**: network only. discovery → metadata → deny/filter → rank/trim →
@@ -23,19 +23,8 @@ config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──�
 - `discovery.code_search_filenames` — filenames for `gh search code`.
 - `discovery.awesome_lists` — CSV sources (repo + path + column).
 - `alias_map` — rename map: `old/name` → `new/name` (applied before fetch).
-- `denylist` — editorial exclude (case-insensitive). A list of
-  `{ "repo_id": "owner/name", "reason": "..." }` objects (a bare string is still
-  tolerated by the reader for backward compatibility). `reason` documents *why* the
-  repo is excluded; only `repo_id` affects filtering. **No allowlist.** Reserved for
-  repos that match scope keywords but aren't Claude Code ecosystem tools, in five
-  categories: (1) competing coding-agent CLIs/editors (`google-gemini/gemini-cli`,
-  `openai/codex`, `voideditor/void`); (2) API gateways/proxies/resellers
-  (`songquanpeng/one-api`, `BerriAI/litellm`, `chatanywhere/GPT_API_free`); (3) generic
-  AI apps/clients/platforms (`danny-avila/LibreChat`, `jeecgboot/JeecgBoot`,
-  `khoj-ai/khoj`); (4) generic non-AI repos (`sindresorhus/awesome`, `tw93/Pake`);
-  (5) leaked/rights-infringing content — extracted proprietary system prompts,
-  credentials, or closed-source material (`asgeirtj/system_prompts_leaks`,
-  `x1xhlol/system-prompts-and-models-of-ai-tools`).
+- *(denylist)* — **moved to its own file `helpers/out_of_scope.json`**, no longer a
+  `config.json` key. See the dedicated section below.
 - `brief` — `max_chars`, `readme_excerpt_max_chars`, `readme_raw_max_chars`,
   `fetch_readme_when_description_empty` (fetch caps the raw README; render parses it).
 - `category_rules` — `topic_map` (topic→category) + `keyword_rules` (ordered;
@@ -46,6 +35,33 @@ config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──�
 - `render.other_category_label` / `render.other_max` — the catch-all label and the
   warn threshold (render logs a warning when "Other" ≥ this many repos).
 - `http.user_agent` — sent on every request.
+
+## out_of_scope.json (the denylist)
+
+Editorial exclude list, kept in its own file `helpers/out_of_scope.json` (loaded by
+`fetch.py` from next to `config.json`; `coverage_sweep.py` reuses the same loader).
+Shape:
+
+```json
+{
+  "description": "...what this file is...",
+  "out_of_scope": [
+    { "repo_id": "owner/name", "reason": "..." }
+  ]
+}
+```
+
+`reason` documents *why* the repo is excluded; only `repo_id` affects filtering
+(case-insensitive). A bare string entry is still tolerated by the reader for
+backward compatibility. **No allowlist.** Reserved for repos that match scope
+keywords but aren't Claude Code ecosystem tools, in five categories:
+(1) competing coding-agent CLIs/editors (`google-gemini/gemini-cli`, `openai/codex`,
+`voideditor/void`); (2) API gateways/proxies/resellers (`songquanpeng/one-api`,
+`BerriAI/litellm`, `chatanywhere/GPT_API_free`); (3) generic AI apps/clients/platforms
+(`danny-avila/LibreChat`, `jeecgboot/JeecgBoot`, `khoj-ai/khoj`); (4) generic non-AI
+repos (`sindresorhus/awesome`, `tw93/Pake`); (5) leaked/rights-infringing content —
+extracted proprietary system prompts, credentials, or closed-source material
+(`asgeirtj/system_prompts_leaks`, `x1xhlol/system-prompts-and-models-of-ai-tools`).
 
 ## repos.json schema contract
 

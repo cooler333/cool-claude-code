@@ -39,6 +39,7 @@ from ghclient import GHClient, RateLimitExhausted, get_token
 HERE = Path(__file__).resolve().parent
 DEFAULT_CONFIG = HERE / "config.json"
 DEFAULT_OUT = HERE / "repos.json"
+DEFAULT_OUT_OF_SCOPE = HERE / "out_of_scope.json"
 
 OWNER_RE = re.compile(r"^[A-Za-z0-9-]+$")
 NAME_RE = re.compile(r"^[A-Za-z0-9._-]+$")
@@ -84,9 +85,20 @@ def canon(alias_map_lc: dict[str, str], full: str) -> str:
 
 
 def deny_id(entry) -> str:
-    """A denylist entry is {"repo_id": ..., "reason": ...}; tolerate a bare
+    """An out-of-scope entry is {"repo_id": ..., "reason": ...}; tolerate a bare
     string for backward compatibility. Returns the owner/name."""
     return entry["repo_id"] if isinstance(entry, dict) else entry
+
+
+def load_out_of_scope(config_path) -> list:
+    """Out-of-scope (denylist) entries live in out_of_scope.json next to the
+    config — a {"out_of_scope": [{repo_id, reason}, ...]} document. Returns the
+    list of entries (empty if the file is absent)."""
+    p = Path(config_path).resolve().parent / "out_of_scope.json"
+    if not p.exists():
+        return []
+    data = json.loads(p.read_text())
+    return data.get("out_of_scope", []) if isinstance(data, dict) else data
 
 
 def in_scope(repo: dict, scope: dict) -> bool:
@@ -405,7 +417,7 @@ def main() -> int:
 
     client = GHClient(get_token(), cfg["http"]["user_agent"])
     alias_lc = {k.lower(): v for k, v in cfg.get("alias_map", {}).items()}
-    deny_lc = {deny_id(d).lower() for d in cfg.get("denylist", [])}
+    deny_lc = {deny_id(d).lower() for d in load_out_of_scope(args.config)}
 
     # 1) discovery
     log("discovering candidates...")

@@ -270,9 +270,10 @@ repository search (keyword/topic), structural code search (`SKILL.md` /
 CONTRIBUTING = """## Contributing
 
 The published tables are generated — don't edit them by hand. To change what
-appears, edit `helpers/config.json`: discovery queries, the `denylist` (to exclude
-a competing single-vendor CLI), `alias_map`, `scope_filter`, and the category
-rules. The daily workflow re-fetches and re-ranks.
+appears, edit `helpers/config.json` (discovery queries, `alias_map`, `scope_filter`,
+category rules) or `helpers/out_of_scope.json` (the denylist, to exclude a competing
+single-vendor CLI or other off-scope repo). The daily workflow re-fetches and
+re-ranks.
 """
 
 DISCLAIMER = """## Disclaimer
@@ -292,7 +293,7 @@ source code or content.
   are trademarks of their respective owners. References are nominative (for
   identification only) and imply no affiliation or sponsorship.
 - **Removal.** To request removal of an entry, open an issue; off-scope or
-  rights-infringing repositories can be excluded via the `denylist`.
+  rights-infringing repositories can be excluded via `helpers/out_of_scope.json`.
 """
 
 LICENSE = """## License

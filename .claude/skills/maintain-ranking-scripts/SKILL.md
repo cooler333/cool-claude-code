@@ -12,7 +12,8 @@ Claude Code / skills / agents / MCP ecosystem.
 
 1. **`helpers/fetch.py`** (network only) discovers candidate repos (GitHub repo
    search + `gh` code search + an awesome-list CSV), resolves authoritative
-   metadata via the GraphQL API (REST fallback), drops denylisted repos, filters
+   metadata via the GraphQL API (REST fallback), drops denylisted repos (read from
+   `helpers/out_of_scope.json`), filters
    (min_stars + scope + not archived), ranks by stars, fetches raw README text for
    final-set repos that have no description, and serializes the **raw** top N to
    **`helpers/repos.json`**. It does **not** categorize or write briefs.
@@ -37,10 +38,11 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 - **Add/repair an alias** (renamed/moved repos) — `alias_map` in `config.json`.
 - **Adjust scope** (what counts as in-ecosystem) — `scope_filter` in `config.json`.
 - **Exclude an unwanted repo** — add a `{ "repo_id": "owner/name", "reason": "..." }`
-   entry to `denylist` in `config.json` (the reader also tolerates a bare string).
-   The denylist is reserved for editorial exclusions that rules can't detect: repos
-   that match scope keywords but aren't Claude Code ecosystem tools. The established
-   categories are:
+   entry to the `out_of_scope` array in `helpers/out_of_scope.json` (its own file,
+   loaded by `fetch.py` from next to `config.json`; the reader also tolerates a bare
+   string). This denylist is reserved for editorial exclusions that rules can't
+   detect: repos that match scope keywords but aren't Claude Code ecosystem tools.
+   The established categories are:
    1. **Competing coding-agent CLIs / editors** — single-vendor or non-Claude-compatible
       (e.g. `google-gemini/gemini-cli`, `openai/codex`, `voideditor/void`).
    2. **API gateways / proxies / resellers** — model-access infrastructure, not a
@@ -63,8 +65,9 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 
 ## Critical constraints
 
-- `helpers/fetch.py` — discovery + metadata + selection; writes `helpers/repos.json`.
-   Networked. Ends at raw data (no categorize/brief).
+- `helpers/fetch.py` — discovery + metadata + selection; reads `helpers/config.json`
+   + `helpers/out_of_scope.json`, writes `helpers/repos.json`. Networked. Ends at raw
+   data (no categorize/brief).
 - `helpers/render.py` — reads `repos.json`, categorizes + briefs + regenerates
    `README.md`. **Never networks.**
 - Discovery must stay **algorithmic**, not a hand-maintained allowlist of repos.

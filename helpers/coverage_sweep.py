@@ -33,7 +33,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 from ghclient import GHClient, RateLimitExhausted, get_token
-from fetch import in_scope, valid_name, canon, clean_text, log, deny_id
+from fetch import in_scope, valid_name, canon, clean_text, log, deny_id, load_out_of_scope
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_CONFIG = HERE / "config.json"
@@ -129,7 +129,7 @@ def main() -> int:
     min_stars = args.min_stars if args.min_stars is not None else cfg["min_stars"]
     scope = cfg.get("scope_filter") or {}
     alias_lc = {k.lower(): v for k, v in cfg.get("alias_map", {}).items()}
-    deny_lc = {deny_id(d).lower() for d in cfg.get("denylist", [])}
+    deny_lc = {deny_id(d).lower() for d in load_out_of_scope(args.config)}
     target_count = cfg.get("target_count", 0)
 
     repos_doc = json.loads(args.repos.read_text())
