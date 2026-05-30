@@ -1,6 +1,6 @@
 ---
 name: maintain-ranking-scripts
-description: Maintain and improve the scripts that auto-generate this repo's star-ranked "Awesome Claude Code" README. Use when editing helpers/fetch.py, helpers/render.py, or helpers/config.json — improving discovery queries, adding a category rule, changing the repos.json schema or README layout — and when running the web-research COVERAGE CHECK to find repos the deterministic discovery missed. Does NOT run the daily refresh (CI cron does that) and does NOT hand-curate a list (discovery is algorithmic).
+description: Maintain and improve the scripts that auto-generate this repo's star-ranked "Awesome Claude Code" README. Use when editing helpers/fetch.py, helpers/render.py, or helpers/config.json — tuning scope/category rules, changing the repos.json schema or README layout — and when running the CLASSIFICATION AUDIT to curate helpers/filtered.json and fix scope_filter false positives. Does NOT run the daily refresh (CI cron does that) and does NOT hand-curate an include list (discovery is an exhaustive sweep).
 ---
 
 # maintain-ranking-scripts
@@ -10,101 +10,120 @@ Claude Code / skills / agents / MCP ecosystem.
 
 ## What this repo's pipeline does
 
-1. **`helpers/fetch.py`** (network only) discovers candidate repos (GitHub repo
-   search + `gh` code search + an awesome-list CSV), resolves authoritative
-   metadata via the GraphQL API (REST fallback), drops denylisted repos (read from
-   `helpers/out_of_scope.json`), filters
-   (min_stars + scope + not archived), ranks by stars, fetches raw README text for
-   repos that have no description, and serializes the **raw** full kept set (every
-   in-scope repo, not just the top N) to **`helpers/repos.json`**. It does **not**
-   categorize or write briefs.
-2. **`helpers/render.py`** (no network) reads that JSON and regenerates
-   **`README.md`**: it **categorizes**, builds the short **briefs** (from the saved
-   description / raw README / topics), and lays out a Table of Contents, the Top-N
-   leaderboard, and the long tail split into predefined per-category tables.
-3. **`.github/workflows/refresh-ranking.yml`** runs the two daily and commits
-   the regenerated `README.md` + `helpers/repos.json` to `main`.
+1. **`helpers/fetch.py`** (network only) does an **exhaustive** star-bucketed sweep
+   of every public repo at or above `min_stars` (the Search API caps each query at
+   1,000 results, so the star range is split into adaptive buckets, then
+   concatenated). Because the sweep is exhaustive, **discovery is complete by
+   construction** — there are no scoped queries that could miss a popular repo. It
+   writes two files and nothing else:
+   - **`helpers/repos.json`** — the full universe (every repo ≥ `min_stars`),
+     metadata only. The single source of truth for everything downstream.
+   - **`helpers/out_of_scope.json`** — AUTO classification: universe entries that
+     **fail** `scope_filter` (not AI/Claude). Regenerated every run; never
+     hand-edited.
+   It does **not** categorize, write briefs, rank-to-top-N, fetch READMEs, or apply
+   any denylist.
+2. **`helpers/render.py`** (no network) selects the published set —
+   `repos.json` minus `out_of_scope.json` minus `helpers/filtered.json` minus
+   archived, top `render.render_count` by stars — writes
+   **`helpers/repos_to_render.json`**, then **categorizes**, builds the short
+   **briefs** (from description / topics), and lays out **`README.md`**: a Table of
+   Contents, the Top-N leaderboard, and the long tail split into per-category tables.
+3. **CI** (`.github/workflows/`): `refresh-ranking.yml` runs the sweep+render daily
+   and commits the artifacts; `render-on-edit.yml` re-renders (no network) when a
+   human edits `filtered.json` or `config.json`.
+
+The ≥`min_stars` universe partitions as `repos.json` ⊇ (`out_of_scope.json` ∪
+`filtered.json`). See `reference.md` for the full file contracts and schema.
 
 The scripts are **stdlib-only** (no pip installs) and must stay that way.
 
+## The two exclusion sets (orthogonal)
+
+- **`out_of_scope.json` — AUTO, CI-owned.** "Not AI/Claude." Derived from
+  `repos.json` + `scope_filter` every run. **Never hand-edit it** — if something is
+  misclassified, fix the *rules* in `config.json` (single source of truth).
+- **`filtered.json` — MANUAL, human-owned.** Repos that *are* AI/Claude-adjacent
+  (they pass scope) but are excluded as **redundant**. Each entry is
+  `{ "repo_id": "owner/name", "reason": "..." }` (a bare string is also tolerated).
+  This is the **only** editorial lever; there is **no allowlist**. Established
+  categories:
+  1. **Competing coding-agent CLIs / editors** — single-vendor / non-Claude
+     (e.g. `google-gemini/gemini-cli`, `openai/codex`, `voideditor/void`).
+  2. **API gateways / proxies / resellers** (e.g. `songquanpeng/one-api`,
+     `BerriAI/litellm`, `QuantumNous/new-api`).
+  3. **Generic AI apps / clients / platforms** — chat UIs, low/no-code builders,
+     "AI second brain" apps (e.g. `danny-avila/LibreChat`, `khoj-ai/khoj`).
+  4. **Leaked / rights-infringing content** — republished proprietary system
+     prompts, credentials, closed-source material (e.g.
+     `asgeirtj/system_prompts_leaks`). Excluded on legal/editorial grounds.
+
+  (Generic **non-AI** repos that match only by keyword belong in neither file —
+  they fail `scope_filter` and land in `out_of_scope.json` automatically.)
+
 ## Working on this
 
-- **Tune what's discovered** — edit `helpers/config.json` (`repo_search_queries`,
-   `code_search_filenames`, `awesome_lists`, `min_stars`). Note `target_count` is no
-   longer a cap — `repos.json` keeps the full in-scope set; `target_count` is only the
-   `partial` health threshold (see `reference.md`).
-- **Improve categorization** — adjust `category_rules` (topic_map / keyword_rules)
-   in `config.json`; `render.py` assigns the category and groups by it. If you add a
-   new category, also add its heading to `render.category_order` (they must stay in
-   sync, or the category falls into "Other").
-- **Change the table layout / columns / Table of Contents** — edit `helpers/render.py`.
-- **Add/repair an alias** (renamed/moved repos) — `alias_map` in `config.json`.
 - **Adjust scope** (what counts as in-ecosystem) — `scope_filter` in `config.json`.
-- **Exclude an unwanted repo** — add a `{ "repo_id": "owner/name", "reason": "..." }`
-   entry to the `out_of_scope` array in `helpers/out_of_scope.json` (its own file,
-   loaded by `fetch.py` from next to `config.json`; the reader also tolerates a bare
-   string). This denylist is reserved for editorial exclusions that rules can't
-   detect: repos that match scope keywords but aren't Claude Code ecosystem tools.
-   The established categories are:
-   1. **Competing coding-agent CLIs / editors** — single-vendor or non-Claude-compatible
-      (e.g. `google-gemini/gemini-cli`, `openai/codex`, `voideditor/void`).
-   2. **API gateways / proxies / resellers** — model-access infrastructure, not a
-      Claude Code tool (e.g. `songquanpeng/one-api`, `Wei-Shaw/sub2api`,
-      `chatanywhere/GPT_API_free`, `BerriAI/litellm`, `QuantumNous/new-api`).
-   3. **Generic AI apps / clients / platforms** — chat UIs, low-code/no-code builders,
-      "AI second brain" apps that aren't ecosystem-specific (e.g. `jeecgboot/JeecgBoot`,
-      `danny-avila/LibreChat`, `chatboxai/chatbox`, `khoj-ai/khoj`, `labring/FastGPT`).
-   4. **Generic non-AI repos** that match only by keyword (e.g. `sindresorhus/awesome`,
-      `tw93/Pake`).
-   5. **Leaked / rights-infringing content** — repos that primarily republish
-      extracted/leaked proprietary system prompts, credentials, or closed-source
-      material (e.g. `asgeirtj/system_prompts_leaks`,
-      `x1xhlol/system-prompts-and-models-of-ai-tools`). Excluded as a legal/editorial
-      precaution even when popular.
-
-   There is **no allowlist**: if a clearly-relevant repo is missing, fix discovery (a
-   query / scope term), never a hand-maintained include list.
-- **Find repos discovery missed** — run the COVERAGE CHECK below.
+  This drives `out_of_scope.json`. Loosen a term to rescue a false positive; tighten
+  to push a keyword-only match out. **`scope_filter` and `min_stars` are applied by
+  `fetch.py` during the sweep, not by render** — editing them takes effect on the next
+  daily sweep (or a manual `fetch.py` run / a `refresh-ranking` `workflow_dispatch`).
+  A push to `config.json` does NOT trigger the on-edit re-render (that would publish a
+  README that ignores the change); only `filtered.json` edits re-render instantly.
+- **Improve categorization** — `category_rules` (`topic_map` / `keyword_rules`) in
+  `config.json`; `render.py` assigns the category and groups by it. If you add a new
+  category, also add its heading to `render.category_order` (must stay in sync, or it
+  falls into "Other").
+- **Change how many are published** — `render.render_count` in `config.json`.
+- **Change the table layout / columns / Table of Contents** — `helpers/render.py`.
+- **Exclude an AI-adjacent-but-redundant repo** — add a `{ repo_id, reason }` entry
+  to `helpers/filtered.json`.
+- **Audit classification** — run the CLASSIFICATION AUDIT below.
 
 ## Critical constraints
 
-- `helpers/fetch.py` — discovery + metadata + selection; reads `helpers/config.json`
-   + `helpers/out_of_scope.json`, writes `helpers/repos.json`. Networked. Ends at raw
-   data (no categorize/brief).
-- `helpers/render.py` — reads `repos.json`, categorizes + briefs + regenerates
-   `README.md`. **Never networks.**
-- Discovery must stay **algorithmic**, not a hand-maintained allowlist of repos.
-   The `denylist` is the only editorial lever, for off-scope repos that match by
-   keyword: competing CLIs/editors, API gateways/proxies/resellers, generic AI
-   apps/clients, generic non-AI repos, and leaked/rights-infringing content (see the
-   five categories above).
+- `helpers/fetch.py` — exhaustive sweep + auto scope classification; reads
+  `helpers/config.json`, writes `helpers/repos.json` + `helpers/out_of_scope.json`.
+  Networked. No categorize/brief/rank-to-N/README.
+- `helpers/render.py` — reads `repos.json` + `out_of_scope.json` + `filtered.json`,
+  selects the top-N, writes `repos_to_render.json` + `README.md`. **Never networks.**
+- Discovery stays **algorithmic** (an exhaustive sweep), never a hand-maintained
+  allowlist. `filtered.json` is the only editorial lever.
 - Keep scripts **stdlib-only** — no third-party packages.
-- Preserve separation: `fetch.py` only writes `repos.json`; `render.py` only reads
-   it and writes `README.md`.
+- Preserve separation: `fetch.py` writes only `repos.json`/`out_of_scope.json`;
+  `render.py` reads those + `filtered.json` and writes only
+  `repos_to_render.json`/`README.md`.
 - Any `repos.json` schema change must update the `fetch.py` writer, the `render.py`
-   reader, AND this doc + `reference.md` in lockstep.
-- The pipeline must stay **idempotent** and **deterministic**: same inputs →
-   byte-identical `repos.json` and `README.md`.
+  reader, AND this doc + `reference.md` in lockstep.
+- The pipeline stays **idempotent** and **deterministic**: same inputs → identical
+  outputs (modulo `generated_at`).
 - `render.py` must remain safe to re-run anytime (no network, atomic write).
+- The big generated files (`repos.json`, `out_of_scope.json`) are committed and have
+  a **single writer** (the daily job); don't add a second writer. Rate limits are
+  real — `ghclient.py` paces calls; don't remove the throttling.
 
-## COVERAGE CHECK (web research)
+## CLASSIFICATION AUDIT
 
-When asked to audit coverage (find repos the deterministic pipeline missed):
+The sweep is exhaustive, so there is nothing to "discover" — every repo ≥ `min_stars`
+is already in `repos.json`. Auditing means checking that each repo is in the *right*
+bucket. **`grep` the large files; don't read them whole.**
 
-1. Read `helpers/config.json` and the current `helpers/repos.json`.
-2. Search the web / GitHub for active Claude Code/skills/MCP/agent repos.
-3. For each candidate, check it against the live GitHub API (stars, pushed_at,
-   archived) and the current ranking; collect those missing or mis-ranked.
-4. Propose concrete `config.json` edits (queries, `alias_map`, scope terms, category
-   rules; or a `denylist` entry to remove an off-scope repo — competing CLI, gateway/
-   reseller, or generic app) — never hand-edit `README.md` or `repos.json`, and never
-   add an allowlist.
+1. **Scope false positives** (ecosystem repos wrongly auto-excluded): scan
+   `out_of_scope.json` for entries whose name/description/topics look genuinely
+   Claude/agent/MCP-related. Fix by loosening/adding a `scope_filter` term in
+   `config.json` (never hand-edit `out_of_scope.json`).
+2. **Scope false negatives** (off-topic repos that slipped into the published set):
+   inspect `repos_to_render.json`; if a keyword-only match shouldn't be in scope,
+   tighten `scope_filter`.
+3. **Editorial redundancy** (AI-adjacent but not worth listing): add the repo to
+   `helpers/filtered.json` with a `reason`.
+4. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or
+   `repos_to_render.json`, and never add an allowlist.
 
 ## Notes
 
 - The repo intentionally has **no Python deps**; don't add a `requirements.txt`.
-- If you change the JSON schema, bump `schema_version` and any docs that describe it.
-- `render.py` has a min-repo floor; respect it when changing thresholds. It also
-  warns (non-fatal) when the "Other" category reaches `render.other_max` repos —
-  that's a signal to refine `category_rules` / `category_order`.
-- Rate limits are real; `ghclient.py` paces calls. Don't remove the throttling.
+- If you change the `repos.json` schema, bump `schema_version` and the docs.
+- `render.py` has a min-repo floor on the **published set**; respect it. It also
+  warns (non-fatal) when "Other" reaches `render.other_max` — refine
+  `category_rules` / `category_order`.

@@ -1,0 +1,69 @@
+name: Re-render on editorial edit
+
+# When a human edits the editorial denylist (helpers/filtered.json), regenerate
+# README.md + helpers/repos_to_render.json from the existing helpers/repos.json. No
+# network, no token — the daily sweep keeps repos.json/out_of_scope.json fresh; this
+# just keeps the published view consistent right after an edit instead of waiting for
+# the next cron run.
+#
+# NOTE: this does NOT trigger on helpers/config.json. render.py only re-applies the
+# render-time config (render_count, category_rules, top_table_size); the highest-value
+# knobs — scope_filter and min_stars — are applied by fetch.py during the sweep, so a
+# render-only re-run would publish a README that does NOT reflect those edits. Config
+# changes therefore take effect on the next daily sweep (or a manual fetch+render run /
+# refresh-ranking workflow_dispatch). Only filtered.json, which render fully owns, gets
+# an instant re-render here.
+#
+# No self-loop: this triggers only on filtered.json, but commits
+# README.md/repos_to_render.json — different paths — and a GITHUB_TOKEN push does
+# not re-trigger workflows anyway ([skip ci] is added as defense-in-depth).
+on:
+  push:
+    branches: [main]
+    paths:
+      - helpers/filtered.json
+
+# Share the daily refresh's lane so a re-render and a daily sweep never race.
+concurrency:
+  group: refresh-ranking
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  rerender:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # Pure-CPU re-render from the committed repos.json (no network).
+      - name: Render README
+        run: python helpers/render.py
+
+      - name: Commit changes if any
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md helpers/repos_to_render.json
+          if git diff --cached --quiet; then
+            echo "No changes to publish — nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore(ranking): re-render after editorial edit [skip ci]"
+          for i in 1 2 3; do
+            if git pull --rebase --autostash && git push; then
+              exit 0
+            fi
+            echo "push race; retrying ($i/3)..."
+            sleep 5
+          done
+          echo "FATAL: could not push after retries" >&2
+          exit 1

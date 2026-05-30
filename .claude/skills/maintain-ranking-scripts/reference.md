@@ -1,173 +1,108 @@
 # maintain-ranking-scripts — reference
 
-Deep reference for the ranking pipeline. Read this when making non-trivial
-changes (schema, discovery, ranking, categorization).
+Extended reference for the ranking pipeline: file contracts, the `repos.json`
+schema, config keys, failure modes, and rationale. The top-level `SKILL.md` is the
+quick map; this is the detail.
 
-## Pipeline overview
+## Pipeline data flow
 
 ```
-config.json + out_of_scope.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──▶ README.md
+config.json ─► fetch.py ─► repos.json ────────────┐
+(knobs)        (network)   out_of_scope.json (auto)│
+                                                   ├─► render.py ─► repos_to_render.json
+                           filtered.json ──────────┘   (offline)   README.md
+                           (manual editorial)
 ```
 
-- **fetch.py**: network only. discovery → metadata → deny/filter → rank/trim →
-  raw README (for empty-description repos) → raw JSON. No categorize/brief.
-- **render.py**: no network. JSON → categorize + brief → TOC + grouped markdown tables.
+- **`fetch.py`** is the only networked component. It sweeps the full ≥ `min_stars`
+  universe, writes `repos.json`, classifies scope-fails into `out_of_scope.json`,
+  then stops. No Markdown, no categorization, no top-N.
+- **`render.py`** is pure CPU: it reads `repos.json` + the two exclusion sets,
+  selects the published top-N into `repos_to_render.json`, and writes `README.md`.
+  Re-runnable anytime, deterministic, no network.
+- **`config.json`** holds every knob. Changing scope/categories/count is a config
+  edit, not a code edit.
+
+## The four data files
+
+| file | writer | role |
+|------|--------|------|
+| `repos.json` | `fetch.py` (daily) | the full universe: every repo ≥ `min_stars`, metadata only |
+| `out_of_scope.json` | `fetch.py` (daily) | AUTO: universe entries that fail `scope_filter` (not AI/Claude) |
+| `filtered.json` | human | MANUAL: AI-adjacent but redundant editorial exclusions |
+| `repos_to_render.json` | `render.py` | DERIVED: the published top-N (universe − out_of_scope − filtered − archived) |
+
+Universe partition: `repos.json` ⊇ (`out_of_scope.json` ∪ `filtered.json`).
+**Single source of truth for "in scope" is `config.json`'s `scope_filter`** —
+`out_of_scope.json` is a materialized cache of it, regenerated every run.
+
+## repos.json schema (`schema_version: 3`)
+
+Top-level keys: `generated_at`, `generator`, `schema_version`, `min_stars`,
+`count`, `repos[]`. Entries are stars-sorted (desc).
+
+| field | type | notes |
+|-------|------|-------|
+| `full_name` | str | `owner/name` |
+| `stars` | int | stargazers at sweep time |
+| `description` | str | upstream description (may be empty) |
+| `topics` | list | GitHub topics |
+| `archived` | bool | kept in the universe; excluded at render |
+
+(No `rank`/`url`/`sources`/`redirected_from`/`readme_raw` — render derives `url`
+from `full_name` and assigns display rank within the published set.)
+
+`out_of_scope.json`: `{ description, generated_at, min_stars, count, out_of_scope:
+[{ repo_id, stars, description, tags }] }`.
+`filtered.json`: `{ description, filtered: [{ repo_id, reason, ... }] }` (only
+`repo_id` affects filtering; a bare string is tolerated).
+`repos_to_render.json`: `{ generated_at, generator, count, repos: [{ full_name,
+stars, description, topics }] }`.
 
 ## config.json keys
 
-- `target_count` — how many repos to keep (default 100).
-- `min_stars` — floor; repos below are dropped (currently 20000).
-- `scope_filter.any` — at least one substring must appear in name/desc/topics
-  (the "is this in-ecosystem?" gate).
-- `discovery.repo_search_queries` — GitHub search queries (topic:/keyword).
-- `discovery.code_search_filenames` — filenames for `gh search code`.
-- `discovery.awesome_lists` — CSV sources (repo + path + column).
-- `alias_map` — rename map: `old/name` → `new/name` (applied before fetch).
-- *(denylist)* — **moved to its own file `helpers/out_of_scope.json`**, no longer a
-  `config.json` key. See the dedicated section below.
-- `brief` — `max_chars`, `readme_excerpt_max_chars`, `readme_raw_max_chars`,
-  `fetch_readme_when_description_empty` (fetch caps the raw README; render parses it).
-- `category_rules` — `topic_map` (topic→category) + `keyword_rules` (ordered;
-  `match_owner` or `any` substrings) + `default_category` (`"Other"`).
-- `render.category_order` — the fixed, ordered category headings for the By-category
-  section. **Must list every category `category_rules` can emit** (except the default
-  `"Other"`), or that category silently falls into "Other".
-- `render.other_category_label` / `render.other_max` — the catch-all label and the
-  warn threshold (render logs a warning when "Other" ≥ this many repos).
-- `http.user_agent` — sent on every request.
+| key | meaning |
+|-----|---------|
+| `top_table_size` | size of the leaderboard table in the README |
+| `min_stars` | floor for inclusion (sweep lower bound) |
+| `fetch.floor_fraction` | min sweep coverage (swept / live total) before fetch will overwrite |
+| `render.render_count` | size of the published set written to `repos_to_render.json` |
+| `render.category_order` | ordered category headings in the README |
+| `render.other_category_label` | label for the catch-all bucket |
+| `render.other_max` | warn threshold for the catch-all size |
+| `brief.max_chars` | truncation for the description brief |
+| `scope_filter` | relevance classifier (`require_match` + `any` terms) → drives `out_of_scope.json` |
+| `category_rules` | `topic_map` + `keyword_rules` + `default_category` |
+| `http.user_agent` | UA string for API calls |
 
-## out_of_scope.json (the denylist)
+## Failure modes & guarantees
 
-Editorial exclude list, kept in its own file `helpers/out_of_scope.json` (loaded by
-`fetch.py` from next to `config.json`; `coverage_sweep.py` reuses the same loader).
-Shape:
+- **Rate limits.** `ghclient.py` paces each API class and backs off on 403/429 +
+  `Retry-After`. A run that still exhausts retries raises and the workflow fails
+  **without** overwriting `repos.json` (stale data beats wrong data).
+- **Low coverage.** If the sweep returns < `floor_fraction` of the live ≥
+  `min_stars` total, `fetch.py` aborts rather than publish a half-empty universe.
+- **Min-repo floor.** `render.py` refuses to write a README if the *published set*
+  drops below its floor (guards a bad `filtered.json` / scope regression).
+- **Determinism.** Same inputs → identical outputs (modulo `generated_at`).
+  `render.py` is a pure function of its inputs.
+- **Atomic writes.** Every file is written to a temp path and `os.replace`d, so a
+  crash never leaves a partial file.
+- **No conflicts by construction.** Each big file has one writer (the daily job);
+  both workflows share the `refresh-ranking` concurrency group, and the commit step
+  rebases before push to absorb any race.
 
-```json
-{
-  "description": "...what this file is...",
-  "out_of_scope": [
-    { "repo_id": "owner/name", "stars": 1234, "reason": "...", "description": "repo About", "tags": ["topic", ...] }
-  ]
-}
-```
+## Rationale notes
 
-`reason` documents *why* the repo is excluded; `description` (the repo's GitHub
-About) and `tags` (its topics) are enrichment context. Only `repo_id` affects
-filtering (case-insensitive) — the reader reads nothing else, and a bare string
-entry is still tolerated for backward compatibility. `description`/`tags` are a
-snapshot (enriched from the sweep cache; refresh via `coverage_sweep.py`). **No allowlist.** Reserved for repos that match scope
-keywords but aren't Claude Code ecosystem tools, in five categories:
-(1) competing coding-agent CLIs/editors (`google-gemini/gemini-cli`, `openai/codex`,
-`voideditor/void`); (2) API gateways/proxies/resellers (`songquanpeng/one-api`,
-`BerriAI/litellm`, `chatanywhere/GPT_API_free`); (3) generic AI apps/clients/platforms
-(`danny-avila/LibreChat`, `jeecgboot/JeecgBoot`, `khoj-ai/khoj`); (4) generic non-AI
-repos (`sindresorhus/awesome`, `tw93/Pake`); (5) leaked/rights-infringing content —
-extracted proprietary system prompts, credentials, or closed-source material
-(`asgeirtj/system_prompts_leaks`, `x1xhlol/system-prompts-and-models-of-ai-tools`).
-
-## scope_excluded.json (the "filtered" set)
-
-Reference snapshot, **not a pipeline input** — `fetch.py` never reads it. It lists
-GitHub repos with `>= min_stars` that **fail `scope_filter`**, i.e. the rules already
-classify them as outside the ecosystem (so they never reach `repos.json` or the
-denylist). Shape: `{ "description", "min_stars", "count", "scope_excluded": [ {repo_id, stars, description, tags}, ... ] }`,
-sorted by stars desc. Stored for transparency and to spot a metadata-blind ecosystem
-repo (cf. `openclaw`) wrongly excluded here. It's a **snapshot** (stale-prone);
-regenerate it from `helpers/coverage_sweep.py`, which writes the same list to its
-output dir.
-
-### The full ≥min_stars picture
-
-Together the three files partition the `>= min_stars` universe:
-
-```
-scope_excluded.json  (fails scope_filter)
-out_of_scope.json    (passes scope_filter, but denylisted — editorial)
-repos.json           (passes scope_filter, not denylisted — the kept/ranked set)
-```
-
-Note `repos.json` comes from `fetch.py`'s *scoped* discovery queries (not a global
-`stars:>=N` sweep), so the partition is exact only up to query coverage;
-`coverage_sweep.py` is the global cross-check.
-
-## repos.json schema contract
-
-```json
-{
-  "generated_at": "ISO8601",
-  "generator": "helpers/fetch.py",
-  "schema_version": 2,
-  "count": 134,
-  "target_count": 100,
-  "partial": false,
-  "repos": [
-    {
-      "rank": 1,
-      "full_name": "owner/name",
-      "url": "https://github.com/owner/name",
-      "stars": 123,
-      "description": "raw GitHub description (UNtruncated)",
-      "topics": ["x", "y"],
-      "archived": false,
-      "sources": ["repo_search", "code_search"],
-      "redirected_from": null,
-      "readme_raw": "first N chars of raw README, newlines preserved (empty unless description was empty)"
-    }
-  ]
-}
-```
-
-- Raw snapshot: **no `category` or brief** — render derives both. `description` is the
-  untruncated GitHub description; `readme_raw` is only populated when the description
-  was empty (capped to `brief.readme_raw_max_chars`, newlines kept).
-- `repos` is the **FULL kept set** — every in-scope, non-archived repo at or above
-  `min_stars` that fetch's discovery found — **not** capped at `target_count`. So
-  `count` is the full kept count, and `repos.json` + `out_of_scope.json` +
-  `scope_excluded.json` ≈ the whole `>= min_stars` universe (see partition above).
-- `target_count` — no longer a cap; it's the **health threshold**: `partial` is true
-  when fewer than `target_count` in-scope repos were found (a thin-discovery warning).
-  The leaderboard size in the README is render's `top_table_size`, independent of this.
-- `--limit N` still caps output for cheap test runs (sets `partial` aside).
-- `schema_version` — bump when shape changes; update both scripts + docs.
-- Atomic write: fetch writes to a temp path then renames (write is the last step, so a
-  good `repos.json` is never clobbered).
-- Ranking lives entirely in fetch (`(-stars, full_name)`); render trusts `rank`.
-
-## Editing recipes
-
-- Add a discovery query → `repo_search_queries`. Re-run fetch; confirm new repos.
-- Re-categorize / relabel → tweak `category_rules` (+ `render.category_order`); re-run
-  **render only** (no fetch needed — category + brief are computed offline).
-- Bump star floor → `min_stars`; re-run fetch.
-- Change columns / TOC / category order → edit `render.py` / `render.category_order`;
-  re-run render.
-- Exclude an off-scope repo (competing CLI, gateway/reseller, generic app) → add a
-  `{repo_id, reason}` entry to `helpers/out_of_scope.json`; re-run fetch.
-
-## Scope philosophy
-
-- In: Claude Code skills/plugins/agents, MCP servers/clients, agent harnesses,
-  memory/context tools; general-purpose & provider-neutral LLM/agent frameworks; and
-  multi-model coding-agent CLIs that support Claude (opencode, OpenHands, goose).
-- Out (all in `denylist`): single-vendor / non-Claude-compatible competing coding-agent
-  CLIs & editors (`google-gemini/gemini-cli`, `openai/codex`, `voideditor/void`); API
-  gateways/proxies/resellers (`songquanpeng/one-api`, `BerriAI/litellm`); generic AI
-  apps/clients/platforms — chat UIs, low-code builders, "AI second brain" apps
-  (`danny-avila/LibreChat`, `jeecgboot/JeecgBoot`, `khoj-ai/khoj`); generic non-AI
-  awesome-of-awesomes (`sindresorhus/awesome`). Archived repos and repos under
-  `min_stars` are filtered out automatically.
-
-## Common failure modes
-
-- **Rate limit** → fetch exits 2; CI fails; no write. Re-run later.
-- **Low coverage** (< floor_fraction) → fetch refuses to overwrite. Investigate.
-- **Empty/changed schema** → render's floor check refuses to overwrite README.
-- **gh not authed** → code search skipped (logged), other signals still run.
-- **"Other" too big / category drift** → render warns (non-fatal); add a category
-  rule and/or a `category_order` entry.
-
-## Notes
-
-- Background jobs / multiple writers onto `repos.json` can race — don't run two
-  fetches at once.
-- Keep this file and `SKILL.md` in sync with actual script behavior.
+- **Why an exhaustive sweep?** Scoped queries can silently miss a popular ecosystem
+  repo. Sweeping every repo ≥ `min_stars` makes coverage complete by construction;
+  classification (not discovery) becomes the only thing to tune.
+- **Why no allowlist?** A hand-maintained include list rots and biases. Keeping the
+  universe algorithmic means the ranking reflects real ecosystem signal.
+- **Why two exclusion files?** They're orthogonal axes: topical relevance (auto,
+  rule-driven) vs editorial redundancy (manual). Separating them keeps CI and humans
+  off each other's files — no merge conflicts.
+- **Why keep filtered repos in `repos.json`?** So the full set stays locally
+  analyzable; exclusion happens only at render.
+- **Why split fetch/render?** Network and formatting have different failure modes
+  and cadences. Re-rendering after an editorial edit shouldn't require re-sweeping.

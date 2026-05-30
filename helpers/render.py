@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""render.py — regenerate README.md from helpers/repos.json. Zero network.
+"""render.py — select the published set and regenerate README.md. Zero network.
 
-render owns all the pure-CPU steps: it reads the raw snapshot fetch.py produced
-(metadata + raw README text), then categorizes, builds the short briefs, and lays
-out the README — a Table of Contents, a Top-N leaderboard, the long tail split
-into one table per predefined category (with a trailing "Other" catch-all), and
-static scope/contributing/license prose.
+render owns all the pure-CPU steps. It reads the full universe fetch.py produced
+(helpers/repos.json) plus the two exclusion sets — helpers/out_of_scope.json (auto:
+not AI/Claude) and helpers/filtered.json (manual: in-scope but redundant) — then:
+  1. selects the top `render.render_count` repos by stars that are neither excluded
+     nor archived, and writes that set to helpers/repos_to_render.json;
+  2. categorizes, builds the short briefs (from description / topics), and lays out
+     the README — a Table of Contents, a Top-N leaderboard, the long tail split into
+     one table per predefined category (with a trailing "Other"), and static prose.
 
 Usage:
-  python helpers/render.py                # write ../README.md
-  python helpers/render.py --dry-run      # print to stdout
+  python helpers/render.py                # write ../README.md + repos_to_render.json
+  python helpers/render.py --dry-run      # print to stdout, write nothing
 """
 
 from __future__ import annotations
@@ -18,24 +21,23 @@ import argparse
 import json
 import re
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_IN = HERE / "repos.json"
+DEFAULT_OUT_OF_SCOPE = HERE / "out_of_scope.json"
+DEFAULT_FILTERED = HERE / "filtered.json"
+DEFAULT_RENDER = HERE / "repos_to_render.json"
 DEFAULT_CONFIG = HERE / "config.json"
 DEFAULT_OUT = HERE.parent / "README.md"
 
-MIN_REPOS = 10  # floor: refuse to overwrite README with an implausibly short list
+MIN_REPOS = 10  # floor: refuse to overwrite README with an implausibly short render set
 
 _TAG = re.compile(r"<[^>]*>")
 _WS = re.compile(r"\s+")
 _ILLEGAL = re.compile("[^\x09\x0a\x0d\x20-\U0010ffff]")
 _SLUG_STRIP = re.compile(r"[^a-z0-9 _-]")
-
-# README-excerpt parsing (ported from fetch.py; operates on saved raw text, no network)
-_SKIP_LINE = re.compile(r"^\s*(#|>|<|\[!\[|!\[|---|===|\|)")
-_MD_LINK = re.compile(r"\[([^\]]+)\]\([^)]+\)")
-_MD_INLINE = re.compile(r"[`*_]+")
 
 
 def log(msg: str) -> None:
@@ -116,30 +118,9 @@ def categorize(full_name: str, description: str, topics: list[str], rules: dict)
     return rules["default_category"]
 
 
-def readme_excerpt(raw: str) -> str:
-    """First prose paragraph of a raw README, stripped of markdown. No network."""
-    buf = []
-    for line in raw.splitlines():
-        if not line.strip():
-            if buf:
-                break
-            continue
-        if _SKIP_LINE.match(line):
-            continue
-        buf.append(line.strip())
-    text = " ".join(buf)
-    text = _MD_LINK.sub(r"\1", text)
-    text = _MD_INLINE.sub("", text)
-    return clean_text(text)
-
-
-def build_brief(description: str, topics: list[str], readme_raw: str, briefcfg: dict) -> str:
+def build_brief(description: str, topics: list[str], briefcfg: dict) -> str:
     if description:
         return truncate(description, briefcfg["max_chars"])
-    if readme_raw:
-        para = readme_excerpt(readme_raw)
-        if para:
-            return truncate(para, briefcfg["readme_excerpt_max_chars"])
     if topics:
         return ", ".join(topics[:5])
     return ""
@@ -150,24 +131,80 @@ def build_brief(description: str, topics: list[str], readme_raw: str, briefcfg: 
 # --------------------------------------------------------------------------
 
 def parse_repos(payload: dict, cfg: dict) -> list[dict]:
+    """Build display rows (rank/url/category/brief) from a stars-sorted render set."""
     rules = cfg["category_rules"]
     briefcfg = cfg["brief"]
     repos = []
-    for r in payload.get("repos", []):
+    for rank, r in enumerate(payload.get("repos", []), 1):
         full = r.get("full_name", "")
         desc_raw = r.get("description", "") or ""
         topics = r.get("topics") or []
-        readme_raw = r.get("readme_raw", "") or ""
         repos.append({
-            "rank": int(r.get("rank", 0)),
+            "rank": rank,
             "full_name": full,
-            "url": r.get("url", "") or f"https://github.com/{full}",
+            "url": f"https://github.com/{full}",
             "stars": int(r.get("stars", 0)),
             "category": categorize(full, desc_raw, topics, rules),
-            "description": build_brief(desc_raw, topics, readme_raw, briefcfg),
+            "description": build_brief(desc_raw, topics, briefcfg),
         })
-    repos.sort(key=lambda r: r["rank"])
     return repos
+
+
+# --------------------------------------------------------------------------
+# selection: universe - out_of_scope - filtered - archived -> top render_count
+# --------------------------------------------------------------------------
+
+def _load_ids(path: Path, key: str) -> set[str]:
+    """Lowercased repo_id set from an exclusion file (out_of_scope / filtered).
+    Tolerates a bare-string entry and a missing file (returns empty set)."""
+    if not path.exists():
+        return set()
+    data = json.loads(path.read_text())
+    entries = data.get(key, []) if isinstance(data, dict) else data
+    out = set()
+    for e in entries:
+        rid = e["repo_id"] if isinstance(e, dict) else e
+        if rid:
+            out.add(rid.lower())
+    return out
+
+
+def select_render_set(universe: list[dict], excluded: set[str], render_count: int) -> list[dict]:
+    """Top `render_count` repos by stars that are neither excluded nor archived.
+    `universe` is already stars-sorted by fetch.py; we preserve that order."""
+    eligible = [
+        r for r in universe
+        if not r.get("archived") and r.get("full_name", "").lower() not in excluded
+    ]
+    return eligible[:render_count]
+
+
+def build_render_payload(repos: list[dict], generated_at: str) -> dict:
+    return {
+        "generated_at": generated_at,
+        "generator": "helpers/render.py",
+        "count": len(repos),
+        "repos": [
+            {
+                "full_name": r["full_name"],
+                "stars": int(r.get("stars", 0)),
+                "description": r.get("description", "") or "",
+                "topics": r.get("topics") or [],
+            }
+            for r in repos
+        ],
+    }
+
+
+def write_atomic(payload_or_text, out: Path) -> None:
+    tmp = out.with_suffix(out.suffix + ".tmp")
+    if isinstance(payload_or_text, str):
+        tmp.write_text(payload_or_text, encoding="utf-8")
+    else:
+        with tmp.open("w", encoding="utf-8") as f:
+            json.dump(payload_or_text, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+    tmp.replace(out)
 
 
 def group_tail(tail: list[dict], cfg: dict) -> list[tuple[str, list[dict]]]:
@@ -252,17 +289,22 @@ SCOPE = """## Scope & methodology
 
 This list is generated automatically, once per day, by `helpers/fetch.py` →
 `helpers/render.py` (see `.github/workflows/refresh-ranking.yml`). Membership is
-**not hand-curated**: candidates are discovered from three signals — GitHub
-repository search (keyword/topic), structural code search (`SKILL.md` /
-`CLAUDE.md`), and curated awesome-list aggregation — then deduped, re-ranked by
-**live star count**, and trimmed to the top results.
+**not hand-curated**: `fetch.py` does an exhaustive sweep of **every** public repo
+at or above the star floor (`helpers/repos.json`), so discovery is complete by
+construction. `render.py` then removes the two exclusion sets and publishes the top
+results by **live star count**.
 
 - **In scope:** Claude Code skills, agents, plugins, harnesses, memory and
   orchestration; the MCP tool-protocol layer; general-purpose and provider-neutral
   LLM/agent frameworks; and multi-model coding-agent CLIs that support Claude
   (opencode, OpenHands, goose).
-- **Out of scope:** single-vendor / non-Claude-compatible competing coding-agent
-  CLIs (e.g. gemini-cli, codex), and general chat UIs.
+- **Out of scope (`helpers/out_of_scope.json`, auto):** repos whose
+  name/description/topics don't match any ecosystem term — classified out
+  automatically by `scope_filter`, regenerated every run.
+- **Filtered (`helpers/filtered.json`, editorial):** repos that *are* AI/Claude-
+  adjacent but excluded as redundant — single-vendor / non-Claude competing CLIs
+  (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs, and
+  leaked/rights-infringing content.
 - **Floor:** repositories under 20,000 stars, and archived repositories, are excluded.
 - **Star counts** are a point-in-time snapshot and drift daily.
 """
@@ -270,10 +312,11 @@ repository search (keyword/topic), structural code search (`SKILL.md` /
 CONTRIBUTING = """## Contributing
 
 The published tables are generated — don't edit them by hand. To change what
-appears, edit `helpers/config.json` (discovery queries, `alias_map`, `scope_filter`,
-category rules) or `helpers/out_of_scope.json` (the denylist, to exclude a competing
-single-vendor CLI or other off-scope repo). The daily workflow re-fetches and
-re-ranks.
+appears: adjust `scope_filter` / `category_rules` in `helpers/config.json` (to
+re-classify what counts as in-ecosystem), or add a `{ "repo_id": "owner/name",
+"reason": "..." }` entry to `helpers/filtered.json` (to drop an AI-adjacent but
+redundant repo). There is **no allowlist** and no hand-edited ranking — the daily
+workflow re-sweeps and re-renders.
 """
 
 DISCLAIMER = """## Disclaimer
@@ -293,7 +336,7 @@ source code or content.
   are trademarks of their respective owners. References are nominative (for
   identification only) and imply no affiliation or sponsorship.
 - **Removal.** To request removal of an entry, open an issue; off-scope or
-  rights-infringing repositories can be excluded via `helpers/out_of_scope.json`.
+  rights-infringing repositories can be excluded via `helpers/filtered.json`.
 """
 
 LICENSE = """## License
@@ -356,29 +399,55 @@ def build_readme(payload: dict, cfg: dict) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--in", dest="infile", type=Path, default=DEFAULT_IN)
+    ap.add_argument("--out-of-scope", type=Path, default=DEFAULT_OUT_OF_SCOPE)
+    ap.add_argument("--filtered", type=Path, default=DEFAULT_FILTERED)
+    ap.add_argument("--render-out", type=Path, default=DEFAULT_RENDER)
     ap.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    payload = json.loads(args.infile.read_text())
-    count = len(payload.get("repos", []))
-    if count < MIN_REPOS:
-        log(f"FATAL: only {count} repos in {args.infile.name} (< {MIN_REPOS}); "
+    cfg = json.loads(args.config.read_text())
+    universe_doc = json.loads(args.infile.read_text())
+    universe = universe_doc.get("repos", [])
+
+    # universe - out_of_scope (auto) - filtered (manual) - archived, top N by stars
+    oos_ids = _load_ids(args.out_of_scope, "out_of_scope")
+    filtered_ids = _load_ids(args.filtered, "filtered")
+    excluded = oos_ids | filtered_ids
+    render_count = cfg["render"]["render_count"]
+    render_set = select_render_set(universe, excluded, render_count)
+    log(f"universe {len(universe)} | excluded {len(excluded)} | "
+        f"render set {len(render_set)} (cap {render_count})")
+
+    # surface dead filtered.json entries (renamed/dropped-below-floor repos) — they
+    # match nothing in the universe, so they silently do nothing until audited.
+    universe_ids = {r.get("full_name", "").lower() for r in universe}
+    stale = sorted(filtered_ids - universe_ids)
+    if stale:
+        noun = "entry matches" if len(stale) == 1 else "entries match"
+        log(f"WARNING: {len(stale)} filtered.json {noun} no repo in the universe "
+            f"(renamed or below the star floor?): {', '.join(stale)}")
+
+    # floor guards the PUBLISHED set, not the universe
+    if len(render_set) < MIN_REPOS:
+        log(f"FATAL: only {len(render_set)} repos in the render set (< {MIN_REPOS}); "
             f"refusing to overwrite README.")
         return 1
 
-    cfg = json.loads(args.config.read_text())
-    readme = build_readme(payload, cfg)
+    generated_at = universe_doc.get("generated_at") or datetime.now(
+        timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    render_payload = build_render_payload(render_set, generated_at)
+    readme = build_readme(render_payload, cfg)
 
     if args.dry_run:
         sys.stdout.write(readme)
+        log(f"(dry-run) render set {len(render_set)} repos; nothing written")
         return 0
 
-    tmp = args.out.with_suffix(args.out.suffix + ".tmp")
-    tmp.write_text(readme, encoding="utf-8")
-    tmp.replace(args.out)
-    log(f"wrote {args.out} ({count} repos)")
+    write_atomic(render_payload, args.render_out)
+    write_atomic(readme, args.out)
+    log(f"wrote {args.out} + {args.render_out} ({len(render_set)} repos)")
     return 0
 
 

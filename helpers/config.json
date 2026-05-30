@@ -1,17 +1,14 @@
 {
-  "schema_version": 2,
-  "target_count": 100,
+  "schema_version": 3,
   "top_table_size": 30,
   "min_stars": 20000,
 
   "fetch": {
-    "floor_fraction": 0.9,
-    "max_repo_search_pages": 3,
-    "per_query_page_size": 50,
-    "graphql_batch_size": 50
+    "floor_fraction": 0.9
   },
 
   "render": {
+    "render_count": 100,
     "category_order": [
       "Official Anthropic",
       "Claude Code skills",
@@ -28,10 +25,7 @@
   },
 
   "brief": {
-    "max_chars": 280,
-    "readme_excerpt_max_chars": 320,
-    "readme_raw_max_chars": 4000,
-    "fetch_readme_when_description_empty": true
+    "max_chars": 280
   },
 
   "scope_filter": {
@@ -46,61 +40,6 @@
       "ai harness", "agency-agents", "ai agency", "bmad", "agile ai",
       "agent-memory", "ai-memory"
     ]
-  },
-
-  "discovery": {
-    "repo_search_queries": [
-      "topic:claude-code",
-      "topic:claude-skills",
-      "topic:claude-agent",
-      "topic:claude",
-      "topic:model-context-protocol",
-      "topic:spec-driven",
-      "claude code in:name,description",
-      "claude skill in:name,description",
-      "claude agent in:name,description",
-      "mcp server in:name,description",
-      "claude-code in:name,description",
-      "coding agent cli in:name,description",
-      "opencode in:name,description",
-      "openhands in:name,description",
-      "spec-driven development in:name,description",
-      "agency-agents in:name,description",
-      "agent skills in:name,description",
-      "claude plugin in:name,description",
-      "topic:anthropic",
-      "prompt engineering in:name,description",
-      "ai harness in:name,description",
-      "claude in:name",
-      "bmad in:name,description",
-      "ai memory in:name,description",
-      "topic:mcp",
-      "topic:mcp-server",
-      "model context protocol in:name,description",
-      "topic:openclaw",
-      "openclaw in:name,description"
-    ],
-    "code_search_filenames": [
-      "SKILL.md",
-      "CLAUDE.md"
-    ],
-    "awesome_lists": [
-      {
-        "repo": "hesreallyhim/awesome-claude-code",
-        "path": "data/repo-ticker.csv",
-        "owner_repo_col": 0,
-        "skip_header": true
-      }
-    ]
-  },
-
-  "alias_map": {
-    "All-Hands-AI/OpenHands": "OpenHands/OpenHands",
-    "affaan-m/ECC": "affaan-m/everything-claude-code",
-    "sst/opencode": "anomalyco/opencode",
-    "getAsterisk/claudia": "winfunc/opcode",
-    "forrestchang/andrej-karpathy-skills": "multica-ai/andrej-karpathy-skills",
-    "ruvnet/claude-flow": "ruvnet/ruflo"
   },
 
   "category_rules": {

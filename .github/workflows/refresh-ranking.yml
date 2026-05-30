@@ -15,13 +15,15 @@ on:
     - cron: "30 6 * * *"   # 06:30 UTC daily
   workflow_dispatch: {}
 
-# One refresh at a time; do NOT cancel an in-flight run (avoid half-written commits).
+# One ranking job at a time across BOTH this workflow and render-on-edit.yml, so a
+# daily sweep and a re-render never race. Do NOT cancel an in-flight run (avoid
+# half-written commits).
 concurrency:
   group: refresh-ranking
   cancel-in-progress: false
 
 permissions:
-  contents: write          # commit the regenerated README + repos.json back to main
+  contents: write          # commit the regenerated artifacts back to main
 
 jobs:
   refresh:
@@ -36,33 +38,42 @@ jobs:
         with:
           python-version: "3.x"   # stdlib-only scripts; any 3.x works
 
-      # fetch.py discovers + ranks and writes helpers/repos.json. It exits
-      # non-zero on hard failure (auth, rate-limit exhaustion, low coverage) so
-      # render never runs on degraded data. `gh` is preinstalled on the runner
-      # and authenticates via GITHUB_TOKEN for the code-search discovery signal.
-      - name: Fetch and rank repositories
+      # fetch.py sweeps the full >= min_stars universe and writes helpers/repos.json
+      # + helpers/out_of_scope.json. GITHUB_TOKEN authenticates the Search API
+      # (ghclient). It exits non-zero on hard failure (auth, rate-limit exhaustion,
+      # low sweep coverage) so render never runs on degraded data.
+      - name: Sweep and classify repositories
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python helpers/fetch.py
 
-      # render.py reads helpers/repos.json and regenerates README.md. Only reached
-      # if fetch.py succeeded (default fail-fast). Floor-checks before overwrite.
+      # render.py selects the published top-N (universe - out_of_scope - filtered -
+      # archived), writes helpers/repos_to_render.json, and regenerates README.md.
+      # Only reached if fetch.py succeeded (default fail-fast). No network.
       - name: Render README
         run: python helpers/render.py
 
-      # Commit only the two generated artifacts, and only if they changed. A push
-      # by GITHUB_TOKEN does not re-trigger workflows, and there is no `on: push`
-      # trigger here anyway, so there is no commit loop. [skip ci] is added as
-      # defense-in-depth against future trigger changes.
+      # Commit the generated artifacts, only if they changed. repos.json /
+      # out_of_scope.json have a single writer (this job), so they never conflict;
+      # the pull --rebase + retry only absorbs a push race against render-on-edit.
+      # [skip ci] is defense-in-depth (a GITHUB_TOKEN push doesn't re-trigger anyway).
       - name: Commit changes if any
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md helpers/repos.json
+          git add README.md helpers/repos.json helpers/out_of_scope.json helpers/repos_to_render.json
           if git diff --cached --quiet; then
             echo "No changes to ranking — nothing to commit."
             exit 0
           fi
           git commit -m "chore(ranking): daily refresh of Claude tools ranking [skip ci]"
-          git push
+          for i in 1 2 3; do
+            if git pull --rebase --autostash && git push; then
+              exit 0
+            fi
+            echo "push race; retrying ($i/3)..."
+            sleep 5
+          done
+          echo "FATAL: could not push after retries" >&2
+          exit 1
