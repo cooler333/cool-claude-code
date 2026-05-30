@@ -1,7 +1,7 @@
 # Awesome Claude Code & Agent Tools
 
 > The most-starred repositories in the Claude Code / skills / agents / MCP ecosystem.
-> **Updated at 2026-05-30 21:50 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
+> **Updated at 2026-05-30 22:06 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
 
 ## Contents
 
@@ -29,7 +29,7 @@
 | 1 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 375.7k | Other | Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 |
 | 2 | [obra/superpowers](https://github.com/obra/superpowers) | 212.9k | Claude Code skills | An agentic skills framework & software development methodology that works. |
 | 3 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 199.2k | MCP server / tooling | The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. |
-| 4 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 173.6k | Agent harness | The agent that grows with you |
+| 4 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 173.7k | Agent harness | The agent that grows with you |
 | 5 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 167.5k | Coding agent CLI | The open source coding agent. |
 | 6 | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 162.5k | Claude Code skills | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls. |
 | 7 | [anthropics/skills](https://github.com/anthropics/skills) | 144.1k | Official Anthropic | Public repository for Agent Skills |
@@ -79,7 +79,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | 55.6k | from vibe coding to agentic engineering - practice makes claude perfect |
 | [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills) | 49.5k | The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞 |
 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 47.2k | Production-grade engineering skills for AI coding agents. |
-| [Lum1104/Understand-Anything](https://github.com/Lum1104/Understand-Anything) | 45.8k | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more. |
+| [Lum1104/Understand-Anything](https://github.com/Lum1104/Understand-Anything) | 45.9k | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more. |
 | [multica-ai/multica](https://github.com/multica-ai/multica) | 34.3k | The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills. |
 | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | 33.7k | Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI. |
 | [hesamsheikh/awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases) | 31.2k | A community collection of OpenClaw use cases for making life easier. |

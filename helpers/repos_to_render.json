@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-30T21:50:09Z",
+  "generated_at": "2026-05-30T22:06:38Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
     {
       "full_name": "openclaw/openclaw",
-      "stars": 375670,
+      "stars": 375671,
       "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞",
       "topics": [
         "ai",
@@ -19,13 +19,13 @@
     },
     {
       "full_name": "obra/superpowers",
-      "stars": 212921,
+      "stars": 212923,
       "description": "An agentic skills framework & software development methodology that works.",
       "topics": []
     },
     {
       "full_name": "affaan-m/ECC",
-      "stars": 199223,
+      "stars": 199229,
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "topics": [
         "ai-agents",
@@ -40,7 +40,7 @@
     },
     {
       "full_name": "NousResearch/hermes-agent",
-      "stars": 173647,
+      "stars": 173651,
       "description": "The agent that grows with you",
       "topics": [
         "ai",
@@ -63,19 +63,19 @@
     },
     {
       "full_name": "anomalyco/opencode",
-      "stars": 167474,
+      "stars": 167475,
       "description": "The open source coding agent.",
       "topics": []
     },
     {
       "full_name": "multica-ai/andrej-karpathy-skills",
-      "stars": 162502,
+      "stars": 162505,
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
       "topics": []
     },
     {
       "full_name": "anthropics/skills",
-      "stars": 144066,
+      "stars": 144071,
       "description": "Public repository for Agent Skills",
       "topics": [
         "agent-skills"
@@ -83,7 +83,7 @@
     },
     {
       "full_name": "anthropics/claude-code",
-      "stars": 128363,
+      "stars": 128367,
       "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
       "topics": []
     },
@@ -120,13 +120,13 @@
     },
     {
       "full_name": "msitarzewski/agency-agents",
-      "stars": 106168,
+      "stars": 106169,
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
       "topics": []
     },
     {
       "full_name": "garrytan/gstack",
-      "stars": 104782,
+      "stars": 104785,
       "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
       "topics": []
     },
@@ -147,7 +147,7 @@
     },
     {
       "full_name": "VoltAgent/awesome-design-md",
-      "stars": 85878,
+      "stars": 85879,
       "description": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
       "topics": [
         "awesome-list",
@@ -164,7 +164,7 @@
     },
     {
       "full_name": "farion1231/cc-switch",
-      "stars": 85534,
+      "stars": 85535,
       "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io",
       "topics": [
         "ai-tools",
@@ -191,7 +191,7 @@
     },
     {
       "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 85121,
+      "stars": 85125,
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "topics": [
         "ai-skills",
@@ -217,7 +217,7 @@
     },
     {
       "full_name": "thedotmack/claude-mem",
-      "stars": 79740,
+      "stars": 79742,
       "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "topics": [
         "ai",
@@ -278,7 +278,7 @@
     },
     {
       "full_name": "JuliusBrussee/caveman",
-      "stars": 66656,
+      "stars": 66657,
       "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
       "topics": [
         "ai",
@@ -310,7 +310,7 @@
     },
     {
       "full_name": "gsd-build/get-shit-done",
-      "stars": 63785,
+      "stars": 63786,
       "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
       "topics": [
         "claude-code",
@@ -344,7 +344,7 @@
     },
     {
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "stars": 62538,
+      "stars": 62539,
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "topics": [
         "agent-skills",
@@ -368,7 +368,7 @@
     },
     {
       "full_name": "code-yeongyu/oh-my-openagent",
-      "stars": 60315,
+      "stars": 60317,
       "description": "omo; the best agent harness - previously oh-my-opencode",
       "topics": [
         "ai",
@@ -391,13 +391,13 @@
     },
     {
       "full_name": "earendil-works/pi",
-      "stars": 57775,
+      "stars": 57779,
       "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
       "topics": []
     },
     {
       "full_name": "mem0ai/mem0",
-      "stars": 57156,
+      "stars": 57157,
       "description": "Universal memory layer for AI Agents",
       "topics": [
         "agents",
@@ -418,7 +418,7 @@
     },
     {
       "full_name": "safishamsi/graphify",
-      "stars": 56699,
+      "stars": 56706,
       "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
       "topics": [
         "antigravity",
@@ -436,7 +436,7 @@
     },
     {
       "full_name": "ruvnet/ruflo",
-      "stars": 56649,
+      "stars": 56648,
       "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features enterprise-grade architecture, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
       "topics": [
         "agentic-ai",
@@ -463,7 +463,7 @@
     },
     {
       "full_name": "rtk-ai/rtk",
-      "stars": 56529,
+      "stars": 56531,
       "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
       "topics": [
         "agentic-coding",
@@ -494,7 +494,7 @@
     },
     {
       "full_name": "nexu-io/open-design",
-      "stars": 55897,
+      "stars": 55901,
       "description": "🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.",
       "topics": [
         "agent-skills",
@@ -603,7 +603,7 @@
     },
     {
       "full_name": "santifer/career-ops",
-      "stars": 47937,
+      "stars": 47938,
       "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
       "topics": [
         "ai-agent",
@@ -623,7 +623,7 @@
     },
     {
       "full_name": "addyosmani/agent-skills",
-      "stars": 47177,
+      "stars": 47179,
       "description": "Production-grade engineering skills for AI coding agents.",
       "topics": [
         "agent-skills",
@@ -647,7 +647,7 @@
     },
     {
       "full_name": "Lum1104/Understand-Anything",
-      "stars": 45848,
+      "stars": 45856,
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
       "topics": [
         "antigravity-skills",
@@ -808,7 +808,7 @@
     },
     {
       "full_name": "wshobson/agents",
-      "stars": 36154,
+      "stars": 36155,
       "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI",
       "topics": [
         "agent-skills",
@@ -835,7 +835,7 @@
     },
     {
       "full_name": "anthropics/prompt-eng-interactive-tutorial",
-      "stars": 36054,
+      "stars": 36055,
       "description": "Anthropic's Interactive Prompt Engineering Tutorial",
       "topics": []
     },
@@ -880,7 +880,7 @@
     },
     {
       "full_name": "colbymchenry/codegraph",
-      "stars": 34283,
+      "stars": 34286,
       "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
       "topics": []
     },
@@ -892,7 +892,7 @@
     },
     {
       "full_name": "kepano/obsidian-skills",
-      "stars": 33687,
+      "stars": 33688,
       "description": "Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI.",
       "topics": [
         "claude",
@@ -908,7 +908,7 @@
     },
     {
       "full_name": "microsoft/playwright-mcp",
-      "stars": 33236,
+      "stars": 33237,
       "description": "Playwright MCP server",
       "topics": [
         "mcp",
@@ -917,7 +917,7 @@
     },
     {
       "full_name": "pbakaus/impeccable",
-      "stars": 31608,
+      "stars": 31610,
       "description": "The design language that makes your AI harness better at design.",
       "topics": []
     },
@@ -947,7 +947,7 @@
     },
     {
       "full_name": "coreyhaines31/marketingskills",
-      "stars": 31209,
+      "stars": 31212,
       "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
       "topics": [
         "claude",
@@ -979,7 +979,7 @@
     },
     {
       "full_name": "Leonxlnx/taste-skill",
-      "stars": 29067,
+      "stars": 29070,
       "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
       "topics": [
         "agent",
@@ -1013,13 +1013,13 @@
     },
     {
       "full_name": "anthropics/financial-services",
-      "stars": 28857,
+      "stars": 28858,
       "description": "",
       "topics": []
     },
     {
       "full_name": "anthropics/claude-plugins-official",
-      "stars": 28768,
+      "stars": 28771,
       "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
       "topics": [
         "claude-code",
@@ -1029,7 +1029,7 @@
     },
     {
       "full_name": "ComposioHQ/composio",
-      "stars": 28531,
+      "stars": 28532,
       "description": "Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed workbench to help you build AI agents that turn intent into action.",
       "topics": [
         "agentic-ai",
@@ -1053,7 +1053,7 @@
     },
     {
       "full_name": "Gitlawb/openclaude",
-      "stars": 28085,
+      "stars": 28086,
       "description": "runs anywhere. uses anything",
       "topics": [
         "ai",
@@ -1085,7 +1085,7 @@
     },
     {
       "full_name": "davila7/claude-code-templates",
-      "stars": 27674,
+      "stars": 27675,
       "description": "CLI tool for configuring and monitoring Claude Code",
       "topics": [
         "anthropic",
@@ -1121,7 +1121,7 @@
     },
     {
       "full_name": "iOfficeAI/AionUi",
-      "stars": 27244,
+      "stars": 27245,
       "description": "Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI | Customize your assistants | Star if you like it!",
       "topics": [
         "acp",
@@ -1148,7 +1148,7 @@
     },
     {
       "full_name": "mvanhorn/last30days-skill",
-      "stars": 26836,
+      "stars": 26837,
       "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
       "topics": [
         "ai-prompts",
@@ -1265,7 +1265,7 @@
     },
     {
       "full_name": "volcengine/OpenViking",
-      "stars": 24919,
+      "stars": 24921,
       "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
       "topics": [
         "agent",
@@ -1326,7 +1326,7 @@
     },
     {
       "full_name": "Imbad0202/academic-research-skills",
-      "stars": 24492,
+      "stars": 24494,
       "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
       "topics": [
         "academic-pipeline",
@@ -1379,7 +1379,7 @@
     },
     {
       "full_name": "VoltAgent/awesome-agent-skills",
-      "stars": 23641,
+      "stars": 23642,
       "description": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
       "topics": [
         "agent-skills",
@@ -1412,7 +1412,7 @@
     },
     {
       "full_name": "supermemoryai/supermemory",
-      "stars": 22898,
+      "stars": 22901,
       "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
       "topics": [
         "agent-memory",
@@ -1503,7 +1503,7 @@
     },
     {
       "full_name": "alchaincyf/nuwa-skill",
-      "stars": 21987,
+      "stars": 21988,
       "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
       "topics": []
     }
