@@ -183,7 +183,11 @@ def main() -> int:
     # repos the rules already reject (fail scope_filter) -- the "filtered" set;
     # together with repos.json + out_of_scope.json this partitions the >=min_stars
     # universe. Reference only; never a pipeline input.
-    scope_excluded = [r["full_name"] for r in swept if not in_scope(r, scope)]
+    scope_excluded = [
+        {"repo_id": r["full_name"], "stars": r["stars"],
+         "description": r["description"], "tags": r["topics"]}
+        for r in swept if not in_scope(r, scope)
+    ]
     log(f"in-scope & already listed: {in_list} | denylisted (skill exceptions): "
         f"{denied_hits} | MISSED in-scope: {len(missed)} | "
         f"scope-excluded (filtered): {len(scope_excluded)}")

@@ -46,14 +46,16 @@ Shape:
 {
   "description": "...what this file is...",
   "out_of_scope": [
-    { "repo_id": "owner/name", "reason": "..." }
+    { "repo_id": "owner/name", "reason": "...", "description": "repo About", "tags": ["topic", ...] }
   ]
 }
 ```
 
-`reason` documents *why* the repo is excluded; only `repo_id` affects filtering
-(case-insensitive). A bare string entry is still tolerated by the reader for
-backward compatibility. **No allowlist.** Reserved for repos that match scope
+`reason` documents *why* the repo is excluded; `description` (the repo's GitHub
+About) and `tags` (its topics) are enrichment context. Only `repo_id` affects
+filtering (case-insensitive) — the reader reads nothing else, and a bare string
+entry is still tolerated for backward compatibility. `description`/`tags` are a
+snapshot (enriched from the sweep cache; refresh via `coverage_sweep.py`). **No allowlist.** Reserved for repos that match scope
 keywords but aren't Claude Code ecosystem tools, in five categories:
 (1) competing coding-agent CLIs/editors (`google-gemini/gemini-cli`, `openai/codex`,
 `voideditor/void`); (2) API gateways/proxies/resellers (`songquanpeng/one-api`,
@@ -68,7 +70,7 @@ extracted proprietary system prompts, credentials, or closed-source material
 Reference snapshot, **not a pipeline input** — `fetch.py` never reads it. It lists
 GitHub repos with `>= min_stars` that **fail `scope_filter`**, i.e. the rules already
 classify them as outside the ecosystem (so they never reach `repos.json` or the
-denylist). Shape: `{ "description", "min_stars", "count", "scope_excluded": ["owner/name", ...] }`,
+denylist). Shape: `{ "description", "min_stars", "count", "scope_excluded": [ {repo_id, stars, description, tags}, ... ] }`,
 sorted by stars desc. Stored for transparency and to spot a metadata-blind ecosystem
 repo (cf. `openclaw`) wrongly excluded here. It's a **snapshot** (stale-prone);
 regenerate it from `helpers/coverage_sweep.py`, which writes the same list to its
