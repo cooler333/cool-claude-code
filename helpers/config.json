@@ -28,8 +28,8 @@
   },
 
   "brief": {
-    "max_chars": 140,
-    "readme_excerpt_max_chars": 160,
+    "max_chars": 280,
+    "readme_excerpt_max_chars": 320,
     "readme_raw_max_chars": 4000,
     "fetch_readme_when_description_empty": true
   },

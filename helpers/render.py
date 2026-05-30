@@ -308,7 +308,6 @@ def build_readme(payload: dict, cfg: dict) -> str:
     repos = parse_repos(payload, cfg)
     top_n = cfg.get("top_table_size", 30)
     generated_at = fmt_date(payload.get("generated_at", ""))
-    partial = bool(payload.get("partial"))
 
     top = repos[:top_n]
     tail = repos[top_n:]
@@ -318,11 +317,9 @@ def build_readme(payload: dict, cfg: dict) -> str:
         "# Awesome Claude Code & Agent Tools",
         "",
         "> The most-starred repositories in the Claude Code / skills / agents / MCP ecosystem.",
-        f"> **Updated at {generated_at}** (last successful refresh). Sorted by live GitHub stars, descending.",
+        f"> **Updated at {generated_at}** (last successful refresh). "
+        f"{len(repos)} repositories, sorted by live GitHub stars, descending.",
     ]
-    if partial:
-        out.append(">")
-        out.append(f"> ⚠️ Partial refresh — {len(repos)} repos (fewer than the target).")
 
     # table of contents
     top_heading = f"Top {len(top)}"
