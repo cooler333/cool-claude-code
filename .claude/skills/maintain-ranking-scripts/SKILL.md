@@ -37,12 +37,21 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 - **Add/repair an alias** (renamed/moved repos) — `alias_map` in `config.json`.
 - **Adjust scope** (what counts as in-ecosystem) — `scope_filter` in `config.json`.
 - **Exclude an unwanted repo** — add it to `denylist` in `config.json`. The denylist
-   is reserved for editorial exclusions that rules can't detect — **non-Claude-compatible
-   / single-vendor competing coding-agent CLIs** (e.g. `google-gemini/gemini-cli`,
-   `openai/codex`) and **generic, non-AI repos** that match by keyword but aren't
-   ecosystem-specific (e.g. `sindresorhus/awesome`). There is **no allowlist**: if a
-   clearly-relevant repo is missing, fix discovery (a query / scope term), never a
-   hand-maintained include list.
+   is reserved for editorial exclusions that rules can't detect: repos that match scope
+   keywords but aren't Claude Code ecosystem tools. The established categories are:
+   1. **Competing coding-agent CLIs / editors** — single-vendor or non-Claude-compatible
+      (e.g. `google-gemini/gemini-cli`, `openai/codex`, `voideditor/void`).
+   2. **API gateways / proxies / resellers** — model-access infrastructure, not a
+      Claude Code tool (e.g. `songquanpeng/one-api`, `Wei-Shaw/sub2api`,
+      `chatanywhere/GPT_API_free`, `BerriAI/litellm`, `QuantumNous/new-api`).
+   3. **Generic AI apps / clients / platforms** — chat UIs, low-code/no-code builders,
+      "AI second brain" apps that aren't ecosystem-specific (e.g. `jeecgboot/JeecgBoot`,
+      `danny-avila/LibreChat`, `chatboxai/chatbox`, `khoj-ai/khoj`, `labring/FastGPT`).
+   4. **Generic non-AI repos** that match only by keyword (e.g. `sindresorhus/awesome`,
+      `tw93/Pake`).
+
+   There is **no allowlist**: if a clearly-relevant repo is missing, fix discovery (a
+   query / scope term), never a hand-maintained include list.
 - **Find repos discovery missed** — run the COVERAGE CHECK below.
 
 ## Critical constraints
@@ -52,7 +61,9 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 - `helpers/render.py` — reads `repos.json`, categorizes + briefs + regenerates
    `README.md`. **Never networks.**
 - Discovery must stay **algorithmic**, not a hand-maintained allowlist of repos.
-   The `denylist` is the only editorial lever, and only for competing CLIs.
+   The `denylist` is the only editorial lever, for off-scope repos that match by
+   keyword: competing CLIs/editors, API gateways/proxies/resellers, generic AI
+   apps/clients, and generic non-AI repos (see the four categories above).
 - Keep scripts **stdlib-only** — no third-party packages.
 - Preserve separation: `fetch.py` only writes `repos.json`; `render.py` only reads
    it and writes `README.md`.
@@ -71,8 +82,9 @@ When asked to audit coverage (find repos the deterministic pipeline missed):
 3. For each candidate, check it against the live GitHub API (stars, pushed_at,
    archived) and the current ranking; collect those missing or mis-ranked.
 4. Propose concrete `config.json` edits (queries, `alias_map`, scope terms, category
-   rules; or a `denylist` entry to remove a competing CLI) — never hand-edit
-   `README.md` or `repos.json`, and never add an allowlist.
+   rules; or a `denylist` entry to remove an off-scope repo — competing CLI, gateway/
+   reseller, or generic app) — never hand-edit `README.md` or `repos.json`, and never
+   add an allowlist.
 
 ## Notes
 

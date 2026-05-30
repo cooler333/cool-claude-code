@@ -24,8 +24,12 @@ config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──�
 - `discovery.awesome_lists` — CSV sources (repo + path + column).
 - `alias_map` — rename map: `old/name` → `new/name` (applied before fetch).
 - `denylist` — editorial exclude (case-insensitive). **No allowlist.** Reserved for
-  non-Claude-compatible / single-vendor competing coding-agent CLIs and generic, non-AI
-  repos that match by keyword but aren't ecosystem-specific (e.g. `sindresorhus/awesome`).
+  repos that match scope keywords but aren't Claude Code ecosystem tools, in four
+  categories: (1) competing coding-agent CLIs/editors (`google-gemini/gemini-cli`,
+  `openai/codex`, `voideditor/void`); (2) API gateways/proxies/resellers
+  (`songquanpeng/one-api`, `BerriAI/litellm`, `chatanywhere/GPT_API_free`); (3) generic
+  AI apps/clients/platforms (`danny-avila/LibreChat`, `jeecgboot/JeecgBoot`,
+  `khoj-ai/khoj`); (4) generic non-AI repos (`sindresorhus/awesome`, `tw93/Pake`).
 - `brief` — `max_chars`, `readme_excerpt_max_chars`, `readme_raw_max_chars`,
   `fetch_readme_when_description_empty` (fetch caps the raw README; render parses it).
 - `category_rules` — `topic_map` (topic→category) + `keyword_rules` (ordered;
@@ -80,17 +84,21 @@ config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──�
 - Bump star floor → `min_stars`; re-run fetch.
 - Change columns / TOC / category order → edit `render.py` / `render.category_order`;
   re-run render.
-- Exclude a competing CLI → add it to `denylist`; re-run fetch.
+- Exclude an off-scope repo (competing CLI, gateway/reseller, generic app) → add it to
+  `denylist`; re-run fetch.
 
 ## Scope philosophy
 
 - In: Claude Code skills/plugins/agents, MCP servers/clients, agent harnesses,
   memory/context tools; general-purpose & provider-neutral LLM/agent frameworks; and
   multi-model coding-agent CLIs that support Claude (opencode, OpenHands, goose).
-- Out: single-vendor / non-Claude-compatible competing coding-agent CLIs
-  (`google-gemini/gemini-cli`, `openai/codex` — in `denylist`); generic non-AI
-  awesome-of-awesomes (`sindresorhus/awesome` — in `denylist`); general chat UIs.
-  Archived repos and repos under `min_stars` are filtered out automatically.
+- Out (all in `denylist`): single-vendor / non-Claude-compatible competing coding-agent
+  CLIs & editors (`google-gemini/gemini-cli`, `openai/codex`, `voideditor/void`); API
+  gateways/proxies/resellers (`songquanpeng/one-api`, `BerriAI/litellm`); generic AI
+  apps/clients/platforms — chat UIs, low-code builders, "AI second brain" apps
+  (`danny-avila/LibreChat`, `jeecgboot/JeecgBoot`, `khoj-ai/khoj`); generic non-AI
+  awesome-of-awesomes (`sindresorhus/awesome`). Archived repos and repos under
+  `min_stars` are filtered out automatically.
 
 ## Common failure modes
 
