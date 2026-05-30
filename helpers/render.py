@@ -49,11 +49,13 @@ def log(msg: str) -> None:
 # --------------------------------------------------------------------------
 
 def human_stars(n: int) -> str:
+    # non-breaking space ( ) keeps the star glued to the number so the
+    # right-aligned Stars column never wraps "⭐" onto its own line.
     if n >= 1_000_000:
-        return f"⭐ {n / 1_000_000:.1f}M"
+        return f"⭐ {n / 1_000_000:.1f}M"
     if n >= 1000:
-        return f"⭐ {n / 1000:.1f}k"
-    return f"⭐ {n}"
+        return f"⭐ {n / 1000:.1f}k"
+    return f"⭐ {n}"
 
 
 def clean_text(s: str) -> str:
