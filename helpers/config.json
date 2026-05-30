@@ -113,7 +113,10 @@
     "khoj-ai/khoj",
     "labring/FastGPT",
     "asgeirtj/system_prompts_leaks",
-    "x1xhlol/system-prompts-and-models-of-ai-tools"
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "CherryHQ/cherry-studio",
+    "dyad-sh/dyad",
+    "activepieces/activepieces"
   ],
 
   "category_rules": {
