@@ -96,7 +96,22 @@
   "denylist": [
     "google-gemini/gemini-cli",
     "openai/codex",
-    "sindresorhus/awesome"
+    "sindresorhus/awesome",
+    "chatanywhere/GPT_API_free",
+    "songquanpeng/one-api",
+    "Wei-Shaw/sub2api",
+    "voideditor/void",
+    "jeecgboot/JeecgBoot",
+    "BerriAI/litellm",
+    "QuantumNous/new-api",
+    "router-for-me/CLIProxyAPI",
+    "cheahjs/free-llm-api-resources",
+    "Alishahryar1/free-claude-code",
+    "tw93/Pake",
+    "chatboxai/chatbox",
+    "danny-avila/LibreChat",
+    "khoj-ai/khoj",
+    "labring/FastGPT"
   ],
 
   "category_rules": {
