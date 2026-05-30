@@ -151,7 +151,23 @@
     "oobabooga/textgen",
     "mudler/LocalAI",
     "gitroomhq/postiz-app",
-    "elder-plinius/CL4R1T4S"
+    "elder-plinius/CL4R1T4S",
+    "cursor/cursor",
+    "siyuan-note/siyuan",
+    "AstrBotDevs/AstrBot",
+    "moeru-ai/airi",
+    "HKUDS/DeepTutor",
+    "flipped-aurora/gin-vue-admin",
+    "crewAIInc/crewAI",
+    "microsoft/autogen",
+    "FoundationAgents/MetaGPT",
+    "agno-agi/agno",
+    "langchain-ai/langgraph",
+    "openai/openai-agents-python",
+    "mastra-ai/mastra",
+    "letta-ai/letta",
+    "agentscope-ai/agentscope",
+    "openai/swarm"
   ],
 
   "category_rules": {
