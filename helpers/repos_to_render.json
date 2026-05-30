@@ -1205,31 +1205,6 @@
       ]
     },
     {
-      "full_name": "NirDiamant/RAG_Techniques",
-      "stars": 27633,
-      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial.",
-      "topics": [
-        "agentic-rag",
-        "ai",
-        "embeddings",
-        "generative-ai",
-        "gpt",
-        "langchain",
-        "llama-index",
-        "llm",
-        "llms",
-        "machine-learning",
-        "nlp",
-        "openai",
-        "python",
-        "rag",
-        "retrieval-augmented-generation",
-        "semantic-search",
-        "tutorials",
-        "vector-database"
-      ]
-    },
-    {
       "full_name": "vercel-labs/agent-skills",
       "stars": 27330,
       "description": "Vercel's official collection of agent skills",
@@ -1317,29 +1292,6 @@
         "graph",
         "llms",
         "rag"
-      ]
-    },
-    {
-      "full_name": "googleworkspace/cli",
-      "stars": 26693,
-      "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
-      "topics": [
-        "agent-skills",
-        "ai-agent",
-        "automation",
-        "cli",
-        "discovery-api",
-        "gemini-cli-extension",
-        "google-admin",
-        "google-api",
-        "google-calendar",
-        "google-chat",
-        "google-docs",
-        "google-drive",
-        "google-sheets",
-        "google-workspace",
-        "oauth2",
-        "rust"
       ]
     },
     {
@@ -1561,6 +1513,31 @@
       "stars": 23181,
       "description": "The official Python SDK for Model Context Protocol servers and clients",
       "topics": []
+    },
+    {
+      "full_name": "SuperClaude-Org/SuperClaude_Framework",
+      "stars": 23067,
+      "description": "A configuration framework that enhances Claude Code with specialized commands, cognitive personas, and development methodologies.",
+      "topics": []
+    },
+    {
+      "full_name": "supermemoryai/supermemory",
+      "stars": 22884,
+      "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
+      "topics": [
+        "agent-memory",
+        "ai-memory",
+        "cloudflare-kv",
+        "cloudflare-pages",
+        "cloudflare-workers",
+        "drizzle-orm",
+        "memory",
+        "postgres",
+        "remix",
+        "tailwindcss",
+        "typescript",
+        "vite"
+      ]
     }
   ]
 }

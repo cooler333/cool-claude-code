@@ -31,7 +31,8 @@ Claude Code / skills / agents / MCP ecosystem.
    Contents, the Top-N leaderboard, and the long tail split into per-category tables.
 3. **CI** (`.github/workflows/`): `refresh-ranking.yml` runs the sweep+render daily
    and commits the artifacts; `render-on-edit.yml` re-renders (no network) when a
-   human edits `filtered.json` or `config.json`.
+   human edits `filtered.json` (NOT `config.json` — scope/min_stars are sweep-time,
+   so config edits wait for the next sweep).
 
 The ≥`min_stars` universe partitions as `repos.json` ⊇ (`out_of_scope.json` ∪
 `filtered.json`). See `reference.md` for the full file contracts and schema.

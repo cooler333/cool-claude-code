@@ -124,10 +124,8 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [simstudioai/sim](https://github.com/simstudioai/sim) | 28.7k | Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce. |
 | [Gitlawb/openclaude](https://github.com/Gitlawb/openclaude) | 28.1k | runs anywhere. uses anything |
 | [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) | 28.1k | A list of AI autonomous agents |
-| [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) | 27.6k | This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial. |
 | [iOfficeAI/AionUi](https://github.com/iOfficeAI/AionUi) | 27.2k | Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI \| Customize your assistants \| Star if you like it! |
 | [getzep/graphiti](https://github.com/getzep/graphiti) | 26.8k | Build Real-Time Knowledge Graphs for AI Agents |
-| [googleworkspace/cli](https://github.com/googleworkspace/cli) | 26.7k | Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills. |
 | [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) | 26.7k | Get 10X more out of Claude Code, Codex or any coding agent |
 | [volcengine/OpenViking](https://github.com/volcengine/OpenViking) | 24.9k | OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and… |
 | [oraios/serena](https://github.com/oraios/serena) | 24.8k | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities - the IDE for your agent |
@@ -153,6 +151,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | Repo | Stars | Description |
 |------|------:|-------------|
 | [mem0ai/mem0](https://github.com/mem0ai/mem0) | 57.2k | Universal memory layer for AI Agents |
+| [supermemoryai/supermemory](https://github.com/supermemoryai/supermemory) | 22.9k | Memory engine and app that is extremely fast, scalable. The Memory API for the AI era. |
 
 ### Prompts & system prompts
 
@@ -180,6 +179,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) | 48.3k | Breakthrough Method for Agile Ai Driven Development |
 | [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) | 34.5k | Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic. |
 | [eyaltoledano/claude-task-master](https://github.com/eyaltoledano/claude-task-master) | 27.3k | An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others. |
+| [SuperClaude-Org/SuperClaude_Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework) | 23.1k | A configuration framework that enhances Claude Code with specialized commands, cognitive personas, and development methodologies. |
 
 ## Scope & methodology
 

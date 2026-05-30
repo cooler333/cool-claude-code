@@ -2348,6 +2348,33 @@
         "wifi",
         "wifi-security"
       ]
+    },
+    {
+      "repo_id": "googleworkspace/cli",
+      "reason": "single-vendor Google Workspace CLI / Gemini CLI extension, not a Claude-ecosystem tool",
+      "stars": 26693,
+      "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more.",
+      "tags": [
+        "agent-skills",
+        "ai-agent",
+        "cli",
+        "gemini-cli-extension",
+        "google-workspace"
+      ]
+    },
+    {
+      "repo_id": "NirDiamant/RAG_Techniques",
+      "reason": "generic RAG tutorial/notebook collection (matches only by 'agentic'); not ecosystem-specific",
+      "stars": 27633,
+      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems.",
+      "tags": [
+        "agentic-rag",
+        "ai",
+        "llm",
+        "rag",
+        "retrieval-augmented-generation",
+        "tutorials"
+      ]
     }
   ]
 }
