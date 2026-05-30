@@ -40,7 +40,7 @@
       "claude", "anthropic", "mcp", "model context protocol",
       "model-context-protocol", "claude-code", "claude code", "agentic",
       "coding agent", "coding-agent", "ai agent", "ai-agent", "llm agent",
-      "agent skill", "agent framework", "subagent", "codex", "opencode",
+      "agent skill", "agent framework", "subagent", "codex", "opencode", "openclaw",
       "skill.md", "slash command", "agent harness", "skill", "skills",
       "system prompt", "system prompts", "spec-driven", "spec-kit", "spec kit",
       "ai harness", "agency-agents", "ai agency", "bmad", "agile ai",
@@ -76,7 +76,9 @@
       "ai memory in:name,description",
       "topic:mcp",
       "topic:mcp-server",
-      "model context protocol in:name,description"
+      "model context protocol in:name,description",
+      "topic:openclaw",
+      "openclaw in:name,description"
     ],
     "code_search_filenames": [
       "SKILL.md",
