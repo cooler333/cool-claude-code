@@ -1,7 +1,7 @@
 # Awesome Claude Code & Agent Tools
 
 > The most-starred repositories in the Claude Code / skills / agents / MCP ecosystem.
-> **Updated at 2026-05-30 20:35 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
+> **Updated at 2026-05-30 21:50 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
 
 ## Contents
 
@@ -32,10 +32,10 @@
 | 4 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 173.6k | Agent harness | The agent that grows with you |
 | 5 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 167.5k | Coding agent CLI | The open source coding agent. |
 | 6 | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | 162.5k | Claude Code skills | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls. |
-| 7 | [anthropics/skills](https://github.com/anthropics/skills) | 144.0k | Official Anthropic | Public repository for Agent Skills |
-| 8 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | 128.3k | Official Anthropic | Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. |
-| 9 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 112.3k | Awesome list / directory | 100+ AI Agent & RAG apps you can actually run — clone, customize, ship. |
-| 10 | [mattpocock/skills](https://github.com/mattpocock/skills) | 112.3k | Claude Code skills | Skills for Real Engineers. Straight from my .claude directory. |
+| 7 | [anthropics/skills](https://github.com/anthropics/skills) | 144.1k | Official Anthropic | Public repository for Agent Skills |
+| 8 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | 128.4k | Official Anthropic | Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. |
+| 9 | [mattpocock/skills](https://github.com/mattpocock/skills) | 112.3k | Claude Code skills | Skills for Real Engineers. Straight from my .claude directory. |
+| 10 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 112.3k | Awesome list / directory | 100+ AI Agent & RAG apps you can actually run — clone, customize, ship. |
 | 11 | [github/spec-kit](https://github.com/github/spec-kit) | 107.2k | Spec-driven dev | 💫 Toolkit to help you get started with Spec-Driven Development |
 | 12 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | 106.2k | Agent harness | A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables. |
 | 13 | [garrytan/gstack](https://github.com/garrytan/gstack) | 104.8k | Other | Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA |
@@ -47,7 +47,7 @@
 | 19 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | 79.7k | Claude Code skills | Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More |
 | 20 | [OpenHands/OpenHands](https://github.com/OpenHands/OpenHands) | 75.4k | Agent harness | 🙌 OpenHands: AI-Driven Development |
 | 21 | [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) | 75.1k | Agent harness | 🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents. |
-| 22 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | 66.6k | Prompts & system prompts | 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman |
+| 22 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | 66.7k | Prompts & system prompts | 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman |
 | 23 | [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | 66.0k | Agent harness | 12 Lessons to Get Started Building AI Agents |
 | 24 | [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) | 63.8k | Spec-driven dev | A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES. |
 | 25 | [shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | 63.7k | Agent harness | Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1 |
@@ -67,7 +67,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 |------|------:|-------------|
 | [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | 44.6k | A collection of notebooks/recipes showcasing some fun and effective ways of using Claude. |
 | [anthropics/prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) | 36.1k | Anthropic's Interactive Prompt Engineering Tutorial |
-| [anthropics/financial-services](https://github.com/anthropics/financial-services) | 28.8k | — |
+| [anthropics/financial-services](https://github.com/anthropics/financial-services) | 28.9k | — |
 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 28.8k | Official, Anthropic-managed directory of high quality Claude Code Plugins. |
 
 ### Claude Code skills
@@ -101,7 +101,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [aaif-goose/goose](https://github.com/aaif-goose/goose) | 46.1k | an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM |
 | [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | 42.3k | Chrome DevTools for coding agents |
 | [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) | 39.2k | Installable GitHub library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections. |
-| [wshobson/agents](https://github.com/wshobson/agents) | 36.1k | Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI |
+| [wshobson/agents](https://github.com/wshobson/agents) | 36.2k | Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI |
 | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 33.2k | Playwright MCP server |
 | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 30.3k | GitHub's official MCP Server |
 | [ComposioHQ/composio](https://github.com/ComposioHQ/composio) | 28.5k | Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed workbench to help you build AI agents that turn intent into action. |
@@ -120,7 +120,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | 43.4k | Lightweight, open-source AI agent for your tools, chats, and workflows. |
 | [luongnv89/claude-howto](https://github.com/luongnv89/claude-howto) | 34.6k | A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value. |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 31.6k | The design language that makes your AI harness better at design. |
-| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 29.0k | Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 29.1k | Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop |
 | [huggingface/agents-course](https://github.com/huggingface/agents-course) | 29.0k | This repository contains the Hugging Face Agents Course. |
 | [simstudioai/sim](https://github.com/simstudioai/sim) | 28.7k | Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce. |
 | [Gitlawb/openclaude](https://github.com/Gitlawb/openclaude) | 28.1k | runs anywhere. uses anything |
