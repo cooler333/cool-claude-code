@@ -2389,6 +2389,34 @@
         "prompt-engineering",
         "prompts"
       ]
+    },
+    {
+      "repo_id": "langchain-ai/langchain",
+      "reason": "generic agent framework / platform (not Claude-specific) — consistent with already-filtered langchain-ai/langgraph and langchain-ai/deepagents",
+      "stars": 138053,
+      "description": "The agent engineering platform.",
+      "tags": [
+        "agents",
+        "ai",
+        "langchain",
+        "llm",
+        "openai",
+        "gemini"
+      ]
+    },
+    {
+      "repo_id": "Significant-Gravitas/AutoGPT",
+      "reason": "generic autonomous-agent framework/platform, not Claude-ecosystem-specific (same class as filtered crewAI/autogen/MetaGPT)",
+      "stars": 184656,
+      "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on.",
+      "tags": [
+        "ai",
+        "agents",
+        "autonomous-agents",
+        "gpt-4",
+        "openai",
+        "python"
+      ]
     }
   ]
 }

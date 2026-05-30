@@ -39,24 +39,6 @@
       ]
     },
     {
-      "full_name": "Significant-Gravitas/AutoGPT",
-      "stars": 184656,
-      "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
-      "topics": [
-        "agentic-ai",
-        "agents",
-        "ai",
-        "artificial-intelligence",
-        "autonomous-agents",
-        "claude",
-        "gpt",
-        "llama-api",
-        "llm",
-        "openai",
-        "python"
-      ]
-    },
-    {
       "full_name": "NousResearch/hermes-agent",
       "stars": 173613,
       "description": "The agent that grows with you",
@@ -97,33 +79,6 @@
       "description": "Public repository for Agent Skills",
       "topics": [
         "agent-skills"
-      ]
-    },
-    {
-      "full_name": "langchain-ai/langchain",
-      "stars": 138053,
-      "description": "The agent engineering platform.",
-      "topics": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "anthropic",
-        "chatgpt",
-        "deepagents",
-        "enterprise",
-        "framework",
-        "gemini",
-        "generative-ai",
-        "langchain",
-        "langgraph",
-        "llm",
-        "multiagent",
-        "open-source",
-        "openai",
-        "pydantic",
-        "python",
-        "rag",
-        "typescript"
       ]
     },
     {
@@ -1535,6 +1490,58 @@
         "self-hosted",
         "telegram-bot",
         "workflow-automation"
+      ]
+    },
+    {
+      "full_name": "OthmanAdi/planning-with-files",
+      "stars": 22362,
+      "description": "Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition.",
+      "topics": [
+        "adal",
+        "agent-skills",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "copilot",
+        "copilot-skills",
+        "hermes",
+        "hermes-agent",
+        "hermes-skill",
+        "kilocode",
+        "manus",
+        "mastra",
+        "openclaw",
+        "openclaw-skills",
+        "pi",
+        "pi-agent",
+        "planning"
+      ]
+    },
+    {
+      "full_name": "NirDiamant/GenAI_Agents",
+      "stars": 22277,
+      "description": "50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems.",
+      "topics": [
+        "agentic-ai",
+        "agents",
+        "ai",
+        "ai-agents",
+        "autonomous-agents",
+        "genai",
+        "generative-ai",
+        "langchain",
+        "langgraph",
+        "llm",
+        "llms",
+        "machine-learning",
+        "mcp",
+        "multi-agent",
+        "multi-agent-systems",
+        "openai",
+        "python",
+        "rag",
+        "tutorials"
       ]
     }
   ]
