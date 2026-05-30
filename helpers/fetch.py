@@ -436,6 +436,21 @@ def main() -> int:
         if r["stars"] >= min_stars and in_scope(r, scope) and not r["archived"]
     ]
     log(f"  {len(ranked)} repos in scope (of {len(resolved)} resolved)")
+    # Visibility: popular repos that cleared min_stars + not-archived but were
+    # dropped *solely* by scope_filter. A silent scope drop is how a high-star
+    # ecosystem repo (e.g. one whose name/description/topics carry no ecosystem
+    # keyword) can stay invisible. Surface the worst offenders here so coverage
+    # gaps show up in the log instead of hiding -- the fix is to tune
+    # scope_filter / discovery in config.json, never a hand-maintained allowlist.
+    scope_dropped = sorted(
+        (r for r in resolved.values()
+         if r["stars"] >= min_stars and not r["archived"] and not in_scope(r, scope)),
+        key=lambda r: (-r["stars"], r["full_name"].lower()),
+    )
+    if scope_dropped:
+        log(f"  note: {len(scope_dropped)} repo(s) >= {min_stars} stars dropped by "
+            f"scope_filter; top: "
+            + ", ".join(f"{r['full_name']}({r['stars']})" for r in scope_dropped[:10]))
     ranked.sort(key=lambda r: (-r["stars"], r["full_name"].lower()))
     target = cfg["target_count"]
     limit = args.limit or target

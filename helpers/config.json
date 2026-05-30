@@ -43,7 +43,8 @@
       "agent skill", "agent framework", "subagent", "codex", "opencode",
       "skill.md", "slash command", "agent harness", "skill", "skills",
       "system prompt", "system prompts", "spec-driven", "spec-kit", "spec kit",
-      "ai harness"
+      "ai harness", "agency-agents", "ai agency", "bmad", "agile ai",
+      "agent-memory", "ai-memory"
     ]
   },
 
@@ -69,7 +70,10 @@
       "claude plugin in:name,description",
       "topic:anthropic",
       "prompt engineering in:name,description",
-      "ai harness in:name,description"
+      "ai harness in:name,description",
+      "claude in:name",
+      "bmad in:name,description",
+      "ai memory in:name,description"
     ],
     "code_search_filenames": [
       "SKILL.md",
@@ -90,7 +94,8 @@
     "affaan-m/ECC": "affaan-m/everything-claude-code",
     "sst/opencode": "anomalyco/opencode",
     "getAsterisk/claudia": "winfunc/opcode",
-    "forrestchang/andrej-karpathy-skills": "multica-ai/andrej-karpathy-skills"
+    "forrestchang/andrej-karpathy-skills": "multica-ai/andrej-karpathy-skills",
+    "ruvnet/claude-flow": "ruvnet/ruflo"
   },
 
   "denylist": [
