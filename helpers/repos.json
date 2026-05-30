@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T22:06:38Z",
+  "generated_at": "2026-05-30T22:26:32Z",
   "generator": "helpers/fetch.py",
   "schema_version": 3,
   "min_stars": 20000,
@@ -7,7 +7,7 @@
   "repos": [
     {
       "full_name": "codecrafters-io/build-your-own-x",
-      "stars": 508131,
+      "stars": 508146,
       "description": "Master programming by recreating your favorite technologies from scratch.",
       "topics": [
         "awesome-list",
@@ -21,7 +21,7 @@
     },
     {
       "full_name": "sindresorhus/awesome",
-      "stars": 471485,
+      "stars": 471488,
       "description": "😎 Awesome lists about all kinds of interesting topics",
       "topics": [
         "awesome",
@@ -34,7 +34,7 @@
     },
     {
       "full_name": "freeCodeCamp/freeCodeCamp",
-      "stars": 445655,
+      "stars": 445656,
       "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
       "topics": [
         "careers",
@@ -57,7 +57,7 @@
     },
     {
       "full_name": "public-apis/public-apis",
-      "stars": 437947,
+      "stars": 437948,
       "description": "A collective list of free APIs",
       "topics": [
         "api",
@@ -78,7 +78,7 @@
     },
     {
       "full_name": "EbookFoundation/free-programming-books",
-      "stars": 389225,
+      "stars": 389226,
       "description": ":books: Freely available programming books",
       "topics": [
         "books",
@@ -91,7 +91,7 @@
     },
     {
       "full_name": "openclaw/openclaw",
-      "stars": 375671,
+      "stars": 375675,
       "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞",
       "topics": [
         "ai",
@@ -106,7 +106,7 @@
     },
     {
       "full_name": "nilbuild/developer-roadmap",
-      "stars": 355747,
+      "stars": 355746,
       "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
       "topics": [
         "angular-roadmap",
@@ -153,7 +153,7 @@
     },
     {
       "full_name": "jwasham/coding-interview-university",
-      "stars": 347809,
+      "stars": 347810,
       "description": "A complete computer science study plan to become a software engineer.",
       "topics": [
         "algorithm",
@@ -187,7 +187,7 @@
     },
     {
       "full_name": "awesome-selfhosted/awesome-selfhosted",
-      "stars": 296249,
+      "stars": 296254,
       "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
       "topics": [
         "awesome",
@@ -226,7 +226,7 @@
     },
     {
       "full_name": "facebook/react",
-      "stars": 245332,
+      "stars": 245333,
       "description": "The library for web and native user interfaces.",
       "topics": [
         "declarative",
@@ -247,7 +247,7 @@
     },
     {
       "full_name": "trimstray/the-book-of-secret-knowledge",
-      "stars": 225674,
+      "stars": 225677,
       "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
       "topics": [
         "awesome",
@@ -274,7 +274,7 @@
     },
     {
       "full_name": "TheAlgorithms/Python",
-      "stars": 221492,
+      "stars": 221493,
       "description": "All Algorithms implemented in Python",
       "topics": [
         "algorithm",
@@ -296,7 +296,7 @@
     },
     {
       "full_name": "obra/superpowers",
-      "stars": 212923,
+      "stars": 212924,
       "description": "An agentic skills framework & software development methodology that works.",
       "topics": [],
       "archived": false
@@ -327,7 +327,7 @@
     },
     {
       "full_name": "affaan-m/ECC",
-      "stars": 199229,
+      "stars": 199236,
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "topics": [
         "ai-agents",
@@ -343,7 +343,7 @@
     },
     {
       "full_name": "trekhleb/javascript-algorithms",
-      "stars": 196006,
+      "stars": 196005,
       "description": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
       "topics": [
         "algorithm",
@@ -375,7 +375,7 @@
     },
     {
       "full_name": "ultraworkers/claw-code",
-      "stars": 192921,
+      "stars": 192920,
       "description": "The repo is finally unlocked. enjoy the party! The fastest repo in history to surpass 100K stars ⭐. Join Discord: https://discord.gg/5TUQKqFWd Built in Rust using oh-my-codex.",
       "topics": [],
       "archived": false
@@ -585,7 +585,7 @@
     },
     {
       "full_name": "avelino/awesome-go",
-      "stars": 174080,
+      "stars": 174081,
       "description": "A curated list of awesome Go frameworks, libraries and software",
       "topics": [
         "awesome",
@@ -599,7 +599,7 @@
     },
     {
       "full_name": "NousResearch/hermes-agent",
-      "stars": 173651,
+      "stars": 173663,
       "description": "The agent that grows with you",
       "topics": [
         "ai",
@@ -623,7 +623,7 @@
     },
     {
       "full_name": "ollama/ollama",
-      "stars": 172677,
+      "stars": 172678,
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "topics": [
         "deepseek",
@@ -646,7 +646,7 @@
     },
     {
       "full_name": "DigitalPlatDev/FreeDomain",
-      "stars": 172479,
+      "stars": 172481,
       "description": "DigitalPlat FreeDomain: Free Domain For Everyone",
       "topics": [
         "digitalplat",
@@ -661,14 +661,14 @@
     },
     {
       "full_name": "anomalyco/opencode",
-      "stars": 167475,
+      "stars": 167477,
       "description": "The open source coding agent.",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "yt-dlp/yt-dlp",
-      "stars": 166708,
+      "stars": 166712,
       "description": "A feature-rich command-line audio/video downloader",
       "topics": [
         "cli",
@@ -683,7 +683,7 @@
     },
     {
       "full_name": "AUTOMATIC1111/stable-diffusion-webui",
-      "stars": 163344,
+      "stars": 163343,
       "description": "Stable Diffusion web UI",
       "topics": [
         "ai",
@@ -733,14 +733,14 @@
     },
     {
       "full_name": "multica-ai/andrej-karpathy-skills",
-      "stars": 162505,
+      "stars": 162506,
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "huggingface/transformers",
-      "stars": 161079,
+      "stars": 161078,
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
       "topics": [
         "audio",
@@ -781,7 +781,7 @@
     },
     {
       "full_name": "521xueweihan/HelloGitHub",
-      "stars": 159388,
+      "stars": 159389,
       "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
       "topics": [
         "awesome",
@@ -814,7 +814,7 @@
     },
     {
       "full_name": "langflow-ai/langflow",
-      "stars": 148922,
+      "stars": 148921,
       "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
       "topics": [
         "agents",
@@ -850,7 +850,7 @@
     },
     {
       "full_name": "anthropics/skills",
-      "stars": 144071,
+      "stars": 144076,
       "description": "Public repository for Agent Skills",
       "topics": [
         "agent-skills"
@@ -887,7 +887,7 @@
     },
     {
       "full_name": "Genymobile/scrcpy",
-      "stars": 142715,
+      "stars": 142716,
       "description": "Display and control your Android device",
       "topics": [
         "android",
@@ -1001,7 +1001,7 @@
     },
     {
       "full_name": "langchain-ai/langchain",
-      "stars": 138055,
+      "stars": 138054,
       "description": "The agent engineering platform.",
       "topics": [
         "agents",
@@ -1041,7 +1041,7 @@
     },
     {
       "full_name": "microsoft/PowerToys",
-      "stars": 133641,
+      "stars": 133642,
       "description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
       "topics": [
         "advanced-paste",
@@ -1077,7 +1077,7 @@
     },
     {
       "full_name": "microsoft/markitdown",
-      "stars": 132165,
+      "stars": 132197,
       "description": "Python tool for converting files and office documents to Markdown.",
       "topics": [
         "autogen",
@@ -1092,14 +1092,14 @@
     },
     {
       "full_name": "anthropics/claude-code",
-      "stars": 128367,
+      "stars": 128371,
       "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "Chalarangelo/30-seconds-of-code",
-      "stars": 127958,
+      "stars": 127957,
       "description": "Coding articles to level up your development skills",
       "topics": [
         "astro",
@@ -1120,7 +1120,7 @@
     },
     {
       "full_name": "firecrawl/firecrawl",
-      "stars": 126487,
+      "stars": 126488,
       "description": "The API to search, scrape, and interact with the web at scale. 🔥",
       "topics": [
         "ai",
@@ -1182,7 +1182,7 @@
     },
     {
       "full_name": "excalidraw/excalidraw",
-      "stars": 124306,
+      "stars": 124307,
       "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
       "topics": [
         "canvas",
@@ -1350,7 +1350,7 @@
     },
     {
       "full_name": "Comfy-Org/ComfyUI",
-      "stars": 115028,
+      "stars": 115030,
       "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
       "topics": [
         "ai",
@@ -1364,7 +1364,7 @@
     },
     {
       "full_name": "ggml-org/llama.cpp",
-      "stars": 113847,
+      "stars": 113848,
       "description": "LLM inference in C/C++",
       "topics": [
         "ggml"
@@ -1373,7 +1373,7 @@
     },
     {
       "full_name": "Hack-with-Github/Awesome-Hacking",
-      "stars": 113432,
+      "stars": 113433,
       "description": "A collection of various awesome lists for hackers, pentesters and security researchers",
       "topics": [
         "android",
@@ -1390,7 +1390,7 @@
     },
     {
       "full_name": "rust-lang/rust",
-      "stars": 113220,
+      "stars": 113221,
       "description": "Empowering everyone to build reliable and efficient software.",
       "topics": [
         "compiler",
@@ -1435,14 +1435,14 @@
     },
     {
       "full_name": "mattpocock/skills",
-      "stars": 112272,
+      "stars": 112281,
       "description": "Skills for Real Engineers. Straight from my .claude directory.",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "Shubhamsaboo/awesome-llm-apps",
-      "stars": 112265,
+      "stars": 112264,
       "description": "100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
       "topics": [
         "agents",
@@ -1491,7 +1491,7 @@
     },
     {
       "full_name": "axios/axios",
-      "stars": 109085,
+      "stars": 109086,
       "description": "Promise based HTTP client for the browser and node.js",
       "topics": [
         "hacktoberfest",
@@ -1557,7 +1557,7 @@
     },
     {
       "full_name": "github/spec-kit",
-      "stars": 107179,
+      "stars": 107181,
       "description": "💫 Toolkit to help you get started with Spec-Driven Development",
       "topics": [
         "ai",
@@ -1602,7 +1602,7 @@
     },
     {
       "full_name": "papers-we-love/papers-we-love",
-      "stars": 106649,
+      "stars": 106650,
       "description": "Papers from the computer science community to read and discuss.",
       "topics": [
         "awesome",
@@ -1617,7 +1617,7 @@
     },
     {
       "full_name": "msitarzewski/agency-agents",
-      "stars": 106169,
+      "stars": 106170,
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
       "topics": [],
       "archived": false
@@ -1650,7 +1650,7 @@
     },
     {
       "full_name": "jaywcjlove/awesome-mac",
-      "stars": 104923,
+      "stars": 104924,
       "description": " This project is dedicated to collecting high-quality macOS software and organizing them systematically by different categories for easy search and use.",
       "topics": [
         "app",
@@ -1677,14 +1677,14 @@
     },
     {
       "full_name": "garrytan/gstack",
-      "stars": 104785,
+      "stars": 104790,
       "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "google-gemini/gemini-cli",
-      "stars": 104751,
+      "stars": 104752,
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
       "topics": [
         "ai",
@@ -1717,7 +1717,7 @@
     },
     {
       "full_name": "microsoft/terminal",
-      "stars": 103361,
+      "stars": 103362,
       "description": "The new Windows Terminal and the original Windows console host, all in the same place!",
       "topics": [
         "cmd",
@@ -1736,7 +1736,7 @@
     },
     {
       "full_name": "supabase/supabase",
-      "stars": 103240,
+      "stars": 103241,
       "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
       "topics": [
         "ai",
@@ -1763,7 +1763,7 @@
     },
     {
       "full_name": "immich-app/immich",
-      "stars": 102285,
+      "stars": 102286,
       "description": "High performance self-hosted photo and video management solution.",
       "topics": [
         "backup-tool",
@@ -1794,7 +1794,7 @@
     },
     {
       "full_name": "Anduin2017/HowToCook",
-      "stars": 100385,
+      "stars": 100386,
       "description": "程序员在家做饭方法指南。Programmer's guide about how to cook at home (Simplified Chinese only).",
       "topics": [
         "chinese",
@@ -1932,7 +1932,7 @@
     },
     {
       "full_name": "rasbt/LLMs-from-scratch",
-      "stars": 96347,
+      "stars": 96346,
       "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
       "topics": [
         "ai",
@@ -1974,7 +1974,7 @@
     },
     {
       "full_name": "microsoft/Web-Dev-For-Beginners",
-      "stars": 95833,
+      "stars": 95834,
       "description": "24 Lessons, 12 Weeks, Get Started as a Web Developer",
       "topics": [
         "css",
@@ -2022,7 +2022,7 @@
     },
     {
       "full_name": "ryanmcdermott/clean-code-javascript",
-      "stars": 94396,
+      "stars": 94395,
       "description": "Clean Code concepts adapted for JavaScript",
       "topics": [
         "best-practices",
@@ -2137,7 +2137,7 @@
     },
     {
       "full_name": "ruanyf/weekly",
-      "stars": 92580,
+      "stars": 92582,
       "description": "科技爱好者周刊，每周五发布",
       "topics": [],
       "archived": false
@@ -2206,7 +2206,7 @@
     },
     {
       "full_name": "microsoft/playwright",
-      "stars": 89884,
+      "stars": 89886,
       "description": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API.",
       "topics": [
         "automation",
@@ -2288,7 +2288,7 @@
     },
     {
       "full_name": "punkpeye/awesome-mcp-servers",
-      "stars": 88202,
+      "stars": 88203,
       "description": "A collection of MCP servers.",
       "topics": [
         "ai",
@@ -2355,7 +2355,7 @@
     },
     {
       "full_name": "louislam/uptime-kuma",
-      "stars": 87442,
+      "stars": 87443,
       "description": "A fancy self-hosted monitoring tool",
       "topics": [
         "docker",
@@ -2403,7 +2403,7 @@
     },
     {
       "full_name": "openai/codex",
-      "stars": 87119,
+      "stars": 87120,
       "description": "Lightweight coding agent that runs in your terminal",
       "topics": [],
       "archived": false
@@ -2461,7 +2461,7 @@
     },
     {
       "full_name": "VoltAgent/awesome-design-md",
-      "stars": 85879,
+      "stars": 85882,
       "description": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
       "topics": [
         "awesome-list",
@@ -2479,7 +2479,7 @@
     },
     {
       "full_name": "astral-sh/uv",
-      "stars": 85757,
+      "stars": 85758,
       "description": "An extremely fast Python package and project manager, written in Rust.",
       "topics": [
         "packaging",
@@ -2491,7 +2491,7 @@
     },
     {
       "full_name": "farion1231/cc-switch",
-      "stars": 85535,
+      "stars": 85536,
       "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io",
       "topics": [
         "ai-tools",
@@ -2519,7 +2519,7 @@
     },
     {
       "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 85125,
+      "stars": 85129,
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "topics": [
         "ai-skills",
@@ -2546,7 +2546,7 @@
     },
     {
       "full_name": "syncthing/syncthing",
-      "stars": 84770,
+      "stars": 84771,
       "description": "Open Source Continuous File Synchronization",
       "topics": [
         "go",
@@ -2569,7 +2569,7 @@
     },
     {
       "full_name": "sherlock-project/sherlock",
-      "stars": 84251,
+      "stars": 84253,
       "description": "Hunt down social media accounts by username across social networks",
       "topics": [
         "cli",
@@ -2593,7 +2593,7 @@
     },
     {
       "full_name": "karpathy/autoresearch",
-      "stars": 84190,
+      "stars": 84191,
       "description": "AI agents running research on single-GPU nanochat training automatically",
       "topics": [],
       "archived": false
@@ -2661,7 +2661,7 @@
     },
     {
       "full_name": "DopplerHQ/awesome-interview-questions",
-      "stars": 82842,
+      "stars": 82843,
       "description": ":octocat: A curated awesome list of lists of interview questions. Feel free to contribute! :mortar_board:",
       "topics": [
         "android-interview-questions",
@@ -2817,7 +2817,7 @@
     },
     {
       "full_name": "TauricResearch/TradingAgents",
-      "stars": 80967,
+      "stars": 80971,
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "topics": [
         "agent",
@@ -2880,7 +2880,7 @@
     },
     {
       "full_name": "Stirling-Tools/Stirling-PDF",
-      "stars": 79855,
+      "stars": 79857,
       "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
       "topics": [
         "docker",
@@ -2914,7 +2914,7 @@
     },
     {
       "full_name": "thedotmack/claude-mem",
-      "stars": 79742,
+      "stars": 79744,
       "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "topics": [
         "ai",
@@ -3069,7 +3069,7 @@
     },
     {
       "full_name": "d2l-ai/d2l-zh",
-      "stars": 78089,
+      "stars": 78090,
       "description": "《动手学深度学习》：面向中文读者、能运行、可讨论。中英文版被70多个国家的500多所大学用于教学。",
       "topics": [
         "book",
@@ -3313,7 +3313,7 @@
     },
     {
       "full_name": "OpenHands/OpenHands",
-      "stars": 75421,
+      "stars": 75422,
       "description": "🙌 OpenHands: AI-Driven Development",
       "topics": [
         "agent",
@@ -3349,7 +3349,7 @@
     },
     {
       "full_name": "redis/redis",
-      "stars": 74610,
+      "stars": 74611,
       "description": "For developers, who are building real-time data-driven applications, Redis is the preferred, fastest, and most feature-rich cache, data structure server, and document and vector query engine.",
       "topics": [
         "cache",
@@ -3454,7 +3454,7 @@
     },
     {
       "full_name": "vuejs/awesome-vue",
-      "stars": 73579,
+      "stars": 73578,
       "description": "🎉 A curated list of awesome things related to Vue.js",
       "topics": [],
       "archived": false
@@ -3535,7 +3535,7 @@
     },
     {
       "full_name": "CompVis/stable-diffusion",
-      "stars": 73062,
+      "stars": 73060,
       "description": "A latent text-to-image diffusion model",
       "topics": [],
       "archived": false
@@ -3678,7 +3678,7 @@
     },
     {
       "full_name": "harry0703/MoneyPrinterTurbo",
-      "stars": 71852,
+      "stars": 71865,
       "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
       "topics": [
         "ai",
@@ -3781,7 +3781,7 @@
     },
     {
       "full_name": "AppFlowy-IO/AppFlowy",
-      "stars": 71487,
+      "stars": 71488,
       "description": "Bring projects, wikis, and teams together with AI. AppFlowy is the AI collaborative workspace where you achieve more without losing control of your data. The leading open source Notion alternative.",
       "topics": [
         "blog",
@@ -3883,7 +3883,7 @@
     },
     {
       "full_name": "nektos/act",
-      "stars": 70549,
+      "stars": 70550,
       "description": "Run your GitHub Actions locally 🚀",
       "topics": [
         "ci",
@@ -3966,7 +3966,7 @@
     },
     {
       "full_name": "toeverything/AFFiNE",
-      "stars": 68910,
+      "stars": 68911,
       "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
       "topics": [
         "app",
@@ -3992,7 +3992,7 @@
     },
     {
       "full_name": "ruvnet/RuView",
-      "stars": 68830,
+      "stars": 68837,
       "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
       "topics": [
         "awesome",
@@ -4062,7 +4062,7 @@
     },
     {
       "full_name": "paperclipai/paperclip",
-      "stars": 68361,
+      "stars": 68362,
       "description": "The open-source app everyone uses to manage agents at work",
       "topics": [],
       "archived": false
@@ -4116,7 +4116,7 @@
     },
     {
       "full_name": "unclecode/crawl4ai",
-      "stars": 67345,
+      "stars": 67346,
       "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
       "topics": [],
       "archived": false
@@ -4200,7 +4200,7 @@
     },
     {
       "full_name": "xtekky/gpt4free",
-      "stars": 66281,
+      "stars": 66280,
       "description": "The official gpt4free repository | various collection of powerful language models | opus 4.6 gpt 5.3 kimi 2.5 deepseek v3.2 gemini 3",
       "topics": [
         "chatbot",
@@ -4241,7 +4241,7 @@
     },
     {
       "full_name": "microsoft/ai-agents-for-beginners",
-      "stars": 65991,
+      "stars": 65992,
       "description": "12 Lessons to Get Started Building AI Agents",
       "topics": [
         "agentic-ai",
@@ -4536,7 +4536,7 @@
     },
     {
       "full_name": "openinterpreter/open-interpreter",
-      "stars": 63743,
+      "stars": 63742,
       "description": "A natural language interface for computers",
       "topics": [
         "chatgpt",
@@ -4550,7 +4550,7 @@
     },
     {
       "full_name": "shareAI-lab/learn-claude-code",
-      "stars": 63703,
+      "stars": 63704,
       "description": "Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1",
       "topics": [
         "agent",
@@ -4983,7 +4983,7 @@
     },
     {
       "full_name": "atom/atom",
-      "stars": 60794,
+      "stars": 60793,
       "description": ":atom: The hackable text editor",
       "topics": [
         "atom",
@@ -4998,7 +4998,7 @@
     },
     {
       "full_name": "topjohnwu/Magisk",
-      "stars": 60707,
+      "stars": 60706,
       "description": "The Magic Mask for Android",
       "topics": [],
       "archived": false
@@ -5080,7 +5080,7 @@
     },
     {
       "full_name": "code-yeongyu/oh-my-openagent",
-      "stars": 60317,
+      "stars": 60319,
       "description": "omo; the best agent harness - previously oh-my-opencode",
       "topics": [
         "ai",
@@ -5213,7 +5213,7 @@
     },
     {
       "full_name": "withastro/astro",
-      "stars": 59690,
+      "stars": 59692,
       "description": "The web framework for content-driven websites. ⭐️ Star to support our work!",
       "topics": [
         "astro",
@@ -5342,7 +5342,7 @@
     },
     {
       "full_name": "pocketbase/pocketbase",
-      "stars": 58748,
+      "stars": 58749,
       "description": "Open Source realtime backend in 1 file",
       "topics": [
         "authentication",
@@ -5475,7 +5475,7 @@
     },
     {
       "full_name": "starship/starship",
-      "stars": 57835,
+      "stars": 57836,
       "description": "☄🌌️ The minimal, blazing-fast, and infinitely customizable prompt for any shell!",
       "topics": [
         "bash",
@@ -5523,7 +5523,7 @@
     },
     {
       "full_name": "earendil-works/pi",
-      "stars": 57779,
+      "stars": 57783,
       "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
       "topics": [],
       "archived": false
@@ -5540,7 +5540,7 @@
     },
     {
       "full_name": "rclone/rclone",
-      "stars": 57484,
+      "stars": 57485,
       "description": "\"rsync for cloud storage\" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files",
       "topics": [
         "azure-blob",
@@ -5618,7 +5618,7 @@
     },
     {
       "full_name": "mem0ai/mem0",
-      "stars": 57157,
+      "stars": 57156,
       "description": "Universal memory layer for AI Agents",
       "topics": [
         "agents",
@@ -5639,21 +5639,8 @@
       "archived": false
     },
     {
-      "full_name": "tiimgreen/github-cheat-sheet",
-      "stars": 57132,
-      "description": "A list of cool features of Git and GitHub.",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "git",
-        "github",
-        "list"
-      ],
-      "archived": false
-    },
-    {
       "full_name": "2dust/v2rayNG",
-      "stars": 57131,
+      "stars": 57132,
       "description": "A V2Ray client for Android, support Xray core and v2fly core",
       "topics": [
         "android",
@@ -5672,8 +5659,21 @@
       "archived": false
     },
     {
+      "full_name": "tiimgreen/github-cheat-sheet",
+      "stars": 57132,
+      "description": "A list of cool features of Git and GitHub.",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "git",
+        "github",
+        "list"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "FuelLabs/fuel-core",
-      "stars": 57040,
+      "stars": 57039,
       "description": "Rust full node implementation of the Fuel v2 protocol.",
       "topics": [
         "blockchain",
@@ -5690,7 +5690,7 @@
     },
     {
       "full_name": "safishamsi/graphify",
-      "stars": 56706,
+      "stars": 56714,
       "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
       "topics": [
         "antigravity",
@@ -5731,7 +5731,7 @@
     },
     {
       "full_name": "ruvnet/ruflo",
-      "stars": 56648,
+      "stars": 56650,
       "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features enterprise-grade architecture, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
       "topics": [
         "agentic-ai",
@@ -5922,7 +5922,7 @@
     },
     {
       "full_name": "go-gitea/gitea",
-      "stars": 56024,
+      "stars": 56025,
       "description": "Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD",
       "topics": [
         "bitbucket",
@@ -5965,7 +5965,7 @@
     },
     {
       "full_name": "nexu-io/open-design",
-      "stars": 55901,
+      "stars": 55907,
       "description": "🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.",
       "topics": [
         "agent-skills",
@@ -5993,7 +5993,7 @@
     },
     {
       "full_name": "D4Vinci/Scrapling",
-      "stars": 55803,
+      "stars": 55805,
       "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!",
       "topics": [
         "ai",
@@ -6043,7 +6043,7 @@
     },
     {
       "full_name": "termux/termux-app",
-      "stars": 55720,
+      "stars": 55721,
       "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages.",
       "topics": [
         "android",
@@ -6056,14 +6056,14 @@
     },
     {
       "full_name": "ghostty-org/ghostty",
-      "stars": 55603,
+      "stars": 55605,
       "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "shanraisshan/claude-code-best-practice",
-      "stars": 55564,
+      "stars": 55567,
       "description": "from vibe coding to agentic engineering - practice makes claude perfect",
       "topics": [
         "agentic-ai",
@@ -6091,7 +6091,7 @@
     },
     {
       "full_name": "ChrisTitusTech/winutil",
-      "stars": 55303,
+      "stars": 55306,
       "description": "Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates",
       "topics": [],
       "archived": false
@@ -6200,7 +6200,7 @@
     },
     {
       "full_name": "karpathy/nanochat",
-      "stars": 54400,
+      "stars": 54402,
       "description": "The best ChatGPT that $100 can buy.",
       "topics": [],
       "archived": false
@@ -6246,7 +6246,7 @@
     },
     {
       "full_name": "firstcontributions/first-contributions",
-      "stars": 54253,
+      "stars": 54254,
       "description": "🚀✨ Help beginners to contribute to open source projects",
       "topics": [
         "beginner",
@@ -6371,7 +6371,7 @@
     },
     {
       "full_name": "typst/typst",
-      "stars": 53852,
+      "stars": 53853,
       "description": "A markup-based typesetting system that is powerful and easy to learn.",
       "topics": [
         "compiler",
@@ -6461,7 +6461,7 @@
     },
     {
       "full_name": "mozilla/pdf.js",
-      "stars": 53382,
+      "stars": 53381,
       "description": "PDF Reader in JavaScript",
       "topics": [],
       "archived": false
@@ -6687,7 +6687,7 @@
     },
     {
       "full_name": "Fission-AI/OpenSpec",
-      "stars": 51805,
+      "stars": 51808,
       "description": "Spec-driven development (SDD) for AI coding assistants.",
       "topics": [
         "ai",
@@ -6705,7 +6705,7 @@
     },
     {
       "full_name": "odoo/odoo",
-      "stars": 51748,
+      "stars": 51749,
       "description": "Odoo. Open Source Apps To Grow Your Business.",
       "topics": [
         "apps",
@@ -6775,7 +6775,7 @@
     },
     {
       "full_name": "google/guava",
-      "stars": 51481,
+      "stars": 51482,
       "description": "Google core libraries for Java",
       "topics": [
         "guava",
@@ -6890,7 +6890,7 @@
     },
     {
       "full_name": "justjavac/awesome-wechat-weapp",
-      "stars": 51038,
+      "stars": 51037,
       "description": "微信小程序开发资源汇总 :100:",
       "topics": [
         "demo",
@@ -6955,7 +6955,7 @@
     },
     {
       "full_name": "poteto/hiring-without-whiteboards",
-      "stars": 50806,
+      "stars": 50807,
       "description": "⭐️ Companies that don't have a broken hiring process",
       "topics": [
         "airtable",
@@ -7086,7 +7086,7 @@
     },
     {
       "full_name": "makeplane/plane",
-      "stars": 49950,
+      "stars": 49951,
       "description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
       "topics": [
         "boards",
@@ -7218,7 +7218,7 @@
     },
     {
       "full_name": "VoltAgent/awesome-openclaw-skills",
-      "stars": 49543,
+      "stars": 49544,
       "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
       "topics": [
         "agent-skills",
@@ -7331,7 +7331,7 @@
     },
     {
       "full_name": "serhii-londar/open-source-mac-os-apps",
-      "stars": 48816,
+      "stars": 48817,
       "description": "🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps",
       "topics": [
         "applications",
@@ -7357,7 +7357,7 @@
     },
     {
       "full_name": "skylot/jadx",
-      "stars": 48802,
+      "stars": 48801,
       "description": "Dex to Java decompiler",
       "topics": [
         "android",
@@ -7369,7 +7369,7 @@
     },
     {
       "full_name": "BerriAI/litellm",
-      "stars": 48776,
+      "stars": 48777,
       "description": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM]",
       "topics": [
         "ai-gateway",
@@ -7409,7 +7409,7 @@
     },
     {
       "full_name": "twentyhq/twenty",
-      "stars": 48697,
+      "stars": 48698,
       "description": "The open alternative to Salesforce, designed for AI.",
       "topics": [
         "crm",
@@ -7545,7 +7545,7 @@
     },
     {
       "full_name": "jakevdp/PythonDataScienceHandbook",
-      "stars": 48341,
+      "stars": 48342,
       "description": "Python Data Science Handbook: full text in Jupyter Notebooks",
       "topics": [
         "jupyter-notebook",
@@ -7559,7 +7559,7 @@
     },
     {
       "full_name": "bmad-code-org/BMAD-METHOD",
-      "stars": 48314,
+      "stars": 48316,
       "description": "Breakthrough Method for Agile Ai Driven Development",
       "topics": [],
       "archived": false
@@ -7578,7 +7578,7 @@
     },
     {
       "full_name": "Homebrew/brew",
-      "stars": 48240,
+      "stars": 48241,
       "description": "🍺 The missing package manager for macOS (or Linux)",
       "topics": [
         "brew",
@@ -7641,7 +7641,7 @@
     },
     {
       "full_name": "santifer/career-ops",
-      "stars": 47938,
+      "stars": 47940,
       "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
       "topics": [
         "ai-agent",
@@ -7715,7 +7715,7 @@
     },
     {
       "full_name": "astral-sh/ruff",
-      "stars": 47739,
+      "stars": 47740,
       "description": "An extremely fast Python linter and code formatter, written in Rust.",
       "topics": [
         "linter",
@@ -7903,7 +7903,7 @@
     },
     {
       "full_name": "addyosmani/agent-skills",
-      "stars": 47179,
+      "stars": 47183,
       "description": "Production-grade engineering skills for AI coding agents.",
       "topics": [
         "agent-skills",
@@ -8013,7 +8013,7 @@
     },
     {
       "full_name": "gedoor/legado",
-      "stars": 46904,
+      "stars": 46903,
       "description": "Legado 3.0 Book Reader with powerful controls & full functions❤️阅读3.0, 阅读是一款可以自定义来源阅读网络内容的工具，为广大网络文学爱好者提供一种方便、快捷舒适的试读体验。",
       "topics": [],
       "archived": false
@@ -8088,7 +8088,7 @@
     },
     {
       "full_name": "GitHubDaily/GitHubDaily",
-      "stars": 46643,
+      "stars": 46642,
       "description": "坚持分享 GitHub 上高质量、有趣实用的开源技术教程、开发者工具、编程网站、技术资讯。A list cool, interesting projects of GitHub.",
       "topics": [
         "ai",
@@ -8224,7 +8224,7 @@
     },
     {
       "full_name": "Asabeneh/30-Days-Of-JavaScript",
-      "stars": 46382,
+      "stars": 46381,
       "description": "30 days of JavaScript programming challenge is a step-by-step guide to learn JavaScript programming language in 30 days. This challenge may take more than 100 days, please just follow your own pace. These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw",
       "topics": [
         "30daysofjavascript",
@@ -8297,7 +8297,7 @@
     },
     {
       "full_name": "aaif-goose/goose",
-      "stars": 46076,
+      "stars": 46077,
       "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
       "topics": [
         "acp",
@@ -8376,7 +8376,7 @@
     },
     {
       "full_name": "Lum1104/Understand-Anything",
-      "stars": 45856,
+      "stars": 45866,
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
       "topics": [
         "antigravity-skills",
@@ -8515,6 +8515,17 @@
       "archived": false
     },
     {
+      "full_name": "docker/awesome-compose",
+      "stars": 45437,
+      "description": "Awesome Docker Compose samples",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "docker-compose"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "ColorlibHQ/AdminLTE",
       "stars": 45436,
       "description": "AdminLTE - Free admin dashboard template based on Bootstrap 5",
@@ -8561,17 +8572,6 @@
         "voice-cloning",
         "voice-conversion",
         "voice-synthesis"
-      ],
-      "archived": false
-    },
-    {
-      "full_name": "docker/awesome-compose",
-      "stars": 45436,
-      "description": "Awesome Docker Compose samples",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "docker-compose"
       ],
       "archived": false
     },
@@ -8681,7 +8681,7 @@
     },
     {
       "full_name": "isocpp/CppCoreGuidelines",
-      "stars": 45028,
+      "stars": 45029,
       "description": "The C++ Core Guidelines are a set of tried-and-true guidelines, rules, and best practices about coding in C++",
       "topics": [],
       "archived": false
@@ -8830,7 +8830,7 @@
     },
     {
       "full_name": "SimplifyJobs/Summer2026-Internships",
-      "stars": 44731,
+      "stars": 44732,
       "description": "Summer 2026 software engineering, data science, AI, quant, product management, and hardware internship postings. Updated daily by Simplify and Pitt CSC.",
       "topics": [
         "data-science",
@@ -8866,7 +8866,7 @@
     },
     {
       "full_name": "anthropics/claude-cookbooks",
-      "stars": 44634,
+      "stars": 44635,
       "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
       "topics": [],
       "archived": false
@@ -8911,7 +8911,7 @@
     },
     {
       "full_name": "hiroi-sora/Umi-OCR",
-      "stars": 44589,
+      "stars": 44590,
       "description": "OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PDF文档识别，排除水印/页眉页脚，扫描/生成二维码。内置多国语言库。",
       "topics": [
         "ocr",
@@ -8960,7 +8960,7 @@
     },
     {
       "full_name": "milvus-io/milvus",
-      "stars": 44547,
+      "stars": 44548,
       "description": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
       "topics": [
         "anns",
@@ -9242,7 +9242,7 @@
     },
     {
       "full_name": "karanpratapsingh/system-design",
-      "stars": 43771,
+      "stars": 43772,
       "description": "Learn how to design systems at scale and prepare for system design interviews",
       "topics": [
         "architecture",
@@ -9674,7 +9674,7 @@
     },
     {
       "full_name": "ray-project/ray",
-      "stars": 42713,
+      "stars": 42714,
       "description": "Ray is an AI compute engine. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.",
       "topics": [
         "data-science",
@@ -9808,7 +9808,7 @@
     },
     {
       "full_name": "mingrammer/diagrams",
-      "stars": 42307,
+      "stars": 42308,
       "description": ":art: Diagram as Code for prototyping cloud system architectures",
       "topics": [
         "architecture",
@@ -9933,7 +9933,7 @@
     },
     {
       "full_name": "DataTalksClub/data-engineering-zoomcamp",
-      "stars": 41774,
+      "stars": 41777,
       "description": "Data Engineering Zoomcamp is a free 9-week course on building production-ready data pipelines. The next cohort starts in January 2026. Join the course here 👇🏼",
       "topics": [
         "course",
@@ -9949,7 +9949,7 @@
     },
     {
       "full_name": "paperless-ngx/paperless-ngx",
-      "stars": 41747,
+      "stars": 41749,
       "description": "A community-supported supercharged document management system: scan, index and archive all your documents",
       "topics": [
         "angular",
@@ -10384,7 +10384,7 @@
     },
     {
       "full_name": "mifi/lossless-cut",
-      "stars": 40798,
+      "stars": 40797,
       "description": "The swiss army knife of lossless video/audio editing",
       "topics": [
         "codec",
@@ -10420,7 +10420,7 @@
     },
     {
       "full_name": "imputnet/cobalt",
-      "stars": 40617,
+      "stars": 40618,
       "description": "best way to save what you love",
       "topics": [
         "collaboration",
@@ -10460,7 +10460,7 @@
     },
     {
       "full_name": "moeru-ai/airi",
-      "stars": 40541,
+      "stars": 40542,
       "description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.",
       "topics": [
         "ai-companion",
@@ -10521,7 +10521,7 @@
     },
     {
       "full_name": "chakra-ui/chakra-ui",
-      "stars": 40418,
+      "stars": 40419,
       "description": "Chakra UI is a component system for building SaaS products with speed ⚡️",
       "topics": [
         "a11y",
@@ -11030,7 +11030,7 @@
     },
     {
       "full_name": "sickn33/antigravity-awesome-skills",
-      "stars": 39204,
+      "stars": 39206,
       "description": "Installable GitHub library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.",
       "topics": [
         "agent-skills",
@@ -11177,7 +11177,7 @@
     },
     {
       "full_name": "gkd-kit/gkd",
-      "stars": 39023,
+      "stars": 39022,
       "description": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
       "topics": [
         "accessibility",
@@ -11269,7 +11269,7 @@
     },
     {
       "full_name": "MHSanaei/3x-ui",
-      "stars": 38821,
+      "stars": 38822,
       "description": "Xray panel supporting multi-protocol multi-user expire day & traffic & IP limit (Vmess, Vless, Trojan, ShadowSocks, Wireguard, Hysteria, Tunnel, Mixed, HTTP, Tun)",
       "topics": [
         "ech",
@@ -11471,7 +11471,7 @@
     },
     {
       "full_name": "ashishps1/awesome-system-design-resources",
-      "stars": 38304,
+      "stars": 38305,
       "description": "Learn System Design concepts and prepare for interviews using free resources.",
       "topics": [
         "awesome",
@@ -11530,7 +11530,7 @@
     },
     {
       "full_name": "kilimchoi/engineering-blogs",
-      "stars": 38219,
+      "stars": 38220,
       "description": "A curated list of engineering blogs",
       "topics": [
         "engineering-blogs",
@@ -11672,7 +11672,7 @@
     },
     {
       "full_name": "amruthpillai/reactive-resume",
-      "stars": 38085,
+      "stars": 38087,
       "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
       "topics": [
         "better-auth",
@@ -11759,7 +11759,7 @@
     },
     {
       "full_name": "qbittorrent/qBittorrent",
-      "stars": 37865,
+      "stars": 37866,
       "description": "qBittorrent BitTorrent client",
       "topics": [
         "bittorrent",
@@ -11828,7 +11828,7 @@
     },
     {
       "full_name": "siddharthvaddem/openscreen",
-      "stars": 37816,
+      "stars": 37817,
       "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
       "topics": [
         "electron",
@@ -12008,7 +12008,7 @@
     },
     {
       "full_name": "LizardByte/Sunshine",
-      "stars": 37479,
+      "stars": 37480,
       "description": "Self-hosted game stream host for Moonlight.",
       "topics": [
         "cpp",
@@ -12150,7 +12150,7 @@
     },
     {
       "full_name": "aseprite/aseprite",
-      "stars": 37236,
+      "stars": 37237,
       "description": "Animated sprite editor & pixel art tool (Windows, macOS, Linux)",
       "topics": [
         "animated-sprites",
@@ -12342,7 +12342,7 @@
     },
     {
       "full_name": "mattermost/mattermost",
-      "stars": 36903,
+      "stars": 36904,
       "description": "Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..",
       "topics": [
         "collaboration",
@@ -12447,7 +12447,7 @@
     },
     {
       "full_name": "google/langextract",
-      "stars": 36738,
+      "stars": 36739,
       "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.",
       "topics": [
         "gemini",
@@ -12638,7 +12638,7 @@
     },
     {
       "full_name": "pbatard/rufus",
-      "stars": 36250,
+      "stars": 36251,
       "description": "The Reliable USB Formatting Utility",
       "topics": [
         "bios",
@@ -12751,7 +12751,7 @@
     },
     {
       "full_name": "wshobson/agents",
-      "stars": 36155,
+      "stars": 36156,
       "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI",
       "topics": [
         "agent-skills",
@@ -12842,7 +12842,7 @@
     },
     {
       "full_name": "hyprwm/Hyprland",
-      "stars": 36112,
+      "stars": 36113,
       "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
       "topics": [
         "compositor",
@@ -12946,7 +12946,7 @@
     },
     {
       "full_name": "directus/directus",
-      "stars": 36023,
+      "stars": 36024,
       "description": "The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",
       "topics": [
         "api",
@@ -12991,7 +12991,7 @@
     },
     {
       "full_name": "XingangPan/DragGAN",
-      "stars": 35845,
+      "stars": 35844,
       "description": "Official Code for DragGAN (SIGGRAPH 2023)",
       "topics": [
         "artificial-intelligence",
@@ -13003,7 +13003,7 @@
     },
     {
       "full_name": "mouredev/Hello-Python",
-      "stars": 35806,
+      "stars": 35808,
       "description": "Curso para aprender el lenguaje de programación Python desde cero y para principiantes. 100 clases, 44 horas en vídeo, código, proyectos y grupo de chat. Fundamentos, frontend, backend, testing, IA...",
       "topics": [
         "backend",
@@ -13150,7 +13150,7 @@
     },
     {
       "full_name": "zsh-users/zsh-autosuggestions",
-      "stars": 35612,
+      "stars": 35613,
       "description": "Fish-like autosuggestions for zsh",
       "topics": [
         "autocomplete",
@@ -13193,7 +13193,7 @@
     },
     {
       "full_name": "nextcloud/server",
-      "stars": 35586,
+      "stars": 35587,
       "description": "☁️ Nextcloud server, a safe home for all your data",
       "topics": [
         "cloud",
@@ -13307,7 +13307,7 @@
     },
     {
       "full_name": "patchy631/ai-engineering-hub",
-      "stars": 35409,
+      "stars": 35410,
       "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
       "topics": [
         "agents",
@@ -13321,7 +13321,7 @@
     },
     {
       "full_name": "google-ai-edge/mediapipe",
-      "stars": 35407,
+      "stars": 35406,
       "description": "Cross-platform, customizable ML solutions for live and streaming media.",
       "topics": [
         "android",
@@ -13472,7 +13472,7 @@
     },
     {
       "full_name": "frappe/erpnext",
-      "stars": 35128,
+      "stars": 35129,
       "description": "Free and Open Source Enterprise Resource Planning (ERP)",
       "topics": [
         "accounting",
@@ -13544,7 +13544,7 @@
     },
     {
       "full_name": "ItzCrazyKns/Vane",
-      "stars": 35013,
+      "stars": 35014,
       "description": "Vane is an AI-powered answering engine.",
       "topics": [
         "ai-agents",
@@ -13734,7 +13734,7 @@
     },
     {
       "full_name": "stanfordnlp/dspy",
-      "stars": 34734,
+      "stars": 34735,
       "description": "DSPy: The framework for programming—not prompting—language models",
       "topics": [],
       "archived": false
@@ -13875,7 +13875,7 @@
     },
     {
       "full_name": "AdguardTeam/AdGuardHome",
-      "stars": 34470,
+      "stars": 34471,
       "description": "Network-wide ads & trackers blocking DNS server",
       "topics": [
         "adblock",
@@ -13958,7 +13958,7 @@
     },
     {
       "full_name": "qishibo/AnotherRedisDesktopManager",
-      "stars": 34345,
+      "stars": 34344,
       "description": "🚀🚀🚀A faster, better and more stable Redis desktop manager [GUI client], compatible with Linux, Windows, Mac.",
       "topics": [
         "redis",
@@ -14020,7 +14020,7 @@
     },
     {
       "full_name": "colbymchenry/codegraph",
-      "stars": 34286,
+      "stars": 34291,
       "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
       "topics": [],
       "archived": false
@@ -14504,7 +14504,7 @@
     },
     {
       "full_name": "ocrmypdf/OCRmyPDF",
-      "stars": 33745,
+      "stars": 33746,
       "description": "OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched",
       "topics": [
         "image-processing",
@@ -14570,7 +14570,7 @@
     },
     {
       "full_name": "kepano/obsidian-skills",
-      "stars": 33688,
+      "stars": 33689,
       "description": "Agent skills for Obsidian. Teach your agent to use Markdown, Bases, JSON Canvas, and use the CLI.",
       "topics": [
         "claude",
@@ -14664,7 +14664,7 @@
     },
     {
       "full_name": "fish-shell/fish-shell",
-      "stars": 33560,
+      "stars": 33561,
       "description": "The user-friendly command line shell.",
       "topics": [
         "fish",
@@ -15298,7 +15298,7 @@
     },
     {
       "full_name": "nicolargo/glances",
-      "stars": 32681,
+      "stars": 32682,
       "description": "Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems.",
       "topics": [
         "monitoring",
@@ -15326,7 +15326,7 @@
     },
     {
       "full_name": "valinet/ExplorerPatcher",
-      "stars": 32673,
+      "stars": 32672,
       "description": "This project aims to enhance the working environment on Windows",
       "topics": [],
       "archived": false
@@ -15422,7 +15422,7 @@
     },
     {
       "full_name": "aristocratos/btop",
-      "stars": 32549,
+      "stars": 32550,
       "description": "A monitor of resources",
       "topics": [],
       "archived": false
@@ -15522,7 +15522,7 @@
     },
     {
       "full_name": "VectifyAI/PageIndex",
-      "stars": 32339,
+      "stars": 32340,
       "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
       "topics": [
         "agentic-ai",
@@ -15734,7 +15734,7 @@
     },
     {
       "full_name": "waydabber/BetterDisplay",
-      "stars": 31986,
+      "stars": 31987,
       "description": "Unlock your displays on your Mac! Flexible HiDPI scaling, XDR/HDR extra brightness, virtual screens, DDC control, extra dimming, PIP/streaming, EDID override and lots more!",
       "topics": [
         "4k",
@@ -15789,7 +15789,7 @@
     },
     {
       "full_name": "telegramdesktop/tdesktop",
-      "stars": 31920,
+      "stars": 31921,
       "description": "Telegram Desktop messaging app",
       "topics": [
         "messenger",
@@ -16020,7 +16020,7 @@
     },
     {
       "full_name": "ValveSoftware/Proton",
-      "stars": 31706,
+      "stars": 31707,
       "description": "Compatibility tool for Steam Play based on Wine and additional components",
       "topics": [
         "proton"
@@ -16126,7 +16126,7 @@
     },
     {
       "full_name": "pbakaus/impeccable",
-      "stars": 31610,
+      "stars": 31612,
       "description": "The design language that makes your AI harness better at design.",
       "topics": [],
       "archived": false
@@ -16272,7 +16272,7 @@
     },
     {
       "full_name": "ashishpatel26/500-AI-Agents-Projects",
-      "stars": 31390,
+      "stars": 31391,
       "description": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.",
       "topics": [
         "ai-agents",
@@ -16314,7 +16314,7 @@
     },
     {
       "full_name": "qarmin/czkawka",
-      "stars": 31265,
+      "stars": 31266,
       "description": "Multi functional app to find duplicates, empty folders, similar images etc.",
       "topics": [
         "cleaner",
@@ -16430,7 +16430,7 @@
     },
     {
       "full_name": "coreyhaines31/marketingskills",
-      "stars": 31212,
+      "stars": 31213,
       "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
       "topics": [
         "claude",
@@ -16562,14 +16562,14 @@
     },
     {
       "full_name": "Alishahryar1/free-claude-code",
-      "stars": 31077,
+      "stars": 31081,
       "description": "Use claude-code for free in the terminal, VSCode extension or discord like OpenClaw (voice supported)",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "soxoj/maigret",
-      "stars": 31072,
+      "stars": 31074,
       "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
       "topics": [
         "cli",
@@ -16766,7 +16766,7 @@
     },
     {
       "full_name": "iperov/DeepFaceLive",
-      "stars": 30886,
+      "stars": 30887,
       "description": "Real-time face swap for PC streaming or video calls",
       "topics": [
         "deepfake",
@@ -16781,7 +16781,7 @@
     },
     {
       "full_name": "searxng/searxng",
-      "stars": 30877,
+      "stars": 30876,
       "description": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.",
       "topics": [
         "bing",
@@ -16933,7 +16933,7 @@
     },
     {
       "full_name": "datawhalechina/self-llm",
-      "stars": 30683,
+      "stars": 30684,
       "description": "《开源大模型食用指南》针对中国宝宝量身打造的基于Linux环境快速微调（全参数/Lora）、部署国内外开源大模型（LLM）/多模态大模型（MLLM）教程",
       "topics": [
         "chatglm",
@@ -16985,7 +16985,7 @@
     },
     {
       "full_name": "iced-rs/iced",
-      "stars": 30609,
+      "stars": 30610,
       "description": "A cross-platform GUI library for Rust, inspired by Elm",
       "topics": [
         "elm",
@@ -17139,7 +17139,7 @@
     },
     {
       "full_name": "DayuanJiang/next-ai-draw-io",
-      "stars": 30472,
+      "stars": 30473,
       "description": "A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.",
       "topics": [
         "ai",
@@ -17276,7 +17276,7 @@
     },
     {
       "full_name": "cheeriojs/cheerio",
-      "stars": 30346,
+      "stars": 30347,
       "description": "The fast, flexible, and elegant library for parsing and manipulating HTML and XML.",
       "topics": [
         "cheerio",
@@ -17304,6 +17304,21 @@
       "archived": false
     },
     {
+      "full_name": "yuliskov/SmartTube",
+      "stars": 30295,
+      "description": "Browse media content with your own rules on Android TV",
+      "topics": [
+        "android",
+        "android-tv",
+        "android-tv-box",
+        "java",
+        "kotlin",
+        "retrofit2",
+        "rxjava-android"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "Binaryify/NeteaseCloudMusicApi",
       "stars": 30293,
       "description": "网易云音乐 Node.js API service",
@@ -17316,21 +17331,6 @@
         "nodejs"
       ],
       "archived": true
-    },
-    {
-      "full_name": "yuliskov/SmartTube",
-      "stars": 30293,
-      "description": "Browse media content with your own rules on Android TV",
-      "topics": [
-        "android",
-        "android-tv",
-        "android-tv-box",
-        "java",
-        "kotlin",
-        "retrofit2",
-        "rxjava-android"
-      ],
-      "archived": false
     },
     {
       "full_name": "chinabugotech/hutool",
@@ -17461,7 +17461,7 @@
     },
     {
       "full_name": "hiddify/hiddify-app",
-      "stars": 30168,
+      "stars": 30169,
       "description": "Multi-platform auto-proxy client, supporting Sing-box, X-ray, TUIC, Hysteria, Reality, Trojan, SSH etc. It’s an open-source, secure and ad-free.",
       "topics": [
         "clash",
@@ -17754,6 +17754,13 @@
       "archived": false
     },
     {
+      "full_name": "tinyhumansai/openhuman",
+      "stars": 29761,
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "topics": [],
+      "archived": false
+    },
+    {
       "full_name": "apolloconfig/apollo",
       "stars": 29759,
       "description": "Apollo is a reliable configuration management system suitable for microservice configuration management scenarios.",
@@ -17765,13 +17772,6 @@
         "spring-boot",
         "spring-cloud"
       ],
-      "archived": false
-    },
-    {
-      "full_name": "tinyhumansai/openhuman",
-      "stars": 29758,
-      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
-      "topics": [],
       "archived": false
     },
     {
@@ -17893,7 +17893,7 @@
     },
     {
       "full_name": "eugeneyan/applied-ml",
-      "stars": 29575,
+      "stars": 29576,
       "description": "📚 Papers & tech blogs by companies sharing their work on data science & machine learning in production.",
       "topics": [
         "applied-data-science",
@@ -18047,7 +18047,7 @@
     },
     {
       "full_name": "composer/composer",
-      "stars": 29437,
+      "stars": 29438,
       "description": "Dependency Manager for PHP",
       "topics": [
         "composer",
@@ -18112,7 +18112,7 @@
     },
     {
       "full_name": "the1812/Bilibili-Evolved",
-      "stars": 29387,
+      "stars": 29388,
       "description": "强大的哔哩哔哩增强脚本",
       "topics": [
         "bilibili",
@@ -18160,7 +18160,7 @@
     },
     {
       "full_name": "academic/awesome-datascience",
-      "stars": 29295,
+      "stars": 29296,
       "description": ":memo: An awesome Data Science repository to learn and apply for real world problems.",
       "topics": [
         "analytics",
@@ -18185,7 +18185,7 @@
     },
     {
       "full_name": "DrKLO/Telegram",
-      "stars": 29250,
+      "stars": 29251,
       "description": "Telegram for Android source",
       "topics": [
         "telegram"
@@ -18336,25 +18336,14 @@
     },
     {
       "full_name": "Genesis-Embodied-AI/genesis-world",
-      "stars": 29097,
+      "stars": 29098,
       "description": "Simulation platform for general-purpose robotics & embodied AI learning.",
       "topics": [],
       "archived": false
     },
     {
-      "full_name": "233boy/v2ray",
-      "stars": 29071,
-      "description": "最好用的 V2Ray 一键安装脚本 & 管理脚本",
-      "topics": [
-        "shell-script",
-        "v2ray",
-        "vmess"
-      ],
-      "archived": false
-    },
-    {
       "full_name": "Leonxlnx/taste-skill",
-      "stars": 29070,
+      "stars": 29076,
       "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
       "topics": [
         "agent",
@@ -18370,6 +18359,17 @@
         "skill",
         "skills",
         "vibecoding"
+      ],
+      "archived": false
+    },
+    {
+      "full_name": "233boy/v2ray",
+      "stars": 29071,
+      "description": "最好用的 V2Ray 一键安装脚本 & 管理脚本",
+      "topics": [
+        "shell-script",
+        "v2ray",
+        "vmess"
       ],
       "archived": false
     },
@@ -18446,7 +18446,7 @@
     },
     {
       "full_name": "projectdiscovery/nuclei",
-      "stars": 28959,
+      "stars": 28960,
       "description": "Nuclei is a fast, customizable vulnerability scanner powered by the global security community and built on a simple YAML-based DSL, enabling collaboration to tackle trending vulnerabilities on the internet. It helps you find vulnerabilities in your applications, APIs, networks, DNS, and cloud configurations.",
       "topics": [
         "attack-surface",
@@ -18623,7 +18623,7 @@
     },
     {
       "full_name": "anthropics/financial-services",
-      "stars": 28858,
+      "stars": 28862,
       "description": "",
       "topics": [],
       "archived": false
@@ -18766,7 +18766,7 @@
     },
     {
       "full_name": "anthropics/claude-plugins-official",
-      "stars": 28771,
+      "stars": 28775,
       "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
       "topics": [
         "claude-code",
@@ -18820,7 +18820,7 @@
     },
     {
       "full_name": "Flowseal/zapret-discord-youtube",
-      "stars": 28705,
+      "stars": 28707,
       "description": "",
       "topics": [],
       "archived": false
@@ -19391,7 +19391,7 @@
     },
     {
       "full_name": "langfuse/langfuse",
-      "stars": 28231,
+      "stars": 28232,
       "description": "🪢 Open source LLM engineering platform: LLM Observability, metrics, evals, prompt management, playground, datasets. Integrates with OpenTelemetry, Langchain, OpenAI SDK, LiteLLM, and more. 🍊YC W23",
       "topics": [
         "analytics",
@@ -19649,7 +19649,7 @@
     },
     {
       "full_name": "Gitlawb/openclaude",
-      "stars": 28086,
+      "stars": 28085,
       "description": "runs anywhere. uses anything",
       "topics": [
         "ai",
@@ -19863,7 +19863,7 @@
     },
     {
       "full_name": "cloudreve/cloudreve",
-      "stars": 27939,
+      "stars": 27940,
       "description": "🌩 Self-hosted file management and sharing system, supports multiple storage providers",
       "topics": [
         "cloud",
@@ -20003,7 +20003,7 @@
     },
     {
       "full_name": "YMFE/yapi",
-      "stars": 27722,
+      "stars": 27721,
       "description": "YApi 是一个可本地部署的、打通前后端及QA的、可视化的接口管理平台",
       "topics": [
         "api",
@@ -20015,7 +20015,7 @@
     },
     {
       "full_name": "Anuken/Mindustry",
-      "stars": 27717,
+      "stars": 27718,
       "description": "The automation tower defense RTS",
       "topics": [
         "android",
@@ -20107,6 +20107,13 @@
       "archived": false
     },
     {
+      "full_name": "shiyu-coder/Kronos",
+      "stars": 27604,
+      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "topics": [],
+      "archived": false
+    },
+    {
       "full_name": "posquit0/Awesome-CV",
       "stars": 27603,
       "description": ":page_facing_up: Awesome CV is LaTeX template for your outstanding job application",
@@ -20122,13 +20129,6 @@
         "sharelatex",
         "tex"
       ],
-      "archived": false
-    },
-    {
-      "full_name": "shiyu-coder/Kronos",
-      "stars": 27603,
-      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
-      "topics": [],
       "archived": false
     },
     {
@@ -20283,30 +20283,8 @@
       "archived": false
     },
     {
-      "full_name": "Asabeneh/30-Days-Of-React",
-      "stars": 27398,
-      "description": "30 Days of React challenge is a step by step guide to learn React in 30 days. These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw",
-      "topics": [
-        "30dayofjavascript",
-        "challenge",
-        "css",
-        "html",
-        "html5",
-        "javascript",
-        "js",
-        "programming",
-        "react",
-        "react-router-dom",
-        "reactjs",
-        "redux",
-        "webdevelopment",
-        "website"
-      ],
-      "archived": false
-    },
-    {
       "full_name": "gitleaks/gitleaks",
-      "stars": 27397,
+      "stars": 27399,
       "description": "Find secrets with Gitleaks 🔑",
       "topics": [
         "ai-powered",
@@ -20329,6 +20307,28 @@
         "secret",
         "security",
         "security-tools"
+      ],
+      "archived": false
+    },
+    {
+      "full_name": "Asabeneh/30-Days-Of-React",
+      "stars": 27398,
+      "description": "30 Days of React challenge is a step by step guide to learn React in 30 days. These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw",
+      "topics": [
+        "30dayofjavascript",
+        "challenge",
+        "css",
+        "html",
+        "html5",
+        "javascript",
+        "js",
+        "programming",
+        "react",
+        "react-router-dom",
+        "reactjs",
+        "redux",
+        "webdevelopment",
+        "website"
       ],
       "archived": false
     },
@@ -20419,7 +20419,7 @@
     },
     {
       "full_name": "Crosstalk-Solutions/project-nomad",
-      "stars": 27317,
+      "stars": 27321,
       "description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
       "topics": [],
       "archived": false
@@ -20446,7 +20446,7 @@
     },
     {
       "full_name": "invoke-ai/InvokeAI",
-      "stars": 27289,
+      "stars": 27290,
       "description": "Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies. The solution offers an industry leading WebUI, and serves as the foundation for multiple commercial products.",
       "topics": [
         "ai-art",
@@ -20486,15 +20486,8 @@
       "archived": false
     },
     {
-      "full_name": "codemirror/codemirror5",
-      "stars": 27245,
-      "description": "In-browser code editor (version 5, legacy)",
-      "topics": [],
-      "archived": true
-    },
-    {
       "full_name": "iOfficeAI/AionUi",
-      "stars": 27245,
+      "stars": 27246,
       "description": "Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI | Customize your assistants | Star if you like it!",
       "topics": [
         "acp",
@@ -20519,6 +20512,13 @@
         "webui"
       ],
       "archived": false
+    },
+    {
+      "full_name": "codemirror/codemirror5",
+      "stars": 27245,
+      "description": "In-browser code editor (version 5, legacy)",
+      "topics": [],
+      "archived": true
     },
     {
       "full_name": "fingerprintjs/fingerprintjs",
@@ -20618,7 +20618,7 @@
     },
     {
       "full_name": "sindresorhus/awesome-electron",
-      "stars": 27163,
+      "stars": 27162,
       "description": "Useful resources for creating apps with Electron [SUBMISSIONS ARE TEMPORARILY PAUSED BECAUSE I'M TIRED OF REVIEWING LOW-QUALITY STUFF]",
       "topics": [
         "awesome",
@@ -20897,7 +20897,7 @@
     },
     {
       "full_name": "NickeManarin/ScreenToGif",
-      "stars": 27018,
+      "stars": 27019,
       "description": "🎬 ScreenToGif allows you to record a selected area of your screen, edit and save it as a gif or video.",
       "topics": [
         "editor",
@@ -20949,7 +20949,7 @@
     },
     {
       "full_name": "kestra-io/kestra",
-      "stars": 26931,
+      "stars": 26932,
       "description": "Event Driven Orchestration & Scheduling Platform for Mission Critical Applications",
       "topics": [
         "automation",
@@ -21139,7 +21139,7 @@
     },
     {
       "full_name": "libuv/libuv",
-      "stars": 26870,
+      "stars": 26871,
       "description": "Cross-platform asynchronous I/O",
       "topics": [
         "asynchronous",
@@ -21187,7 +21187,7 @@
     },
     {
       "full_name": "mvanhorn/last30days-skill",
-      "stars": 26837,
+      "stars": 26838,
       "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
       "topics": [
         "ai-prompts",
@@ -21258,7 +21258,7 @@
     },
     {
       "full_name": "getzep/graphiti",
-      "stars": 26762,
+      "stars": 26761,
       "description": "Build Real-Time Knowledge Graphs for AI Agents",
       "topics": [
         "agents",
@@ -21372,7 +21372,7 @@
     },
     {
       "full_name": "Loyalsoldier/clash-rules",
-      "stars": 26747,
+      "stars": 26746,
       "description": "🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)，兼容 ClashX Pro、Clash for Windows 等基于 Clash Premium 内核的客户端。",
       "topics": [
         "adblock",
@@ -21410,6 +21410,18 @@
       "archived": false
     },
     {
+      "full_name": "actualbudget/actual",
+      "stars": 26721,
+      "description": "A local-first personal finance app",
+      "topics": [
+        "budgeting",
+        "finance",
+        "money",
+        "personal-finance"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "discordjs/discord.js",
       "stars": 26721,
       "description": "A powerful JavaScript library for interacting with the Discord API",
@@ -21423,18 +21435,6 @@
         "hacktoberfest",
         "nodejs",
         "voice-support"
-      ],
-      "archived": false
-    },
-    {
-      "full_name": "actualbudget/actual",
-      "stars": 26720,
-      "description": "A local-first personal finance app",
-      "topics": [
-        "budgeting",
-        "finance",
-        "money",
-        "personal-finance"
       ],
       "archived": false
     },
@@ -21464,7 +21464,7 @@
     },
     {
       "full_name": "badges/shields",
-      "stars": 26702,
+      "stars": 26703,
       "description": "Concise, consistent, and legible badges in SVG and raster format",
       "topics": [
         "badge",
@@ -21514,7 +21514,7 @@
     },
     {
       "full_name": "virattt/dexter",
-      "stars": 26690,
+      "stars": 26691,
       "description": "An autonomous agent for deep financial research",
       "topics": [],
       "archived": false
@@ -21607,7 +21607,7 @@
     },
     {
       "full_name": "HandsOnLLM/Hands-On-Large-Language-Models",
-      "stars": 26632,
+      "stars": 26633,
       "description": "Official code repo for the O'Reilly Book - \"Hands-On Large Language Models\"",
       "topics": [
         "artificial-intelligence",
@@ -21684,7 +21684,7 @@
     },
     {
       "full_name": "jivoi/awesome-osint",
-      "stars": 26544,
+      "stars": 26545,
       "description": ":scream: A curated list of amazingly awesome OSINT",
       "topics": [
         "awesome-list",
@@ -21702,7 +21702,7 @@
     },
     {
       "full_name": "JunkFood02/Seal",
-      "stars": 26535,
+      "stars": 26536,
       "description": "🦭 Video/Audio Downloader for Android, based on yt-dlp",
       "topics": [
         "android",
@@ -21860,7 +21860,7 @@
     },
     {
       "full_name": "Leey21/awesome-ai-research-writing",
-      "stars": 26375,
+      "stars": 26376,
       "description": "Elevate your AI research writing, no more tedious polishing ✨",
       "topics": [],
       "archived": false
@@ -22243,7 +22243,7 @@
     },
     {
       "full_name": "GraphiteEditor/Graphite",
-      "stars": 26071,
+      "stars": 26070,
       "description": "Community-built comprehensive 2D content creation appplication for graphic design, digital art, and interactive real-time motion graphics powered by a node-based procedural graphics engine",
       "topics": [
         "2d-graphics",
@@ -22403,7 +22403,7 @@
     },
     {
       "full_name": "stretchr/testify",
-      "stars": 25996,
+      "stars": 25995,
       "description": "A toolkit with common assertions and mocks that plays nicely with the standard library",
       "topics": [
         "assertions",
@@ -22562,6 +22562,23 @@
       "archived": false
     },
     {
+      "full_name": "agentscope-ai/agentscope",
+      "stars": 25874,
+      "description": "Build and run agents you can see, understand and trust.",
+      "topics": [
+        "agent",
+        "chatbot",
+        "large-language-models",
+        "llm",
+        "llm-agent",
+        "mcp",
+        "multi-agent",
+        "multi-modal",
+        "react-agent"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "GrapesJS/grapesjs",
       "stars": 25874,
       "description": "Free and Open source Web Builder Framework. Next generation tool for building templates without coding",
@@ -22578,23 +22595,6 @@
         "web-builder",
         "web-builder-framework",
         "website-builder"
-      ],
-      "archived": false
-    },
-    {
-      "full_name": "agentscope-ai/agentscope",
-      "stars": 25873,
-      "description": "Build and run agents you can see, understand and trust.",
-      "topics": [
-        "agent",
-        "chatbot",
-        "large-language-models",
-        "llm",
-        "llm-agent",
-        "mcp",
-        "multi-agent",
-        "multi-modal",
-        "react-agent"
       ],
       "archived": false
     },
@@ -22742,7 +22742,7 @@
     },
     {
       "full_name": "yamadashy/repomix",
-      "stars": 25767,
+      "stars": 25768,
       "description": "📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity, Gemini, Gemma, Llama, Grok, and more.",
       "topics": [
         "ai",
@@ -23060,6 +23060,21 @@
       "archived": false
     },
     {
+      "full_name": "karakeep-app/karakeep",
+      "stars": 25634,
+      "description": "A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search",
+      "topics": [
+        "bookmark-manager",
+        "bookmarks",
+        "bookmarks-manager",
+        "nextjs",
+        "react-native",
+        "read-it-later",
+        "self-hosted"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "netbirdio/netbird",
       "stars": 25634,
       "description": "Connect your devices into a secure WireGuard®-based overlay network with SSO, MFA and granular access controls.",
@@ -23074,21 +23089,6 @@
         "wireguard-vpn",
         "wiretrustee",
         "zero-trust-network-access"
-      ],
-      "archived": false
-    },
-    {
-      "full_name": "karakeep-app/karakeep",
-      "stars": 25633,
-      "description": "A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search",
-      "topics": [
-        "bookmark-manager",
-        "bookmarks",
-        "bookmarks-manager",
-        "nextjs",
-        "react-native",
-        "read-it-later",
-        "self-hosted"
       ],
       "archived": false
     },
@@ -23474,7 +23474,7 @@
     },
     {
       "full_name": "zai-org/Open-AutoGLM",
-      "stars": 25384,
+      "stars": 25385,
       "description": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
       "topics": [
         "agent",
@@ -23610,7 +23610,7 @@
     },
     {
       "full_name": "goldfire/howler.js",
-      "stars": 25297,
+      "stars": 25296,
       "description": "Javascript audio library for the modern web.",
       "topics": [
         "audio",
@@ -23708,7 +23708,7 @@
     },
     {
       "full_name": "lucidrains/vit-pytorch",
-      "stars": 25243,
+      "stars": 25244,
       "description": "Implementation of Vision Transformer, a simple way to achieve SOTA in vision classification with only a single transformer encoder, in Pytorch",
       "topics": [
         "artificial-intelligence",
@@ -23850,7 +23850,7 @@
     },
     {
       "full_name": "rohitg00/ai-engineering-from-scratch",
-      "stars": 25120,
+      "stars": 25126,
       "description": "Learn it. Build it. Ship it for others.",
       "topics": [
         "agents",
@@ -23955,7 +23955,7 @@
     },
     {
       "full_name": "tsenart/vegeta",
-      "stars": 25053,
+      "stars": 25054,
       "description": "HTTP load testing tool and library. It's over 9000!",
       "topics": [
         "benchmarking",
@@ -24266,7 +24266,7 @@
     },
     {
       "full_name": "resemble-ai/chatterbox",
-      "stars": 24900,
+      "stars": 24901,
       "description": "SoTA open-source TTS",
       "topics": [],
       "archived": false
@@ -24636,7 +24636,7 @@
     },
     {
       "full_name": "Fincept-Corporation/FinceptTerminal",
-      "stars": 24664,
+      "stars": 24665,
       "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
       "topics": [
         "ai-agents",
@@ -24660,20 +24660,6 @@
       "archived": false
     },
     {
-      "full_name": "iBotPeaches/Apktool",
-      "stars": 24656,
-      "description": "A tool for reverse engineering Android apk files",
-      "topics": [
-        "9patch",
-        "android",
-        "apk",
-        "apktool",
-        "arsc",
-        "reverse-engineering"
-      ],
-      "archived": false
-    },
-    {
       "full_name": "actix/actix-web",
       "stars": 24655,
       "description": "Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust.",
@@ -24685,6 +24671,20 @@
         "web",
         "web-development",
         "websockets"
+      ],
+      "archived": false
+    },
+    {
+      "full_name": "iBotPeaches/Apktool",
+      "stars": 24655,
+      "description": "A tool for reverse engineering Android apk files",
+      "topics": [
+        "9patch",
+        "android",
+        "apk",
+        "apktool",
+        "arsc",
+        "reverse-engineering"
       ],
       "archived": false
     },
@@ -24872,7 +24872,7 @@
     },
     {
       "full_name": "mozilla-ai/llamafile",
-      "stars": 24550,
+      "stars": 24551,
       "description": "Distribute and run LLMs with a single file.",
       "topics": [
         "cross-platform",
@@ -25260,7 +25260,7 @@
     },
     {
       "full_name": "ashishps1/awesome-low-level-design",
-      "stars": 24275,
+      "stars": 24276,
       "description": "Learn Low Level Design (LLD) and prepare for interviews using free resources.",
       "topics": [
         "awesome",
@@ -25424,14 +25424,14 @@
     },
     {
       "full_name": "RooCodeInc/Roo-Code",
-      "stars": 24170,
+      "stars": 24171,
       "description": "Roo Code gives you a whole dev team of AI agents in your code editor.",
       "topics": [],
       "archived": true
     },
     {
       "full_name": "Devolutions/UniGetUI",
-      "stars": 24146,
+      "stars": 24147,
       "description": "UniGetUI: The Graphical Interface for your package managers. Could be terribly described as a package manager manager to manage your package managers",
       "topics": [
         "chocolatey",
@@ -25468,7 +25468,7 @@
     },
     {
       "full_name": "jarrodwatts/claude-hud",
-      "stars": 24117,
+      "stars": 24119,
       "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
       "topics": [
         "anthropic",
@@ -25523,7 +25523,7 @@
     },
     {
       "full_name": "a2aproject/A2A",
-      "stars": 24066,
+      "stars": 24067,
       "description": "Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications.",
       "topics": [
         "a2a",
@@ -25553,7 +25553,7 @@
     },
     {
       "full_name": "Dao-AILab/flash-attention",
-      "stars": 23990,
+      "stars": 23991,
       "description": "Fast and memory-efficient exact attention",
       "topics": [],
       "archived": false
@@ -25939,7 +25939,7 @@
     },
     {
       "full_name": "VoltAgent/awesome-agent-skills",
-      "stars": 23642,
+      "stars": 23643,
       "description": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
       "topics": [
         "agent-skills",
@@ -26080,7 +26080,7 @@
     },
     {
       "full_name": "lukasmasuch/best-of-ml-python",
-      "stars": 23586,
+      "stars": 23585,
       "description": "🏆 A ranked list of awesome machine learning Python libraries. Updated weekly.",
       "topics": [
         "automl",
@@ -26249,15 +26249,8 @@
       "archived": false
     },
     {
-      "full_name": "livewire/livewire",
-      "stars": 23530,
-      "description": "A full-stack framework for Laravel that takes the pain out of building dynamic UIs.",
-      "topics": [],
-      "archived": false
-    },
-    {
       "full_name": "fmtlib/fmt",
-      "stars": 23529,
+      "stars": 23530,
       "description": "A modern formatting library",
       "topics": [
         "c-plus-plus",
@@ -26273,6 +26266,13 @@
         "ranges",
         "unicode"
       ],
+      "archived": false
+    },
+    {
+      "full_name": "livewire/livewire",
+      "stars": 23530,
+      "description": "A full-stack framework for Laravel that takes the pain out of building dynamic UIs.",
+      "topics": [],
       "archived": false
     },
     {
@@ -26488,7 +26488,7 @@
     },
     {
       "full_name": "louislam/dockge",
-      "stars": 23348,
+      "stars": 23349,
       "description": "A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager",
       "topics": [
         "docker",
@@ -26555,7 +26555,7 @@
     },
     {
       "full_name": "Tencent/ncnn",
-      "stars": 23310,
+      "stars": 23311,
       "description": "ncnn is a high-performance neural network inference framework optimized for the mobile platform",
       "topics": [
         "android",
@@ -26686,7 +26686,7 @@
     },
     {
       "full_name": "hagezi/dns-blocklists",
-      "stars": 23266,
+      "stars": 23267,
       "description": "DNS-Blocklists: For a better internet - keep the internet clean!",
       "topics": [
         "adblock",
@@ -26845,7 +26845,7 @@
     },
     {
       "full_name": "deepseek-ai/DeepSeek-OCR",
-      "stars": 23204,
+      "stars": 23203,
       "description": "Contexts Optical Compression",
       "topics": [],
       "archived": false
@@ -27054,7 +27054,7 @@
     },
     {
       "full_name": "copy/v86",
-      "stars": 23078,
+      "stars": 23079,
       "description": "x86 PC emulator and x86-to-wasm JIT, running in the browser",
       "topics": [
         "emulator",
@@ -27296,7 +27296,7 @@
     },
     {
       "full_name": "openjdk/jdk",
-      "stars": 22932,
+      "stars": 22931,
       "description": "JDK main-line development https://openjdk.org/projects/jdk",
       "topics": [
         "java",
@@ -27361,19 +27361,8 @@
       "archived": false
     },
     {
-      "full_name": "PicoTrex/Awesome-Nano-Banana-images",
-      "stars": 22903,
-      "description": "A curated collection of fun and creative examples generated with Nano Banana & Nano Banana Pro🍌, Gemini-2.5-flash-image based model. We also release Nano-consistent-150K openly to support the community's development of image generation and unified models(click to website to see our blog)",
-      "topics": [
-        "awesome",
-        "gemini-2-5-flash-image",
-        "nano-banana"
-      ],
-      "archived": false
-    },
-    {
       "full_name": "supermemoryai/supermemory",
-      "stars": 22901,
+      "stars": 22906,
       "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
       "topics": [
         "agent-memory",
@@ -27388,6 +27377,17 @@
         "tailwindcss",
         "typescript",
         "vite"
+      ],
+      "archived": false
+    },
+    {
+      "full_name": "PicoTrex/Awesome-Nano-Banana-images",
+      "stars": 22903,
+      "description": "A curated collection of fun and creative examples generated with Nano Banana & Nano Banana Pro🍌, Gemini-2.5-flash-image based model. We also release Nano-consistent-150K openly to support the community's development of image generation and unified models(click to website to see our blog)",
+      "topics": [
+        "awesome",
+        "gemini-2-5-flash-image",
+        "nano-banana"
       ],
       "archived": false
     },
@@ -27756,7 +27756,7 @@
     },
     {
       "full_name": "OpenBMB/VoxCPM",
-      "stars": 22723,
+      "stars": 22728,
       "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
       "topics": [
         "audio",
@@ -27918,7 +27918,7 @@
     },
     {
       "full_name": "CloakHQ/CloakBrowser",
-      "stars": 22624,
+      "stars": 22629,
       "description": "Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
       "topics": [
         "ai-agents",
@@ -28129,7 +28129,7 @@
     },
     {
       "full_name": "cheahjs/free-llm-api-resources",
-      "stars": 22562,
+      "stars": 22563,
       "description": "A list of free LLM inference resources accessible via API.",
       "topics": [
         "ai",
@@ -28156,7 +28156,7 @@
     },
     {
       "full_name": "heygen-com/hyperframes",
-      "stars": 22543,
+      "stars": 22544,
       "description": "Write HTML. Render video. Built for agents.",
       "topics": [
         "ai",
@@ -28247,7 +28247,7 @@
     },
     {
       "full_name": "p-e-w/heretic",
-      "stars": 22496,
+      "stars": 22498,
       "description": "Fully automatic censorship removal for language models",
       "topics": [
         "abliteration",
@@ -28436,7 +28436,7 @@
     },
     {
       "full_name": "OthmanAdi/planning-with-files",
-      "stars": 22362,
+      "stars": 22364,
       "description": "Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition.",
       "topics": [
         "adal",
@@ -28627,7 +28627,7 @@
     },
     {
       "full_name": "henrygd/beszel",
-      "stars": 22247,
+      "stars": 22248,
       "description": "Lightweight server monitoring with historical data, docker stats, and alerts.",
       "topics": [
         "homelab",
@@ -28949,7 +28949,7 @@
     },
     {
       "full_name": "RustPython/RustPython",
-      "stars": 22085,
+      "stars": 22086,
       "description": "A Python Interpreter written in Rust",
       "topics": [
         "compiler",
@@ -29132,7 +29132,7 @@
     },
     {
       "full_name": "winfunc/opcode",
-      "stars": 21977,
+      "stars": 21976,
       "description": "A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.",
       "topics": [
         "anthropic",
@@ -29757,7 +29757,7 @@
     },
     {
       "full_name": "blader/humanizer",
-      "stars": 21645,
+      "stars": 21647,
       "description": "Claude Code skill that removes signs of AI-generated writing from text",
       "topics": [],
       "archived": false
@@ -29896,7 +29896,7 @@
     },
     {
       "full_name": "SBoudrias/Inquirer.js",
-      "stars": 21571,
+      "stars": 21570,
       "description": "A collection of common interactive command line user interfaces.",
       "topics": [
         "cli",
@@ -30174,7 +30174,7 @@
     },
     {
       "full_name": "guidance-ai/guidance",
-      "stars": 21484,
+      "stars": 21485,
       "description": "A guidance language for controlling large language models.",
       "topics": [],
       "archived": false
@@ -30202,7 +30202,7 @@
     },
     {
       "full_name": "TibixDev/winboat",
-      "stars": 21448,
+      "stars": 21447,
       "description": "Run Windows apps on 🐧 Linux with ✨ seamless integration",
       "topics": [
         "docker",
@@ -30575,7 +30575,7 @@
     },
     {
       "full_name": "FunAudioLLM/CosyVoice",
-      "stars": 21333,
+      "stars": 21334,
       "description": "Multi-lingual large voice generation model, providing inference, training and deployment full-stack ability.",
       "topics": [
         "audio-generation",
@@ -30602,7 +30602,7 @@
     },
     {
       "full_name": "aidenybai/react-scan",
-      "stars": 21323,
+      "stars": 21324,
       "description": "Scan and fix React performance issues",
       "topics": [
         "javascript",
@@ -30821,7 +30821,7 @@
     },
     {
       "full_name": "RasaHQ/rasa",
-      "stars": 21190,
+      "stars": 21189,
       "description": "💬 Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants",
       "topics": [
         "bot",
@@ -31135,7 +31135,7 @@
     },
     {
       "full_name": "NawfalMotii79/PLFM_RADAR",
-      "stars": 21048,
+      "stars": 21049,
       "description": "Open-source, low-cost 10.5 GHz PLFM phased array RADAR system",
       "topics": [],
       "archived": false
@@ -31149,7 +31149,7 @@
     },
     {
       "full_name": "liriliri/eruda",
-      "stars": 21031,
+      "stars": 21030,
       "description": "Console for mobile browsers",
       "topics": [
         "console",
@@ -31162,7 +31162,7 @@
     },
     {
       "full_name": "folke/lazy.nvim",
-      "stars": 21027,
+      "stars": 21028,
       "description": "💤 A modern plugin manager for Neovim",
       "topics": [
         "neovim",
@@ -31175,7 +31175,7 @@
     },
     {
       "full_name": "m1k1o/neko",
-      "stars": 21012,
+      "stars": 21013,
       "description": "A self hosted virtual browser that runs in docker and uses WebRTC.",
       "topics": [
         "docker",
@@ -31271,7 +31271,7 @@
     },
     {
       "full_name": "nikitabobko/AeroSpace",
-      "stars": 20975,
+      "stars": 20976,
       "description": "AeroSpace is an i3-like tiling window manager for macOS",
       "topics": [
         "apple",
@@ -31411,7 +31411,7 @@
     },
     {
       "full_name": "VoltAgent/awesome-claude-code-subagents",
-      "stars": 20899,
+      "stars": 20901,
       "description": "A collection of 100+ specialized Claude Code subagents covering a wide range of development use cases",
       "topics": [
         "ai-agent-framework",
@@ -31453,8 +31453,28 @@
       "archived": false
     },
     {
+      "full_name": "jart/cosmopolitan",
+      "stars": 20858,
+      "description": "build-once run-anywhere c library",
+      "topics": [
+        "bios",
+        "containers",
+        "darwin",
+        "efi",
+        "freebsd",
+        "libc",
+        "linux",
+        "netbsd",
+        "openbsd",
+        "polyglot",
+        "windows",
+        "zip"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "pavlobu/deskreen",
-      "stars": 20859,
+      "stars": 20858,
       "description": "Deskreen turns any device with a web browser into a secondary screen for your computer. ⭐️ Star to support our work!",
       "topics": [
         "blueprintjs",
@@ -31477,26 +31497,6 @@
         "webrtc",
         "wifi",
         "windowsapp"
-      ],
-      "archived": false
-    },
-    {
-      "full_name": "jart/cosmopolitan",
-      "stars": 20858,
-      "description": "build-once run-anywhere c library",
-      "topics": [
-        "bios",
-        "containers",
-        "darwin",
-        "efi",
-        "freebsd",
-        "libc",
-        "linux",
-        "netbsd",
-        "openbsd",
-        "polyglot",
-        "windows",
-        "zip"
       ],
       "archived": false
     },
@@ -31650,7 +31650,7 @@
     },
     {
       "full_name": "xbmc/xbmc",
-      "stars": 20796,
+      "stars": 20797,
       "description": "Kodi is an award-winning free and open source home theater/media center software and entertainment hub for digital media. With its beautiful interface and powerful skinning engine, it's available for Android, BSD, Linux, macOS, iOS, tvOS and Windows.",
       "topics": [
         "android",
@@ -31823,6 +31823,13 @@
       "archived": false
     },
     {
+      "full_name": "vercel-labs/skills",
+      "stars": 20727,
+      "description": "The open agent skills tool - npx skills",
+      "topics": [],
+      "archived": false
+    },
+    {
       "full_name": "apache/shardingsphere",
       "stars": 20726,
       "description": "Empowering Data Intelligence with Distributed SQL for Sharding, Scalability, and Security Across All Databases.",
@@ -31844,13 +31851,6 @@
         "shard",
         "sql"
       ],
-      "archived": false
-    },
-    {
-      "full_name": "vercel-labs/skills",
-      "stars": 20726,
-      "description": "The open agent skills tool - npx skills",
-      "topics": [],
       "archived": false
     },
     {
@@ -31962,7 +31962,7 @@
     },
     {
       "full_name": "Panniantong/Agent-Reach",
-      "stars": 20622,
+      "stars": 20621,
       "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
       "topics": [
         "agent-infrastructure",
@@ -32081,7 +32081,7 @@
     },
     {
       "full_name": "AIDC-AI/Pixelle-Video",
-      "stars": 20571,
+      "stars": 20572,
       "description": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short Video Engine",
       "topics": [
         "aigc",
@@ -32120,6 +32120,15 @@
       "archived": false
     },
     {
+      "full_name": "sveltejs/kit",
+      "stars": 20543,
+      "description": "web development, streamlined",
+      "topics": [
+        "svelte"
+      ],
+      "archived": false
+    },
+    {
       "full_name": "Nyr/openvpn-install",
       "stars": 20542,
       "description": "OpenVPN road warrior installer for Ubuntu, Debian, AlmaLinux, Rocky Linux, CentOS and Fedora",
@@ -32134,15 +32143,6 @@
         "shell",
         "ubuntu",
         "vpn"
-      ],
-      "archived": false
-    },
-    {
-      "full_name": "sveltejs/kit",
-      "stars": 20542,
-      "description": "web development, streamlined",
-      "topics": [
-        "svelte"
       ],
       "archived": false
     },
@@ -32618,7 +32618,7 @@
     },
     {
       "full_name": "AI4Finance-Foundation/FinGPT",
-      "stars": 20323,
+      "stars": 20324,
       "description": "FinGPT: Open-Source Financial Large Language Models! Revolutionize 🔥 We release the trained model on HuggingFace.",
       "topics": [
         "chatgpt",
@@ -32805,7 +32805,7 @@
     },
     {
       "full_name": "Universidade-Livre/ciencia-da-computacao",
-      "stars": 20250,
+      "stars": 20251,
       "description": "🎓 Um caminho para a educação autodidata em Ciência da Computação!",
       "topics": [
         "awesome-list",
@@ -32949,14 +32949,14 @@
     },
     {
       "full_name": "openai/gpt-oss",
-      "stars": 20125,
+      "stars": 20126,
       "description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
       "topics": [],
       "archived": false
     },
     {
       "full_name": "google/fonts",
-      "stars": 20124,
+      "stars": 20123,
       "description": "Font files available from Google Fonts, and a public issue tracker for all things Google Fonts",
       "topics": [],
       "archived": false
@@ -33200,7 +33200,7 @@
     },
     {
       "full_name": "dockur/macos",
-      "stars": 20005,
+      "stars": 20006,
       "description": "MacOS inside a Docker container.",
       "topics": [
         "docker",
