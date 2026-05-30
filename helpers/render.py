@@ -275,9 +275,32 @@ a competing single-vendor CLI), `alias_map`, `scope_filter`, and the category
 rules. The daily workflow re-fetches and re-ranks.
 """
 
+DISCLAIMER = """## Disclaimer
+
+This is an automatically generated index of **publicly available** GitHub
+repository metadata (names, owners, star counts, and the projects' own
+descriptions). It does **not** host, mirror, or redistribute any third-party
+source code or content.
+
+- **No endorsement.** Inclusion is purely algorithmic (by public star count) and
+  is not a recommendation, endorsement, or vetting of any listed project. We do
+  not audit listed repositories for security, licensing, or legal compliance.
+- **Third-party links.** Links point to independent repositories we do not
+  control and are not responsible for. Descriptions are the projects' own text,
+  reproduced as factual metadata; they are not statements by this project.
+- **Trademarks.** "Claude", "Anthropic", and all other product and company names
+  are trademarks of their respective owners. References are nominative (for
+  identification only) and imply no affiliation or sponsorship.
+- **Removal.** To request removal of an entry, open an issue; off-scope or
+  rights-infringing repositories can be excluded via the `denylist`.
+"""
+
 LICENSE = """## License
 
-[CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) — public domain.
+The contents of **this** repository (scripts and generated index) are released
+under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) — public
+domain. Listed third-party repositories remain under their own licenses, held by
+their respective owners.
 """
 
 
@@ -311,6 +334,7 @@ def build_readme(payload: dict, cfg: dict) -> str:
     out += [
         f"- [Scope & methodology](#{slugify('Scope & methodology')})",
         f"- [Contributing](#{slugify('Contributing')})",
+        f"- [Disclaimer](#{slugify('Disclaimer')})",
         f"- [License](#{slugify('License')})",
     ]
 
@@ -327,7 +351,7 @@ def build_readme(payload: dict, cfg: dict) -> str:
         for heading, items in grouped:
             out += [f"### {heading}", "", category_table(items), ""]
 
-    out += [SCOPE, CONTRIBUTING, LICENSE]
+    out += [SCOPE, CONTRIBUTING, DISCLAIMER, LICENSE]
     return "\n".join(out).rstrip() + "\n"
 
 

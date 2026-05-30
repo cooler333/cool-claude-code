@@ -29,7 +29,10 @@ config.json ──▶ fetch.py ──▶ repos.json ──▶ render.py ──�
   `openai/codex`, `voideditor/void`); (2) API gateways/proxies/resellers
   (`songquanpeng/one-api`, `BerriAI/litellm`, `chatanywhere/GPT_API_free`); (3) generic
   AI apps/clients/platforms (`danny-avila/LibreChat`, `jeecgboot/JeecgBoot`,
-  `khoj-ai/khoj`); (4) generic non-AI repos (`sindresorhus/awesome`, `tw93/Pake`).
+  `khoj-ai/khoj`); (4) generic non-AI repos (`sindresorhus/awesome`, `tw93/Pake`);
+  (5) leaked/rights-infringing content — extracted proprietary system prompts,
+  credentials, or closed-source material (`asgeirtj/system_prompts_leaks`,
+  `x1xhlol/system-prompts-and-models-of-ai-tools`).
 - `brief` — `max_chars`, `readme_excerpt_max_chars`, `readme_raw_max_chars`,
   `fetch_readme_when_description_empty` (fetch caps the raw README; render parses it).
 - `category_rules` — `topic_map` (topic→category) + `keyword_rules` (ordered;

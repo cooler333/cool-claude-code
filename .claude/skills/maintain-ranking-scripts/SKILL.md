@@ -49,6 +49,11 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
       `danny-avila/LibreChat`, `chatboxai/chatbox`, `khoj-ai/khoj`, `labring/FastGPT`).
    4. **Generic non-AI repos** that match only by keyword (e.g. `sindresorhus/awesome`,
       `tw93/Pake`).
+   5. **Leaked / rights-infringing content** — repos that primarily republish
+      extracted/leaked proprietary system prompts, credentials, or closed-source
+      material (e.g. `asgeirtj/system_prompts_leaks`,
+      `x1xhlol/system-prompts-and-models-of-ai-tools`). Excluded as a legal/editorial
+      precaution even when popular.
 
    There is **no allowlist**: if a clearly-relevant repo is missing, fix discovery (a
    query / scope term), never a hand-maintained include list.
@@ -63,7 +68,8 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 - Discovery must stay **algorithmic**, not a hand-maintained allowlist of repos.
    The `denylist` is the only editorial lever, for off-scope repos that match by
    keyword: competing CLIs/editors, API gateways/proxies/resellers, generic AI
-   apps/clients, and generic non-AI repos (see the four categories above).
+   apps/clients, generic non-AI repos, and leaked/rights-infringing content (see the
+   five categories above).
 - Keep scripts **stdlib-only** — no third-party packages.
 - Preserve separation: `fetch.py` only writes `repos.json`; `render.py` only reads
    it and writes `README.md`.

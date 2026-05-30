@@ -111,7 +111,9 @@
     "chatboxai/chatbox",
     "danny-avila/LibreChat",
     "khoj-ai/khoj",
-    "labring/FastGPT"
+    "labring/FastGPT",
+    "asgeirtj/system_prompts_leaks",
+    "x1xhlol/system-prompts-and-models-of-ai-tools"
   ],
 
   "category_rules": {
