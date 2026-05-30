@@ -1,0 +1,68 @@
+name: Refresh Claude tools ranking
+
+# Daily refresh of the star-ranked README.
+#
+# NOTE: GitHub's scheduled-workflow runner is best-effort. Runs can be delayed
+# (often 10-60+ min) or, under heavy platform load, skipped entirely. "Daily"
+# here means "approximately once per UTC day"; the next run self-heals. We use an
+# off-peak, off-the-hour slot (06:30 UTC) to minimise scheduler queueing and
+# GitHub API contention.
+#
+# Requires: `main` must allow a direct push by github-actions[bot]. If branch
+# protection later forbids that, switch the commit step to a pull-request flow.
+on:
+  schedule:
+    - cron: "30 6 * * *"   # 06:30 UTC daily
+  workflow_dispatch: {}
+
+# One refresh at a time; do NOT cancel an in-flight run (avoid half-written commits).
+concurrency:
+  group: refresh-ranking
+  cancel-in-progress: false
+
+permissions:
+  contents: write          # commit the regenerated README + repos.xml back to main
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"   # stdlib-only scripts; any 3.x works
+
+      # fetch.py discovers + ranks and writes helpers/repos.xml. It exits
+      # non-zero on hard failure (auth, rate-limit exhaustion, low coverage) so
+      # render never runs on degraded data. `gh` is preinstalled on the runner
+      # and authenticates via GITHUB_TOKEN for the code-search discovery signal.
+      - name: Fetch and rank repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python helpers/fetch.py
+
+      # render.py reads helpers/repos.xml and regenerates README.md. Only reached
+      # if fetch.py succeeded (default fail-fast). Floor-checks before overwrite.
+      - name: Render README
+        run: python helpers/render.py
+
+      # Commit only the two generated artifacts, and only if they changed. A push
+      # by GITHUB_TOKEN does not re-trigger workflows, and there is no `on: push`
+      # trigger here anyway, so there is no commit loop. [skip ci] is added as
+      # defense-in-depth against future trigger changes.
+      - name: Commit changes if any
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md helpers/repos.xml
+          if git diff --cached --quiet; then
+            echo "No changes to ranking — nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore(ranking): daily refresh of Claude tools ranking [skip ci]"
+          git push

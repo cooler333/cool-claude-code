@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "target_count": 100,
+  "top_table_size": 30,
+  "min_stars": 50,
+
+  "fetch": {
+    "floor_fraction": 0.9,
+    "max_repo_search_pages": 3,
+    "per_query_page_size": 50,
+    "graphql_batch_size": 50
+  },
+
+  "render": {
+    "min_rows_per_category": 3,
+    "other_category_label": "Other"
+  },
+
+  "brief": {
+    "max_chars": 140,
+    "readme_excerpt_max_chars": 160,
+    "fetch_readme_when_description_empty": true
+  },
+
+  "scope_filter": {
+    "require_match": true,
+    "any": [
+      "claude", "anthropic", "mcp", "model context protocol",
+      "model-context-protocol", "claude-code", "claude code", "agentic",
+      "coding agent", "coding-agent", "ai agent", "ai-agent", "llm agent",
+      "agent skill", "agent framework", "subagent", "codex", "opencode",
+      "skill.md", "slash command", "agent harness"
+    ]
+  },
+
+  "discovery": {
+    "repo_search_queries": [
+      "topic:claude-code",
+      "topic:claude-skills",
+      "topic:claude-agent",
+      "topic:claude",
+      "topic:model-context-protocol",
+      "claude code in:name,description",
+      "claude skill in:name,description",
+      "claude agent in:name,description",
+      "mcp server in:name,description",
+      "claude-code in:name,description",
+      "coding agent cli in:name,description"
+    ],
+    "code_search_filenames": [
+      "SKILL.md",
+      "CLAUDE.md"
+    ],
+    "awesome_lists": [
+      {
+        "repo": "hesreallyhim/awesome-claude-code",
+        "path": "data/repo-ticker.csv",
+        "owner_repo_col": 0,
+        "skip_header": true
+      }
+    ]
+  },
+
+  "alias_map": {
+    "All-Hands-AI/OpenHands": "OpenHands/OpenHands",
+    "affaan-m/ECC": "affaan-m/everything-claude-code",
+    "sst/opencode": "anomalyco/opencode",
+    "getAsterisk/claudia": "winfunc/opcode",
+    "forrestchang/andrej-karpathy-skills": "multica-ai/andrej-karpathy-skills"
+  },
+
+  "allowlist": [
+    "obra/superpowers",
+    "affaan-m/everything-claude-code",
+    "NousResearch/hermes-agent",
+    "anomalyco/opencode",
+    "multica-ai/andrej-karpathy-skills",
+    "anthropics/skills",
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "anthropics/claude-code",
+    "mattpocock/skills",
+    "github/spec-kit",
+    "msitarzewski/agency-agents",
+    "google-gemini/gemini-cli",
+    "garrytan/gstack",
+    "punkpeye/awesome-mcp-servers",
+    "openai/codex",
+    "modelcontextprotocol/servers",
+    "farion1231/cc-switch",
+    "nextlevelbuilder/ui-ux-pro-max-skill",
+    "thedotmack/claude-mem",
+    "OpenHands/OpenHands",
+    "ruvnet/RuView",
+    "JuliusBrussee/caveman",
+    "gsd-build/get-shit-done",
+    "shareAI-lab/learn-claude-code",
+    "earendil-works/pi",
+    "ruvnet/ruflo",
+    "safishamsi/graphify",
+    "nexu-io/open-design",
+    "shanraisshan/claude-code-best-practice",
+    "santifer/career-ops"
+  ],
+
+  "denylist": [
+    "langchain-ai/langchain",
+    "langgenius/dify",
+    "langflow-ai/langflow",
+    "mendableai/firecrawl",
+    "infiniflow/ragflow"
+  ],
+
+  "category_rules": {
+    "topic_map": {
+      "claude-skills": "Claude Code skills",
+      "claude-code": "Claude Code tooling",
+      "mcp": "MCP server / tooling",
+      "model-context-protocol": "MCP server / tooling",
+      "coding-agent": "Coding agent CLI",
+      "ai-agent": "Agent harness",
+      "agent": "Agent harness",
+      "memory": "Memory / context",
+      "prompt-engineering": "Prompts & system prompts"
+    },
+    "keyword_rules": [
+      { "category": "Official Anthropic", "match_owner": ["anthropics"] },
+      { "category": "MCP server / tooling", "any": ["mcp", "model context protocol", "model-context-protocol"] },
+      { "category": "Claude Code skills", "any": ["skill", "skills", "skill.md"] },
+      { "category": "Coding agent CLI", "any": ["coding agent", "codex", "gemini-cli", "opencode", "cli"] },
+      { "category": "Awesome list / directory", "any": ["awesome", "curated", "directory", "list of"] },
+      { "category": "Spec-driven dev", "any": ["spec-driven", "spec kit", "spec-kit", "specification"] },
+      { "category": "Memory / context", "any": ["memory", "persistent context", "recall"] },
+      { "category": "Prompts & system prompts", "any": ["system prompt", "prompts", "prompt library"] },
+      { "category": "Agent harness", "any": ["harness", "agent", "swarm", "orchestrat", "autonomous"] }
+    ],
+    "default_category": "Claude Code tooling"
+  },
+
+  "http": {
+    "user_agent": "cool-claude-code-bot/1.0 (+https://github.com/cooler333/cool-claude-code)"
+  }
+}
