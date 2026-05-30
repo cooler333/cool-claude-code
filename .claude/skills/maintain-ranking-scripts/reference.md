@@ -46,7 +46,7 @@ Shape:
 {
   "description": "...what this file is...",
   "out_of_scope": [
-    { "repo_id": "owner/name", "reason": "...", "description": "repo About", "tags": ["topic", ...] }
+    { "repo_id": "owner/name", "stars": 1234, "reason": "...", "description": "repo About", "tags": ["topic", ...] }
   ]
 }
 ```
