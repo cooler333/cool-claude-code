@@ -2431,6 +2431,86 @@
         "github-copilot",
         "prompt-engineering"
       ]
+    },
+    {
+      "repo_id": "NirDiamant/GenAI_Agents",
+      "reason": "generic GenAI agent tutorials (gpt-focused, zero Claude in README); not Claude-ecosystem-specific — same class as the already-filtered NirDiamant/RAG_Techniques",
+      "stars": 22277,
+      "description": "50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems.",
+      "tags": [
+        "agentic-ai",
+        "agents",
+        "ai",
+        "ai-agents",
+        "autonomous-agents",
+        "genai",
+        "generative-ai",
+        "langchain",
+        "langgraph",
+        "llm",
+        "llms",
+        "machine-learning",
+        "mcp",
+        "multi-agent",
+        "multi-agent-systems",
+        "openai",
+        "python",
+        "rag",
+        "tutorials"
+      ]
+    },
+    {
+      "repo_id": "NirDiamant/agents-towards-production",
+      "reason": "generic end-to-end GenAI production tutorials (zero Claude in README); not Claude-ecosystem-specific",
+      "stars": 20544,
+      "description": "End-to-end, code-first tutorials for building production-grade GenAI agents. From prototype to enterprise deployment.",
+      "tags": [
+        "agent",
+        "agent-framework",
+        "agentic-ai",
+        "agents",
+        "ai-agents",
+        "deployment",
+        "genai",
+        "generative-ai",
+        "langgraph",
+        "llm",
+        "llms",
+        "mcp",
+        "mlops",
+        "multi-agent-systems",
+        "observability",
+        "production",
+        "python",
+        "rag",
+        "tutorials"
+      ]
+    },
+    {
+      "repo_id": "simstudioai/sim",
+      "reason": "generic agent-builder platform (README mentions Copilot/Cursor, zero Claude); not a Claude-ecosystem tool",
+      "stars": 28655,
+      "description": "Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.",
+      "tags": [
+        "agent-workflow",
+        "agentic-workflow",
+        "agents",
+        "ai",
+        "aiagents",
+        "anthropic",
+        "artificial-intelligence",
+        "automation",
+        "chatbot",
+        "deepseek",
+        "gemini",
+        "low-code",
+        "nextjs",
+        "no-code",
+        "openai",
+        "rag",
+        "react",
+        "typescript"
+      ]
     }
   ]
 }

@@ -90,6 +90,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 26.6k | Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex,… |
 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 23.6k | A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more. |
 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) | 22.4k | Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition. |
+| [alchaincyf/nuwa-skill](https://github.com/alchaincyf/nuwa-skill) | 22.0k | 你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks. |
 
 ### MCP server / tooling
 
@@ -109,7 +110,6 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [PrefectHQ/fastmcp](https://github.com/PrefectHQ/fastmcp) | 25.4k | 🚀 The fast, Pythonic way to build MCP servers and clients. |
 | [a2aproject/A2A](https://github.com/a2aproject/A2A) | 24.1k | Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications. |
 | [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | 23.2k | The official Python SDK for Model Context Protocol servers and clients |
-| [NirDiamant/GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents) | 22.3k | 50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems. |
 | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | 22.2k | — |
 
 ### Agent harness
@@ -123,7 +123,6 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 31.6k | The design language that makes your AI harness better at design. |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 29.1k | Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop |
 | [huggingface/agents-course](https://github.com/huggingface/agents-course) | 29.0k | This repository contains the Hugging Face Agents Course. |
-| [simstudioai/sim](https://github.com/simstudioai/sim) | 28.7k | Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce. |
 | [Gitlawb/openclaude](https://github.com/Gitlawb/openclaude) | 28.1k | runs anywhere. uses anything |
 | [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) | 28.1k | A list of AI autonomous agents |
 | [iOfficeAI/AionUi](https://github.com/iOfficeAI/AionUi) | 27.2k | Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI \| Customize your assistants \| Star if you like it! |
@@ -146,6 +145,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) | 27.7k | CLI tool for configuring and monitoring Claude Code |
 | [gastownhall/beads](https://github.com/gastownhall/beads) | 24.2k | Beads - A memory upgrade for your coding agent |
 | [jarrodwatts/claude-hud](https://github.com/jarrodwatts/claude-hud) | 24.1k | A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress |
+| [coleam00/Archon](https://github.com/coleam00/Archon) | 22.0k | The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable. |
 
 ### Memory / context
 
