@@ -205,20 +205,14 @@ def build_out_of_scope_payload(entries: list[dict], min_stars: int, generated_at
             "scope_filter — classified as outside the Claude Code / agent "
             "ecosystem. Regenerated every run; DO NOT hand-edit (tune scope_filter "
             "in config.json). Editorial exclusions of in-scope-but-redundant repos "
-            "live in helpers/filtered.json."
+            "live in helpers/filtered.json. Entries are repo references only "
+            "(repo_id); stars/description/topics live in repos.json, the single "
+            "source of truth (join on full_name)."
         ),
         "generated_at": generated_at,
         "min_stars": min_stars,
         "count": len(entries),
-        "out_of_scope": [
-            {
-                "repo_id": r["full_name"],
-                "stars": r["stars"],
-                "description": r["description"],
-                "tags": r["topics"],
-            }
-            for r in entries
-        ],
+        "out_of_scope": [r["full_name"] for r in entries],
     }
 
 

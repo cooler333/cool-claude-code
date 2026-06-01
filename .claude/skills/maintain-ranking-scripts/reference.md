@@ -53,11 +53,14 @@ Top-level keys: `generated_at`, `generator`, `schema_version`, `min_stars`,
 from `full_name` and assigns display rank within the published set.)
 
 `out_of_scope.json`: `{ description, generated_at, min_stars, count, out_of_scope:
-[{ repo_id, stars, description, tags }] }`.
-`filtered.json`: `{ description, filtered: [{ repo_id, reason, ... }] }` (only
-`repo_id` affects filtering; a bare string is tolerated).
-`repos_to_render.json`: `{ generated_at, generator, count, repos: [{ full_name,
-stars, description, topics }] }`.
+[repo_id, ...] }` — repo references only (full_name strings); stars/description/
+topics live in repos.json, never duplicated here (join on full_name to audit).
+`filtered.json`: `{ description, filtered: [{ repo_id, reason }] }` (only
+`repo_id` affects filtering; `reason` is human-only; a bare string is tolerated;
+stars/description/tags are NOT stored — they live in `repos.json`).
+`repos_to_render.json`: `{ generated_at, generator, count, repos: [full_name, ...] }`
+— repo references only, in rank (stars-descending) order; metadata lives in
+`repos.json` (join on `full_name`), never duplicated here.
 
 ## config.json keys
 

@@ -3,2536 +3,791 @@
   "filtered": [
     {
       "repo_id": "google-gemini/gemini-cli",
-      "stars": 104749,
-      "reason": "competing coding-agent CLI (Google, single-vendor)",
-      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
-      "tags": [
-        "ai",
-        "ai-agents",
-        "cli",
-        "gemini",
-        "gemini-api",
-        "mcp-client",
-        "mcp-server"
-      ]
+      "reason": "competing coding-agent CLI (Google, single-vendor)"
     },
     {
       "repo_id": "openai/codex",
-      "stars": 87095,
-      "reason": "competing coding-agent CLI (OpenAI, single-vendor)",
-      "description": "Lightweight coding agent that runs in your terminal",
-      "tags": []
+      "reason": "competing coding-agent CLI (OpenAI, single-vendor)"
     },
     {
       "repo_id": "chatanywhere/GPT_API_free",
-      "stars": 38248,
-      "reason": "free API-key reseller / gateway",
-      "description": "Free ChatGPT&DeepSeek API Key，免费ChatGPT&DeepSeek API。免费接入DeepSeek API和GPT4 API，支持 gpt | deepseek | claude | gemini | grok 等排名靠前的常用大模型。",
-      "tags": [
-        "api",
-        "chatgpt",
-        "claude",
-        "deepseek",
-        "gemini",
-        "gpt",
-        "grok"
-      ]
+      "reason": "free API-key reseller / gateway"
     },
     {
       "repo_id": "songquanpeng/one-api",
-      "stars": 34433,
-      "reason": "LLM API gateway/proxy",
-      "description": "LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包、ChatGLM、文心一言、讯飞星火、通义千问、360 智脑、腾讯混元等主流模型，统一 API 适配，可用于 key 管理与二次分发。单可执行文件，提供 Docker 镜像，一键部署，开箱即用。LLM API management & key redistribution system, unifying multiple providers under a single API. Single binary, Docker-ready, with an English UI.",
-      "tags": [
-        "api",
-        "api-gateway",
-        "azure-openai-api",
-        "chatgpt",
-        "claude",
-        "ernie-bot",
-        "gemini",
-        "gpt",
-        "openai",
-        "openai-api",
-        "proxy"
-      ]
+      "reason": "LLM API gateway/proxy"
     },
     {
       "repo_id": "Wei-Shaw/sub2api",
-      "stars": 24429,
-      "reason": "API proxy / reseller",
-      "description": "Sub2API 一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。",
-      "tags": [
-        "2api",
-        "antigravity2api",
-        "cc2api",
-        "claude",
-        "claude-code",
-        "codex",
-        "crs",
-        "crs2",
-        "gemini"
-      ]
+      "reason": "API proxy / reseller"
     },
     {
       "repo_id": "voideditor/void",
-      "stars": 28802,
-      "reason": "competing AI code editor",
-      "description": "",
-      "tags": [
-        "chatgpt",
-        "claude",
-        "copilot",
-        "cursor",
-        "developer-tools",
-        "editor",
-        "llm",
-        "open-source",
-        "openai",
-        "visual-studio-code",
-        "vscode",
-        "vscode-extension"
-      ]
+      "reason": "competing AI code editor"
     },
     {
       "repo_id": "jeecgboot/JeecgBoot",
-      "stars": 46522,
-      "reason": "generic low-code dev platform",
-      "description": "AI 低代码平台「低代码 + 零代码」双驱动！低代码可一键生成前后端代码;零代码可 5 分钟搭建系统;AI Skills 一句话画流程、设计表单、生成整套系统。内置 AI聊天、知识库、流程编排、MCP插件等，兼容主流大模型。引领「AI 生成 → 在线配置 → 代码生成 → 手工合并->AI修改」开发模式，消除 Java 项目 80% 的重复工作，提效而不失灵活。",
-      "tags": [
-        "activiti",
-        "agent",
-        "ai",
-        "antd",
-        "claude-code",
-        "cli",
-        "codegenerator",
-        "codex",
-        "flowable",
-        "langchain4j",
-        "llm",
-        "low-code",
-        "mcp",
-        "mybatis-plus",
-        "rag",
-        "skills",
-        "spring-ai",
-        "springboot",
-        "springcloud",
-        "vue3"
-      ]
+      "reason": "generic low-code dev platform"
     },
     {
       "repo_id": "BerriAI/litellm",
-      "stars": 48768,
-      "reason": "LLM API gateway/proxy",
-      "description": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM]",
-      "tags": [
-        "ai-gateway",
-        "anthropic",
-        "azure-openai",
-        "bedrock",
-        "gateway",
-        "langchain",
-        "litellm",
-        "llm",
-        "llm-gateway",
-        "llmops",
-        "mcp-gateway",
-        "openai",
-        "openai-proxy",
-        "vertex-ai"
-      ]
+      "reason": "LLM API gateway/proxy"
     },
     {
       "repo_id": "QuantumNous/new-api",
-      "stars": 36219,
-      "reason": "LLM API gateway/proxy",
-      "description": "A unified AI model hub for aggregation & distribution. It supports cross-converting various LLMs into OpenAI-compatible, Claude-compatible, or Gemini-compatible formats. A centralized gateway for personal and enterprise model management. 🍥",
-      "tags": [
-        "ai-gateway",
-        "claude",
-        "deepseek",
-        "gemini",
-        "newapi",
-        "openai",
-        "rerank"
-      ]
+      "reason": "LLM API gateway/proxy"
     },
     {
       "repo_id": "router-for-me/CLIProxyAPI",
-      "stars": 35470,
-      "reason": "CLI API proxy",
-      "description": "Wrap Gemini CLI, Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.5, Grok 4.3, Claude model through API",
-      "tags": [
-        "antigravity",
-        "claude-code",
-        "cluade",
-        "codex",
-        "gemini",
-        "openai"
-      ]
+      "reason": "CLI API proxy"
     },
     {
       "repo_id": "cheahjs/free-llm-api-resources",
-      "stars": 22556,
-      "reason": "free LLM API resource list (reseller)",
-      "description": "A list of free LLM inference resources accessible via API.",
-      "tags": [
-        "ai",
-        "claude",
-        "gemini",
-        "llama",
-        "llm",
-        "openai"
-      ]
+      "reason": "free LLM API resource list (reseller)"
     },
     {
       "repo_id": "Alishahryar1/free-claude-code",
-      "stars": 31015,
-      "reason": "free-key proxy to run claude-code off non-Anthropic providers",
-      "description": "Use claude-code for free in the terminal, VSCode extension or discord like OpenClaw (voice supported)",
-      "tags": []
+      "reason": "free-key proxy to run claude-code off non-Anthropic providers"
     },
     {
       "repo_id": "tw93/Pake",
-      "stars": 49528,
-      "reason": "generic web-to-desktop packager (non-AI)",
-      "description": "🤱🏻 Turn any webpage into a desktop app with one command.",
-      "tags": [
-        "chatgpt",
-        "claude",
-        "desktop",
-        "gemini",
-        "hight-performance",
-        "linux",
-        "macos",
-        "no-electron",
-        "package",
-        "rust",
-        "tauri",
-        "windows",
-        "youtube"
-      ]
+      "reason": "generic web-to-desktop packager (non-AI)"
     },
     {
       "repo_id": "chatboxai/chatbox",
-      "stars": 40213,
-      "reason": "generic chat client",
-      "description": "Powerful AI Client",
-      "tags": [
-        "assistant",
-        "chatbot",
-        "chatgpt",
-        "claude",
-        "copilot",
-        "deepseek",
-        "gemini",
-        "gpt",
-        "gpt-5",
-        "ollama",
-        "openai"
-      ]
+      "reason": "generic chat client"
     },
     {
       "repo_id": "danny-avila/LibreChat",
-      "stars": 37687,
-      "reason": "generic chat UI",
-      "description": "Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.",
-      "tags": [
-        "ai",
-        "anthropic",
-        "artifacts",
-        "aws",
-        "azure",
-        "chatgpt",
-        "chatgpt-clone",
-        "claude",
-        "clone",
-        "deepseek",
-        "gemini",
-        "google",
-        "gpt-5",
-        "librechat",
-        "mcp",
-        "o1",
-        "openai",
-        "responses-api",
-        "vision",
-        "webui"
-      ]
+      "reason": "generic chat UI"
     },
     {
       "repo_id": "khoj-ai/khoj",
-      "stars": 34768,
-      "reason": "generic AI second-brain app",
-      "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
-      "tags": [
-        "agent",
-        "ai",
-        "assistant",
-        "chat",
-        "chatgpt",
-        "emacs",
-        "image-generation",
-        "llama3",
-        "llamacpp",
-        "llm",
-        "obsidian",
-        "obsidian-md",
-        "offline-llm",
-        "productivity",
-        "rag",
-        "research",
-        "self-hosted",
-        "semantic-search",
-        "stt",
-        "whatsapp-ai"
-      ]
+      "reason": "generic AI second-brain app"
     },
     {
       "repo_id": "labring/FastGPT",
-      "stars": 28201,
-      "reason": "generic AI knowledge-base platform",
-      "description": "FastGPT is a knowledge-based platform built on the LLMs, offers a comprehensive suite of out-of-the-box capabilities such as data processing, RAG retrieval, and visual AI workflow orchestration, letting you easily develop and deploy complex question-answering systems without the need for extensive setup or configuration.",
-      "tags": [
-        "agent",
-        "claude",
-        "deepseek",
-        "llm",
-        "mcp",
-        "nextjs",
-        "openai",
-        "qwen",
-        "rag",
-        "workflow"
-      ]
+      "reason": "generic AI knowledge-base platform"
     },
     {
       "repo_id": "asgeirtj/system_prompts_leaks",
-      "stars": 40959,
-      "reason": "leaked proprietary system prompts",
-      "description": "Extracted system prompts from Anthropic - Opus 4.7, Opus 4.6, Sonnet 4.6. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google Gemini - 3.5 Flash, 3.1 Pro, 3 Flash, Antigravity. xAI - Grok. Github Copilot. Perplexity, and more. Updated regularly.",
-      "tags": [
-        "ai",
-        "anthropic",
-        "awesome",
-        "chatbot",
-        "chatgpt",
-        "claude",
-        "claude-code",
-        "codex",
-        "deep-learning",
-        "education",
-        "gemini",
-        "generative-ai",
-        "google",
-        "llm",
-        "machine-learning",
-        "natural-language-processing",
-        "nlp",
-        "open-source",
-        "openai",
-        "prompt-engineering"
-      ]
+      "reason": "leaked proprietary system prompts"
     },
     {
       "repo_id": "x1xhlol/system-prompts-and-models-of-ai-tools",
-      "stars": 138565,
-      "reason": "leaked proprietary system prompts",
-      "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
-      "tags": [
-        "ai",
-        "bolt",
-        "cluely",
-        "copilot",
-        "cursor",
-        "cursorai",
-        "devin",
-        "github-copilot",
-        "lovable",
-        "open-source",
-        "perplexity",
-        "replit",
-        "system-prompts",
-        "trae",
-        "trae-ai",
-        "trae-ide",
-        "v0",
-        "vscode",
-        "windsurf",
-        "windsurf-ai"
-      ]
+      "reason": "leaked proprietary system prompts"
     },
     {
       "repo_id": "CherryHQ/cherry-studio",
-      "stars": 46618,
-      "reason": "generic AI desktop client/studio",
-      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
-      "tags": [
-        "agent-skills",
-        "ai-agent",
-        "awesome-skills",
-        "claude-code",
-        "codex",
-        "deepseek",
-        "hermes-agent",
-        "openclaw",
-        "skills",
-        "vibe-coding"
-      ]
+      "reason": "generic AI desktop client/studio"
     },
     {
       "repo_id": "dyad-sh/dyad",
-      "stars": 20473,
-      "reason": "generic AI app builder",
-      "description": "Local, open-source AI app builder for power users ✨ v0 / Lovable / Replit / Bolt alternative 🌟 Star if you like it!",
-      "tags": [
-        "ai-app-builder",
-        "anthropic",
-        "artificial-intelligence",
-        "bolt",
-        "deepseek",
-        "gemini",
-        "generative-ai",
-        "github",
-        "llm",
-        "llms",
-        "lovable",
-        "nextjs",
-        "ollama",
-        "openai",
-        "qwen",
-        "react",
-        "typescript",
-        "v0",
-        "vercel"
-      ]
+      "reason": "generic AI app builder"
     },
     {
       "repo_id": "activepieces/activepieces",
-      "stars": 22480,
-      "reason": "generic automation/workflow platform",
-      "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents",
-      "tags": [
-        "ai-agent",
-        "ai-agent-tools",
-        "ai-agents",
-        "ai-agents-framework",
-        "mcp",
-        "mcp-server",
-        "mcp-tools",
-        "mcps",
-        "n8n-alternative",
-        "no-code-automation",
-        "workflow",
-        "workflow-automation",
-        "workflows"
-      ]
+      "reason": "generic automation/workflow platform"
     },
     {
       "repo_id": "charmbracelet/crush",
-      "stars": 24829,
-      "reason": "competing coding-agent CLI",
-      "description": "Glamourous agentic coding for all 💘",
-      "tags": [
-        "agentic-ai",
-        "ai",
-        "llms",
-        "ravishing"
-      ]
+      "reason": "competing coding-agent CLI"
     },
     {
       "repo_id": "QwenLM/qwen-code",
-      "stars": 24773,
-      "reason": "competing coding-agent CLI (Qwen/Alibaba)",
-      "description": "An open-source AI agent that lives in your terminal.",
-      "tags": []
+      "reason": "competing coding-agent CLI (Qwen/Alibaba)"
     },
     {
       "repo_id": "openai/symphony",
-      "stars": 24839,
-      "reason": "competing coding agent (OpenAI, single-vendor)",
-      "description": "Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents.",
-      "tags": []
+      "reason": "competing coding agent (OpenAI, single-vendor)"
     },
     {
       "repo_id": "openai/skills",
-      "stars": 20896,
-      "reason": "single-vendor (OpenAI) skills, not Claude ecosystem",
-      "description": "Skills Catalog for Codex",
-      "tags": []
+      "reason": "single-vendor (OpenAI) skills, not Claude ecosystem"
     },
     {
       "repo_id": "Yeachan-Heo/oh-my-codex",
-      "stars": 29990,
-      "reason": "Codex-specific config framework (non-Claude)",
-      "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
-      "tags": []
+      "reason": "Codex-specific config framework (non-Claude)"
     },
     {
       "repo_id": "ultraworkers/claw-code",
-      "stars": 192909,
-      "reason": "meme / star-magnet repo, not a usable tool",
-      "description": "The repo is finally unlocked. enjoy the party! The fastest repo in history to surpass 100K stars ⭐. Join Discord: https://discord.gg/5TUQKqFWd Built in Rust using oh-my-codex.",
-      "tags": []
+      "reason": "meme / star-magnet repo, not a usable tool"
     },
     {
       "repo_id": "zeroclaw-labs/zeroclaw",
-      "stars": 31646,
-      "reason": "competing autonomous agent harness",
-      "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, any OS, any platform — deploy anywhere, swap anything 🦀",
-      "tags": [
-        "agent",
-        "agentic",
-        "ai",
-        "infra",
-        "ml",
-        "openclaw",
-        "os",
-        "zeroclaw"
-      ]
+      "reason": "competing autonomous agent harness"
     },
     {
       "repo_id": "n8n-io/n8n",
-      "stars": 190352,
-      "reason": "generic workflow automation platform",
-      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "tags": [
-        "ai",
-        "apis",
-        "automation",
-        "cli",
-        "data-flow",
-        "development",
-        "integration-framework",
-        "integrations",
-        "ipaas",
-        "low-code",
-        "low-code-platform",
-        "mcp",
-        "mcp-client",
-        "mcp-server",
-        "n8n",
-        "no-code",
-        "self-hosted",
-        "typescript",
-        "workflow",
-        "workflow-automation"
-      ]
+      "reason": "generic workflow automation platform"
     },
     {
       "repo_id": "open-webui/open-webui",
-      "stars": 139280,
-      "reason": "generic LLM chat UI",
-      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "tags": [
-        "ai",
-        "llm",
-        "llm-ui",
-        "llm-webui",
-        "llms",
-        "mcp",
-        "ollama",
-        "ollama-webui",
-        "open-webui",
-        "openai",
-        "openapi",
-        "rag",
-        "self-hosted",
-        "ui",
-        "webui"
-      ]
+      "reason": "generic LLM chat UI"
     },
     {
       "repo_id": "langgenius/dify",
-      "stars": 143185,
-      "reason": "generic low-code AI app platform",
-      "description": "Production-ready platform for agentic workflow development.",
-      "tags": [
-        "agent",
-        "agentic-ai",
-        "agentic-framework",
-        "agentic-workflow",
-        "ai",
-        "automation",
-        "gemini",
-        "genai",
-        "gpt",
-        "gpt-4",
-        "llm",
-        "low-code",
-        "mcp",
-        "nextjs",
-        "no-code",
-        "openai",
-        "orchestration",
-        "python",
-        "rag",
-        "workflow"
-      ]
+      "reason": "generic low-code AI app platform"
     },
     {
       "repo_id": "Mintplex-Labs/anything-llm",
-      "stars": 60808,
-      "reason": "generic all-in-one AI app",
-      "description": "The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration.",
-      "tags": [
-        "ai-agents",
-        "custom-ai-agents",
-        "deepseek",
-        "kimi",
-        "llama3",
-        "llm",
-        "lmstudio",
-        "local-llm",
-        "localai",
-        "mcp",
-        "mcp-servers",
-        "moonshot",
-        "multimodal",
-        "no-code",
-        "ollama",
-        "qwen3",
-        "rag",
-        "vector-database",
-        "web-scraping"
-      ]
+      "reason": "generic all-in-one AI app"
     },
     {
       "repo_id": "FlowiseAI/Flowise",
-      "stars": 53222,
-      "reason": "generic low-code AI agent builder",
-      "description": "Build AI Agents, Visually",
-      "tags": [
-        "agentic-ai",
-        "agentic-workflow",
-        "agents",
-        "artificial-intelligence",
-        "chatbot",
-        "chatgpt",
-        "javascript",
-        "langchain",
-        "large-language-models",
-        "low-code",
-        "multiagent-systems",
-        "no-code",
-        "openai",
-        "rag",
-        "react",
-        "typescript",
-        "workflow-automation"
-      ]
+      "reason": "generic low-code AI agent builder"
     },
     {
       "repo_id": "ChatGPTNextWeb/NextChat",
-      "stars": 88131,
-      "reason": "generic chat client",
-      "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android | Linux | Windows",
-      "tags": [
-        "calclaude",
-        "chatgpt",
-        "claude",
-        "cross-platform",
-        "desktop",
-        "fe",
-        "gemini",
-        "gemini-pro",
-        "gemini-server",
-        "gemini-ultra",
-        "gpt-4o",
-        "groq",
-        "nextjs",
-        "ollama",
-        "react",
-        "tauri",
-        "tauri-app",
-        "vercel",
-        "webui"
-      ]
+      "reason": "generic chat client"
     },
     {
       "repo_id": "ToolJet/ToolJet",
-      "stars": 37955,
-      "reason": "generic low-code app builder",
-      "description": "ToolJet is the open-source foundation of ToolJet AI - the enterprise app generation platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
-      "tags": [
-        "ai-app-builder",
-        "docker",
-        "hacktoberfest",
-        "internal-applications",
-        "internal-project",
-        "internal-tool",
-        "internal-tools",
-        "javascript",
-        "kubernetes",
-        "low-code",
-        "low-code-development-platform",
-        "low-code-framework",
-        "no-code",
-        "nodejs",
-        "reactjs",
-        "self-hosted",
-        "typescript",
-        "web-development-tools",
-        "workflow-automation"
-      ]
+      "reason": "generic low-code app builder"
     },
     {
       "repo_id": "Budibase/budibase",
-      "stars": 27972,
-      "reason": "generic low-code platform",
-      "description": "AI agents, automations and apps that run your operations. Model agnostic.",
-      "tags": [
-        "ai-app-builder",
-        "ai-applications",
-        "crud-app",
-        "crud-application",
-        "data-application",
-        "data-apps",
-        "internal-tools",
-        "it-workflows",
-        "low-code",
-        "low-code-no-code",
-        "low-code-platform",
-        "no-code",
-        "no-code-platform",
-        "open-source",
-        "rest-api-framework",
-        "sql-gui",
-        "workflow-apps",
-        "workflow-automation",
-        "workflow-engine"
-      ]
+      "reason": "generic low-code platform"
     },
     {
       "repo_id": "nocobase/nocobase",
-      "stars": 22584,
-      "reason": "generic no-code platform",
-      "description": "NocoBase is an open-source AI + no-code platform for building business systems fast. Instead of generating everything from scratch, AI works on top of production-proven infrastructure and a WYSIWYG no-code interface, so you get both speed and reliability.",
-      "tags": [
-        "admin-dashboard",
-        "ai-agent",
-        "ai-agents",
-        "ai-assistant",
-        "ai-tools",
-        "airtable",
-        "crm",
-        "crud",
-        "erp",
-        "internal-tool",
-        "internal-tools",
-        "low-code",
-        "lowcode",
-        "no-code",
-        "nocode",
-        "project-management",
-        "salesforce",
-        "self-hosted",
-        "workflows"
-      ]
+      "reason": "generic no-code platform"
     },
     {
       "repo_id": "1Panel-dev/1Panel",
-      "stars": 35676,
-      "reason": "generic server/VPS control panel",
-      "description": "🔥 1Panel is a modern, open-source VPS control panel — and the only one with native AI agent support. Run Ollama models, deploy OpenClaw agents, and manage your entire server stack from one clean web interface.",
-      "tags": [
-        "agent",
-        "clawdbot",
-        "copaw",
-        "docker",
-        "docker-ui",
-        "hermes",
-        "hermes-agent",
-        "linux",
-        "lnmp",
-        "ollama",
-        "openclaw",
-        "openresty",
-        "qwenpaw",
-        "webmin"
-      ]
+      "reason": "generic server/VPS control panel"
     },
     {
       "repo_id": "1Panel-dev/MaxKB",
-      "stars": 21099,
-      "reason": "generic chatbot / knowledge-base platform",
-      "description": "🔥 MaxKB is an open-source platform for building enterprise-grade agents. 强大易用的开源企业级智能体平台。",
-      "tags": [
-        "agent",
-        "agentic-ai",
-        "chatbot",
-        "deepseek-r1",
-        "knowledgebase",
-        "langchain",
-        "llama3",
-        "llm",
-        "maxkb",
-        "mcp-server",
-        "ollama",
-        "pgvector",
-        "qwen3",
-        "rag"
-      ]
+      "reason": "generic chatbot / knowledge-base platform"
     },
     {
       "repo_id": "coze-dev/coze-studio",
-      "stars": 20882,
-      "reason": "generic AI agent/bot builder platform",
-      "description": "An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.",
-      "tags": [
-        "agent",
-        "agent-platform",
-        "ai-plugins",
-        "chatbot",
-        "chatbot-framework",
-        "coze",
-        "coze-platform",
-        "generative-ai",
-        "go",
-        "kouzi",
-        "low-code-ai",
-        "multimodel-ai",
-        "no-code",
-        "rag",
-        "studio",
-        "typescript",
-        "workflow"
-      ]
+      "reason": "generic AI agent/bot builder platform"
     },
     {
       "repo_id": "warpdotdev/warp",
-      "stars": 60627,
-      "reason": "generic terminal app",
-      "description": "Warp is an agentic development environment, born out of the terminal.",
-      "tags": [
-        "bash",
-        "linux",
-        "macos",
-        "rust",
-        "shell",
-        "terminal",
-        "wasm",
-        "zsh"
-      ]
+      "reason": "generic terminal app"
     },
     {
       "repo_id": "binary-husky/gpt_academic",
-      "stars": 70792,
-      "reason": "generic GPT academic app",
-      "description": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
-      "tags": [
-        "academic",
-        "chatglm-6b",
-        "chatgpt",
-        "gpt-4",
-        "large-language-models"
-      ]
+      "reason": "generic GPT academic app"
     },
     {
       "repo_id": "oobabooga/textgen",
-      "stars": 47258,
-      "reason": "generic local LLM web UI",
-      "description": "Open-source desktop app for local LLMs. Text, vision, tool-calling, OpenAI/Anthropic-compatible API. 100% private.",
-      "tags": []
+      "reason": "generic local LLM web UI"
     },
     {
       "repo_id": "mudler/LocalAI",
-      "stars": 46546,
-      "reason": "local model API server (model-access infra, not a CC tool)",
-      "description": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
-      "tags": [
-        "agents",
-        "ai",
-        "api",
-        "audio-generation",
-        "decentralized",
-        "distributed",
-        "image-generation",
-        "libp2p",
-        "llama",
-        "llm",
-        "mamba",
-        "mcp",
-        "musicgen",
-        "object-detection",
-        "rerank",
-        "stable-diffusion",
-        "text-generation",
-        "tts"
-      ]
+      "reason": "local model API server (model-access infra, not a CC tool)"
     },
     {
       "repo_id": "gitroomhq/postiz-app",
-      "stars": 31235,
-      "reason": "generic social-media scheduling app",
-      "description": "📨 The ultimate agentic social media scheduling tool 🤖",
-      "tags": [
-        "nextjs",
-        "open-source",
-        "open-source-social-media-scheduling-tool",
-        "oss",
-        "redis",
-        "scheduling-tool",
-        "social-media-scheduling-tool",
-        "typescript"
-      ]
+      "reason": "generic social-media scheduling app"
     },
     {
       "repo_id": "elder-plinius/CL4R1T4S",
-      "stars": 26328,
-      "reason": "leaked / extracted system prompts",
-      "description": "LEAKED SYSTEM PROMPTS FOR CHATGPT, CLAUDE, GEMINI, GROK, PERPLEXITY, CURSOR, LOVABLE, REPLIT, AND MORE! - AI SYSTEMS TRANSPARENCY FOR ALL! 👐",
-      "tags": [
-        "agents",
-        "ai",
-        "chatgpt",
-        "gemini",
-        "google",
-        "grok",
-        "hacking",
-        "leak",
-        "leaked",
-        "openai",
-        "prompt",
-        "prompt-engineering",
-        "prompts",
-        "red-team",
-        "red-teaming",
-        "system",
-        "system-info",
-        "system-prompts",
-        "tools",
-        "transparency"
-      ]
+      "reason": "leaked / extracted system prompts"
     },
     {
       "repo_id": "siyuan-note/siyuan",
-      "stars": 44210,
-      "reason": "generic personal knowledge-management app",
-      "description": "A privacy-first, self-hosted, fully open source personal knowledge management software, written in typescript and golang.",
-      "tags": [
-        "anki",
-        "chatgpt",
-        "deepseek",
-        "electron",
-        "evernote",
-        "knowledge-base",
-        "local-first",
-        "markdown",
-        "note-taking",
-        "notes-app",
-        "notion",
-        "obsidian",
-        "ocr",
-        "ollama",
-        "openclaw",
-        "pdf",
-        "s3",
-        "self-hosted",
-        "webdav"
-      ]
+      "reason": "generic personal knowledge-management app"
     },
     {
       "repo_id": "AstrBotDevs/AstrBot",
-      "stars": 33470,
-      "reason": "generic multi-platform chatbot framework",
-      "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "tags": [
-        "agent",
-        "ai",
-        "chatbot",
-        "chatgpt",
-        "discord",
-        "docker",
-        "gemini",
-        "gpt",
-        "llama",
-        "llm",
-        "mcp",
-        "openai",
-        "python",
-        "qq",
-        "qqbot",
-        "telegram"
-      ]
+      "reason": "generic multi-platform chatbot framework"
     },
     {
       "repo_id": "moeru-ai/airi",
-      "stars": 40540,
-      "reason": "generic self-hosted AI companion app",
-      "description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.",
-      "tags": [
-        "ai-companion",
-        "ai-vtuber",
-        "airi",
-        "digital-life",
-        "grok-companion",
-        "live2d",
-        "neuro-sama",
-        "neurosama",
-        "openclaw",
-        "vrm",
-        "vtuber"
-      ]
+      "reason": "generic self-hosted AI companion app"
     },
     {
       "repo_id": "HKUDS/DeepTutor",
-      "stars": 24416,
-      "reason": "generic AI tutor app",
-      "description": "DeepTutor: Agent-native, Open-sourced Personalized Tutoring. https://deeptutor.info/.",
-      "tags": [
-        "ai-agents",
-        "ai-tutor",
-        "clawdbot",
-        "cli-tool",
-        "deepresearch",
-        "interactive-learning",
-        "large-language-models",
-        "multi-agent-systems",
-        "rag"
-      ]
+      "reason": "generic AI tutor app"
     },
     {
       "repo_id": "flipped-aurora/gin-vue-admin",
-      "stars": 24722,
-      "reason": "generic admin/dev platform (matches only by 'mcp')",
-      "description": "🚀Vite+Vue3+Gin拥有AI辅助的基础开发平台，企业级业务AI+开发解决方案，内置mcp辅助服务，内置skills管理，支持TS和JS混用。它集成了JWT鉴权、权限管理、动态路由、显隐可控组件、分页封装、多点登录拦截、资源权限、上传下载、代码生成器、表单生成器和可配置的导入导出等开发必备功能。",
-      "tags": [
-        "admin",
-        "ai",
-        "casbin",
-        "claw",
-        "element-ui",
-        "gin",
-        "gin-admin",
-        "gin-vue-admin",
-        "go",
-        "go-admin",
-        "golang",
-        "gorm",
-        "i18n",
-        "jwt",
-        "mcp",
-        "skills",
-        "vibecoding",
-        "vue",
-        "vue-admin",
-        "vue3"
-      ]
+      "reason": "generic admin/dev platform (matches only by 'mcp')"
     },
     {
       "repo_id": "crewAIInc/crewAI",
-      "stars": 52484,
-      "reason": "generic multi-agent framework (not Claude-specific)",
-      "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
-      "tags": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "aiagentframework",
-        "llms"
-      ]
+      "reason": "generic multi-agent framework (not Claude-specific)"
     },
     {
       "repo_id": "microsoft/autogen",
-      "stars": 58544,
-      "reason": "generic multi-agent framework",
-      "description": "A programming framework for agentic AI",
-      "tags": [
-        "agentic",
-        "agentic-agi",
-        "agents",
-        "ai",
-        "autogen",
-        "autogen-ecosystem",
-        "chatgpt",
-        "framework",
-        "llm-agent",
-        "llm-framework"
-      ]
+      "reason": "generic multi-agent framework"
     },
     {
       "repo_id": "FoundationAgents/MetaGPT",
-      "stars": 68413,
-      "reason": "generic multi-agent framework",
-      "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "tags": [
-        "agent",
-        "gpt",
-        "llm",
-        "metagpt",
-        "multi-agent"
-      ]
+      "reason": "generic multi-agent framework"
     },
     {
       "repo_id": "agno-agi/agno",
-      "stars": 40426,
-      "reason": "generic agent framework",
-      "description": "Build, run, and manage agent platforms.",
-      "tags": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "developer-tools",
-        "python"
-      ]
+      "reason": "generic agent framework"
     },
     {
       "repo_id": "langchain-ai/langgraph",
-      "stars": 33393,
-      "reason": "generic agent framework (langchain platform itself is listed)",
-      "description": "Build resilient agents.",
-      "tags": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "chatgpt",
-        "deepagents",
-        "enterprise",
-        "framework",
-        "gemini",
-        "generative-ai",
-        "langchain",
-        "langgraph",
-        "llm",
-        "multiagent",
-        "open-source",
-        "openai",
-        "pydantic",
-        "python",
-        "rag"
-      ]
+      "reason": "generic agent framework (langchain platform itself is listed)"
     },
     {
       "repo_id": "openai/openai-agents-python",
-      "stars": 26770,
-      "reason": "single-vendor (OpenAI) agent framework",
-      "description": "A lightweight, powerful framework for multi-agent workflows",
-      "tags": [
-        "agents",
-        "ai",
-        "framework",
-        "harness",
-        "llm",
-        "openai",
-        "python"
-      ]
+      "reason": "single-vendor (OpenAI) agent framework"
     },
     {
       "repo_id": "mastra-ai/mastra",
-      "stars": 24555,
-      "reason": "generic agent framework",
-      "description": "From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack.",
-      "tags": [
-        "agents",
-        "ai",
-        "chatbots",
-        "evals",
-        "javascript",
-        "llm",
-        "mcp",
-        "nextjs",
-        "nodejs",
-        "reactjs",
-        "tts",
-        "typescript",
-        "workflows"
-      ]
-    },
-    {
-      "repo_id": "letta-ai/letta",
-      "stars": 23042,
-      "reason": "generic agent-memory framework",
-      "description": "Letta is the platform for building stateful agents: AI with advanced memory that can learn and self-improve over time.",
-      "tags": [
-        "ai",
-        "ai-agents",
-        "llm",
-        "llm-agent"
-      ]
+      "reason": "generic agent framework"
     },
     {
       "repo_id": "agentscope-ai/agentscope",
-      "stars": 25873,
-      "reason": "generic multi-agent framework",
-      "description": "Build and run agents you can see, understand and trust.",
-      "tags": [
-        "agent",
-        "chatbot",
-        "large-language-models",
-        "llm",
-        "llm-agent",
-        "mcp",
-        "multi-agent",
-        "multi-modal",
-        "react-agent"
-      ]
+      "reason": "generic multi-agent framework"
     },
     {
       "repo_id": "Snailclimb/JavaGuide",
-      "stars": 155975,
-      "reason": "Java interview / backend study guide (matches only by mcp/skills topics)",
-      "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
-      "tags": [
-        "agent",
-        "ai",
-        "context-engineering",
-        "deepseek",
-        "interview",
-        "java",
-        "mcp",
-        "mysql",
-        "redis",
-        "redisson",
-        "skills",
-        "springai",
-        "system-design"
-      ]
+      "reason": "Java interview / backend study guide (matches only by mcp/skills topics)"
     },
     {
       "repo_id": "alibaba/nacos",
-      "stars": 32985,
-      "reason": "microservices service-discovery / config platform (matches only by mcp-registry)",
-      "description": "an easy-to-use dynamic service discovery, configuration and service management platform for building AI cloud native applications.",
-      "tags": [
-        "a2a-registry",
-        "agent",
-        "ai-registry",
-        "configuration-management",
-        "distributed-configuration",
-        "dubbo",
-        "istio",
-        "kubernetes",
-        "mcp",
-        "mcp-management",
-        "mcp-registry",
-        "microservices",
-        "nacos",
-        "prompt",
-        "skills",
-        "spring-cloud"
-      ]
+      "reason": "microservices service-discovery / config platform (matches only by mcp-registry)"
     },
     {
       "repo_id": "sansan0/TrendRadar",
-      "stars": 58598,
-      "reason": "generic AI news / opinion trend-monitor app",
-      "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 + AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
-      "tags": [
-        "ai",
-        "bark",
-        "data-analysis",
-        "docker",
-        "hot-news",
-        "llm",
-        "mail",
-        "mcp",
-        "mcp-server",
-        "news",
-        "ntfy",
-        "python",
-        "rss",
-        "trending-topics",
-        "wechat",
-        "wework"
-      ]
+      "reason": "generic AI news / opinion trend-monitor app"
     },
     {
       "repo_id": "mindsdb/minds-platform",
-      "stars": 39221,
-      "reason": "generic applied-AI platform",
-      "description": "Platform dedicated to building an open foundation for applied Artificial Intelligence, designed for people seeking production-ready AI systems they can truly control, extend and deploy anywhere.",
-      "tags": [
-        "agents",
-        "ai",
-        "analytics",
-        "artificial-inteligence",
-        "bigquery",
-        "business-intelligence",
-        "databases",
-        "hacktoberfest",
-        "llms",
-        "mcp",
-        "mssql",
-        "mysql",
-        "postgresql",
-        "rag"
-      ]
+      "reason": "generic applied-AI platform"
     },
     {
       "repo_id": "PDFMathTranslate/PDFMathTranslate",
-      "stars": 34259,
-      "reason": "PDF paper-translation tool (matches only by optional MCP interface)",
-      "description": "[EMNLP 2025 Demo] PDF scientific paper translation with preserved formats - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero",
-      "tags": [
-        "chinese",
-        "document",
-        "edit",
-        "english",
-        "japanese",
-        "korean",
-        "latex",
-        "math",
-        "mcp",
-        "modify",
-        "obsidian",
-        "openai",
-        "pdf",
-        "pdf2zh",
-        "python",
-        "russian",
-        "translate",
-        "translation",
-        "zotero"
-      ]
+      "reason": "PDF paper-translation tool (matches only by optional MCP interface)"
     },
     {
       "repo_id": "78/xiaozhi-esp32",
-      "stars": 26879,
-      "reason": "ESP32 hardware chatbot (matches only by mcp)",
-      "description": "An MCP-based chatbot | 一个基于MCP的聊天机器人",
-      "tags": [
-        "chatbot",
-        "esp32",
-        "mcp"
-      ]
+      "reason": "ESP32 hardware chatbot (matches only by mcp)"
     },
     {
       "repo_id": "bytedance/UI-TARS-desktop",
-      "stars": 35749,
-      "reason": "generic multimodal GUI-agent stack",
-      "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
-      "tags": [
-        "agent",
-        "agent-tars",
-        "browser-use",
-        "computer-use",
-        "cowork",
-        "gui-agent",
-        "gui-operator",
-        "mcp",
-        "mcp-server",
-        "multimodal",
-        "tars",
-        "ui-tars",
-        "vision",
-        "vlm"
-      ]
+      "reason": "generic multimodal GUI-agent stack"
     },
     {
       "repo_id": "assafelovic/gpt-researcher",
-      "stars": 27395,
-      "reason": "generic autonomous research agent",
-      "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
-      "tags": [
-        "agent",
-        "ai",
-        "automation",
-        "deepresearch",
-        "llms",
-        "mcp",
-        "mcp-server",
-        "python",
-        "research",
-        "search",
-        "webscraping"
-      ]
-    },
-    {
-      "repo_id": "patchy631/ai-engineering-hub",
-      "stars": 35403,
-      "reason": "generic AI-engineering tutorials, not ecosystem-specific",
-      "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
-      "tags": [
-        "agents",
-        "ai",
-        "llms",
-        "machine-learning",
-        "mcp",
-        "rag"
-      ]
-    },
-    {
-      "repo_id": "rohitg00/ai-engineering-from-scratch",
-      "stars": 25047,
-      "reason": "generic AI-engineering course",
-      "description": "Learn it. Build it. Ship it for others.",
-      "tags": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "ai-engineering",
-        "computer-vision",
-        "course",
-        "deep-learning",
-        "from-scratch",
-        "generative-ai",
-        "llm",
-        "machine-learning",
-        "mcp",
-        "nlp",
-        "python",
-        "reinforcement-learning",
-        "rust",
-        "swarm-intelligence",
-        "transformers",
-        "tutorial",
-        "typescript"
-      ]
+      "reason": "generic autonomous research agent"
     },
     {
       "repo_id": "langchain-ai/deepagents",
-      "stars": 23570,
-      "reason": "generic agent harness/framework (langchain)",
-      "description": "The batteries-included agent harness.",
-      "tags": [
-        "ai",
-        "deepagents",
-        "langchain",
-        "langgraph",
-        "python",
-        "typescript"
-      ]
+      "reason": "generic agent harness/framework (langchain)"
     },
     {
       "repo_id": "lobehub/lobehub",
-      "stars": 77987,
-      "reason": "generic AI agent-operator / chat platform",
-      "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
-      "tags": [
-        "agent",
-        "agent-collaboration",
-        "agent-harness",
-        "ai",
-        "cao",
-        "chatgpt",
-        "chief-agent-operator",
-        "claude",
-        "deepseek",
-        "gemini",
-        "gpt",
-        "knowledge-base",
-        "mcp",
-        "openai",
-        "skills"
-      ]
+      "reason": "generic AI agent-operator / chat platform"
     },
     {
       "repo_id": "Chalarangelo/30-seconds-of-code",
-      "stars": 127957,
-      "reason": "coding-snippets article collection (matched by 'skill')",
-      "description": "Coding articles to level up your development skills",
-      "tags": [
-        "astro",
-        "awesome-list",
-        "css",
-        "education",
-        "es6-javascript",
-        "git",
-        "html",
-        "javascript",
-        "learn-to-code",
-        "learning-resources",
-        "nodejs",
-        "programming",
-        "snippets"
-      ]
+      "reason": "coding-snippets article collection (matched by 'skill')"
     },
     {
       "repo_id": "florinpop17/app-ideas",
-      "stars": 94432,
-      "reason": "list of app project ideas (matched by 'skill')",
-      "description": "A Collection of application ideas which can be used to improve your coding skills.",
-      "tags": [
-        "applications",
-        "coding",
-        "codingchallenges",
-        "css",
-        "hacktoberfest",
-        "html",
-        "ideas",
-        "javascript",
-        "practice"
-      ]
+      "reason": "list of app project ideas (matched by 'skill')"
     },
     {
       "repo_id": "thedaviddias/Front-End-Checklist",
-      "stars": 72749,
-      "reason": "front-end best-practices checklist (keyword match)",
-      "description": "🗂 The essential checklist for modern web development, for humans and AI agents",
-      "tags": [
-        "ai-agent",
-        "ai-agents",
-        "checklist",
-        "css",
-        "front-end-developer-tool",
-        "front-end-development",
-        "frontend",
-        "guidelines",
-        "html",
-        "javascript",
-        "lists",
-        "reference",
-        "resources",
-        "rules",
-        "web-development"
-      ]
+      "reason": "front-end best-practices checklist (keyword match)"
     },
     {
       "repo_id": "netdata/netdata",
-      "stars": 78974,
-      "reason": "infrastructure monitoring / observability (matched by 'mcp')",
-      "description": "The fastest path to AI-powered full stack observability, even for lean teams.",
-      "tags": [
-        "ai",
-        "alerting",
-        "cncf",
-        "data-visualization",
-        "database",
-        "devops",
-        "docker",
-        "grafana",
-        "influxdb",
-        "kubernetes",
-        "linux",
-        "machine-learning",
-        "mcp",
-        "mongodb",
-        "monitoring",
-        "mysql",
-        "netdata",
-        "observability",
-        "postgresql",
-        "prometheus"
-      ]
+      "reason": "infrastructure monitoring / observability (matched by 'mcp')"
     },
     {
       "repo_id": "Kong/kong",
-      "stars": 43490,
-      "reason": "API / AI gateway (matched by 'mcp')",
-      "description": "🦍 The API and AI Gateway",
-      "tags": [
-        "ai",
-        "ai-gateway",
-        "api-gateway",
-        "api-management",
-        "apis",
-        "artificial-intelligence",
-        "cloud-native",
-        "devops",
-        "kubernetes",
-        "kubernetes-ingress",
-        "kubernetes-ingress-controller",
-        "llm-gateway",
-        "llm-ops",
-        "mcp",
-        "mcp-gateway",
-        "microservice",
-        "microservices",
-        "openai-proxy",
-        "reverse-proxy",
-        "serverless"
-      ]
+      "reason": "API / AI gateway (matched by 'mcp')"
     },
     {
       "repo_id": "pingcap/tidb",
-      "stars": 40119,
-      "reason": "distributed SQL database (matched by 'agentic')",
-      "description": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
-      "tags": [
-        "agent",
-        "agent-context",
-        "agent-memory",
-        "agentic",
-        "ai",
-        "cloud-native",
-        "database",
-        "distributed-database",
-        "distributed-transactions",
-        "go",
-        "hacktoberfest",
-        "htap",
-        "memory",
-        "mysql",
-        "mysql-compatibility",
-        "scale",
-        "serverless",
-        "sql",
-        "tidb"
-      ]
+      "reason": "distributed SQL database (matched by 'agentic')"
     },
     {
       "repo_id": "zeromicro/go-zero",
-      "stars": 33055,
-      "reason": "Go microservices framework (matched by 'spec-driven')",
-      "description": "A cloud-native Go microservices framework with cli tool for productivity.",
-      "tags": [
-        "ai-native",
-        "ai-native-development",
-        "cloud-native",
-        "code-generation",
-        "framework",
-        "gateway",
-        "go",
-        "golang",
-        "grpc-gateway",
-        "microservice",
-        "microservice-framework",
-        "microservices",
-        "microservices-architecture",
-        "rest-api",
-        "restful",
-        "restful-api",
-        "rpc",
-        "rpc-framework",
-        "spec-driven-development",
-        "web-framework"
-      ]
+      "reason": "Go microservices framework (matched by 'spec-driven')"
     },
     {
       "repo_id": "go-kratos/kratos",
-      "stars": 25699,
-      "reason": "Go microservices framework (matched by 'mcp')",
-      "description": "Your ultimate Go microservices framework for the cloud-native era.",
-      "tags": [
-        "ai",
-        "architecture",
-        "cloud-native",
-        "framework",
-        "generate",
-        "go",
-        "golang",
-        "grpc",
-        "http",
-        "kratos",
-        "mcp",
-        "microservice",
-        "microservices",
-        "protobuf"
-      ]
+      "reason": "Go microservices framework (matched by 'mcp')"
     },
     {
       "repo_id": "codex-team/editor.js",
-      "stars": 31796,
-      "reason": "block-style WYSIWYG editor; spurious 'codex' match",
-      "description": "A block-style editor with clean JSON output",
-      "tags": [
-        "codex-editor",
-        "editor",
-        "javascript",
-        "json",
-        "redactor",
-        "typescript",
-        "ui",
-        "wysiwyg"
-      ]
+      "reason": "block-style WYSIWYG editor; spurious 'codex' match"
     },
     {
       "repo_id": "AllThingsSmitty/css-protips",
-      "stars": 30075,
-      "reason": "CSS tips collection (matched by 'skill')",
-      "description": "⚡️ A collection of tips to help take your CSS skills pro 🦾",
-      "tags": [
-        "awesome",
-        "awesome-list",
-        "css",
-        "css-flexbox",
-        "css-grid",
-        "css-tricks",
-        "css3",
-        "flexbox",
-        "learning-resources",
-        "protip",
-        "tips",
-        "tips-and-tricks",
-        "useful"
-      ]
+      "reason": "CSS tips collection (matched by 'skill')"
     },
     {
       "repo_id": "Ebazhanov/linkedin-skill-assessments-quizzes",
-      "stars": 28761,
-      "reason": "LinkedIn quiz answers (matched by 'skill')",
-      "description": "Full reference of LinkedIn answers 2024 for skill assessments (aws-lambda, rest-api, javascript, react, git, html, jquery, mongodb, java, Go, python, machine-learning, power-point) linkedin excel test lösungen, linkedin machine learning test LinkedIn test questions and answers",
-      "tags": [
-        "answers",
-        "assessment",
-        "english",
-        "exam",
-        "france",
-        "german",
-        "golang",
-        "hacktoberfest",
-        "hacktoberfest2020",
-        "hacktoberfest2021",
-        "hacktoberfest2022",
-        "hacktoberfest2023",
-        "hacktoberfest2024",
-        "hacktoberfest2025",
-        "linkedin",
-        "linkedin-questions",
-        "quiz",
-        "quiz-questions",
-        "skills"
-      ]
+      "reason": "LinkedIn quiz answers (matched by 'skill')"
     },
     {
       "repo_id": "norvig/pytudes",
-      "stars": 24331,
-      "reason": "Python practice exercises (matched by 'skill')",
-      "description": "Python programs, usually short, of considerable difficulty, to perfect particular skills.",
-      "tags": [
-        "demonstrate-skills",
-        "practice",
-        "programming",
-        "python",
-        "python-3"
-      ]
+      "reason": "Python practice exercises (matched by 'skill')"
     },
     {
       "repo_id": "dolthub/dolt",
-      "stars": 22921,
-      "reason": "version-controlled SQL database (keyword match)",
-      "description": "Dolt – Git for Data",
-      "tags": [
-        "agent-memory",
-        "agent-memory-server",
-        "ai-agents",
-        "ai-database",
-        "data-version-control",
-        "data-versioning",
-        "database",
-        "database-version-control",
-        "database-versioning",
-        "decentralized-database",
-        "git",
-        "git-database",
-        "git-for-data",
-        "git-for-databases",
-        "git-sql",
-        "immutable-database",
-        "mariadb",
-        "mysql",
-        "sql",
-        "version-controlled-database"
-      ]
+      "reason": "version-controlled SQL database (keyword match)"
     },
     {
       "repo_id": "qax-os/excelize",
-      "stars": 20619,
-      "reason": "Go library for Excel files (matched by 'mcp')",
-      "description": "Go language library for reading and writing Microsoft Excel™ (XLAM / XLSM / XLSX / XLTM / XLTX) spreadsheets",
-      "tags": [
-        "agent",
-        "ai",
-        "analytics",
-        "chart",
-        "ecma-376",
-        "excel",
-        "excelize",
-        "formula",
-        "go",
-        "mcp",
-        "microsoft",
-        "office",
-        "ooxml",
-        "spreadsheet",
-        "statistics",
-        "table",
-        "vba",
-        "visualization",
-        "xlsx",
-        "xml"
-      ]
+      "reason": "Go library for Excel files (matched by 'mcp')"
     },
     {
       "repo_id": "airbytehq/airbyte",
-      "stars": 21355,
-      "reason": "data-integration / ELT platform (matched by 'ai agent')",
-      "description": "Open-source data movement for ELT pipelines and AI agents — from APIs, databases & files to warehouses, lakes, and AI applications. Both self-hosted and Cloud.",
-      "tags": [
-        "bigquery",
-        "change-data-capture",
-        "data",
-        "data-analysis",
-        "data-collection",
-        "data-engineering",
-        "data-integration",
-        "data-pipeline",
-        "elt",
-        "etl",
-        "java",
-        "mssql",
-        "mysql",
-        "pipeline",
-        "postgresql",
-        "python",
-        "redshift",
-        "s3",
-        "self-hosted",
-        "snowflake"
-      ]
+      "reason": "data-integration / ELT platform (matched by 'ai agent')"
     },
     {
       "repo_id": "TeamStuQ/skill-map",
-      "stars": 21569,
-      "reason": "programmer skill-map study guide (matched by 'skill')",
-      "description": "程序员技能图谱",
-      "tags": [
-        "programmer",
-        "skillmap",
-        "stuq"
-      ]
+      "reason": "programmer skill-map study guide (matched by 'skill')"
     },
     {
       "repo_id": "nrwl/nx",
-      "stars": 28798,
-      "reason": "monorepo build system (matched by 'ai agent')",
-      "description": "The Monorepo Platform that amplifies both developers and AI agents. Nx optimizes your builds, scales your CI, and fixes failed PRs automatically. Ship in half the time.",
-      "tags": [
-        "angular",
-        "build",
-        "build-system",
-        "build-tool",
-        "building-tool",
-        "cli",
-        "cypress",
-        "hacktoberfest",
-        "javascript",
-        "monorepo",
-        "nextjs",
-        "nodejs",
-        "nx",
-        "nx-workspaces",
-        "react",
-        "storybook",
-        "typescript"
-      ]
+      "reason": "monorepo build system (matched by 'ai agent')"
     },
     {
       "repo_id": "chroma-core/chroma",
-      "stars": 28134,
-      "reason": "vector database / search infra (matched by 'ai agent')",
-      "description": "Search infrastructure for AI",
-      "tags": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "database",
-        "rust",
-        "rust-lang"
-      ]
+      "reason": "vector database / search infra (matched by 'ai agent')"
     },
     {
       "repo_id": "cube-js/cube",
-      "stars": 20070,
-      "reason": "semantic-layer / analytics framework (matched by 'agentic')",
-      "description": "📊 Cube Core is open-source semantic layer for AI, BI and embedded analytics",
-      "tags": [
-        "agentic-analytics",
-        "agents",
-        "ai",
-        "analytics",
-        "bi",
-        "bigquery",
-        "business-intelligence",
-        "businessintelligence",
-        "conversational-analytics",
-        "cube",
-        "databricks",
-        "embedded-analytics",
-        "headless-bi",
-        "mysql",
-        "postgresql",
-        "rust",
-        "semantic-layer",
-        "snowflake",
-        "sql"
-      ]
+      "reason": "semantic-layer / analytics framework (matched by 'agentic')"
     },
     {
       "repo_id": "firecrawl/firecrawl",
-      "stars": 126411,
-      "reason": "web scraping/crawling API service (generic AI infra)",
-      "description": "The API to search, scrape, and interact with the web at scale. 🔥",
-      "tags": [
-        "ai",
-        "ai-agents",
-        "ai-crawler",
-        "ai-scraping",
-        "ai-search",
-        "crawler",
-        "data-extraction",
-        "html-to-markdown",
-        "llm",
-        "markdown",
-        "scraper",
-        "scraping",
-        "web-crawler",
-        "web-data",
-        "web-data-extraction",
-        "web-scraper",
-        "web-scraping",
-        "web-search",
-        "webscraping"
-      ]
-    },
-    {
-      "repo_id": "browser-use/browser-use",
-      "stars": 96291,
-      "reason": "generic browser-automation library for AI agents",
-      "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-      "tags": [
-        "ai-agents",
-        "ai-tools",
-        "browser-automation",
-        "browser-use",
-        "llm",
-        "playwright",
-        "python"
-      ]
+      "reason": "web scraping/crawling API service (generic AI infra)"
     },
     {
       "repo_id": "karpathy/autoresearch",
-      "stars": 84170,
-      "reason": "generic autonomous research agent",
-      "description": "AI agents running research on single-GPU nanochat training automatically",
-      "tags": []
+      "reason": "generic autonomous research agent"
     },
     {
       "repo_id": "infiniflow/ragflow",
-      "stars": 81560,
-      "reason": "generic open-source RAG engine",
-      "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
-      "tags": [
-        "agentic-ai",
-        "agentic-retrieval",
-        "agentic-search",
-        "ai",
-        "ai-agents",
-        "context-engine",
-        "context-management",
-        "llm-apps",
-        "rag",
-        "retrieval-augmented-generation"
-      ]
+      "reason": "generic open-source RAG engine"
     },
     {
       "repo_id": "daytonaio/daytona",
-      "stars": 72513,
-      "reason": "generic dev-environment / sandbox infra for agents",
-      "description": "Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code",
-      "tags": [
-        "agentic-workflow",
-        "ai",
-        "ai-agents",
-        "ai-runtime",
-        "ai-sandboxes",
-        "code-execution",
-        "code-interpreter",
-        "developer-tools"
-      ]
+      "reason": "generic dev-environment / sandbox infra for agents"
     },
     {
       "repo_id": "bytedance/deer-flow",
-      "stars": 70018,
-      "reason": "generic long-horizon agent harness (ByteDance)",
-      "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
-      "tags": [
-        "agent",
-        "agentic",
-        "agentic-framework",
-        "agentic-workflow",
-        "ai",
-        "ai-agents",
-        "deep-research",
-        "harness",
-        "langchain",
-        "langgraph",
-        "langmanus",
-        "llm",
-        "multi-agent",
-        "nodejs",
-        "podcast",
-        "python",
-        "superagent",
-        "typescript"
-      ]
+      "reason": "generic long-horizon agent harness (ByteDance)"
     },
     {
       "repo_id": "OpenBB-finance/OpenBB",
-      "stars": 68271,
-      "reason": "financial data platform / app",
-      "description": "Financial data platform for analysts, quants and AI agents.",
-      "tags": [
-        "ai",
-        "crypto",
-        "derivatives",
-        "economics",
-        "equity",
-        "finance",
-        "fixed-income",
-        "machine-learning",
-        "openbb",
-        "options",
-        "python",
-        "quantitative-finance",
-        "stocks"
-      ]
+      "reason": "financial data platform / app"
     },
     {
       "repo_id": "opendatalab/MinerU",
-      "stars": 65700,
-      "reason": "generic document / PDF extraction tool",
-      "description": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
-      "tags": [
-        "ai4science",
-        "document-analysis",
-        "docx",
-        "extract-data",
-        "layout-analysis",
-        "ocr",
-        "parser",
-        "pdf",
-        "pdf-converter",
-        "pdf-extractor-llm",
-        "pdf-extractor-pretrain",
-        "pdf-extractor-rag",
-        "pdf-parser",
-        "pptx",
-        "python",
-        "xlsx"
-      ]
+      "reason": "generic document / PDF extraction tool"
     },
     {
       "repo_id": "666ghj/MiroFish",
-      "stars": 63278,
-      "reason": "generic swarm-intelligence agent engine",
-      "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物",
-      "tags": [
-        "agent-memory",
-        "financial-forecasting",
-        "future-prediction",
-        "knowledge-graph",
-        "llms",
-        "multi-agent-simulation",
-        "public-opinion-analysis",
-        "python3",
-        "social-prediction",
-        "swarm-intelligence"
-      ]
+      "reason": "generic swarm-intelligence agent engine"
     },
     {
       "repo_id": "D4Vinci/Scrapling",
-      "stars": 55723,
-      "reason": "generic web-scraping framework",
-      "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!",
-      "tags": [
-        "ai",
-        "ai-scraping",
-        "automation",
-        "crawler",
-        "crawling",
-        "crawling-python",
-        "data",
-        "data-extraction",
-        "mcp",
-        "mcp-server",
-        "playwright",
-        "python",
-        "scraping",
-        "selectors",
-        "stealth",
-        "web-scraper",
-        "web-scraping",
-        "web-scraping-python",
-        "webscraping",
-        "xpath"
-      ]
+      "reason": "generic web-scraping framework"
     },
     {
       "repo_id": "ZhuLinsen/daily_stock_analysis",
-      "stars": 39493,
-      "reason": "LLM stock-analysis app",
-      "description": "LLM驱动的 A/H/美股智能分析：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
-      "tags": [
-        "a-stock",
-        "ai-agent",
-        "aigc",
-        "llm",
-        "quant",
-        "quantitative-finance",
-        "quantitative-trading"
-      ]
+      "reason": "LLM stock-analysis app"
     },
     {
       "repo_id": "Hmbown/CodeWhale",
-      "stars": 36099,
-      "reason": "DeepSeek/MiMo coding agent (non-Claude)",
-      "description": "DeepSeek + MiMo coding agent in terminal",
-      "tags": [
-        "cli",
-        "deepseek",
-        "llm",
-        "rust",
-        "terminal",
-        "tui"
-      ]
+      "reason": "DeepSeek/MiMo coding agent (non-Claude)"
     },
     {
       "repo_id": "ItzCrazyKns/Vane",
-      "stars": 35011,
-      "reason": "generic AI answer engine",
-      "description": "Vane is an AI-powered answering engine.",
-      "tags": [
-        "ai-agents",
-        "ai-search-engine",
-        "answering-engine",
-        "artificial-intelligence",
-        "llm",
-        "machine-learning",
-        "open-source-ai-search-engine",
-        "perplexica",
-        "rag",
-        "search-engine",
-        "searxng",
-        "searxng-copilot",
-        "self-hosted-ai",
-        "vane"
-      ]
+      "reason": "generic AI answer engine"
     },
     {
       "repo_id": "VectifyAI/PageIndex",
-      "stars": 32336,
-      "reason": "generic document-index / vectorless RAG tool",
-      "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
-      "tags": [
-        "agentic-ai",
-        "agents",
-        "ai",
-        "ai-agents",
-        "context-engineering",
-        "information-retrieval",
-        "llm",
-        "rag",
-        "reasoning",
-        "retrieval",
-        "retrieval-augmented-generation",
-        "vector-database"
-      ]
+      "reason": "generic document-index / vectorless RAG tool"
     },
     {
       "repo_id": "conductor-oss/conductor",
-      "stars": 31868,
-      "reason": "generic workflow-orchestration engine",
-      "description": "Conductor is an event driven agentic workflow engine providing durable and highly resilient execution engine for applications and AI Agents",
-      "tags": [
-        "distributed-systems",
-        "durable-execution",
-        "grpc",
-        "java",
-        "javascript",
-        "microservice-orchestration",
-        "orchestration-engine",
-        "orchestrator",
-        "reactjs",
-        "spring-boot",
-        "workflow-automation",
-        "workflow-engine",
-        "workflow-management",
-        "workflows"
-      ]
+      "reason": "generic workflow-orchestration engine"
     },
     {
       "repo_id": "CopilotKit/CopilotKit",
-      "stars": 31851,
-      "reason": "generic agent / generative-UI frontend framework",
-      "description": "The Frontend Stack for Agents & Generative UI. React + Angular. Makers of the AG-UI Protocol",
-      "tags": [
-        "agent",
-        "agent-native",
-        "agentic-ai",
-        "agents",
-        "ai",
-        "ai-agent",
-        "ai-assistant",
-        "assistant",
-        "assistant-chat-bots",
-        "copilot",
-        "copilot-chat",
-        "generative-ui",
-        "js",
-        "llm",
-        "nextjs",
-        "open-source",
-        "react",
-        "reactjs",
-        "ts",
-        "typescript"
-      ]
+      "reason": "generic agent / generative-UI frontend framework"
     },
     {
       "repo_id": "Fosowl/agenticSeek",
-      "stars": 26434,
-      "reason": "generic local autonomous agent (Manus-like)",
-      "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)",
-      "tags": [
-        "agentic-ai",
-        "agents",
-        "ai",
-        "autonomous-agents",
-        "deepseek-r1",
-        "llm",
-        "llm-agents",
-        "voice-assistant"
-      ]
+      "reason": "generic local autonomous agent (Manus-like)"
     },
     {
       "repo_id": "Fincept-Corporation/FinceptTerminal",
-      "stars": 24647,
-      "reason": "finance terminal app",
-      "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
-      "tags": [
-        "ai-agents",
-        "algorithmic-trading",
-        "bloomberg-terminal",
-        "cpp",
-        "finance",
-        "financial-markets",
-        "fintech",
-        "good-first-issue",
-        "investment",
-        "investment-research",
-        "machine-learning",
-        "opensource",
-        "python",
-        "qt",
-        "quantitative-finance",
-        "stock-market",
-        "trading"
-      ]
+      "reason": "finance terminal app"
     },
     {
       "repo_id": "jackwener/OpenCLI",
-      "stars": 23095,
-      "reason": "generic 'website-to-CLI' tool",
-      "description": "Make Any Website into CLI & Use your logged-in browser by AI agent.",
-      "tags": [
-        "ai-agent",
-        "ai-agents",
-        "ai-tools",
-        "cli"
-      ]
+      "reason": "generic 'website-to-CLI' tool"
     },
     {
       "repo_id": "hugohe3/ppt-master",
-      "stars": 22671,
-      "reason": "AI PowerPoint generator app",
-      "description": "AI generates a real, editable PowerPoint from any document — native shapes & animations, speaker notes voiced as audio narration, and the option to follow your own .pptx template, not slide images · by Hugo He",
-      "tags": [
-        "ai-agent",
-        "aippt",
-        "office",
-        "powerpoint",
-        "powerpoint-generation",
-        "ppt",
-        "pptx",
-        "presentation",
-        "slide",
-        "slides"
-      ]
+      "reason": "AI PowerPoint generator app"
     },
     {
       "repo_id": "CloakHQ/CloakBrowser",
-      "stars": 22590,
-      "reason": "stealth / anti-bot-detection browser tool",
-      "description": "Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
-      "tags": [
-        "ai-agents",
-        "anti-detect",
-        "antidetect-browser",
-        "bot-detection",
-        "browser-automation",
-        "captcha-bypass",
-        "chromium",
-        "cloudflare",
-        "cloudflare-bypass",
-        "fingerprint",
-        "headless-browser",
-        "playwright",
-        "puppeteer",
-        "python",
-        "recaptcha",
-        "selenium",
-        "stealth-browser",
-        "undetected",
-        "web-scraping",
-        "webscraping"
-      ]
+      "reason": "stealth / anti-bot-detection browser tool"
     },
     {
       "repo_id": "heygen-com/hyperframes",
-      "stars": 22514,
-      "reason": "HTML-to-video rendering tool",
-      "description": "Write HTML. Render video. Built for agents.",
-      "tags": [
-        "ai",
-        "animation",
-        "ffmpeg",
-        "framework",
-        "gsap",
-        "html",
-        "mcp",
-        "puppeteer",
-        "rendering",
-        "typescript",
-        "video"
-      ]
+      "reason": "HTML-to-video rendering tool"
     },
     {
       "repo_id": "AlexsJones/llmfit",
-      "stars": 26871,
-      "reason": "multi-provider model finder/runner (model-access)",
-      "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
-      "tags": [
-        "gguf",
-        "llm",
-        "localai",
-        "mlx",
-        "skill",
-        "unsloth"
-      ]
+      "reason": "multi-provider model finder/runner (model-access)"
     },
     {
       "repo_id": "stanford-oval/storm",
-      "stars": 28285,
-      "reason": "generic LLM knowledge-curation / research system",
-      "description": "An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations.",
-      "tags": [
-        "agentic-rag",
-        "deep-research",
-        "emnlp2024",
-        "knowledge-curation",
-        "large-language-models",
-        "naacl",
-        "nlp",
-        "report-generation",
-        "retrieval-augmented-generation"
-      ]
+      "reason": "generic LLM knowledge-curation / research system"
     },
     {
       "repo_id": "ruvnet/RuView",
-      "stars": 68669,
-      "reason": "WiFi-signal spatial-sensing project; spurious 'claude' match (unrelated)",
-      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
-      "tags": [
-        "awesome",
-        "claude",
-        "densepose",
-        "esp32",
-        "firmware",
-        "home-assistant",
-        "home-automation",
-        "iot",
-        "monitoring",
-        "networking",
-        "npm",
-        "pose-estimation",
-        "react",
-        "rf",
-        "self-learning",
-        "skills",
-        "spatial-intelligence",
-        "typescript",
-        "wifi",
-        "wifi-security"
-      ]
+      "reason": "WiFi-signal spatial-sensing project; spurious 'claude' match (unrelated)"
     },
     {
       "repo_id": "googleworkspace/cli",
-      "reason": "single-vendor Google Workspace CLI / Gemini CLI extension, not a Claude-ecosystem tool",
-      "stars": 26693,
-      "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more.",
-      "tags": [
-        "agent-skills",
-        "ai-agent",
-        "cli",
-        "gemini-cli-extension",
-        "google-workspace"
-      ]
-    },
-    {
-      "repo_id": "NirDiamant/RAG_Techniques",
-      "reason": "generic RAG tutorial/notebook collection (matches only by 'agentic'); not ecosystem-specific",
-      "stars": 27633,
-      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems.",
-      "tags": [
-        "agentic-rag",
-        "ai",
-        "llm",
-        "rag",
-        "retrieval-augmented-generation",
-        "tutorials"
-      ]
+      "reason": "single-vendor Google Workspace CLI / Gemini CLI extension, not a Claude-ecosystem tool"
     },
     {
       "repo_id": "f/prompts.chat",
-      "reason": "generic provider-neutral prompt directory (f.k.a. Awesome ChatGPT Prompts); ChatGPT-first, matches only by the 'claude' tag, not a Claude-ecosystem tool",
-      "stars": 163065,
-      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-      "tags": [
-        "awesome-list",
-        "chatgpt-prompts",
-        "gpt",
-        "openai",
-        "prompt-engineering",
-        "prompts"
-      ]
+      "reason": "generic provider-neutral prompt directory (f.k.a. Awesome ChatGPT Prompts); ChatGPT-first, matches only by the 'claude' tag, not a Claude-ecosystem tool"
     },
     {
       "repo_id": "langchain-ai/langchain",
-      "reason": "generic agent framework / platform (not Claude-specific) — consistent with already-filtered langchain-ai/langgraph and langchain-ai/deepagents",
-      "stars": 138053,
-      "description": "The agent engineering platform.",
-      "tags": [
-        "agents",
-        "ai",
-        "langchain",
-        "llm",
-        "openai",
-        "gemini"
-      ]
+      "reason": "generic agent framework / platform (not Claude-specific) — consistent with already-filtered langchain-ai/langgraph and langchain-ai/deepagents"
     },
     {
       "repo_id": "Significant-Gravitas/AutoGPT",
-      "reason": "generic autonomous-agent framework/platform, not Claude-ecosystem-specific (same class as filtered crewAI/autogen/MetaGPT)",
-      "stars": 184656,
-      "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on.",
-      "tags": [
-        "ai",
-        "agents",
-        "autonomous-agents",
-        "gpt-4",
-        "openai",
-        "python"
-      ]
+      "reason": "generic autonomous-agent framework/platform, not Claude-ecosystem-specific (same class as filtered crewAI/autogen/MetaGPT)"
     },
     {
       "repo_id": "github/awesome-copilot",
-      "reason": "single-vendor GitHub Copilot customization directory (agents/instructions/skills for Copilot, not Claude); matched scope only via the generic 'skill(s)' term. Same class as openai/skills.",
-      "stars": 34148,
-      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
-      "tags": [
-        "agent-skills",
-        "agents",
-        "awesome",
-        "custom-agents",
-        "github-copilot",
-        "prompt-engineering"
-      ]
-    },
-    {
-      "repo_id": "NirDiamant/GenAI_Agents",
-      "reason": "generic GenAI agent tutorials (gpt-focused, zero Claude in README); not Claude-ecosystem-specific — same class as the already-filtered NirDiamant/RAG_Techniques",
-      "stars": 22277,
-      "description": "50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems.",
-      "tags": [
-        "agentic-ai",
-        "agents",
-        "ai",
-        "ai-agents",
-        "autonomous-agents",
-        "genai",
-        "generative-ai",
-        "langchain",
-        "langgraph",
-        "llm",
-        "llms",
-        "machine-learning",
-        "mcp",
-        "multi-agent",
-        "multi-agent-systems",
-        "openai",
-        "python",
-        "rag",
-        "tutorials"
-      ]
-    },
-    {
-      "repo_id": "NirDiamant/agents-towards-production",
-      "reason": "generic end-to-end GenAI production tutorials (zero Claude in README); not Claude-ecosystem-specific",
-      "stars": 20544,
-      "description": "End-to-end, code-first tutorials for building production-grade GenAI agents. From prototype to enterprise deployment.",
-      "tags": [
-        "agent",
-        "agent-framework",
-        "agentic-ai",
-        "agents",
-        "ai-agents",
-        "deployment",
-        "genai",
-        "generative-ai",
-        "langgraph",
-        "llm",
-        "llms",
-        "mcp",
-        "mlops",
-        "multi-agent-systems",
-        "observability",
-        "production",
-        "python",
-        "rag",
-        "tutorials"
-      ]
+      "reason": "single-vendor GitHub Copilot customization directory (agents/instructions/skills for Copilot, not Claude); matched scope only via the generic 'skill(s)' term. Same class as openai/skills."
     },
     {
       "repo_id": "simstudioai/sim",
-      "reason": "generic agent-builder platform (README mentions Copilot/Cursor, zero Claude); not a Claude-ecosystem tool",
-      "stars": 28655,
-      "description": "Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.",
-      "tags": [
-        "agent-workflow",
-        "agentic-workflow",
-        "agents",
-        "ai",
-        "aiagents",
-        "anthropic",
-        "artificial-intelligence",
-        "automation",
-        "chatbot",
-        "deepseek",
-        "gemini",
-        "low-code",
-        "nextjs",
-        "no-code",
-        "openai",
-        "rag",
-        "react",
-        "typescript"
-      ]
+      "reason": "generic agent-builder platform (README mentions Copilot/Cursor, zero Claude); not a Claude-ecosystem tool"
     },
     {
       "repo_id": "a2aproject/A2A",
-      "reason": "Google + Linux Foundation 'Agent2Agent' agent-interop protocol; zero Claude/Anthropic in README — competing protocol, not a Claude-ecosystem tool",
-      "stars": 24066,
-      "description": "Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications.",
-      "tags": [
-        "a2a",
-        "a2a-mcp",
-        "a2a-protocol",
-        "a2a-server",
-        "agents",
-        "generative-ai",
-        "linux-foundation"
-      ]
+      "reason": "Google + Linux Foundation 'Agent2Agent' agent-interop protocol; zero Claude/Anthropic in README — competing protocol, not a Claude-ecosystem tool"
     },
     {
       "repo_id": "agentsmd/agents.md",
-      "reason": "provider-neutral AGENTS.md coding-agent format (cross-vendor standard); not Claude-specific",
-      "stars": 21839,
-      "description": "AGENTS.md — a simple, open format for guiding coding agents",
-      "tags": []
+      "reason": "provider-neutral AGENTS.md coding-agent format (cross-vendor standard); not Claude-specific"
+    },
+    {
+      "repo_id": "NousResearch/hermes-agent",
+      "reason": "competing agent harness (Nous Research, single-vendor / non-Claude); the user's flagged example"
+    },
+    {
+      "repo_id": "NVIDIA/NemoClaw",
+      "reason": "NVIDIA single-vendor sandbox stack for running non-Claude agents (OpenClaw default, Hermes); zero Claude integration"
+    },
+    {
+      "repo_id": "anomalyco/opencode",
+      "reason": "competing coding-agent harness with its own built-in agents / Tab-switching UX; a Claude Code feature competitor, not a Claude-improvement tool (multi-LLM support doesn't change that)"
+    },
+    {
+      "repo_id": "OpenHands/OpenHands",
+      "reason": "competing autonomous coding-agent harness; alternative to Claude Code, not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "cline/cline",
+      "reason": "competing autonomous coding agent (IDE/CLI harness); a Claude Code competitor, not an extension of it"
+    },
+    {
+      "repo_id": "aaif-goose/goose",
+      "reason": "competing extensible coding-agent harness; alternative to Claude Code, not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "Aider-AI/aider",
+      "reason": "competing AI pair-programming CLI harness; a Claude Code competitor, not an extension of it"
+    },
+    {
+      "repo_id": "zhayujie/CowAgent",
+      "reason": "competing multi-model agent harness / super assistant; not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "HKUDS/nanobot",
+      "reason": "competing general AI-agent harness; not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "earendil-works/pi",
+      "reason": "competing coding-agent CLI harness bundled with a unified LLM gateway; not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "iOfficeAI/AionUi",
+      "reason": "generic multi-CLI desktop client wrapping competing agents; a general app, not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "vercel/ai",
+      "reason": "generic provider-neutral AI SDK framework; build-your-own-agent tooling, not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "code-yeongyu/oh-my-openagent",
+      "reason": "competing coding-agent harness ('the best agent harness', ex oh-my-opencode); a Claude Code harness competitor, not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "nanocoai/nanoclaw",
+      "reason": "competing agent-harness runtime ('alternative to OpenClaw'); not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "Gitlawb/openclaude",
+      "reason": "competing open coding-agent harness clone; not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "coleam00/Archon",
+      "reason": "generic harness builder for AI coding; competing-harness tooling, not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "VoltAgent/awesome-openclaw-skills",
+      "reason": "skills directory for OpenClaw (a competing harness); a competitor's ecosystem, not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "hesamsheikh/awesome-openclaw-usecases",
+      "reason": "use-case list for OpenClaw (a competing harness); a competitor's ecosystem, not Claude-specific"
+    },
+    {
+      "repo_id": "Shubhamsaboo/awesome-llm-apps",
+      "reason": "generic list of LLM/agent apps; not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "e2b-dev/awesome-ai-agents",
+      "reason": "generic list of autonomous AI agents; not Claude-specific"
+    },
+    {
+      "repo_id": "ashishpatel26/500-AI-Agents-Projects",
+      "reason": "generic collection of AI-agent project use cases; not Claude-specific"
+    },
+    {
+      "repo_id": "enescingoz/awesome-n8n-templates",
+      "reason": "n8n workflow templates (n8n itself is filtered); not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "ComposioHQ/composio",
+      "reason": "generic provider-neutral tool-integration platform; not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "multica-ai/multica",
+      "reason": "generic vendor-neutral managed-agents platform (doesn't require Claude Code); not a Claude-improvement tool"
+    },
+    {
+      "repo_id": "farion1231/cc-switch",
+      "reason": "Claude Code GUI/client wrapper; redundant client-app category"
+    },
+    {
+      "repo_id": "winfunc/opcode",
+      "reason": "Claude Code GUI/client wrapper; redundant client-app category"
+    },
+    {
+      "repo_id": "jarrodwatts/claude-hud",
+      "reason": "Claude Code GUI/client (context HUD plugin); redundant client-app category"
+    },
+    {
+      "repo_id": "slopus/happy",
+      "reason": "Claude Code mobile/web client; redundant client-app category"
+    },
+    {
+      "repo_id": "manaflow-ai/cmux",
+      "reason": "Claude Code terminal client; redundant client-app category"
+    },
+    {
+      "repo_id": "Panniantong/Agent-Reach",
+      "reason": "agent web-access tool; redundant with browser-use/agent-browser"
+    },
+    {
+      "repo_id": "google/adk-python",
+      "reason": "build-your-own agent framework (Google, single-vendor; not Claude-specific)"
+    },
+    {
+      "repo_id": "pydantic/pydantic-ai",
+      "reason": "build-your-own agent framework (not Claude-specific)"
+    },
+    {
+      "repo_id": "camel-ai/camel",
+      "reason": "build-your-own multi-agent framework (not Claude-specific)"
+    },
+    {
+      "repo_id": "QwenLM/Qwen-Agent",
+      "reason": "build-your-own agent framework (Qwen, single-vendor)"
+    },
+    {
+      "repo_id": "TransformerOptimus/SuperAGI",
+      "reason": "autonomous agent framework (build-your-own)"
+    },
+    {
+      "repo_id": "emcie-co/parlant",
+      "reason": "build-your-own customer-facing agent framework"
+    },
+    {
+      "repo_id": "NVIDIA-NeMo/NeMo",
+      "reason": "generative-AI / LLM training framework (infra)"
+    },
+    {
+      "repo_id": "microsoft/agent-lightning",
+      "reason": "agent training/optimization framework (infra)"
+    },
+    {
+      "repo_id": "kortix-ai/suna",
+      "reason": "generic AI command-center platform (standalone, replaces CC)"
+    },
+    {
+      "repo_id": "Kilo-Org/kilocode",
+      "reason": "competing all-in-one agentic coding platform/CLI"
+    },
+    {
+      "repo_id": "stitionai/devika",
+      "reason": "competing autonomous software-engineer agent"
+    },
+    {
+      "repo_id": "elizaOS/eliza",
+      "reason": "competing agentic OS / framework (standalone)"
+    },
+    {
+      "repo_id": "RightNow-AI/openfang",
+      "reason": "competing agent operating system"
+    },
+    {
+      "repo_id": "esengine/DeepSeek-Reasonix",
+      "reason": "competing coding-agent CLI (DeepSeek, single-vendor)"
+    },
+    {
+      "repo_id": "plandex-ai/plandex",
+      "reason": "competing autonomous AI coding-agent CLI"
+    },
+    {
+      "repo_id": "HKUDS/DeepCode",
+      "reason": "standalone autonomous coding agent (research)"
+    },
+    {
+      "repo_id": "different-ai/openwork",
+      "reason": "competing app (Claude Cowork alternative)"
+    },
+    {
+      "repo_id": "claude-code-best/claude-code",
+      "reason": "redundant repackaged Claude Code clone"
+    },
+    {
+      "repo_id": "leon-ai/leon",
+      "reason": "generic open-source personal assistant (not CC-compatible)"
+    },
+    {
+      "repo_id": "agentscope-ai/QwenPaw",
+      "reason": "generic personal AI assistant (Qwen, single-vendor)"
+    },
+    {
+      "repo_id": "eosphoros-ai/DB-GPT",
+      "reason": "generic agentic data/AI platform"
+    },
+    {
+      "repo_id": "lss233/kirara-ai",
+      "reason": "generic multi-platform AI chatbot (WeChat/QQ/Telegram)"
+    },
+    {
+      "repo_id": "ai-shifu/ChatALL",
+      "reason": "generic multi-LLM chat client"
+    },
+    {
+      "repo_id": "stackblitz/bolt.new",
+      "reason": "generic AI full-stack app builder"
+    },
+    {
+      "repo_id": "langbot-app/LangBot",
+      "reason": "generic agentic IM-bot platform"
+    },
+    {
+      "repo_id": "GaiZhenbiao/ChuanhuChatGPT",
+      "reason": "generic chat GUI for ChatGPT/LLMs"
+    },
+    {
+      "repo_id": "Canner/WrenAI",
+      "reason": "generic text-to-SQL / business-data RAG platform"
+    },
+    {
+      "repo_id": "triggerdotdev/trigger.dev",
+      "reason": "generic background-jobs / workflow platform"
+    },
+    {
+      "repo_id": "alibaba/page-agent",
+      "reason": "standalone in-page web GUI agent library (single-vendor)"
+    },
+    {
+      "repo_id": "HKUDS/AI-Trader",
+      "reason": "standalone autonomous trading agent app (vertical)"
+    },
+    {
+      "repo_id": "vxcontrol/pentagi",
+      "reason": "standalone autonomous pentest agent app (vertical)"
+    },
+    {
+      "repo_id": "comet-ml/opik",
+      "reason": "LLM observability / evaluation platform"
+    },
+    {
+      "repo_id": "raga-ai-hub/RagaAI-Catalyst",
+      "reason": "agent observability / monitoring SDK"
+    },
+    {
+      "repo_id": "keploy/keploy",
+      "reason": "API test-sandbox / mocking infra (not a CC tool)"
+    },
+    {
+      "repo_id": "trycua/cua",
+      "reason": "computer-use-agent sandbox / training infra"
+    },
+    {
+      "repo_id": "Tencent/WeKnora",
+      "reason": "RAG knowledge platform"
+    },
+    {
+      "repo_id": "AsyncFuncAI/deepwiki-open",
+      "reason": "standalone AI wiki / doc generator"
+    },
+    {
+      "repo_id": "decolua/9router",
+      "reason": "free AI-coding gateway / model-access reseller"
+    },
+    {
+      "repo_id": "GoogleCloudPlatform/generative-ai",
+      "reason": "Google Cloud / Gemini SDK samples (single-vendor, non-Claude)"
+    },
+    {
+      "repo_id": "clauderic/dnd-kit",
+      "reason": "scope false-positive: drag-and-drop UI library; matched 'claude' via owner name"
+    },
+    {
+      "repo_id": "nukeop/nuclear",
+      "reason": "scope false-positive: streaming music player (incidental mcp-server topic)"
+    },
+    {
+      "repo_id": "kubesphere/kubesphere",
+      "reason": "scope false-positive: Kubernetes platform; matched on 'skills' topic spam"
+    },
+    {
+      "repo_id": "modelscope/FunASR",
+      "reason": "scope false-positive: speech-recognition toolkit (incidental mcp-server topic)"
+    },
+    {
+      "repo_id": "openimsdk/open-im-server",
+      "reason": "scope false-positive: instant-messaging server; matched 'openclaw' SEO keyword"
+    },
+    {
+      "repo_id": "udecode/plate",
+      "reason": "scope false-positive: rich-text editor library (incidental ai/mcp topics)"
+    },
+    {
+      "repo_id": "webadderallorg/Recordly",
+      "reason": "scope false-positive: screen recorder; matched 'skills' keyword"
     }
   ]
 }

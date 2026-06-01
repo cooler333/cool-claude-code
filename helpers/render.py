@@ -132,12 +132,14 @@ def build_brief(description: str, topics: list[str], briefcfg: dict) -> str:
 # parse + group
 # --------------------------------------------------------------------------
 
-def parse_repos(payload: dict, cfg: dict) -> list[dict]:
-    """Build display rows (rank/url/category/brief) from a stars-sorted render set."""
+def parse_repos(render_set: list[dict], cfg: dict) -> list[dict]:
+    """Build display rows (rank/url/category/brief) from a stars-sorted render set.
+    Takes the full repo dicts (from repos.json) in memory — the on-disk
+    repos_to_render.json holds only repo references, not this metadata."""
     rules = cfg["category_rules"]
     briefcfg = cfg["brief"]
     repos = []
-    for rank, r in enumerate(payload.get("repos", []), 1):
+    for rank, r in enumerate(render_set, 1):
         full = r.get("full_name", "")
         desc_raw = r.get("description", "") or ""
         topics = r.get("topics") or []
@@ -182,19 +184,14 @@ def select_render_set(universe: list[dict], excluded: set[str], render_count: in
 
 
 def build_render_payload(repos: list[dict], generated_at: str) -> dict:
+    """Slim on-disk record of the published selection: repo references in rank
+    (stars-descending) order. Metadata (stars/description/topics) is NOT
+    duplicated here — it lives in repos.json, the single source of truth."""
     return {
         "generated_at": generated_at,
         "generator": "helpers/render.py",
         "count": len(repos),
-        "repos": [
-            {
-                "full_name": r["full_name"],
-                "stars": int(r.get("stars", 0)),
-                "description": r.get("description", "") or "",
-                "topics": r.get("topics") or [],
-            }
-            for r in repos
-        ],
+        "repos": [r["full_name"] for r in repos],
     }
 
 
@@ -307,7 +304,7 @@ results by **live star count**.
   adjacent but excluded as redundant — single-vendor / non-Claude competing CLIs
   (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs, and
   leaked/rights-infringing content.
-- **Floor:** repositories under 20,000 stars, and archived repositories, are excluded.
+- **Floor:** repositories under {min_stars} stars, and archived repositories, are excluded.
 - **Star counts** are a point-in-time snapshot and drift daily.
 """
 
@@ -350,10 +347,10 @@ their respective owners.
 """
 
 
-def build_readme(payload: dict, cfg: dict) -> str:
-    repos = parse_repos(payload, cfg)
+def build_readme(render_set: list[dict], generated_at: str, cfg: dict) -> str:
+    repos = parse_repos(render_set, cfg)
     top_n = cfg.get("top_table_size", 30)
-    generated_at = fmt_date(payload.get("generated_at", ""))
+    generated_at = fmt_date(generated_at)
 
     top = repos[:top_n]
     tail = repos[top_n:]
@@ -394,7 +391,8 @@ def build_readme(payload: dict, cfg: dict) -> str:
         for heading, items in grouped:
             out += [f"### {heading}", "", category_table(items), ""]
 
-    out += [SCOPE, CONTRIBUTING, DISCLAIMER, LICENSE]
+    scope = SCOPE.format(min_stars=f"{cfg.get('min_stars', 20000):,}")
+    out += [scope, CONTRIBUTING, DISCLAIMER, LICENSE]
     return "\n".join(out).rstrip() + "\n"
 
 
@@ -440,7 +438,7 @@ def main() -> int:
     generated_at = universe_doc.get("generated_at") or datetime.now(
         timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     render_payload = build_render_payload(render_set, generated_at)
-    readme = build_readme(render_payload, cfg)
+    readme = build_readme(render_set, generated_at, cfg)
 
     if args.dry_run:
         sys.stdout.write(readme)

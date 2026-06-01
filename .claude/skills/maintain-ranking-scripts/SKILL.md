@@ -107,15 +107,18 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 
 The sweep is exhaustive, so there is nothing to "discover" — every repo ≥ `min_stars`
 is already in `repos.json`. Auditing means checking that each repo is in the *right*
-bucket. **`grep` the large files; don't read them whole.**
+bucket. **`grep` the large files; don't read them whole.** Note that
+`out_of_scope.json` and `repos_to_render.json` hold only repo references (`repo_id` /
+`full_name`); their stars/description/topics live in `repos.json` — join on the name
+(`grep` the id in `repos.json`) when you need the metadata to judge a repo.
 
 1. **Scope false positives** (ecosystem repos wrongly auto-excluded): scan
-   `out_of_scope.json` for entries whose name/description/topics look genuinely
-   Claude/agent/MCP-related. Fix by loosening/adding a `scope_filter` term in
-   `config.json` (never hand-edit `out_of_scope.json`).
+   `out_of_scope.json` for repo names that look genuinely Claude/agent/MCP-related,
+   then check their description/topics in `repos.json`. Fix by loosening/adding a
+   `scope_filter` term in `config.json` (never hand-edit `out_of_scope.json`).
 2. **Scope false negatives** (off-topic repos that slipped into the published set):
-   inspect `repos_to_render.json`; if a keyword-only match shouldn't be in scope,
-   tighten `scope_filter`.
+   inspect `repos_to_render.json` (join `repos.json` for metadata); if a keyword-only
+   match shouldn't be in scope, tighten `scope_filter`.
 3. **Editorial redundancy** (AI-adjacent but not worth listing): add the repo to
    `helpers/filtered.json` with a `reason`.
 4. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or

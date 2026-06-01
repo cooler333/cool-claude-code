@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "top_table_size": 30,
-  "min_stars": 20000,
+  "min_stars": 15000,
 
   "fetch": {
     "floor_fraction": 0.9
@@ -38,7 +38,8 @@
       "skill.md", "slash command", "agent harness", "skill", "skills",
       "system prompt", "system prompts", "spec-driven", "spec-kit", "spec kit",
       "ai harness", "agency-agents", "ai agency", "bmad", "agile ai",
-      "agent-memory", "ai-memory"
+      "agent-memory", "ai-memory", "generative ai", "token-oriented",
+      "agent-native", "manage agents", "ai prompts"
     ]
   },
 
