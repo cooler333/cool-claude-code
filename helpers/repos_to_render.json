@@ -6,6 +6,7 @@
     "openclaw/openclaw",
     "obra/superpowers",
     "affaan-m/ECC",
+    "NousResearch/hermes-agent",
     "multica-ai/andrej-karpathy-skills",
     "anthropics/skills",
     "anthropics/claude-code",
@@ -15,6 +16,7 @@
     "msitarzewski/agency-agents",
     "garrytan/gstack",
     "browser-use/browser-use",
+    "farion1231/cc-switch",
     "punkpeye/awesome-mcp-servers",
     "VoltAgent/awesome-design-md",
     "nextlevelbuilder/ui-ux-pro-max-skill",
@@ -100,8 +102,6 @@
     "garrytan/gbrain",
     "Donchitos/Claude-Code-Game-Studios",
     "NirDiamant/agents-towards-production",
-    "JimLiu/baoyu-skills",
-    "zarazhangrui/frontend-slides",
-    "openai/codex-plugin-cc"
+    "JimLiu/baoyu-skills"
   ]
 }

@@ -486,10 +486,6 @@
       "reason": "provider-neutral AGENTS.md coding-agent format (cross-vendor standard); not Claude-specific"
     },
     {
-      "repo_id": "NousResearch/hermes-agent",
-      "reason": "competing agent harness (Nous Research, single-vendor / non-Claude); the user's flagged example"
-    },
-    {
       "repo_id": "NVIDIA/NemoClaw",
       "reason": "NVIDIA single-vendor sandbox stack for running non-Claude agents (OpenClaw default, Hermes); zero Claude integration"
     },
@@ -580,10 +576,6 @@
     {
       "repo_id": "multica-ai/multica",
       "reason": "generic vendor-neutral managed-agents platform (doesn't require Claude Code); not a Claude-improvement tool"
-    },
-    {
-      "repo_id": "farion1231/cc-switch",
-      "reason": "Claude Code GUI/client wrapper; redundant client-app category"
     },
     {
       "repo_id": "winfunc/opcode",
