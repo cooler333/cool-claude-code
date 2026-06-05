@@ -201,7 +201,7 @@ results by **live star count**.
   adjacent but excluded as redundant — single-vendor / non-Claude competing CLIs
   (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs, and
   leaked/rights-infringing content.
-- **Floor:** repositories under 15,000 stars, and archived repositories, are excluded.
+- **Floor:** repositories under 20,000 stars, and archived repositories, are excluded.
 - **Star counts** are a point-in-time snapshot and drift daily.
 
 ## Contributing

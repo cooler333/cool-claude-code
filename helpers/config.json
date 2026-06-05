@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "top_table_size": 30,
-  "min_stars": 15000,
+  "min_stars": 20000,
 
   "fetch": {
     "floor_fraction": 0.9
