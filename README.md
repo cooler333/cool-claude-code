@@ -85,11 +85,11 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | ⭐ 27.2k | Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex,… |
 | [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | ⭐ 24.2k | A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more. |
 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) | ⭐ 22.7k | Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition. |
-| [alchaincyf/nuwa-skill](https://github.com/alchaincyf/nuwa-skill) | ⭐ 22.6k | 你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks. |
 | [blader/humanizer](https://github.com/blader/humanizer) | ⭐ 22.3k | Claude Code skill that removes signs of AI-generated writing from text |
 | [vercel-labs/skills](https://github.com/vercel-labs/skills) | ⭐ 21.3k | The open agent skills tool - npx skills |
 | [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) | ⭐ 20.8k | Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy. |
 | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | ⭐ 20.4k | agent-skills, claude-skills, codex-skills, openclaw-skills |
+| [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) | ⭐ 20.3k | Create beautiful slides on the web using a coding agent's frontend skills |
 
 ### MCP server / tooling
 

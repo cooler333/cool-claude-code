@@ -89,7 +89,6 @@
     "letta-ai/letta",
     "micro/go-micro",
     "OthmanAdi/planning-with-files",
-    "alchaincyf/nuwa-skill",
     "NirDiamant/GenAI_Agents",
     "blader/humanizer",
     "ahujasid/blender-mcp",
@@ -102,6 +101,7 @@
     "garrytan/gbrain",
     "Donchitos/Claude-Code-Game-Studios",
     "NirDiamant/agents-towards-production",
-    "JimLiu/baoyu-skills"
+    "JimLiu/baoyu-skills",
+    "zarazhangrui/frontend-slides"
   ]
 }

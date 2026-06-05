@@ -780,6 +780,14 @@
     {
       "repo_id": "webadderallorg/Recordly",
       "reason": "scope false-positive: screen recorder; matched 'skills' keyword"
+    },
+    {
+      "repo_id": "alchaincyf/nuwa-skill",
+      "reason": "CJK (non-English) description"
+    },
+    {
+      "repo_id": "Yuan1z0825/nature-skills",
+      "reason": "CJK (non-English) description"
     }
   ]
 }
