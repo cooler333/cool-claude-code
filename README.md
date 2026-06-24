@@ -1,7 +1,7 @@
 # Awesome Claude Code & Agent Tools
 
 > The most-starred repositories in the Claude Code / skills / agents / MCP ecosystem.
-> **Updated at 2026-06-23 10:09 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
+> **Updated at 2026-06-24 09:56 UTC** (last successful refresh). 100 repositories, sorted by live GitHub stars, descending.
 
 ## Contents
 
@@ -26,36 +26,36 @@
 
 | # | Repo | Stars | Category | Description |
 |---|------|------:|----------|-------------|
-| 1 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | ⭐ 380.1k | Other | Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 |
-| 2 | [obra/superpowers](https://github.com/obra/superpowers) | ⭐ 236.5k | Claude Code skills | An agentic skills framework & software development methodology that works. |
-| 3 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | ⭐ 220.1k | MCP server / tooling | The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. |
-| 4 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | ⭐ 200.4k | Agent harness | The agent that grows with you |
-| 5 | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | ⭐ 180.7k | Claude Code skills | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls. |
-| 6 | [anthropics/skills](https://github.com/anthropics/skills) | ⭐ 154.2k | Official Anthropic | Public repository for Agent Skills |
-| 7 | [mattpocock/skills](https://github.com/mattpocock/skills) | ⭐ 142.6k | Claude Code skills | Skills for Real Engineers. Straight from my .claude directory. |
-| 8 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | ⭐ 133.9k | Official Anthropic | Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. |
-| 9 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | ⭐ 115.3k | Agent harness | A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables. |
-| 10 | [github/spec-kit](https://github.com/github/spec-kit) | ⭐ 114.9k | Spec-driven dev | 💫 Toolkit to help you get started with Spec-Driven Development |
-| 11 | [garrytan/gstack](https://github.com/garrytan/gstack) | ⭐ 113.6k | Other | Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA |
-| 12 | [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners) | ⭐ 112.2k | Prompts & system prompts | 21 Lessons, Get Started Building with Generative AI |
-| 13 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch) | ⭐ 106.8k | MCP server / tooling | A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io |
-| 14 | [browser-use/browser-use](https://github.com/browser-use/browser-use) | ⭐ 100.2k | Agent harness | 🌐 Make websites accessible for AI agents. Automate tasks online with ease. |
-| 15 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | ⭐ 95.3k | Claude Code skills | An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms |
-| 16 | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | ⭐ 92.4k | Coding agent CLI | A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI. |
-| 17 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | ⭐ 89.6k | MCP server / tooling | A collection of MCP servers. |
+| 1 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | ⭐ 380.2k | Other | Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 |
+| 2 | [obra/superpowers](https://github.com/obra/superpowers) | ⭐ 237.4k | Claude Code skills | An agentic skills framework & software development methodology that works. |
+| 3 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | ⭐ 220.9k | MCP server / tooling | The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. |
+| 4 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | ⭐ 201.5k | Agent harness | The agent that grows with you |
+| 5 | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | ⭐ 181.3k | Claude Code skills | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls. |
+| 6 | [anthropics/skills](https://github.com/anthropics/skills) | ⭐ 154.6k | Official Anthropic | Public repository for Agent Skills |
+| 7 | [mattpocock/skills](https://github.com/mattpocock/skills) | ⭐ 144.1k | Claude Code skills | Skills for Real Engineers. Straight from my .claude directory. |
+| 8 | [anthropics/claude-code](https://github.com/anthropics/claude-code) | ⭐ 134.1k | Official Anthropic | Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. |
+| 9 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | ⭐ 115.5k | Agent harness | A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables. |
+| 10 | [github/spec-kit](https://github.com/github/spec-kit) | ⭐ 115.2k | Spec-driven dev | 💫 Toolkit to help you get started with Spec-Driven Development |
+| 11 | [garrytan/gstack](https://github.com/garrytan/gstack) | ⭐ 114.6k | Other | Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA |
+| 12 | [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners) | ⭐ 112.3k | Prompts & system prompts | 21 Lessons, Get Started Building with Generative AI |
+| 13 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch) | ⭐ 107.5k | MCP server / tooling | A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io |
+| 14 | [browser-use/browser-use](https://github.com/browser-use/browser-use) | ⭐ 100.4k | Agent harness | 🌐 Make websites accessible for AI agents. Automate tasks online with ease. |
+| 15 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | ⭐ 95.8k | Claude Code skills | An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms |
+| 16 | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | ⭐ 92.7k | Coding agent CLI | A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI. |
+| 17 | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | ⭐ 89.7k | MCP server / tooling | A collection of MCP servers. |
 | 18 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | ⭐ 87.6k | MCP server / tooling | Model Context Protocol Servers |
-| 19 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | ⭐ 83.9k | Claude Code skills | Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More |
-| 20 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | ⭐ 76.0k | Prompts & system prompts | 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman |
+| 19 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | ⭐ 84.0k | Claude Code skills | Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More |
+| 20 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | ⭐ 76.4k | Prompts & system prompts | 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman |
 | 21 | [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) | ⭐ 75.9k | Agent harness | 🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents. |
-| 22 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip) | ⭐ 71.3k | Coding agent CLI | The open-source app everyone uses to manage agents at work |
-| 23 | [safishamsi/graphify](https://github.com/safishamsi/graphify) | ⭐ 70.9k | Claude Code skills | AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph. |
-| 24 | [nexu-io/open-design](https://github.com/nexu-io/open-design) | ⭐ 69.6k | Claude Code skills | 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex /… |
-| 25 | [shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | ⭐ 68.0k | Agent harness | Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1 |
-| 26 | [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | ⭐ 67.8k | Agent harness | 12 Lessons to Get Started Building AI Agents |
-| 27 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | ⭐ 66.5k | Claude Code skills | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more. |
-| 28 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | ⭐ 65.7k | Claude Code skills | Production-grade engineering skills for AI coding agents. |
-| 29 | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | ⭐ 65.6k | MCP server / tooling | A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows |
-| 30 | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | ⭐ 65.2k | Coding agent CLI | CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies |
+| 22 | [paperclipai/paperclip](https://github.com/paperclipai/paperclip) | ⭐ 71.4k | Coding agent CLI | The open-source app everyone uses to manage agents at work |
+| 23 | [safishamsi/graphify](https://github.com/safishamsi/graphify) | ⭐ 71.4k | Claude Code skills | AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph. |
+| 24 | [nexu-io/open-design](https://github.com/nexu-io/open-design) | ⭐ 70.4k | Claude Code skills | 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex /… |
+| 25 | [shareAI-lab/learn-claude-code](https://github.com/shareAI-lab/learn-claude-code) | ⭐ 68.2k | Agent harness | Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1 |
+| 26 | [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | ⭐ 67.9k | Agent harness | 12 Lessons to Get Started Building AI Agents |
+| 27 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | ⭐ 67.2k | Claude Code skills | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more. |
+| 28 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | ⭐ 66.2k | Claude Code skills | Production-grade engineering skills for AI coding agents. |
+| 29 | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | ⭐ 65.7k | MCP server / tooling | A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows |
+| 30 | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | ⭐ 65.6k | Coding agent CLI | CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies |
 
 ## By category
 
@@ -65,41 +65,41 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | ⭐ 45.8k | A collection of notebooks/recipes showcasing some fun and effective ways of using Claude. |
-| [anthropics/prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) | ⭐ 36.6k | Anthropic's Interactive Prompt Engineering Tutorial |
-| [anthropics/financial-services](https://github.com/anthropics/financial-services) | ⭐ 32.3k | — |
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | ⭐ 30.7k | Official, Anthropic-managed directory of high quality Claude Code Plugins. |
+| [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | ⭐ 45.9k | A collection of notebooks/recipes showcasing some fun and effective ways of using Claude. |
+| [anthropics/prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) | ⭐ 36.7k | Anthropic's Interactive Prompt Engineering Tutorial |
+| [anthropics/financial-services](https://github.com/anthropics/financial-services) | ⭐ 32.4k | — |
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | ⭐ 31.0k | Official, Anthropic-managed directory of high quality Claude Code Plugins. |
 
 ### Claude Code skills
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | ⭐ 59.0k | from vibe coding to agentic engineering - practice makes claude perfect |
-| [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) | ⭐ 46.0k | AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary |
-| [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | ⭐ 37.1k | Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas. |
-| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | ⭐ 34.7k | Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering. |
-| [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | ⭐ 29.1k | Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex,… |
-| [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | ⭐ 28.2k | Vercel's official collection of agent skills |
-| [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | ⭐ 26.2k | A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more. |
-| [blader/humanizer](https://github.com/blader/humanizer) | ⭐ 25.7k | Claude Code skill that removes signs of AI-generated writing from text |
+| [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | ⭐ 59.9k | from vibe coding to agentic engineering - practice makes claude perfect |
+| [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) | ⭐ 46.2k | AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary |
+| [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | ⭐ 37.7k | Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas. |
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | ⭐ 34.8k | Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering. |
+| [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | ⭐ 29.2k | Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex,… |
+| [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | ⭐ 28.3k | Vercel's official collection of agent skills |
+| [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | ⭐ 26.3k | A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more. |
+| [blader/humanizer](https://github.com/blader/humanizer) | ⭐ 25.9k | Claude Code skill that removes signs of AI-generated writing from text |
 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) | ⭐ 23.8k | Persistent file-based planning for AI coding agents and long-running agentic tasks. Crash-proof markdown plans that survive context loss and /clear, plus a deterministic completion gate and multi-agent shared state on disk. Manus-style. Works with Claude Code, Codex CLI, Cursor,… |
-| [vercel-labs/skills](https://github.com/vercel-labs/skills) | ⭐ 23.3k | The open agent skills tool - npx skills |
-| [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) | ⭐ 22.6k | Create beautiful slides on the web using a coding agent's frontend skills |
+| [vercel-labs/skills](https://github.com/vercel-labs/skills) | ⭐ 23.4k | The open agent skills tool - npx skills |
+| [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) | ⭐ 22.8k | Create beautiful slides on the web using a coding agent's frontend skills |
 
 ### MCP server / tooling
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | ⭐ 61.0k | 🌊 The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration |
-| [upstash/context7](https://github.com/upstash/context7) | ⭐ 57.9k | Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors |
-| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | ⭐ 56.2k | The best-benchmarked open-source AI memory system. And it's free. |
-| [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | ⭐ 44.2k | Chrome DevTools for coding agents |
-| [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) | ⭐ 41.4k | Installable GitHub library of 1,600+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes specialized plugins, installer CLI, bundles, workflows, and official/community skill collections. |
+| [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | ⭐ 61.2k | 🌊 The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration |
+| [upstash/context7](https://github.com/upstash/context7) | ⭐ 58.0k | Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors |
+| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | ⭐ 56.3k | The best-benchmarked open-source AI memory system. And it's free. |
+| [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | ⭐ 44.3k | Chrome DevTools for coding agents |
+| [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) | ⭐ 41.6k | Installable GitHub library of 1,600+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes specialized plugins, installer CLI, bundles, workflows, and official/community skill collections. |
 | [mindsdb/minds](https://github.com/mindsdb/minds) | ⭐ 39.3k | General-purpose AI designed for knowledge workers — creators, strategists, and operators — and individuals seeking AI systems they can truly control to help them get work done, with full flexibility to extend and deploy anywhere (VPC, on-prem, or cloud). |
 | [wshobson/agents](https://github.com/wshobson/agents) | ⭐ 37.1k | Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot, and Gemini CLI |
-| [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | ⭐ 35.9k | In-depth tutorials on LLMs, RAGs and real-world AI agent applications. |
-| [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | ⭐ 35.8k | Learn it. Build it. Ship it for others. |
-| [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | ⭐ 34.2k | Playwright MCP server |
+| [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | ⭐ 36.1k | Learn it. Build it. Ship it for others. |
+| [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | ⭐ 36.0k | In-depth tutorials on LLMs, RAGs and real-world AI agent applications. |
+| [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | ⭐ 34.3k | Playwright MCP server |
 | [github/github-mcp-server](https://github.com/github/github-mcp-server) | ⭐ 30.9k | GitHub's official MCP Server |
 | [yamadashy/repomix](https://github.com/yamadashy/repomix) | ⭐ 26.5k | 📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity, Gemini, Gemma, Llama, Grok, and more. |
 | [PrefectHQ/fastmcp](https://github.com/PrefectHQ/fastmcp) | ⭐ 25.8k | 🚀 The fast, Pythonic way to build MCP servers and clients. |
@@ -112,31 +112,31 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [santifer/career-ops](https://github.com/santifer/career-ops) | ⭐ 55.3k | AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing. |
-| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | ⭐ 49.4k | Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop |
-| [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) | ⭐ 47.7k | Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server. |
-| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | ⭐ 40.5k | The design language that makes your AI harness better at design. |
-| [luongnv89/claude-howto](https://github.com/luongnv89/claude-howto) | ⭐ 37.9k | A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value. |
-| [continuedev/continue](https://github.com/continuedev/continue) | ⭐ 34.3k | open-source coding agent |
+| [santifer/career-ops](https://github.com/santifer/career-ops) | ⭐ 55.5k | AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing. |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | ⭐ 50.0k | Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop |
+| [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) | ⭐ 49.1k | Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server. |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | ⭐ 40.9k | The design language that makes your AI harness better at design. |
+| [luongnv89/claude-howto](https://github.com/luongnv89/claude-howto) | ⭐ 38.1k | A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value. |
+| [continuedev/continue](https://github.com/continuedev/continue) | ⭐ 34.4k | open-source coding agent |
 | [huggingface/agents-course](https://github.com/huggingface/agents-course) | ⭐ 29.5k | This repository contains the Hugging Face Agents Course. |
-| [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) | ⭐ 28.1k | This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial. |
-| [getzep/graphiti](https://github.com/getzep/graphiti) | ⭐ 27.7k | Build Real-Time Knowledge Graphs for AI Agents |
+| [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) | ⭐ 28.2k | This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial. |
+| [getzep/graphiti](https://github.com/getzep/graphiti) | ⭐ 27.8k | Build Real-Time Knowledge Graphs for AI Agents |
 | [kestra-io/kestra](https://github.com/kestra-io/kestra) | ⭐ 27.1k | Event Driven Orchestration & Scheduling Platform for Mission Critical Applications |
 | [BloopAI/vibe-kanban](https://github.com/BloopAI/vibe-kanban) | ⭐ 27.1k | Get 10X more out of Claude Code, Codex or any coding agent |
 | [volcengine/OpenViking](https://github.com/volcengine/OpenViking) | ⭐ 26.0k | OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and… |
 | [oraios/serena](https://github.com/oraios/serena) | ⭐ 25.7k | A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities - the IDE for your agent |
-| [garrytan/gbrain](https://github.com/garrytan/gbrain) | ⭐ 23.8k | Garry's Opinionated OpenClaw/Hermes Agent Brain |
+| [garrytan/gbrain](https://github.com/garrytan/gbrain) | ⭐ 24.0k | Garry's Opinionated OpenClaw/Hermes Agent Brain |
 
 ### Coding agent CLI
 
 | Repo | Stars | Description |
 |------|------:|-------------|
 | [openinterpreter/openinterpreter](https://github.com/openinterpreter/openinterpreter) | ⭐ 64.1k | A lightweight coding agent for open models like Deepseek, Kimi, and Qwen |
-| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) | ⭐ 53.5k | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local |
-| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | ⭐ 47.1k | A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic |
+| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) | ⭐ 54.0k | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | ⭐ 47.2k | A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic |
 | [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything) | ⭐ 43.7k | "CLI-Anything: Making ALL Software Agent-Native" -- CLI-Hub: https://clianything.cc/ |
-| [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | ⭐ 36.9k | Browser automation CLI for AI agents |
-| [Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | ⭐ 36.8k | Teams-first Multi-agent orchestration for Claude Code |
+| [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | ⭐ 37.0k | Browser automation CLI for AI agents |
+| [Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | ⭐ 36.9k | Teams-first Multi-agent orchestration for Claude Code |
 | [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) | ⭐ 28.3k | CLI tool for configuring and monitoring Claude Code |
 | [gastownhall/beads](https://github.com/gastownhall/beads) | ⭐ 24.7k | Beads - A memory upgrade for your coding agent |
 
@@ -144,19 +144,19 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [mem0ai/mem0](https://github.com/mem0ai/mem0) | ⭐ 59.2k | Universal memory layer for AI Agents |
-| [supermemoryai/supermemory](https://github.com/supermemoryai/supermemory) | ⭐ 27.3k | Memory and context engine + app that is extremely fast, scalable, and can be run fully locally. The Memory API for the AI era. |
-| [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) | ⭐ 23.8k | 1 Persistent memory for AI coding agents based on real-world benchmarks |
+| [mem0ai/mem0](https://github.com/mem0ai/mem0) | ⭐ 59.3k | Universal memory layer for AI Agents |
+| [supermemoryai/supermemory](https://github.com/supermemoryai/supermemory) | ⭐ 27.4k | Memory and context engine + app that is extremely fast, scalable, and can be run fully locally. The Memory API for the AI era. |
+| [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) | ⭐ 23.9k | 1 Persistent memory for AI coding agents based on real-world benchmarks |
 | [letta-ai/letta](https://github.com/letta-ai/letta) | ⭐ 23.5k | Platform for stateful agents: AI with advanced memory that can learn and self-improve over time. |
 
 ### Prompts & system prompts
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | ⭐ 51.0k | Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote. |
+| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | ⭐ 53.6k | Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote. |
 | [danielmiessler/Fabric](https://github.com/danielmiessler/Fabric) | ⭐ 42.6k | Fabric is an open-source framework for augmenting humans using AI. It provides a modular system for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere. |
-| [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | ⭐ 33.8k | Academic Research Skills for Claude Code: research → write → review → revise → finalize |
-| [toon-format/toon](https://github.com/toon-format/toon) | ⭐ 24.6k | 🎒 Token-Oriented Object Notation (TOON) – Compact, human-readable, schema-aware JSON for LLM prompts. Spec, benchmarks, TypeScript SDK. |
+| [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | ⭐ 34.1k | Academic Research Skills for Claude Code: research → write → review → revise → finalize |
+| [toon-format/toon](https://github.com/toon-format/toon) | ⭐ 24.7k | 🎒 Token-Oriented Object Notation (TOON) – Compact, human-readable, schema-aware JSON for LLM prompts. Spec, benchmarks, TypeScript SDK. |
 | [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | ⭐ 22.5k | Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare performance of GPT, Claude, Gemini, DeepSeek, and more. Simple declarative configs with command line and CI/CD integration. Used by OpenAI and Anthropic. |
 
 ### Spec-driven dev
@@ -164,7 +164,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 | Repo | Stars | Description |
 |------|------:|-------------|
 | [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) | ⭐ 64.5k | A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES. |
-| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | ⭐ 56.2k | Spec-driven development (SDD) for AI coding assistants. |
+| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | ⭐ 56.4k | Spec-driven development (SDD) for AI coding assistants. |
 
 ### Awesome list / directory
 
@@ -176,7 +176,7 @@ _The long tail below the top leaderboard, grouped by category (top-ranked repos 
 
 | Repo | Stars | Description |
 |------|------:|-------------|
-| [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) | ⭐ 49.5k | Breakthrough Method for Agile Ai Driven Development |
+| [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) | ⭐ 49.6k | Breakthrough Method for Agile Ai Driven Development |
 | [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) | ⭐ 35.3k | Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic. |
 | [eyaltoledano/claude-task-master](https://github.com/eyaltoledano/claude-task-master) | ⭐ 27.7k | An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others. |
 | [SuperClaude-Org/SuperClaude_Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework) | ⭐ 23.4k | A configuration framework that enhances Claude Code with specialized commands, cognitive personas, and development methodologies. |
