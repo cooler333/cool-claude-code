@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T08:39:34Z",
+  "generated_at": "2026-07-17T08:32:58Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
@@ -21,8 +21,8 @@
     "VoltAgent/awesome-design-md",
     "punkpeye/awesome-mcp-servers",
     "JuliusBrussee/caveman",
-    "modelcontextprotocol/servers",
     "Graphify-Labs/graphify",
+    "modelcontextprotocol/servers",
     "thedotmack/claude-mem",
     "DietrichGebert/ponytail",
     "nexu-io/open-design",
@@ -61,19 +61,20 @@
     "luongnv89/claude-howto",
     "mindsdb/mindshub",
     "calesthio/OpenMontage",
-    "vercel-labs/agent-browser",
     "rohitg00/ai-engineering-from-scratch",
+    "vercel-labs/agent-browser",
     "Imbad0202/academic-research-skills",
     "wshobson/agents",
     "Yeachan-Heo/oh-my-claudecode",
     "anthropics/prompt-eng-interactive-tutorial",
     "patchy631/ai-engineering-hub",
+    "PostHog/posthog",
     "musistudio/claude-code-router",
     "microsoft/playwright-mcp",
     "continuedev/continue",
     "anthropics/financial-services",
-    "anthropics/claude-plugins-official",
     "DeusData/codebase-memory-mcp",
+    "anthropics/claude-plugins-official",
     "github/github-mcp-server",
     "K-Dense-AI/scientific-agent-skills",
     "huggingface/agents-course",
@@ -91,8 +92,8 @@
     "topoteretes/cognee",
     "eyaltoledano/claude-task-master",
     "srbhr/Resume-Matcher",
-    "kestra-io/kestra",
     "BloopAI/vibe-kanban",
+    "kestra-io/kestra",
     "yamadashy/repomix",
     "volcengine/OpenViking",
     "oraios/serena",
@@ -101,7 +102,6 @@
     "PrefectHQ/fastmcp",
     "google-labs-code/design.md",
     "zarazhangrui/frontend-slides",
-    "mukul975/Anthropic-Cybersecurity-Skills",
-    "OthmanAdi/planning-with-files"
+    "mukul975/Anthropic-Cybersecurity-Skills"
   ]
 }
