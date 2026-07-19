@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T08:16:52Z",
+  "generated_at": "2026-07-19T08:41:41Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
@@ -19,8 +19,8 @@
     "nextlevelbuilder/ui-ux-pro-max-skill",
     "browser-use/browser-use",
     "VoltAgent/awesome-design-md",
-    "punkpeye/awesome-mcp-servers",
     "Graphify-Labs/graphify",
+    "punkpeye/awesome-mcp-servers",
     "JuliusBrussee/caveman",
     "modelcontextprotocol/servers",
     "thedotmack/claude-mem",
@@ -67,8 +67,8 @@
     "wshobson/agents",
     "Yeachan-Heo/oh-my-claudecode",
     "anthropics/prompt-eng-interactive-tutorial",
-    "patchy631/ai-engineering-hub",
     "PostHog/posthog",
+    "patchy631/ai-engineering-hub",
     "musistudio/claude-code-router",
     "microsoft/playwright-mcp",
     "continuedev/continue",
@@ -81,11 +81,11 @@
     "huggingface/agents-course",
     "blader/humanizer",
     "davila7/claude-code-templates",
-    "vercel-labs/agent-skills",
     "openai/codex-plugin-cc",
+    "vercel-labs/agent-skills",
     "getzep/graphiti",
-    "NirDiamant/RAG_Techniques",
     "JCodesMore/ai-website-cloner-template",
+    "NirDiamant/RAG_Techniques",
     "supermemoryai/supermemory",
     "VoltAgent/awesome-agent-skills",
     "aishwaryanr/awesome-generative-ai-guide",
@@ -96,12 +96,12 @@
     "kestra-io/kestra",
     "yamadashy/repomix",
     "volcengine/OpenViking",
+    "vercel-labs/skills",
     "oraios/serena",
     "garrytan/gbrain",
-    "vercel-labs/skills",
     "PrefectHQ/fastmcp",
     "google-labs-code/design.md",
-    "zarazhangrui/frontend-slides",
-    "mukul975/Anthropic-Cybersecurity-Skills"
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "zarazhangrui/frontend-slides"
   ]
 }
