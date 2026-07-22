@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T09:07:49Z",
+  "generated_at": "2026-07-22T09:07:39Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
@@ -35,13 +35,13 @@
     "microsoft/ai-agents-for-beginners",
     "ComposioHQ/awesome-claude-skills",
     "openinterpreter/openinterpreter",
+    "koala73/worldmonitor",
     "Leonxlnx/taste-skill",
     "ruvnet/ruflo",
     "shanraisshan/claude-code-best-practice",
-    "koala73/worldmonitor",
     "Fission-AI/OpenSpec",
-    "mem0ai/mem0",
     "colbymchenry/codegraph",
+    "mem0ai/mem0",
     "headroomlabs-ai/headroom",
     "santifer/career-ops",
     "upstash/context7",
@@ -72,8 +72,8 @@
     "musistudio/claude-code-router",
     "microsoft/playwright-mcp",
     "continuedev/continue",
-    "anthropics/financial-services",
     "DeusData/codebase-memory-mcp",
+    "anthropics/financial-services",
     "anthropics/claude-plugins-official",
     "github/github-mcp-server",
     "SigNoz/signoz",
@@ -82,10 +82,10 @@
     "blader/humanizer",
     "davila7/claude-code-templates",
     "openai/codex-plugin-cc",
-    "vercel-labs/agent-skills",
     "JCodesMore/ai-website-cloner-template",
-    "getzep/graphiti",
+    "vercel-labs/agent-skills",
     "topoteretes/cognee",
+    "getzep/graphiti",
     "NirDiamant/RAG_Techniques",
     "VoltAgent/awesome-agent-skills",
     "supermemoryai/supermemory",
@@ -101,7 +101,7 @@
     "PrefectHQ/fastmcp",
     "oraios/serena",
     "mukul975/Anthropic-Cybersecurity-Skills",
-    "google-labs-code/design.md",
-    "BigPizzaV3/CodexPlusPlus"
+    "HKUDS/Vibe-Trading",
+    "google-labs-code/design.md"
   ]
 }
