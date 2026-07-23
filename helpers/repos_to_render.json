@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T09:07:39Z",
+  "generated_at": "2026-07-23T09:06:08Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
@@ -32,10 +32,10 @@
     "paperclipai/paperclip",
     "rtk-ai/rtk",
     "shareAI-lab/learn-claude-code",
+    "koala73/worldmonitor",
     "microsoft/ai-agents-for-beginners",
     "ComposioHQ/awesome-claude-skills",
     "openinterpreter/openinterpreter",
-    "koala73/worldmonitor",
     "Leonxlnx/taste-skill",
     "ruvnet/ruflo",
     "shanraisshan/claude-code-best-practice",
@@ -58,12 +58,12 @@
     "danielmiessler/Fabric",
     "kepano/obsidian-skills",
     "rohitg00/ai-engineering-from-scratch",
-    "coreyhaines31/marketingskills",
     "calesthio/OpenMontage",
+    "coreyhaines31/marketingskills",
     "luongnv89/claude-howto",
     "mindsdb/mindshub",
-    "vercel-labs/agent-browser",
     "Imbad0202/academic-research-skills",
+    "vercel-labs/agent-browser",
     "wshobson/agents",
     "Yeachan-Heo/oh-my-claudecode",
     "PostHog/posthog",
@@ -78,11 +78,11 @@
     "github/github-mcp-server",
     "SigNoz/signoz",
     "K-Dense-AI/scientific-agent-skills",
-    "huggingface/agents-course",
     "blader/humanizer",
+    "huggingface/agents-course",
     "davila7/claude-code-templates",
-    "openai/codex-plugin-cc",
     "JCodesMore/ai-website-cloner-template",
+    "openai/codex-plugin-cc",
     "vercel-labs/agent-skills",
     "topoteretes/cognee",
     "getzep/graphiti",
@@ -100,8 +100,8 @@
     "garrytan/gbrain",
     "PrefectHQ/fastmcp",
     "oraios/serena",
-    "mukul975/Anthropic-Cybersecurity-Skills",
+    "stablyai/orca",
     "HKUDS/Vibe-Trading",
-    "google-labs-code/design.md"
+    "mukul975/Anthropic-Cybersecurity-Skills"
   ]
 }
