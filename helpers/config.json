@@ -9,6 +9,10 @@
 
   "render": {
     "render_count": 100,
+    "trend": {
+      "window_days": 7,
+      "trending_size": 5
+    },
     "category_order": [
       "Official Anthropic",
       "Claude Code skills",

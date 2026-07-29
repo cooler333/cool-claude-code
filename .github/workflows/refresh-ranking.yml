@@ -30,8 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
+      # Full history: render.py diffs repos.json against its own older commits to
+      # compute the momentum columns (helpers/trend.py). The default depth-1 clone
+      # would silently render a README with no Δ pos / +stars / Trending.
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6

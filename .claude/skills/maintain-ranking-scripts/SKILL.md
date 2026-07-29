@@ -28,11 +28,20 @@ Claude Code / skills / agents / MCP ecosystem.
    archived, top `render.render_count` by stars — writes
    **`helpers/repos_to_render.json`**, then **categorizes**, builds the short
    **briefs** (from description / topics), and lays out **`README.md`**: a Table of
-   Contents, the Top-N leaderboard, and the long tail split into per-category tables.
-3. **CI** (`.github/workflows/`): `refresh-ranking.yml` runs the sweep+render daily
+   Contents, the Top-N leaderboard, a **Trending this week** cut, and the long tail
+   split into per-category tables.
+3. **`helpers/trend.py`** (no network, git only) supplies the **momentum** columns:
+   it reads *older committed versions of `repos.json`* straight out of git history —
+   the previous refresh (for `Δ pos`) and the snapshot from `render.trend.window_days`
+   ago (for `+stars` and Trending). No extra API calls and no new state file; the
+   daily commits **are** the star history. Every read is best-effort: no git, a
+   depth-1 clone, or history shorter than the window drops the affected column and
+   the README still renders.
+4. **CI** (`.github/workflows/`): `refresh-ranking.yml` runs the sweep+render daily
    and commits the artifacts; `render-on-edit.yml` re-renders (no network) when a
    human edits `filtered.json` (NOT `config.json` — scope/min_stars are sweep-time,
-   so config edits wait for the next sweep).
+   so config edits wait for the next sweep). **Both check out with `fetch-depth: 0`**
+   — the default depth-1 clone would silently render without the momentum columns.
 
 The ≥`min_stars` universe partitions as `repos.json` ⊇ (`out_of_scope.json` ∪
 `filtered.json`). See `reference.md` for the full file contracts and schema.
@@ -76,7 +85,13 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   category, also add its heading to `render.category_order` (must stay in sync, or it
   falls into "Other").
 - **Change how many are published** — `render.render_count` in `config.json`.
+- **Change the momentum window / Trending size** — `render.trend.window_days` and
+  `render.trend.trending_size` in `config.json`. `window_days` drives both the
+  `+stars` column and the Trending cut; `Δ pos` is always "since the previous
+  refresh" and has no knob.
 - **Change the table layout / columns / Table of Contents** — `helpers/render.py`.
+  All tables are assembled from the shared `COL_*` specs and `table()`, so add or
+  reorder a column there once instead of per table.
 - **Exclude an AI-adjacent-but-redundant repo** — add a `{ repo_id, reason }` entry
   to `helpers/filtered.json`.
 - **Audit classification** — run the CLASSIFICATION AUDIT below.
@@ -88,6 +103,10 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   Networked. No categorize/brief/rank-to-N/README.
 - `helpers/render.py` — reads `repos.json` + `out_of_scope.json` + `filtered.json`,
   selects the top-N, writes `repos_to_render.json` + `README.md`. **Never networks.**
+- `helpers/trend.py` — the **only** git-reading module, as `ghclient.py` is the only
+  networking one. Keep git out of `render.py`; keep `trend.py` best-effort (it returns
+  `None` instead of raising, so a missing baseline degrades a column rather than
+  failing a run). It reads nothing but committed `repos.json` blobs and writes nothing.
 - Discovery stays **algorithmic** (an exhaustive sweep), never a hand-maintained
   allowlist. `filtered.json` is the only editorial lever.
 - Keep scripts **stdlib-only** — no third-party packages.

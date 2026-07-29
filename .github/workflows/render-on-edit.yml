@@ -36,8 +36,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # Full history for the same reason as the daily job: the momentum columns are
+      # diffed against older repos.json commits (helpers/trend.py).
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6
