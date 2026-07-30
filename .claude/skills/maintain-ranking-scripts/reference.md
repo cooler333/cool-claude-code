@@ -24,10 +24,15 @@ config.json ─► fetch.py ─► repos.json ───────────�
   selects the published top-N into `repos_to_render.json`, and writes `README.md`.
   Re-runnable anytime, deterministic, no network.
 - **`trend.py`** is the only git-reading component, and the momentum columns' sole
-  input. It pulls older committed `repos.json` blobs (`git log --before` + `git show`)
-  and does the delta math; it writes nothing and never networks. Every entry point
-  returns `None` rather than raising, so an unavailable baseline costs a column, not
-  the run.
+  input. It pulls **one** older committed `repos.json` blob (`git log --before` +
+  `git show`) — the newest at least `render.trend.window_days` old — and does the delta
+  math; `Pos` and `+Stars` both derive from that single baseline, so they can never
+  describe different spans. It writes nothing and never networks, and returns `None`
+  rather than raising, so an unavailable baseline costs the columns, not the run.
+- **The static docs** (`docs/METHODOLOGY.md`, `CONTRIBUTING.md`,
+  `docs/DISCLAIMER.md`, `docs/LICENSING.md`) are outside the pipeline entirely:
+  hand-maintained, never generated, linked from the README footer. `render.py` emits
+  tables plus that footer and nothing else.
 - **`config.json`** holds every knob. Changing scope/categories/count is a config
   edit, not a code edit.
 
@@ -78,7 +83,7 @@ stars/description/tags are NOT stored — they live in `repos.json`).
 | `min_stars` | floor for inclusion (sweep lower bound) |
 | `fetch.floor_fraction` | min sweep coverage (swept / live total) before fetch will overwrite |
 | `render.render_count` | size of the published set written to `repos_to_render.json` |
-| `render.trend.window_days` | lookback for the `+stars` column and the Trending cut (`Δ pos` is always vs the previous refresh) |
+| `render.trend.window_days` | lookback for the single momentum baseline — drives `Pos`, `+Stars` and the Trending cut |
 | `render.trend.trending_size` | rows in the "Trending this week" table |
 | `render.category_order` | ordered category headings in the README |
 | `render.other_category_label` | label for the catch-all bucket |
@@ -97,12 +102,12 @@ stars/description/tags are NOT stored — they live in `repos.json`).
   `min_stars` total, `fetch.py` aborts rather than publish a half-empty universe.
 - **Min-repo floor.** `render.py` refuses to write a README if the *published set*
   drops below its floor (guards a bad `filtered.json` / scope regression).
-- **Missing momentum baseline.** `trend.py` needs older `repos.json` commits. A
+- **Missing momentum baseline.** `trend.py` needs an older `repos.json` commit. A
   depth-1 clone, a missing `git`, or a repo younger than `window_days` yields no
-  baseline: `render.py` logs a WARNING, drops just that column (and the Trending
-  section with the week baseline), and still writes a valid README with exit 0. This
-  is why **both workflows check out with `fetch-depth: 0`** — the failure is silent in
-  the output, visible only in the log, so CI must never rely on noticing it.
+  baseline: `render.py` logs a WARNING, drops the `Pos`/`+Stars` columns and the
+  Trending section, and still writes a valid README with exit 0. This is why **both
+  workflows check out with `fetch-depth: 0`** — the failure is silent in the output,
+  visible only in the log, so CI must never rely on noticing it.
 - **Determinism.** Same inputs → identical outputs (modulo `generated_at`).
   `render.py` is a pure function of its inputs — including the git history it reads,
   which is append-only in practice. Both baselines are anchored to `repos.json`'s own
@@ -135,7 +140,11 @@ stars/description/tags are NOT stored — they live in `repos.json`).
   a file that can drift out of sync with the snapshots it summarizes. The cost of
   reading git instead is one dependency — the clone must have history, hence
   `fetch-depth: 0` — which is a one-line CI setting against ~1 MB of packed history.
-- **Why is `Δ pos` computed with *today's* exclusion sets?** Ranking a historical
+- **Why is `Pos` computed with *today's* exclusion sets?** Ranking a historical
   universe with today's `filtered.json` / `out_of_scope.json` keeps the column a
   measure of star movement. Using each snapshot's own exclusions would make every
   editorial edit look like a mass rank shift.
+- **Why one baseline instead of two?** An earlier cut had `Pos` day-over-day and
+  `+Stars` weekly. Two adjacent columns over different spans is a readability trap
+  that no amount of footnoting fixes, and it doubled the git reads and the failure
+  modes. One snapshot, one span, no note needed.

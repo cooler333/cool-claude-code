@@ -28,15 +28,18 @@ Claude Code / skills / agents / MCP ecosystem.
    archived, top `render.render_count` by stars — writes
    **`helpers/repos_to_render.json`**, then **categorizes**, builds the short
    **briefs** (from description / topics), and lays out **`README.md`**: a Table of
-   Contents, the Top-N leaderboard, a **Trending this week** cut, and the long tail
-   split into per-category tables.
-3. **`helpers/trend.py`** (no network, git only) supplies the **momentum** columns:
-   it reads *older committed versions of `repos.json`* straight out of git history —
-   the previous refresh (for `Δ pos`) and the snapshot from `render.trend.window_days`
-   ago (for `+stars` and Trending). No extra API calls and no new state file; the
-   daily commits **are** the star history. Every read is best-effort: no git, a
-   depth-1 clone, or history shorter than the window drops the affected column and
-   the README still renders.
+   Contents, the **Trending this week** cut, the Top-N leaderboard, the long tail
+   split into per-category tables, and a footer of links. **The README body is tables
+   only** — the prose (scope, column definitions, disclaimer, licensing) lives in
+   hand-maintained docs, not in `render.py`; see "Where the static docs live" below.
+3. **`helpers/trend.py`** (no network, git only) supplies the **momentum** columns
+   (`Pos`, `+Stars`) and the Trending cut: it reads an *older committed version of
+   `repos.json`* straight out of git history — the newest snapshot at least
+   `render.trend.window_days` old. **One baseline feeds both columns**, so they always
+   describe the same span. No extra API calls and no new state file; the daily commits
+   **are** the star history. Best-effort: no git, a depth-1 clone, or history shorter
+   than the window drops both columns and the Trending section, and the README still
+   renders.
 4. **CI** (`.github/workflows/`): `refresh-ranking.yml` runs the sweep+render daily
    and commits the artifacts; `render-on-edit.yml` re-renders (no network) when a
    human edits `filtered.json` (NOT `config.json` — scope/min_stars are sweep-time,
@@ -45,6 +48,23 @@ Claude Code / skills / agents / MCP ecosystem.
 
 The ≥`min_stars` universe partitions as `repos.json` ⊇ (`out_of_scope.json` ∪
 `filtered.json`). See `reference.md` for the full file contracts and schema.
+
+## Where the static docs live
+
+`render.py` holds **no prose** beyond the README's one-line header and the footer link
+row. Everything explanatory is a hand-maintained file, edited directly (never
+generated):
+
+| file | holds |
+|------|-------|
+| `docs/METHODOLOGY.md` | how the list is built; what every column means; where `Pos`/`+Stars` come from |
+| `CONTRIBUTING.md` | which files are generated, and which lever to pull to change the output |
+| `docs/DISCLAIMER.md` | no-endorsement, third-party links, trademarks, removals |
+| `docs/LICENSING.md` | CC0 for this repo; listed repos keep their own licenses |
+
+Keep the README body noise-free: a new explanation belongs in `METHODOLOGY.md`, not in
+a note under a table. Don't restate config values (`min_stars`, `window_days`) in these
+docs — reference the key so `config.json` stays the single source of truth.
 
 The scripts are **stdlib-only** (no pip installs) and must stay that way.
 
@@ -86,9 +106,8 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   falls into "Other").
 - **Change how many are published** — `render.render_count` in `config.json`.
 - **Change the momentum window / Trending size** — `render.trend.window_days` and
-  `render.trend.trending_size` in `config.json`. `window_days` drives both the
-  `+stars` column and the Trending cut; `Δ pos` is always "since the previous
-  refresh" and has no knob.
+  `render.trend.trending_size` in `config.json`. `window_days` drives `Pos`, `+Stars`
+  and the Trending cut alike (one baseline, one span).
 - **Change the table layout / columns / Table of Contents** — `helpers/render.py`.
   All tables are assembled from the shared `COL_*` specs and `table()`, so add or
   reorder a column there once instead of per table.

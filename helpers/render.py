@@ -195,36 +195,36 @@ def parse_repos(render_set: list[dict], cfg: dict) -> list[dict]:
             "stars": int(r.get("stars", 0)),
             "category": categorize(full, desc_raw, topics, rules),
             "description": build_brief(desc_raw, topics, briefcfg),
-            # filled by annotate_momentum; None = no baseline for this repo
-            "prev_rank": None,
+            # filled by annotate_momentum; None = not covered by the baseline
+            "base_rank": None,
             "delta_stars": None,
             "pct_stars": None,
         })
     return repos
 
 
-def annotate_momentum(repos: list[dict], prev_ranks: dict | None,
-                      week_stars: dict | None) -> list[str]:
-    """Attach rank movement and star growth in place; return the repos that had no
-    star baseline (new entrants — their gain is unknown, not zero).
+def annotate_momentum(repos: list[dict], base_ranks: dict | None,
+                      base_stars: dict | None) -> list[str]:
+    """Attach rank movement and star growth in place; return the repos the baseline
+    didn't cover (new entrants — their gain is unknown, not zero).
 
-    Either baseline may be absent entirely (short or shallow history); the matching
-    fields then stay None and their whole column is dropped from the render. A repo
-    missing from the rank baseline is not an orphan — it renders as "new".
+    With no baseline at all (short or shallow history) the fields stay None and the
+    whole column pair is dropped from the render. A repo missing from the baseline's
+    published set is not an orphan — it renders as "new".
     """
-    no_baseline = []
+    if base_stars is None:
+        return []
+    orphans = []
     for r in repos:
         full = r["full_name"]
-        if prev_ranks is not None:
-            r["prev_rank"] = prev_ranks.get(full)
-        if week_stars is not None:
-            before = week_stars.get(full)
-            if before is None:
-                no_baseline.append(full)
-            else:
-                r["delta_stars"] = r["stars"] - before
-                r["pct_stars"] = (r["delta_stars"] / before * 100) if before else None
-    return no_baseline
+        r["base_rank"] = (base_ranks or {}).get(full)
+        before = base_stars.get(full)
+        if before is None:
+            orphans.append(full)
+            continue
+        r["delta_stars"] = r["stars"] - before
+        r["pct_stars"] = (r["delta_stars"] / before * 100) if before else None
+    return orphans
 
 
 # --------------------------------------------------------------------------
@@ -258,19 +258,19 @@ def select_render_set(universe: list[dict], excluded: set[str], render_count: in
 
 def collect_baselines(root: Path, generated_at: str, excluded: set[str],
                       render_count: int, trendcfg: dict) -> dict:
-    """Momentum baselines: the previous refresh (rank movement) and the snapshot from
-    `window_days` ago (star growth), both read out of git history.
+    """The momentum baseline: the newest committed repos.json at least
+    `window_days` old, read out of git history.
 
-    Both are optional. Anything unavailable — no git, a depth-1 clone, history
-    shorter than the window — is logged and drops only its own column, so the README
-    always renders.
+    One snapshot feeds both `Pos` and `+Stars`, so the two columns always describe
+    the same span. If it is unavailable — no git, a depth-1 clone, history shorter
+    than the window — the miss is logged and both columns plus the Trending section
+    drop out, and the README still renders.
     """
     window_days = int(trendcfg.get("window_days", 7))
     mom = {
         "window_days": window_days,
         "trending_size": int(trendcfg.get("trending_size", 5)),
-        "prev_ranks": None, "prev_at": "",
-        "week_stars": None, "week_at": "",
+        "base_at": "", "base_ranks": None, "base_stars": None,
     }
     ts = trend.parse_ts(generated_at)
     if ts is None:
@@ -278,26 +278,20 @@ def collect_baselines(root: Path, generated_at: str, excluded: set[str],
             f"momentum columns omitted.")
         return mom
 
-    prev = trend.snapshot_before(root, generated_at)
-    if prev:
-        mom["prev_at"], prev_universe = prev
-        # Rank the historical universe with TODAY's exclusion sets: Δ pos should
-        # track real star movement, not jump because filtered.json / scope_filter
-        # changed who is eligible in between.
-        mom["prev_ranks"] = trend.rank_map(
-            select_render_set(prev_universe, excluded, render_count))
-    else:
-        log("WARNING: no earlier repos.json snapshot in git history (shallow "
-            "clone?); 'Δ pos' column omitted.")
-
-    week = trend.snapshot_at(root, trend.shift_days(ts, window_days), generated_at)
-    if week:
-        mom["week_at"], week_universe = week
-        mom["week_stars"] = trend.stars_map(week_universe)
-    else:
+    base = trend.snapshot_at(root, trend.shift_days(ts, window_days), generated_at)
+    if not base:
         log(f"WARNING: no repos.json snapshot at least {window_days} days old in git "
-            f"history (shallow clone?); '+stars' column and '{TRENDING_HEADING}' "
-            f"section omitted.")
+            f"history (shallow clone?); 'Pos'/'+Stars' columns and "
+            f"'{TRENDING_HEADING}' section omitted.")
+        return mom
+
+    mom["base_at"], universe = base
+    mom["base_stars"] = trend.stars_map(universe)
+    # Rank the historical universe with TODAY's exclusion sets: Pos should track real
+    # star movement, not jump because filtered.json / scope_filter changed who is
+    # eligible in between.
+    mom["base_ranks"] = trend.rank_map(
+        select_render_set(universe, excluded, render_count))
     return mom
 
 
@@ -381,18 +375,16 @@ def repo_link(r: dict) -> str:
 
 
 # Column specs: (header, value function). Every table is assembled from these, so the
-# Top-N leaderboard and the per-category tables can't drift apart.
+# leaderboard, the Trending cut and the per-category tables can't drift apart.
+# Headers stay bare — the definitions live in docs/METHODOLOGY.md, not in the tables.
 COL_RANK = ("#", lambda r: str(r["rank"]))
 COL_NAME = ("Name", repo_link)
 COL_STARS = ("Stars", lambda r: human_stars(r["stars"]))
-COL_MOVE = ("Δ pos (1d)", lambda r: rank_move(r["prev_rank"], r["rank"]))
+COL_POS = ("Pos", lambda r: rank_move(r["base_rank"], r["rank"]))
+COL_GAIN = ("+Stars", lambda r: human_delta(r["delta_stars"]))
+COL_GROWTH = ("Growth", lambda r: human_pct(r["pct_stars"]))
 COL_CATEGORY = ("Category", lambda r: cell(r["category"]))
 COL_DESC = ("Description", lambda r: cell(r["description"]))
-COL_PCT = ("Growth", lambda r: human_pct(r["pct_stars"]))
-
-
-def col_gain(window_days: int) -> tuple:
-    return (f"+stars ({window_days}d)", lambda r: human_delta(r["delta_stars"]))
 
 
 def table(repos: list[dict], cols: list[tuple]) -> str:
@@ -405,185 +397,85 @@ def table(repos: list[dict], cols: list[tuple]) -> str:
 
 
 def repo_columns(mom: dict, with_category: bool) -> list[tuple]:
-    """Columns for a published-repo table. The momentum columns appear only when
-    their baseline was found, so a shallow clone renders the plain ranking."""
+    """Columns for a published-repo table. The momentum pair appears only when the
+    baseline was found, so a shallow clone renders the plain ranking."""
     cols = [COL_RANK, COL_NAME, COL_STARS]
-    if mom.get("prev_at"):
-        cols.append(COL_MOVE)
-    if mom.get("week_at"):
-        cols.append(col_gain(mom["window_days"]))
+    if mom.get("base_at"):
+        cols += [COL_POS, COL_GAIN]
     if with_category:
         cols.append(COL_CATEGORY)
     cols.append(COL_DESC)
     return cols
 
 
-def momentum_note(mom: dict) -> str:
-    """One line telling the reader which window each delta column covers — they
-    differ (position is day-over-day, stars are weekly), and the baselines are real
-    snapshots, so the actual timestamps are named rather than implied."""
-    parts = []
-    if mom.get("prev_at"):
-        parts.append(f"**Δ pos** — places gained since the previous refresh "
-                     f"({fmt_date(mom['prev_at'])})")
-    if mom.get("week_at"):
-        parts.append(f"**+stars** — stars gained since {fmt_date(mom['week_at'])}")
-    if not parts:
-        return ""
-    return ("_" + "; ".join(parts) +
-            ". Both are diffed against committed `helpers/repos.json` snapshots._")
-
-
 # --------------------------------------------------------------------------
 # static prose
 # --------------------------------------------------------------------------
 
-SCOPE = """## Scope & methodology
+# The README body is kept to tables only; the prose that used to live here (scope,
+# column definitions, disclaimer, licensing) moved to hand-maintained docs, and this
+# footer is the single line that points at them.
+FOOTER = """---
 
-This list is generated automatically, once per day, by `helpers/fetch.py` →
-`helpers/render.py` (see `.github/workflows/refresh-ranking.yml`). Membership is
-**not hand-curated**: `fetch.py` does an exhaustive sweep of **every** public repo
-at or above the star floor (`helpers/repos.json`), so discovery is complete by
-construction. `render.py` then removes the two exclusion sets and publishes the top
-results by **live star count**.
-
-- **In scope:** Claude Code skills, agents, plugins, harnesses, memory and
-  orchestration; the MCP tool-protocol layer; general-purpose and provider-neutral
-  LLM/agent frameworks; and multi-model coding-agent CLIs that support Claude
-  (opencode, OpenHands, goose).
-- **Out of scope (`helpers/out_of_scope.json`, auto):** repos whose
-  name/description/topics don't match any ecosystem term — classified out
-  automatically by `scope_filter`, regenerated every run.
-- **Filtered (`helpers/filtered.json`, editorial):** repos that *are* AI/Claude-
-  adjacent but excluded as redundant — single-vendor / non-Claude competing CLIs
-  (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs, and
-  leaked/rights-infringing content.
-- **Floor:** repositories under {min_stars} stars, and archived repositories, are excluded.
-- **Star counts** are a point-in-time snapshot and drift daily.
-- **Momentum (`Δ pos`, `+stars`, Trending):** diffed against older committed
-  `helpers/repos.json` snapshots in this repo's git history — position against the
-  previous refresh, stars over the last {window_days} days. No extra API calls; the
-  exact baseline timestamps are printed under the tables. A clone without history
-  simply renders without those columns.
-"""
-
-CONTRIBUTING = """## Contributing
-
-The published tables are generated — don't edit them by hand. To change what
-appears: adjust `scope_filter` / `category_rules` in `helpers/config.json` (to
-re-classify what counts as in-ecosystem), or add a `{ "repo_id": "owner/name",
-"reason": "..." }` entry to `helpers/filtered.json` (to drop an AI-adjacent but
-redundant repo). There is **no allowlist** and no hand-edited ranking — the daily
-workflow re-sweeps and re-renders.
-"""
-
-DISCLAIMER = """## Disclaimer
-
-This is an automatically generated index of **publicly available** GitHub
-repository metadata (names, owners, star counts, and the projects' own
-descriptions). It does **not** host, mirror, or redistribute any third-party
-source code or content.
-
-- **No endorsement.** Inclusion is purely algorithmic (by public star count) and
-  is not a recommendation, endorsement, or vetting of any listed project. We do
-  not audit listed repositories for security, licensing, or legal compliance.
-- **Third-party links.** Links point to independent repositories we do not
-  control and are not responsible for. Descriptions are the projects' own text,
-  reproduced as factual metadata; they are not statements by this project.
-- **Trademarks.** "Claude", "Anthropic", and all other product and company names
-  are trademarks of their respective owners. References are nominative (for
-  identification only) and imply no affiliation or sponsorship.
-- **Removal.** To request removal of an entry, open an issue; off-scope or
-  rights-infringing repositories can be excluded via `helpers/filtered.json`.
-"""
-
-LICENSE = """## License
-
-The contents of **this** repository (scripts and generated index) are released
-under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) — public
-domain. Listed third-party repositories remain under their own licenses, held by
-their respective owners.
+**How this list is built, and what the columns mean:**
+[docs/METHODOLOGY.md](docs/METHODOLOGY.md) ·
+**Changing what appears:** [CONTRIBUTING.md](CONTRIBUTING.md) ·
+**No endorsement, trademarks, removals:** [docs/DISCLAIMER.md](docs/DISCLAIMER.md) ·
+**Licensing:** [docs/LICENSING.md](docs/LICENSING.md)
 """
 
 
 def build_readme(render_set: list[dict], generated_at: str, cfg: dict,
                  mom: dict) -> str:
     repos = parse_repos(render_set, cfg)
-    orphans = annotate_momentum(repos, mom.get("prev_ranks"), mom.get("week_stars"))
+    orphans = annotate_momentum(repos, mom.get("base_ranks"), mom.get("base_stars"))
     if orphans:
         log(f"WARNING: {len(orphans)} published repo(s) absent from the "
             f"{mom['window_days']}-day baseline (new entrants?), shown as '—': "
             f"{', '.join(orphans)}")
     top_n = cfg.get("top_table_size", 30)
-    generated_at = fmt_date(generated_at)
 
     top = repos[:top_n]
     tail = repos[top_n:]
     grouped = group_tail(tail, cfg) if tail else []
-    note = momentum_note(mom)
-    movers = trend.top_movers(repos, mom["trending_size"]) if mom.get("week_at") else []
+    movers = trend.top_movers(repos, mom["trending_size"]) if mom.get("base_at") else []
 
     out = [
         "# Awesome Claude Code & Agent Tools",
         "",
         "> The most-starred repositories in the Claude Code / skills / agents / MCP ecosystem.",
-        f"> **Updated at {generated_at}** (last successful refresh). "
-        f"{len(repos)} repositories, sorted by live GitHub stars, descending.",
+        f"> **Updated {fmt_date(generated_at)}** · {len(repos)} repositories by live "
+        f"GitHub stars" + (f" · `Pos`/`+Stars` vs {fmt_date(mom['base_at'])}"
+                           if mom.get("base_at") else ""),
     ]
 
-    # table of contents
+    # table of contents — sections only; the static docs live outside the README
     top_heading = f"Top {len(top)}"
-    out += ["", "## Contents", "", f"- [{top_heading}](#{slugify(top_heading)})"]
+    out += ["", "## Contents", ""]
     if movers:
         out.append(f"- [{TRENDING_HEADING}](#{slugify(TRENDING_HEADING)})")
+    out.append(f"- [{top_heading}](#{slugify(top_heading)})")
     if grouped:
         out.append(f"- [By category](#{slugify('By category')})")
         for heading, _ in grouped:
             out.append(f"  - [{heading}](#{slugify(heading)})")
-    out += [
-        f"- [Scope & methodology](#{slugify('Scope & methodology')})",
-        f"- [Contributing](#{slugify('Contributing')})",
-        f"- [Disclaimer](#{slugify('Disclaimer')})",
-        f"- [License](#{slugify('License')})",
-    ]
-
-    out += ["", f"## {top_heading}", ""]
-    if note:
-        out += [note, ""]
-    out += [table(top, repo_columns(mom, with_category=True)), ""]
+    out.append("")
 
     if movers:
-        out += [
-            f"## {TRENDING_HEADING}",
-            "",
-            f"_The `+stars` column, sorted: the biggest star gains of the last "
-            f"{mom['window_days']} days (since {fmt_date(mom['week_at'])}) among the "
-            f"{len(repos)} published repositories. They also appear in the tables "
-            f"above — this is a shortcut, not a separate ranking._",
-            "",
-            table(movers, [COL_RANK, COL_NAME, COL_STARS,
-                           col_gain(mom["window_days"]), COL_PCT]),
-            "",
-        ]
+        out += [f"## {TRENDING_HEADING}", "",
+                table(movers, [COL_RANK, COL_NAME, COL_STARS, COL_GAIN, COL_GROWTH]),
+                ""]
+
+    out += [f"## {top_heading}", "",
+            table(top, repo_columns(mom, with_category=True)), ""]
 
     if grouped:
-        out += [
-            "## By category",
-            "",
-            "_The long tail below the top leaderboard, grouped by category "
-            "(top-ranked repos above are not repeated here). `#` is the overall "
-            "rank._",
-            "",
-        ]
-        if note:
-            out += [note, ""]
+        out += ["## By category", ""]
         for heading, items in grouped:
             out += [f"### {heading}", "",
                     table(items, repo_columns(mom, with_category=False)), ""]
 
-    scope = SCOPE.format(min_stars=f"{cfg.get('min_stars', 20000):,}",
-                         window_days=mom["window_days"])
-    out += [scope, CONTRIBUTING, DISCLAIMER, LICENSE]
+    out.append(FOOTER)
     return "\n".join(out).rstrip() + "\n"
 
 
