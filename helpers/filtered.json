@@ -254,8 +254,8 @@
       "reason": "generic AI news / opinion trend-monitor app"
     },
     {
-      "repo_id": "mindsdb/minds-platform",
-      "reason": "generic applied-AI platform"
+      "repo_id": "mindsdb/mindshub",
+      "reason": "generic applied-AI platform (renamed from mindsdb/minds-platform)"
     },
     {
       "repo_id": "PDFMathTranslate/PDFMathTranslate",
@@ -622,8 +622,8 @@
       "reason": "build-your-own customer-facing agent framework"
     },
     {
-      "repo_id": "NVIDIA-NeMo/NeMo",
-      "reason": "generative-AI / LLM training framework (infra)"
+      "repo_id": "NVIDIA-NeMo/Speech",
+      "reason": "generative-AI / LLM training framework (infra) (renamed from NVIDIA-NeMo/NeMo)"
     },
     {
       "repo_id": "microsoft/agent-lightning",

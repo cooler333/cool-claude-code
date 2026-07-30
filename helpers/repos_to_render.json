@@ -62,7 +62,6 @@
     "coreyhaines31/marketingskills",
     "luongnv89/claude-howto",
     "Imbad0202/academic-research-skills",
-    "mindsdb/mindshub",
     "vercel-labs/agent-browser",
     "wshobson/agents",
     "Yeachan-Heo/oh-my-claudecode",
@@ -102,6 +101,7 @@
     "kestra-io/kestra",
     "yamadashy/repomix",
     "tirth8205/code-review-graph",
-    "garrytan/gbrain"
+    "garrytan/gbrain",
+    "oraios/serena"
   ]
 }

@@ -30,9 +30,10 @@ config.json ─► fetch.py ─► repos.json ───────────�
   describe different spans. It writes nothing and never networks, and returns `None`
   rather than raising, so an unavailable baseline costs the columns, not the run.
 - **The static docs** (`docs/METHODOLOGY.md`, `CONTRIBUTING.md`,
-  `docs/DISCLAIMER.md`, `docs/LICENSING.md`) are outside the pipeline entirely:
+  `docs/DISCLAIMER.md`, plus the root `LICENSE`) are outside the pipeline entirely:
   hand-maintained, never generated, linked from the README footer. `render.py` emits
-  tables plus that footer and nothing else.
+  tables plus that footer and nothing else. The licensing note lives as a bullet in
+  `DISCLAIMER.md`; `LICENSE` holds the CC0 text and is never paraphrased into a doc.
 - **`config.json`** holds every knob. Changing scope/categories/count is a config
   edit, not a code edit.
 
@@ -70,7 +71,10 @@ from `full_name` and assigns display rank within the published set.)
 topics live in repos.json, never duplicated here (join on full_name to audit).
 `filtered.json`: `{ description, filtered: [{ repo_id, reason }] }` (only
 `repo_id` affects filtering; `reason` is human-only; a bare string is tolerated;
-stars/description/tags are NOT stored — they live in `repos.json`).
+stars/description/tags are NOT stored — they live in `repos.json`). Entries matching
+nothing in the universe are **normal**, not rot: an excluded repo that slips under
+`min_stars` keeps its exclusion for when it returns. Only a *renamed* id is dead, and
+telling the two apart needs GitHub — see the CLASSIFICATION AUDIT in `SKILL.md`.
 `repos_to_render.json`: `{ generated_at, generator, count, repos: [full_name, ...] }`
 — repo references only, in rank (stars-descending) order; metadata lives in
 `repos.json` (join on `full_name`), never duplicated here.

@@ -417,11 +417,13 @@ def repo_columns(mom: dict, with_category: bool) -> list[tuple]:
 # footer is the single line that points at them.
 FOOTER = """---
 
-**How this list is built, and what the columns mean:**
-[docs/METHODOLOGY.md](docs/METHODOLOGY.md) ·
-**Changing what appears:** [CONTRIBUTING.md](CONTRIBUTING.md) ·
-**No endorsement, trademarks, removals:** [docs/DISCLAIMER.md](docs/DISCLAIMER.md) ·
-**Licensing:** [docs/LICENSING.md](docs/LICENSING.md)
+- [**Scope & methodology**](docs/METHODOLOGY.md) — how the list is built, and what
+  each column means
+- [**Contributing**](CONTRIBUTING.md) — which files are generated, and how to change
+  what appears
+- [**Disclaimer**](docs/DISCLAIMER.md) — no endorsement, third-party links,
+  trademarks, removals, licensing
+- [**License**](LICENSE) — CC0-1.0 for this repository; listed repos keep their own
 """
 
 
@@ -503,14 +505,18 @@ def main() -> int:
     log(f"universe {len(universe)} | excluded {len(excluded)} | "
         f"render set {len(render_set)} (cap {render_count})")
 
-    # surface dead filtered.json entries (renamed/dropped-below-floor repos) — they
-    # match nothing in the universe, so they silently do nothing until audited.
+    # Filtered entries outside the universe are the expected steady state: an excluded
+    # repo that slips under min_stars leaves repos.json but keeps its exclusion, ready
+    # for when it climbs back. Report the count, not the names — a per-run wall of them
+    # reads like rot. A *renamed* repo hides in this same bucket and does need fixing,
+    # but that's only detectable online: see the CLASSIFICATION AUDIT in
+    # .claude/skills/maintain-ranking-scripts/.
     universe_ids = {r.get("full_name", "").lower() for r in universe}
-    stale = sorted(filtered_ids - universe_ids)
-    if stale:
-        noun = "entry matches" if len(stale) == 1 else "entries match"
-        log(f"WARNING: {len(stale)} filtered.json {noun} no repo in the universe "
-            f"(renamed or below the star floor?): {', '.join(stale)}")
+    dormant = filtered_ids - universe_ids
+    if dormant:
+        log(f"note: {len(dormant)} of {len(filtered_ids)} filtered.json entries are "
+            f"outside the current universe (below the star floor, or renamed); audit "
+            f"periodically for renames")
 
     # floor guards the PUBLISHED set, not the universe
     if len(render_set) < MIN_REPOS:

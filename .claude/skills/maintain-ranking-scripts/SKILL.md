@@ -59,8 +59,8 @@ generated):
 |------|-------|
 | `docs/METHODOLOGY.md` | how the list is built; what every column means; where `Pos`/`+Stars` come from |
 | `CONTRIBUTING.md` | which files are generated, and which lever to pull to change the output |
-| `docs/DISCLAIMER.md` | no-endorsement, third-party links, trademarks, removals |
-| `docs/LICENSING.md` | CC0 for this repo; listed repos keep their own licenses |
+| `docs/DISCLAIMER.md` | no-endorsement, third-party links, trademarks, removals, and the licensing note |
+| `LICENSE` | the CC0-1.0 text itself — the only place it lives; don't restate it in a doc |
 
 Keep the README body noise-free: a new explanation belongs in `METHODOLOGY.md`, not in
 a note under a table. Don't restate config values (`min_stars`, `window_days`) in these
@@ -159,7 +159,27 @@ bucket. **`grep` the large files; don't read them whole.** Note that
    match shouldn't be in scope, tighten `scope_filter`.
 3. **Editorial redundancy** (AI-adjacent but not worth listing): add the repo to
    `helpers/filtered.json` with a `reason`.
-4. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or
+4. **Renamed filtered repos** — the one check that needs the network, and the one that
+   silently breaks the denylist. `render.py` prints a `note:` counting the
+   `filtered.json` entries outside the universe. Most are **dormant**, not dead: an
+   excluded repo that slipped under `min_stars` left `repos.json` but keeps its
+   exclusion for when it climbs back — **don't delete those.** A *renamed* repo hides
+   in the same bucket, and its old id now filters nothing, so it gets published against
+   an explicit decision. Separate the two by asking GitHub, which follows renames:
+   ```sh
+   python3 -c "
+   import json
+   u={r['full_name'].lower() for r in json.load(open('helpers/repos.json'))['repos']}
+   f=json.load(open('helpers/filtered.json'))['filtered']
+   print('\n'.join(e['repo_id'] for e in f if e['repo_id'].lower() not in u))" |
+   while read -r id; do
+     printf '%s\t%s\n' "$id" "$(gh api "repos/$id" --jq '[.full_name,.stargazers_count]|@tsv' 2>/dev/null || echo 404)"
+   done
+   ```
+   A returned `full_name` that differs from the requested id is a rename: repoint the
+   entry (keep the `reason`, append `(renamed from <old>)`). A `404` is genuinely gone —
+   drop it. Everything else is dormant — leave it alone.
+5. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or
    `repos_to_render.json`, and never add an allowlist.
 
 ## Notes

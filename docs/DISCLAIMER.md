@@ -15,3 +15,6 @@ metadata (names, owners, star counts, and the projects' own descriptions). It do
   identification only) and imply no affiliation or sponsorship.
 - **Removal.** To request removal of an entry, open an issue; off-scope or
   rights-infringing repositories can be excluded via `helpers/filtered.json`.
+- **Licensing.** This repository — scripts and generated index — is CC0-1.0, see
+  [`LICENSE`](../LICENSE). Listed third-party repositories remain under their own
+  licenses, held by their respective owners; nothing here relicenses them.
