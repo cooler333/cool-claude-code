@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T07:51:10Z",
+  "generated_at": "2026-08-08T07:27:47Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
@@ -32,8 +32,8 @@
     "dair-ai/Prompt-Engineering-Guide",
     "paperclipai/paperclip",
     "rtk-ai/rtk",
-    "shareAI-lab/learn-claude-code",
     "Leonxlnx/taste-skill",
+    "shareAI-lab/learn-claude-code",
     "ComposioHQ/awesome-claude-skills",
     "microsoft/ai-agents-for-beginners",
     "openinterpreter/openinterpreter",
@@ -74,9 +74,9 @@
     "musistudio/claude-code-router",
     "microsoft/playwright-mcp",
     "continuedev/continue",
+    "bojieli/ai-agent-book",
     "blader/humanizer",
     "anthropics/financial-services",
-    "bojieli/ai-agent-book",
     "anthropics/claude-plugins-official",
     "K-Dense-AI/scientific-agent-skills",
     "github/github-mcp-server",
@@ -85,8 +85,8 @@
     "JCodesMore/ai-website-cloner-template",
     "huggingface/agents-course",
     "MadsLorentzen/ai-job-search",
-    "davila7/claude-code-templates",
     "HKUDS/Vibe-Trading",
+    "davila7/claude-code-templates",
     "topoteretes/cognee",
     "vercel-labs/agent-skills",
     "VoltAgent/awesome-agent-skills",
@@ -97,11 +97,11 @@
     "aishwaryanr/awesome-generative-ai-guide",
     "vercel-labs/skills",
     "BigPizzaV3/CodexPlusPlus",
-    "srbhr/Resume-Matcher",
     "volcengine/OpenViking",
-    "eyaltoledano/claude-task-master",
+    "srbhr/Resume-Matcher",
     "garrytan/gbrain",
+    "eyaltoledano/claude-task-master",
     "oraios/serena",
-    "BloopAI/vibe-kanban"
+    "yamadashy/repomix"
   ]
 }
