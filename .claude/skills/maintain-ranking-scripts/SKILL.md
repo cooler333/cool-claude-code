@@ -87,6 +87,12 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   4. **Leaked / rights-infringing content** — republished proprietary system
      prompts, credentials, closed-source material (e.g.
      `asgeirtj/system_prompts_leaks`). Excluded on legal/editorial grounds.
+  5. **Non-English description** — the published list is English-language, so a
+     repo whose GitHub description is *primarily* non-English (≥50% of its
+     letters in a non-Latin script) is excluded, regardless of quality (e.g.
+     `alchaincyf/nuwa-skill`). A **bilingual** description led by English is
+     kept. This one is invisible to `scope_filter`, so it decays silently —
+     re-check it in every audit (step 5 below).
 
   (Generic **non-AI** repos that match only by keyword belong in neither file —
   they fail `scope_filter` and land in `out_of_scope.json` automatically.)
@@ -179,7 +185,24 @@ bucket. **`grep` the large files; don't read them whole.** Note that
    A returned `full_name` that differs from the requested id is a rename: repoint the
    entry (keep the `reason`, append `(renamed from <old>)`). A `404` is genuinely gone —
    drop it. Everything else is dormant — leave it alone.
-5. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or
+5. **Non-English descriptions** in the published set (exclusion category 5 above) —
+   nothing enforces this rule, so run it every audit:
+   ```sh
+   python3 -c "
+   import json, unicodedata
+   meta={r['full_name']:r for r in json.load(open('helpers/repos.json'))['repos']}
+   raw=json.load(open('helpers/repos_to_render.json'))
+   for i in (raw['repos'] if isinstance(raw,dict) else raw):
+       d=meta.get(i,{}).get('description') or ''
+       L=[c for c in d if c.isalpha()]
+       if not L: continue
+       s=sum(1 for c in L if any(k in unicodedata.name(c,'') for k in ('CJK','HIRAGANA','KATAKANA','HANGUL','CYRILLIC','ARABIC','HEBREW','DEVANAGARI','THAI')))/len(L)
+       if s>=0.5: print(f'{s:.2f} {i}')"
+   ```
+   Each hit goes to `filtered.json` with the reason `CJK (non-English) description`
+   (or the matching script). Judge on the *description* only — a repo with an
+   English description and a non-English README stays.
+6. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or
    `repos_to_render.json`, and never add an allowlist.
 
 ## Notes

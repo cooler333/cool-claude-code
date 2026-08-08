@@ -74,7 +74,6 @@
     "musistudio/claude-code-router",
     "microsoft/playwright-mcp",
     "continuedev/continue",
-    "bojieli/ai-agent-book",
     "blader/humanizer",
     "anthropics/financial-services",
     "anthropics/claude-plugins-official",
@@ -96,12 +95,13 @@
     "supermemoryai/supermemory",
     "aishwaryanr/awesome-generative-ai-guide",
     "vercel-labs/skills",
-    "BigPizzaV3/CodexPlusPlus",
     "volcengine/OpenViking",
     "srbhr/Resume-Matcher",
     "garrytan/gbrain",
     "eyaltoledano/claude-task-master",
     "oraios/serena",
-    "yamadashy/repomix"
+    "yamadashy/repomix",
+    "BloopAI/vibe-kanban",
+    "mukul975/Anthropic-Cybersecurity-Skills"
   ]
 }

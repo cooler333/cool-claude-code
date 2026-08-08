@@ -788,6 +788,18 @@
     {
       "repo_id": "Yuan1z0825/nature-skills",
       "reason": "CJK (non-English) description"
+    },
+    {
+      "repo_id": "bojieli/ai-agent-book",
+      "reason": "CJK (non-English) description"
+    },
+    {
+      "repo_id": "BigPizzaV3/CodexPlusPlus",
+      "reason": "launcher/manager for the OpenAI Codex desktop app (vendor switching, session management); single-vendor non-Claude, same class as the filtered Yeachan-Heo/oh-my-codex"
+    },
+    {
+      "repo_id": "kestra-io/kestra",
+      "reason": "generic data/infra workflow-orchestration platform (matches only by the 'ai-agents' topic); same class as the filtered n8n, conductor-oss, trigger.dev, activepieces"
     }
   ]
 }

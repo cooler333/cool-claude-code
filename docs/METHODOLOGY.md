@@ -37,8 +37,10 @@ removes the two exclusion sets and publishes the top results by live star count.
   automatically by `scope_filter`, regenerated every run.
 - **Filtered (`helpers/filtered.json`, editorial):** repos that *are* AI/Claude-
   adjacent but excluded as redundant — single-vendor / non-Claude competing CLIs
-  (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs, and
-  leaked/rights-infringing content.
+  (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs,
+  leaked/rights-infringing content, and repos whose GitHub description is
+  primarily non-English (this list is English-language; a bilingual description
+  led by English is kept).
 - **Floor:** repositories under `min_stars`, and archived repositories, are excluded.
 - **Star counts** are a point-in-time snapshot and drift daily.
 
