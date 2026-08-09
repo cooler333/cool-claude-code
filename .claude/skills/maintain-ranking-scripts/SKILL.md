@@ -194,6 +194,10 @@ bucket. **`grep` the large files; don't read them whole.** Note that
    A returned `full_name` that differs from the requested id is a rename: repoint the
    entry (keep the `reason`, append `(renamed from <old>)`). A `404` is genuinely gone —
    drop it. Everything else is dormant — leave it alone.
+   Expect dropping a `404` to shift `Pos` by one for every repo below it: the column
+   re-ranks the baseline snapshot with *today's* exclusions, and the deleted repo is
+   still in that older `repos.json`. It self-heals once the baseline rolls past the
+   repo's disappearance — don't chase it.
 5. **Non-English repos** in the published set (exclusion category 5 above) —
    nothing enforces this rule, so run it every audit. It needs the network
    (`gh api`), which is why it is a skill-local script and not a pipeline stage:

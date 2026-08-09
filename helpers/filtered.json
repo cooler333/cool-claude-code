@@ -42,10 +42,6 @@
       "reason": "CLI API proxy"
     },
     {
-      "repo_id": "cheahjs/free-llm-api-resources",
-      "reason": "free LLM API resource list (reseller)"
-    },
-    {
       "repo_id": "Alishahryar1/free-claude-code",
       "reason": "free-key proxy to run claude-code off non-Anthropic providers"
     },

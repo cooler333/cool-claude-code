@@ -453,10 +453,7 @@ def build_readme(render_set: list[dict], generated_at: str, cfg: dict,
     out = [
         "# Awesome Claude Code & Agent Tools",
         "",
-        "> The most-starred repositories in the Claude Code / skills / agents / MCP ecosystem.",
-        f"> **Updated {fmt_date(generated_at)}** · {len(repos)} repositories by live "
-        f"GitHub stars" + (f" · `Pos`/`+Stars` vs {fmt_date(mom['base_at'])}"
-                           if mom.get("base_at") else ""),
+        f"> **Updated {fmt_date(generated_at)}**",
     ]
 
     # table of contents — sections only; the static docs live outside the README
