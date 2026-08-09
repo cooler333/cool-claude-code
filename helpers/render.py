@@ -149,17 +149,25 @@ def categorize(full_name: str, description: str, topics: list[str], rules: dict)
     tps = [t.lower() for t in topics]
     text = " ".join([full_name.lower(), description.lower(), *tps])
 
+    def hit(kr):
+        return any(kw.lower() in text for kw in kr.get("any", []))
+
     for kr in rules["keyword_rules"]:
         if "match_owner" in kr and owner in [o.lower() for o in kr["match_owner"]]:
+            return kr["category"]
+    # A rule flagged `beats_topics` is checked before topic_map: what a repo *is*
+    # (a course, a tutorial) is more decisive than the topics it tags itself with,
+    # and teaching material tags the subject it teaches ("mcp", "agents").
+    for kr in rules["keyword_rules"]:
+        if kr.get("beats_topics") and hit(kr):
             return kr["category"]
     topic_map = {k.lower(): v for k, v in rules["topic_map"].items()}
     for t in tps:
         if t in topic_map:
             return topic_map[t]
     for kr in rules["keyword_rules"]:
-        for kw in kr.get("any", []):
-            if kw.lower() in text:
-                return kr["category"]
+        if hit(kr):
+            return kr["category"]
     return rules["default_category"]
 
 

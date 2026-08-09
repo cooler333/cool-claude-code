@@ -94,7 +94,7 @@ telling the two apart needs GitHub — see the CLASSIFICATION AUDIT in `SKILL.md
 | `render.other_max` | warn threshold for the catch-all size |
 | `brief.max_chars` | truncation for the description brief |
 | `scope_filter` | relevance classifier (`require_match` + `any` terms) → drives `out_of_scope.json` |
-| `category_rules` | `topic_map` + `keyword_rules` + `default_category` |
+| `category_rules` | `topic_map` + `keyword_rules` + `default_category`; applied `match_owner` → `beats_topics` keyword rules → `topic_map` → remaining keyword rules → default |
 | `http.user_agent` | UA string for API calls |
 
 ## Failure modes & guarantees

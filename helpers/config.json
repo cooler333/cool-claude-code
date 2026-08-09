@@ -22,6 +22,7 @@
       "Memory / context",
       "Prompts & system prompts",
       "Spec-driven dev",
+      "Learning & guides",
       "Awesome list / directory"
     ],
     "other_category_label": "Other",
@@ -60,6 +61,7 @@
     },
     "keyword_rules": [
       { "category": "Official Anthropic", "match_owner": ["anthropics"] },
+      { "category": "Learning & guides", "beats_topics": true, "any": ["lessons", "course", "tutorial", "guide", "beginners", "best-practice", "from-scratch", "from scratch", "howto", "curriculum"] },
       { "category": "MCP server / tooling", "any": ["mcp", "model context protocol", "model-context-protocol"] },
       { "category": "Claude Code skills", "any": ["skill", "skills", "skill.md"] },
       { "category": "Coding agent CLI", "any": ["coding agent", "opencode", "cli"] },

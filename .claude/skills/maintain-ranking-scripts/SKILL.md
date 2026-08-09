@@ -111,7 +111,14 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 - **Improve categorization** — `category_rules` (`topic_map` / `keyword_rules`) in
   `config.json`; `render.py` assigns the category and groups by it. If you add a new
   category, also add its heading to `render.category_order` (must stay in sync, or it
-  falls into "Other").
+  falls into "Other"). Rules are applied in this order, first hit wins:
+  `match_owner` → keyword rules flagged `"beats_topics": true` → `topic_map` →
+  the remaining keyword rules (in file order) → `default_category`. Reach for
+  `beats_topics` when the signal describes what a repo *is* and its topics
+  describe something else — a course tags the subject it teaches (`mcp`,
+  `agents`), so "Learning & guides" must outrank `topic_map` to catch it.
+  Verify any rule change by diffing the assignment for the whole published set
+  (categorize every repo before and after), not by spot-checking one repo.
 - **Change how many are published** — `render.render_count` in `config.json`.
 - **Change the momentum window / Trending size** — `render.trend.window_days` and
   `render.trend.trending_size` in `config.json`. `window_days` drives `Pos`, `+Stars`
