@@ -87,12 +87,14 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   4. **Leaked / rights-infringing content** — republished proprietary system
      prompts, credentials, closed-source material (e.g.
      `asgeirtj/system_prompts_leaks`). Excluded on legal/editorial grounds.
-  5. **Non-English description** — the published list is English-language, so a
-     repo whose GitHub description is *primarily* non-English (≥50% of its
-     letters in a non-Latin script) is excluded, regardless of quality (e.g.
-     `alchaincyf/nuwa-skill`). A **bilingual** description led by English is
-     kept. This one is invisible to `scope_filter`, so it decays silently —
-     re-check it in every audit (step 5 below).
+  5. **Non-English** — the published list is English-language, so a repo is
+     excluded when *either* its GitHub description **or** its primary README is
+     primarily non-English (≥50% of prose letters in a non-Latin script),
+     regardless of quality (e.g. `alchaincyf/nuwa-skill`). **Bilingual is fine
+     as long as the main one is English** — `farion1231/cc-switch` ships an
+     English `README.md` with translations beside it and stays. This one is
+     invisible to `scope_filter`, so it decays silently — re-check it in every
+     audit (step 5 below).
 
   (Generic **non-AI** repos that match only by keyword belong in neither file —
   they fail `scope_filter` and land in `out_of_scope.json` automatically.)
@@ -185,23 +187,17 @@ bucket. **`grep` the large files; don't read them whole.** Note that
    A returned `full_name` that differs from the requested id is a rename: repoint the
    entry (keep the `reason`, append `(renamed from <old>)`). A `404` is genuinely gone —
    drop it. Everything else is dormant — leave it alone.
-5. **Non-English descriptions** in the published set (exclusion category 5 above) —
-   nothing enforces this rule, so run it every audit:
+5. **Non-English repos** in the published set (exclusion category 5 above) —
+   nothing enforces this rule, so run it every audit. It needs the network
+   (`gh api`), which is why it is a skill-local script and not a pipeline stage:
    ```sh
-   python3 -c "
-   import json, unicodedata
-   meta={r['full_name']:r for r in json.load(open('helpers/repos.json'))['repos']}
-   raw=json.load(open('helpers/repos_to_render.json'))
-   for i in (raw['repos'] if isinstance(raw,dict) else raw):
-       d=meta.get(i,{}).get('description') or ''
-       L=[c for c in d if c.isalpha()]
-       if not L: continue
-       s=sum(1 for c in L if any(k in unicodedata.name(c,'') for k in ('CJK','HIRAGANA','KATAKANA','HANGUL','CYRILLIC','ARABIC','HEBREW','DEVANAGARI','THAI')))/len(L)
-       if s>=0.5: print(f'{s:.2f} {i}')"
+   python3 .claude/skills/maintain-ranking-scripts/audit_language.py
    ```
-   Each hit goes to `filtered.json` with the reason `CJK (non-English) description`
-   (or the matching script). Judge on the *description* only — a repo with an
-   English description and a non-English README stays.
+   It prints a per-repo `desc`/`readme` ratio to stderr and the hits (either
+   ≥ 0.5) as JSON on stdout; each hit goes to `filtered.json` with the reason
+   `non-English description` / `non-English README`. Calibration: the two repos
+   this rule removed score 0.60–0.64, while bilingual `farion1231/cc-switch`
+   (English `README.md`, translations beside it) scores 0.001 and stays.
 6. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or
    `repos_to_render.json`, and never add an allowlist.
 

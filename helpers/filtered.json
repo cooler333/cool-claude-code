@@ -1,5 +1,5 @@
 {
-  "description": "Editorial exclusions (the only hand-maintained lever; NO allowlist). Repos here ARE AI/Claude-adjacent (they pass scope_filter) but are excluded as redundant: competing single-vendor / non-Claude CLIs, API gateways / proxies / resellers, generic AI apps / clients / platforms, and leaked / rights-infringing content. Each entry is { repo_id, reason, ... }; only repo_id affects filtering (a bare string is also tolerated). Repos that are simply not AI/Claude are auto-classified into out_of_scope.json instead — do not list those here.",
+  "description": "Editorial exclusions (the only hand-maintained lever; NO allowlist). Repos here ARE AI/Claude-adjacent (they pass scope_filter) but are excluded as redundant: competing single-vendor / non-Claude CLIs, API gateways / proxies / resellers, generic AI apps / clients / platforms, leaked / rights-infringing content, and repos that are primarily non-English (by description or primary README). Each entry is { repo_id, reason, ... }; only repo_id affects filtering (a bare string is also tolerated). Repos that are simply not AI/Claude are auto-classified into out_of_scope.json instead — do not list those here.",
   "filtered": [
     {
       "repo_id": "google-gemini/gemini-cli",
@@ -800,6 +800,58 @@
     {
       "repo_id": "kestra-io/kestra",
       "reason": "generic data/infra workflow-orchestration platform (matches only by the 'ai-agents' topic); same class as the filtered n8n, conductor-oss, trigger.dev, activepieces"
+    },
+    {
+      "repo_id": "koala73/worldmonitor",
+      "reason": "standalone news / geopolitical-monitoring dashboard app; ships an optional MCP server but is a product, not agent tooling — same class as the filtered sansan0/TrendRadar and PDFMathTranslate"
+    },
+    {
+      "repo_id": "openinterpreter/openinterpreter",
+      "reason": "competing coding agent for open models (README mentions Claude twice); alternative to Claude Code, same class as the filtered cline, aider, goose, OpenHands"
+    },
+    {
+      "repo_id": "zylon-ai/private-gpt",
+      "reason": "API layer / backend infra over local OpenAI-compatible inference servers (model-access infra); same class as the filtered mudler/LocalAI — it only cites the Claude API as a shape to copy"
+    },
+    {
+      "repo_id": "danielmiessler/Fabric",
+      "reason": "generic provider-neutral prompt/pattern CLI for 'AI augmentation'; zero Claude Code or MCP in the README, same class as the filtered f/prompts.chat"
+    },
+    {
+      "repo_id": "diegosouzapw/OmniRoute",
+      "reason": "free AI gateway — one endpoint over 290+ providers; API gateway/reseller class, same as the filtered decolua/9router, litellm, one-api, new-api"
+    },
+    {
+      "repo_id": "PostHog/posthog",
+      "reason": "product-analytics / observability platform (matches only by 'ai agent' + an MCP integration); same class as the filtered netdata and comet-ml/opik"
+    },
+    {
+      "repo_id": "continuedev/continue",
+      "reason": "competing open-source coding agent (IDE/CLI); zero Claude or MCP in the README, same class as the filtered cline and aider"
+    },
+    {
+      "repo_id": "SigNoz/signoz",
+      "reason": "OpenTelemetry observability platform (matches only via its MCP server); same class as the filtered netdata"
+    },
+    {
+      "repo_id": "srbhr/Resume-Matcher",
+      "reason": "standalone resume/cover-letter app running against 100+ local LLMs; vertical end-user product, same class as the filtered HKUDS/AI-Trader and hugohe3/ppt-master"
+    },
+    {
+      "repo_id": "deepset-ai/haystack",
+      "reason": "generic build-your-own AI orchestration / RAG framework; zero Claude in the README, same class as the filtered langchain, crewAI, autogen, agno, mastra"
+    },
+    {
+      "repo_id": "xai-org/grok-build",
+      "reason": "competing coding-agent harness and TUI (xAI, single-vendor); zero Claude in the README, same class as the filtered QwenLM/qwen-code and openai/codex"
+    },
+    {
+      "repo_id": "letta-ai/letta",
+      "reason": "generic build-your-own platform for stateful agents; not a Claude-ecosystem memory tool, same class as the filtered pydantic-ai and google/adk-python"
+    },
+    {
+      "repo_id": "promptfoo/promptfoo",
+      "reason": "LLM evaluation / red-teaming platform; same class as the filtered comet-ml/opik and raga-ai-hub/RagaAI-Catalyst"
     }
   ]
 }
