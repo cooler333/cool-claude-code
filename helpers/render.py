@@ -421,8 +421,8 @@ def repo_columns(mom: dict, with_category: bool) -> list[tuple]:
 # --------------------------------------------------------------------------
 
 # The README body is kept to tables only; the prose that used to live here (scope,
-# column definitions, disclaimer, licensing) moved to hand-maintained docs, and this
-# footer is the single line that points at them.
+# column definitions, disclaimer, licensing) moved to hand-maintained docs, so the
+# footer is just the link row that points at them, plus the byline.
 FOOTER = """---
 
 - [**Scope & methodology**](docs/METHODOLOGY.md) — how the list is built, and what
@@ -432,6 +432,8 @@ FOOTER = """---
 - [**Disclaimer**](docs/DISCLAIMER.md) — no endorsement, third-party links,
   trademarks, removals, licensing
 - [**License**](LICENSE) — CC0-1.0 for this repository; listed repos keep their own
+
+Built and maintained by [Dmitrii Cooler](https://coolerov.com)
 """
 
 

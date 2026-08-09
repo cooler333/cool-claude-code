@@ -194,3 +194,5 @@
 - [**Disclaimer**](docs/DISCLAIMER.md) — no endorsement, third-party links,
   trademarks, removals, licensing
 - [**License**](LICENSE) — CC0-1.0 for this repository; listed repos keep their own
+
+Built and maintained by [Dmitrii Cooler](https://coolerov.com)
