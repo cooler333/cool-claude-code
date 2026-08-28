@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T17:47:19Z",
+  "generated_at": "2026-08-28T18:53:38Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
@@ -48,10 +48,10 @@
     "mvanhorn/last30days-skill",
     "MemPalace/mempalace",
     "stablyai/orca",
+    "calesthio/OpenMontage",
     "hesreallyhim/awesome-claude-code",
     "bmad-code-org/BMAD-METHOD",
     "anthropics/claude-cookbooks",
-    "calesthio/OpenMontage",
     "rohitg00/ai-engineering-from-scratch",
     "ChromeDevTools/chrome-devtools-mcp",
     "HKUDS/CLI-Anything",
@@ -67,8 +67,8 @@
     "Yeachan-Heo/oh-my-claudecode",
     "blader/humanizer",
     "anthropics/prompt-eng-interactive-tutorial",
-    "patchy631/ai-engineering-hub",
     "MadsLorentzen/ai-job-search",
+    "patchy631/ai-engineering-hub",
     "musistudio/claude-code-router",
     "microsoft/playwright-mcp",
     "K-Dense-AI/scientific-agent-skills",
@@ -77,8 +77,8 @@
     "volcengine/OpenViking",
     "JCodesMore/ai-website-cloner-template",
     "emilkowalski/skills",
-    "VoltAgent/awesome-agent-skills",
     "herdrdev/herdr",
+    "VoltAgent/awesome-agent-skills",
     "github/github-mcp-server",
     "openai/codex-plugin-cc",
     "HKUDS/Vibe-Trading",
@@ -98,10 +98,10 @@
     "aishwaryanr/awesome-generative-ai-guide",
     "oraios/serena",
     "zarazhangrui/frontend-slides",
+    "cathrynlavery/diagram-design",
+    "can1357/oh-my-pi",
     "yamadashy/repomix",
     "OtterMind/Chat2DB",
-    "eyaltoledano/claude-task-master",
-    "BloopAI/vibe-kanban",
-    "can1357/oh-my-pi"
+    "eyaltoledano/claude-task-master"
   ]
 }
