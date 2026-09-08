@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T12:52:57Z",
+  "generated_at": "2026-09-08T11:33:15Z",
   "generator": "helpers/render.py",
   "count": 100,
   "repos": [
@@ -38,8 +38,8 @@
     "microsoft/ai-agents-for-beginners",
     "ruvnet/ruflo",
     "career-ops-hq/career-ops",
-    "colbymchenry/codegraph",
     "headroomlabs-ai/headroom",
+    "colbymchenry/codegraph",
     "Fission-AI/OpenSpec",
     "pbakaus/impeccable",
     "shanraisshan/claude-code-best-practice",
@@ -49,15 +49,15 @@
     "mvanhorn/last30days-skill",
     "MemPalace/mempalace",
     "calesthio/OpenMontage",
-    "hesreallyhim/awesome-claude-code",
-    "bmad-code-org/BMAD-METHOD",
-    "rohitg00/ai-engineering-from-scratch",
-    "anthropics/claude-cookbooks",
     "tt-a1i/archify",
+    "hesreallyhim/awesome-claude-code",
+    "rohitg00/ai-engineering-from-scratch",
+    "bmad-code-org/BMAD-METHOD",
+    "anthropics/claude-cookbooks",
     "ChromeDevTools/chrome-devtools-mcp",
     "HKUDS/CLI-Anything",
-    "kepano/obsidian-skills",
     "coreyhaines31/marketingskills",
+    "kepano/obsidian-skills",
     "Imbad0202/academic-research-skills",
     "sickn33/agentic-awesome-skills",
     "blader/humanizer",
@@ -75,8 +75,8 @@
     "musistudio/claude-code-router",
     "microsoft/playwright-mcp",
     "herdrdev/herdr",
-    "anthropics/claude-plugins-official",
     "emilkowalski/skills",
+    "anthropics/claude-plugins-official",
     "volcengine/OpenViking",
     "zhaoxuya520/reverse-skill",
     "anthropics/financial-services",
@@ -101,7 +101,7 @@
     "NirDiamant/RAG_Techniques",
     "aishwaryanr/awesome-generative-ai-guide",
     "supermemoryai/supermemory",
-    "oraios/serena",
-    "virgiliojr94/book-to-skill"
+    "virgiliojr94/book-to-skill",
+    "oraios/serena"
   ]
 }
