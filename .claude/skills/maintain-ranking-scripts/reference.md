@@ -7,10 +7,10 @@ quick map; this is the detail.
 ## Pipeline data flow
 
 ```
-config.json ─► fetch.py ─► repos.json ────────────┐
-(knobs)        (network)   out_of_scope.json (auto)│
-                                                   ├─► render.py ─► repos_to_render.json
-                           filtered.json ──────────┘   (offline)   README.md
+config.json ─► fetch.py ─► repos.json ────────────┐                repos_to_render.json
+(knobs)        (network)   out_of_scope.json (auto)│                README.md
+                                                   ├─► render.py ─► non_english.json (auto)
+                           filtered.json ──────────┘   (offline)
                            (manual editorial)          ▲
                                                        │
               git history of repos.json ─► trend.py ───┘
@@ -20,8 +20,9 @@ config.json ─► fetch.py ─► repos.json ───────────�
 - **`fetch.py`** is the only networked component. It sweeps the full ≥ `min_stars`
   universe, writes `repos.json`, classifies scope-fails into `out_of_scope.json`,
   then stops. No Markdown, no categorization, no top-N.
-- **`render.py`** is pure CPU: it reads `repos.json` + the two exclusion sets,
-  selects the published top-N into `repos_to_render.json`, and writes `README.md`.
+- **`render.py`** is pure CPU: it reads `repos.json` + the two stored exclusion sets,
+  derives a third (non-English by description) into `non_english.json`, selects the
+  published top-N into `repos_to_render.json`, and writes `README.md`.
   Re-runnable anytime, deterministic, no network.
 - **`trend.py`** is the only git-reading component, and the momentum columns' sole
   input. It pulls **one** older committed `repos.json` blob (`git log --before` +
@@ -37,16 +38,19 @@ config.json ─► fetch.py ─► repos.json ───────────�
 - **`config.json`** holds every knob. Changing scope/categories/count is a config
   edit, not a code edit.
 
-## The four data files
+## The five data files
 
 | file | writer | role |
 |------|--------|------|
 | `repos.json` | `fetch.py` (daily) | the full universe: every repo ≥ `min_stars`, metadata only |
 | `out_of_scope.json` | `fetch.py` (daily) | AUTO: universe entries that fail `scope_filter` (not AI/Claude) |
 | `filtered.json` | human | MANUAL: AI-adjacent but redundant editorial exclusions |
-| `repos_to_render.json` | `render.py` | DERIVED: the published top-N (universe − out_of_scope − filtered − archived) |
+| `non_english.json` | `render.py` | AUTO: otherwise-publishable repos whose description is ≥ `render.non_english_threshold` non-Latin |
+| `repos_to_render.json` | `render.py` | DERIVED: the published top-N (universe − out_of_scope − filtered − non_english − archived) |
 
-Universe partition: `repos.json` ⊇ (`out_of_scope.json` ∪ `filtered.json`).
+Universe partition: `repos.json` ⊇ (`out_of_scope.json` ∪ `filtered.json` ∪
+`non_english.json`), and `non_english.json` is disjoint from the other two — it
+records only repos that would otherwise have been publishable.
 **Single source of truth for "in scope" is `config.json`'s `scope_filter`** —
 `out_of_scope.json` is a materialized cache of it, regenerated every run.
 

@@ -1,7 +1,8 @@
 name: Re-render on editorial edit
 
 # When a human edits the editorial denylist (helpers/filtered.json), regenerate
-# README.md + helpers/repos_to_render.json from the existing helpers/repos.json. No
+# README.md + helpers/repos_to_render.json + helpers/non_english.json from the
+# existing helpers/repos.json. No
 # network, no token — the daily sweep keeps repos.json/out_of_scope.json fresh; this
 # just keeps the published view consistent right after an edit instead of waiting for
 # the next cron run.
@@ -15,7 +16,8 @@ name: Re-render on editorial edit
 # an instant re-render here.
 #
 # No self-loop: this triggers only on filtered.json, but commits
-# README.md/repos_to_render.json — different paths — and a GITHUB_TOKEN push does
+# README.md/repos_to_render.json/non_english.json — different paths — and a
+# GITHUB_TOKEN push does
 # not re-trigger workflows anyway ([skip ci] is added as defense-in-depth).
 on:
   push:
@@ -56,7 +58,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md helpers/repos_to_render.json
+          git add README.md helpers/repos_to_render.json helpers/non_english.json
           if git diff --cached --quiet; then
             echo "No changes to publish — nothing to commit."
             exit 0

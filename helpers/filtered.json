@@ -1,5 +1,5 @@
 {
-  "description": "Editorial exclusions (the only hand-maintained lever; NO allowlist). Repos here ARE AI/Claude-adjacent (they pass scope_filter) but are excluded as redundant: competing single-vendor / non-Claude CLIs, API gateways / proxies / resellers, generic AI apps / clients / platforms, leaked / rights-infringing content, and repos that are primarily non-English (by description or primary README). Each entry is { repo_id, reason, ... }; only repo_id affects filtering (a bare string is also tolerated). Repos that are simply not AI/Claude are auto-classified into out_of_scope.json instead — do not list those here.",
+  "description": "Editorial exclusions (the only hand-maintained lever; NO allowlist). Repos here ARE AI/Claude-adjacent (they pass scope_filter) but are excluded as redundant: competing single-vendor / non-Claude CLIs, API gateways / proxies / resellers, generic AI apps / clients / platforms, leaked / rights-infringing content. Each entry is { repo_id, reason, ... }; only repo_id affects filtering (a bare string is also tolerated). Repos that are simply not AI/Claude are auto-classified into out_of_scope.json instead — do not list those here.",
   "filtered": [
     {
       "repo_id": "google-gemini/gemini-cli",
@@ -776,18 +776,6 @@
     {
       "repo_id": "webadderallorg/Recordly",
       "reason": "scope false-positive: screen recorder; matched 'skills' keyword"
-    },
-    {
-      "repo_id": "alchaincyf/nuwa-skill",
-      "reason": "CJK (non-English) description"
-    },
-    {
-      "repo_id": "Yuan1z0825/nature-skills",
-      "reason": "CJK (non-English) description"
-    },
-    {
-      "repo_id": "bojieli/ai-agent-book",
-      "reason": "CJK (non-English) description"
     },
     {
       "repo_id": "BigPizzaV3/CodexPlusPlus",

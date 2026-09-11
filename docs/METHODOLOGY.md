@@ -26,7 +26,7 @@ leaderboard are not repeated there.
 Membership is **not hand-curated**. `fetch.py` does an exhaustive sweep of **every**
 public repo at or above the star floor (`min_stars` in `helpers/config.json`) into
 `helpers/repos.json`, so discovery is complete by construction. `render.py` then
-removes the two exclusion sets and publishes the top results by live star count.
+removes the three exclusion sets and publishes the top results by live star count.
 
 - **In scope:** Claude Code skills, agents, plugins, harnesses, memory and
   orchestration; the MCP tool-protocol layer; general-purpose and provider-neutral
@@ -37,10 +37,14 @@ removes the two exclusion sets and publishes the top results by live star count.
   automatically by `scope_filter`, regenerated every run.
 - **Filtered (`helpers/filtered.json`, editorial):** repos that *are* AI/Claude-
   adjacent but excluded as redundant — single-vendor / non-Claude competing CLIs
-  (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs,
-  leaked/rights-infringing content, and repos that are primarily non-English —
-  by GitHub description or by primary README (this list is English-language;
-  bilingual repos whose main README is English are kept).
+  (e.g. gemini-cli, codex), API gateways/proxies, generic chat UIs, and
+  leaked/rights-infringing content.
+- **Non-English (`helpers/non_english.json`, auto):** this list is English-language,
+  so a repo whose GitHub description is at least `render.non_english_threshold`
+  non-Latin letters is dropped at render, with its measured share recorded. A
+  primarily non-English *README* is excluded under the same rule, but that check
+  needs the network and is applied by hand; bilingual repos whose main README is
+  English are kept.
 - **Floor:** repositories under `min_stars`, and archived repositories, are excluded.
 - **Star counts** are a point-in-time snapshot and drift daily.
 

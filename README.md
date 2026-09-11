@@ -92,9 +92,9 @@
 | 81 | [ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) | ⭐ 34.2k | -2 | +424 | Clone any website with one command using AI coding agents |
 | 82 | [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | ⭐ 34.1k | -2 | +341 | A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more. |
 | 88 | [skills (vercel-labs)](https://github.com/vercel-labs/skills) | ⭐ 31.4k | +4 | +999 | The open agent skills tool - npx skills |
-| 91 | [agent-skills (vercel-labs)](https://github.com/vercel-labs/agent-skills) | ⭐ 31.1k | -4 | +232 | Vercel's official collection of agent skills |
-| 93 | [cognee](https://github.com/topoteretes/cognee) | ⭐ 30.6k | -2 | +182 | Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine. |
-| 98 | [book-to-skill](https://github.com/virgiliojr94/book-to-skill) | ⭐ 29.9k | new | +1,457 | Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work. |
+| 90 | [agent-skills (vercel-labs)](https://github.com/vercel-labs/agent-skills) | ⭐ 31.1k | -3 | +232 | Vercel's official collection of agent skills |
+| 92 | [cognee](https://github.com/topoteretes/cognee) | ⭐ 30.6k | -1 | +182 | Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine. |
+| 97 | [book-to-skill](https://github.com/virgiliojr94/book-to-skill) | ⭐ 29.9k | new | +1,457 | Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work. |
 
 ### MCP server / tooling
 
@@ -127,11 +127,11 @@
 | 72 | [herdr](https://github.com/herdrdev/herdr) | ⭐ 37.6k | +4 | +2,407 | the runtime your coding agents live on |
 | 74 | [claude-code-router](https://github.com/musistudio/claude-code-router) | ⭐ 37.2k | -3 | +119 | One local control plane for every AI agent: route across models, fuse new capabilities, orchestrate tools, and stay fully in control. |
 | 83 | [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) | ⭐ 33.2k | — | +813 | "Vibe-Trading: Your Personal Trading Agent" |
-| 92 | [graphiti](https://github.com/getzep/graphiti) | ⭐ 30.8k | -4 | +219 | Build Real-Time Knowledge Graphs for AI Agents |
-| 94 | [oh-my-pi](https://github.com/can1357/oh-my-pi) | ⭐ 30.6k | +2 | +1,223 | ⌥ Coding agent with the IDE wired in |
-| 96 | [OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) | ⭐ 30.4k | -2 | +616 | OfficeCLI is the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. Free, open-source, single binary, no Office installation required. |
-| 97 | [AIHawk](https://github.com/feder-cr/AIHawk) | ⭐ 30.3k | -4 | +31 | Open-source AI browser agent for web automation: a web browsing agent and computer-use agent in plain English. Browser MCP for Claude Code and Gemini CLI. |
-| 99 | [gbrain](https://github.com/garrytan/gbrain) | ⭐ 29.8k | -4 | +247 | Garry's Opinionated OpenClaw/Hermes Agent Brain |
+| 91 | [graphiti](https://github.com/getzep/graphiti) | ⭐ 30.8k | -3 | +219 | Build Real-Time Knowledge Graphs for AI Agents |
+| 93 | [oh-my-pi](https://github.com/can1357/oh-my-pi) | ⭐ 30.6k | +3 | +1,223 | ⌥ Coding agent with the IDE wired in |
+| 95 | [OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) | ⭐ 30.4k | -1 | +616 | OfficeCLI is the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. Free, open-source, single binary, no Office installation required. |
+| 96 | [AIHawk](https://github.com/feder-cr/AIHawk) | ⭐ 30.3k | -3 | +31 | Open-source AI browser agent for web automation: a web browsing agent and computer-use agent in plain English. Browser MCP for Claude Code and Gemini CLI. |
+| 98 | [gbrain](https://github.com/garrytan/gbrain) | ⭐ 29.8k | -3 | +247 | Garry's Opinionated OpenClaw/Hermes Agent Brain |
 
 ### Coding agent CLI
 
@@ -143,14 +143,14 @@
 | 55 | [CLI-Anything](https://github.com/HKUDS/CLI-Anything) | ⭐ 49.2k | -2 | +296 | "CLI-Anything: Making ALL Software Agent-Native" -- CLI-Hub: https://clianything.cc/ |
 | 63 | [agent-browser](https://github.com/vercel-labs/agent-browser) | ⭐ 42.4k | — | +482 | Browser automation CLI for AI agents |
 | 69 | [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | ⭐ 39.1k | -1 | +104 | Teams-first Multi-agent orchestration for Claude Code |
-| 95 | [claude-code-templates](https://github.com/davila7/claude-code-templates) | ⭐ 30.6k | -6 | +66 | CLI tool for configuring and monitoring Claude Code |
+| 94 | [claude-code-templates](https://github.com/davila7/claude-code-templates) | ⭐ 30.6k | -5 | +66 | CLI tool for configuring and monitoring Claude Code |
 
 ### Memory / context
 
 | # | Name | Stars | Pos | +Stars | Description |
 |:---|:---|:---|:---|:---|:---|
 | 42 | [mem0](https://github.com/mem0ai/mem0) | ⭐ 65.1k | -1 | +423 | The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production. |
-| 100 | [supermemory](https://github.com/supermemoryai/supermemory) | ⭐ 29.6k | — | +401 | Memory and context engine + app that is extremely fast, scalable, and can be run fully locally. The Memory API for the AI era. |
+| 99 | [supermemory](https://github.com/supermemoryai/supermemory) | ⭐ 29.6k | +1 | +401 | Memory and context engine + app that is extremely fast, scalable, and can be run fully locally. The Memory API for the AI era. |
 
 ### Prompts & system prompts
 
@@ -158,7 +158,6 @@
 |:---|:---|:---|:---|:---|:---|
 | 57 | [academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | ⭐ 47.6k | — | +1,407 | Academic Research Skills for Claude Code: research → write → review → revise → finalize |
 | 58 | [humanizer](https://github.com/blader/humanizer) | ⭐ 46.7k | +4 | +4,621 | Agent skill that removes signs of AI-generated writing from text |
-| 90 | [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | ⭐ 31.2k | new | +3,291 | Prompt as Code \| GPT Image 2 / 2.5 提示词与案例库，530+ 个案例、20+ 套工业级模板与可复用 Skills，新增 2.5 同提示词对比专区，附完整提示词与生成记录，持续更新。 |
 
 ### Spec-driven dev
 
@@ -177,6 +176,7 @@
 | 65 | [claude-howto](https://github.com/luongnv89/claude-howto) | ⭐ 41.4k | -1 | +88 | A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value. |
 | 73 | [ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | ⭐ 37.5k | -3 | +154 | In-depth tutorials on LLMs, RAGs and real-world AI agent applications. |
 | 87 | [agents-course](https://github.com/huggingface/agents-course) | ⭐ 32.4k | -3 | +248 | This repository contains the Hugging Face Agents Course. |
+| 100 | [RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) | ⭐ 29.4k | -2 | +75 | This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial. |
 
 ### Other
 

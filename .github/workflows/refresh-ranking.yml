@@ -54,7 +54,8 @@ jobs:
         run: python helpers/fetch.py
 
       # render.py selects the published top-N (universe - out_of_scope - filtered -
-      # archived), writes helpers/repos_to_render.json, and regenerates README.md.
+      # non_english - archived), writes helpers/repos_to_render.json +
+      # helpers/non_english.json, and regenerates README.md.
       # Only reached if fetch.py succeeded (default fail-fast). No network.
       - name: Render README
         run: python helpers/render.py
@@ -67,7 +68,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md helpers/repos.json helpers/out_of_scope.json helpers/repos_to_render.json
+          git add README.md helpers/repos.json helpers/out_of_scope.json helpers/repos_to_render.json helpers/non_english.json
           if git diff --cached --quiet; then
             echo "No changes to ranking — nothing to commit."
             exit 0

@@ -13,6 +13,9 @@ overwrites them. To change what appears:
   This is the only editorial lever, and it re-renders immediately.
 - **Change the layout, columns, or momentum window** — `helpers/render.py` and the
   `render.*` keys in `helpers/config.json`.
+- **Re-tune the English-language cutoff** — `render.non_english_threshold` in
+  `helpers/config.json`. Repos it drops, and the share measured for each, are
+  listed in `helpers/non_english.json` (generated — don't edit it).
 
 There is **no allowlist** and no hand-edited ranking: discovery is an exhaustive
 sweep of every public repo above the star floor. See

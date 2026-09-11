@@ -25,6 +25,7 @@ Claude Code / skills / agents / MCP ecosystem.
    any denylist.
 2. **`helpers/render.py`** (no network) selects the published set —
    `repos.json` minus `out_of_scope.json` minus `helpers/filtered.json` minus
+   `helpers/non_english.json` (which it derives itself, see below) minus
    archived, top `render.render_count` by stars — writes
    **`helpers/repos_to_render.json`**, then **categorizes**, builds the short
    **briefs** (from description / topics), and lays out **`README.md`**: a Table of
@@ -47,7 +48,7 @@ Claude Code / skills / agents / MCP ecosystem.
    — the default depth-1 clone would silently render without the momentum columns.
 
 The ≥`min_stars` universe partitions as `repos.json` ⊇ (`out_of_scope.json` ∪
-`filtered.json`). See `reference.md` for the full file contracts and schema.
+`filtered.json` ∪ `non_english.json`). See `reference.md` for the full file contracts and schema.
 
 ## Where the static docs live
 
@@ -68,11 +69,17 @@ docs — reference the key so `config.json` stays the single source of truth.
 
 The scripts are **stdlib-only** (no pip installs) and must stay that way.
 
-## The two exclusion sets (orthogonal)
+## The three exclusion sets (orthogonal)
 
 - **`out_of_scope.json` — AUTO, CI-owned.** "Not AI/Claude." Derived from
   `repos.json` + `scope_filter` every run. **Never hand-edit it** — if something is
   misclassified, fix the *rules* in `config.json` (single source of truth).
+- **`non_english.json` — AUTO, render-owned.** "Description isn't English."
+  Derived by `render.py` from `repos.json` every run: any otherwise-publishable
+  repo whose GitHub description is ≥ `render.non_english_threshold` non-Latin
+  letters, recorded with its measured share. **Never hand-edit it** — move the
+  threshold in `config.json` instead. Sited at render because that is where a repo
+  becomes *visible*; it needs no network, so it costs the offline half nothing.
 - **`filtered.json` — MANUAL, human-owned.** Repos that *are* AI/Claude-adjacent
   (they pass scope) but are excluded as **redundant**. Each entry is
   `{ "repo_id": "owner/name", "reason": "..." }` (a bare string is also tolerated).
@@ -87,14 +94,14 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   4. **Leaked / rights-infringing content** — republished proprietary system
      prompts, credentials, closed-source material (e.g.
      `asgeirtj/system_prompts_leaks`). Excluded on legal/editorial grounds.
-  5. **Non-English** — the published list is English-language, so a repo is
-     excluded when *either* its GitHub description **or** its primary README is
-     primarily non-English (≥50% of prose letters in a non-Latin script),
-     regardless of quality (e.g. `alchaincyf/nuwa-skill`). **Bilingual is fine
-     as long as the main one is English** — `farion1231/cc-switch` ships an
-     English `README.md` with translations beside it and stays. This one is
-     invisible to `scope_filter`, so it decays silently — re-check it in every
-     audit (step 5 below).
+  5. **Non-English README** — the published list is English-language. The
+     *description* half of this rule is automatic (`non_english.json` above); a
+     repo with an English description but a primarily non-English **README**
+     still belongs here, because reading a README needs the network and
+     `render.py` never networks. **Bilingual is fine as long as the main one is
+     English** — `farion1231/cc-switch` ships an English `README.md` with
+     translations beside it and stays. Nothing enforces this half, so it decays
+     silently — re-check it in every audit (step 5 below).
 
   (Generic **non-AI** repos that match only by keyword belong in neither file —
   they fail `scope_filter` and land in `out_of_scope.json` automatically.)
@@ -120,6 +127,10 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   Verify any rule change by diffing the assignment for the whole published set
   (categorize every repo before and after), not by spot-checking one repo.
 - **Change how many are published** — `render.render_count` in `config.json`.
+- **Re-tune the English-language cutoff** — `render.non_english_threshold` in
+  `config.json`; render applies it immediately, no sweep needed. Calibration: the
+  five repos it removes score 0.56–0.78, while bilingual `farion1231/cc-switch`
+  scores 0.001.
 - **Change the momentum window / Trending size** — `render.trend.window_days` and
   `render.trend.trending_size` in `config.json`. `window_days` drives `Pos`, `+Stars`
   and the Trending cut alike (one baseline, one span).
@@ -136,7 +147,8 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
   `helpers/config.json`, writes `helpers/repos.json` + `helpers/out_of_scope.json`.
   Networked. No categorize/brief/rank-to-N/README.
 - `helpers/render.py` — reads `repos.json` + `out_of_scope.json` + `filtered.json`,
-  selects the top-N, writes `repos_to_render.json` + `README.md`. **Never networks.**
+  selects the top-N, writes `non_english.json` + `repos_to_render.json` +
+  `README.md`. **Never networks.**
 - `helpers/trend.py` — the **only** git-reading module, as `ghclient.py` is the only
   networking one. Keep git out of `render.py`; keep `trend.py` best-effort (it returns
   `None` instead of raising, so a missing baseline degrades a column rather than
@@ -146,7 +158,9 @@ The scripts are **stdlib-only** (no pip installs) and must stay that way.
 - Keep scripts **stdlib-only** — no third-party packages.
 - Preserve separation: `fetch.py` writes only `repos.json`/`out_of_scope.json`;
   `render.py` reads those + `filtered.json` and writes only
-  `repos_to_render.json`/`README.md`.
+  `non_english.json`/`repos_to_render.json`/`README.md`. Both CI workflows `git add`
+  an explicit file list — a new generated file must be added there too, or it is
+  regenerated every run and never committed.
 - Any `repos.json` schema change must update the `fetch.py` writer, the `render.py`
   reader, AND this doc + `reference.md` in lockstep.
 - The pipeline stays **idempotent** and **deterministic**: same inputs → identical
@@ -198,19 +212,20 @@ bucket. **`grep` the large files; don't read them whole.** Note that
    re-ranks the baseline snapshot with *today's* exclusions, and the deleted repo is
    still in that older `repos.json`. It self-heals once the baseline rolls past the
    repo's disappearance — don't chase it.
-5. **Non-English repos** in the published set (exclusion category 5 above) —
-   nothing enforces this rule, so run it every audit. It needs the network
-   (`gh api`), which is why it is a skill-local script and not a pipeline stage:
+5. **Non-English READMEs** in the published set (exclusion category 5 above) —
+   descriptions are now gated automatically in `render.py`, so this audit covers
+   the half that still can't be: a repo with an English description whose primary
+   README is not English. It needs the network (`gh api`), which is why it is a
+   skill-local script and not a pipeline stage:
    ```sh
    python3 .claude/skills/maintain-ranking-scripts/audit_language.py
    ```
-   It prints a per-repo `desc`/`readme` ratio to stderr and the hits (either
-   ≥ 0.5) as JSON on stdout; each hit goes to `filtered.json` with the reason
-   `non-English description` / `non-English README`. Calibration: the two repos
-   this rule removed score 0.60–0.64, while bilingual `farion1231/cc-switch`
-   (English `README.md`, translations beside it) scores 0.001 and stays.
-6. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`, or
-   `repos_to_render.json`, and never add an allowlist.
+   It prints a per-repo `desc`/`readme` ratio to stderr and the hits (either over
+   `render.non_english_threshold`) as JSON on stdout. A `desc` hit means the gate
+   regressed — fix `render.py`, don't hand-file it. A `readme`-only hit goes to
+   `filtered.json` with the reason `non-English README`.
+6. Never hand-edit `README.md`, `repos.json`, `out_of_scope.json`,
+   `non_english.json`, or `repos_to_render.json`, and never add an allowlist.
 
 ## Notes
 

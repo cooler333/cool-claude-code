@@ -92,7 +92,6 @@
     "huggingface/agents-course",
     "vercel-labs/skills",
     "tirth8205/code-review-graph",
-    "freestylefly/awesome-gpt-image-2",
     "vercel-labs/agent-skills",
     "getzep/graphiti",
     "topoteretes/cognee",
@@ -102,6 +101,7 @@
     "feder-cr/AIHawk",
     "virgiliojr94/book-to-skill",
     "garrytan/gbrain",
-    "supermemoryai/supermemory"
+    "supermemoryai/supermemory",
+    "NirDiamant/RAG_Techniques"
   ]
 }

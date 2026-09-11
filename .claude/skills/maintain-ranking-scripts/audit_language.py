@@ -1,8 +1,13 @@
-"""CLASSIFICATION AUDIT — exclusion category 5 (non-English).
+"""CLASSIFICATION AUDIT — exclusion category 5 (non-English README).
 
 Reports, for every repo in the published set, the share of non-Latin letters in
 (a) its GitHub description and (b) its primary README. A repo is a hit when
-*either* is >= THRESHOLD; hits go to `helpers/filtered.json` by hand.
+*either* is >= the threshold.
+
+The *description* half is gated automatically in render.py (helpers/non_english.json),
+so a `desc` hit here means that gate regressed — fix render.py rather than hand-filing
+the repo. A `readme`-only hit is what this audit exists for: render never networks, so
+nothing in the pipeline can see a README. Those go to `helpers/filtered.json` by hand.
 
 Prose only — fenced/inline code, HTML tags, URLs and link targets are stripped
 before measuring, because badge URLs and code blocks dilute the real prose and
@@ -21,7 +26,8 @@ import subprocess
 import sys
 import unicodedata
 
-THRESHOLD = 0.5
+# One source of truth with the render-time gate; keep them from drifting apart.
+THRESHOLD = json.load(open('helpers/config.json'))['render']['non_english_threshold']
 NON_LATIN = ('CJK', 'HIRAGANA', 'KATAKANA', 'HANGUL', 'CYRILLIC',
              'ARABIC', 'HEBREW', 'DEVANAGARI', 'THAI')
 

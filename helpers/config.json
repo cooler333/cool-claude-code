@@ -9,6 +9,7 @@
 
   "render": {
     "render_count": 100,
+    "non_english_threshold": 0.5,
     "trend": {
       "window_days": 7,
       "trending_size": 5
